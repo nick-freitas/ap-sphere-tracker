@@ -14,6 +14,7 @@ const NON_ITEMS = new Set([
 const NON_LOCATIONS = new Set([
   'Links Pocket',
   'Master Sword Pedestal',
+  'Market ToT Master Sword',
   'Flute Activation Spot',
 ])
 

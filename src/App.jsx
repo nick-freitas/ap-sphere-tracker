@@ -77,14 +77,15 @@ function App() {
     return analyzeSpheres(spoilerData, checkedLocations)
   }, [spoilerData, checkedLocations])
 
-  // Find the index of the last sphere that meets the threshold — extended only shows the next sphere after that one
+  // Find the index of the last sphere that meets the threshold
+  // Sphere 0 (starting items) always qualifies as fallback
   const lastQualifyingIdx = useMemo(() => {
     for (let i = sphereResults.length - 1; i >= 0; i--) {
       if (sphereResults[i].totalChecks > 0 && sphereResults[i].completionPercent >= threshold) {
         return i
       }
     }
-    return -1
+    return sphereResults.length > 0 ? 0 : -1
   }, [sphereResults, threshold])
 
   // Map each player to their highest sphere number
@@ -180,6 +181,7 @@ function App() {
               checkedLocations={checkedLocations}
               playerLastSphere={playerLastSphere}
               showSpoilers={showSpoilers}
+              precollected={spoilerData.spheres[i]?.precollected}
             />
           )
         })}

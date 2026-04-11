@@ -68,11 +68,29 @@ function parseSpheres(text) {
   while ((match = sphereRegex.exec(playthroughBlock)) !== null) {
     const number = parseInt(match[1], 10)
     const block = match[2]
-    const entries = parseSphereEntries(block)
-    spheres.push({ number, entries })
+    if (number === 0) {
+      spheres.push({ number, entries: [], precollected: parsePrecollected(block) })
+    } else {
+      const entries = parseSphereEntries(block)
+      spheres.push({ number, entries })
+    }
   }
 
   return spheres
+}
+
+function parsePrecollected(block) {
+  const items = []
+  const lines = block.split('\n')
+  for (const line of lines) {
+    const trimmed = line.trim()
+    if (!trimmed) continue
+    const parsed = parseNameAndPlayer(trimmed)
+    if (parsed) {
+      items.push({ item: parsed.name, player: parsed.player })
+    }
+  }
+  return items
 }
 
 function parseSphereEntries(block) {

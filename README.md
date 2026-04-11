@@ -1,16 +1,47 @@
-# React + Vite
+# AP Sphere Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A client-side web app for tracking sphere progression in [Archipelago](https://archipelago.gg/) multiworld randomizer sessions.
 
-Currently, two official plugins are available:
+**Live:** [nick-freitas.github.io/ap-sphere-tracker](https://nick-freitas.github.io/ap-sphere-tracker/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What it does
 
-## React Compiler
+Cross-references an Archipelago spoiler log with a server tracker log to show:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Per-sphere completion** with progress bars and player breakdowns
+- **Missing checks** for each sphere above a configurable threshold
+- **Per-player stats** sorted by completion percentage
+- **Starting items** from Sphere 0 displayed at the top
+- **Upcoming sphere** toggle to peek at the next sphere beyond the threshold
+- **Item spoiler toggle** with blur protection and confirmation prompt
 
-## Expanding the ESLint configuration
+## How to use
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Upload your **Spoiler Log** (`AP_*_Spoiler.txt` from your seed)
+2. Upload your **Tracker Log** (the server `.txt` log file)
+3. Adjust the **Threshold** slider to control which spheres reveal missing checks
+4. Toggle **Upcoming Sphere** to see the next sphere beyond the threshold
+5. Toggle **Item Spoilers** to reveal what items are at missing locations
+6. Click player names to filter them in/out of the display
+
+## Features
+
+- Game-agnostic — works with any Archipelago game including unofficial ones
+- Dark/light mode (defaults to system preference)
+- Installable as a PWA for offline use
+- Auto-updates tracker data hourly via GitHub Actions
+- Filters out non-item entries (subrules, logic events)
+- Player color coding throughout all views
+
+## Tech stack
+
+React, Vite, plain CSS. No backend — everything runs in the browser. Deployed to GitHub Pages.
+
+## Development
+
+```bash
+npm install
+npm run dev     # http://localhost:5173/ap-sphere-tracker/
+npm test        # run tests
+npm run build   # production build
+```

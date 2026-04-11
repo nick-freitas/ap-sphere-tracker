@@ -61,12 +61,11 @@ describe('parseSpoilerLog', () => {
   })
 
   describe('sphere parsing', () => {
-    it('parses sphere 0 as empty', () => {
+    it('parses sphere 0 with precollected items', () => {
       const result = parseSpoilerLog(SAMPLE_SPOILER)
-      expect(result.spheres[0]).toEqual({
-        number: 0,
-        entries: [],
-      })
+      expect(result.spheres[0].number).toBe(0)
+      expect(result.spheres[0].entries).toEqual([])
+      expect(result.spheres[0].precollected).toBeDefined()
     })
 
     it('parses sphere 1 entries with correct fields', () => {

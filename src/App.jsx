@@ -126,15 +126,15 @@ function App() {
       )}
       <div className="sphere-list">
         {sphereResults.map((result, i) => {
+          const withinThreshold = lastQualifyingIdx >= 0 && i <= lastQualifyingIdx
           const isExtended = extended
             && lastQualifyingIdx >= 0
-            && i > lastQualifyingIdx
-            && i <= lastQualifyingIdx + 2
+            && i === lastQualifyingIdx + 1
           return (
             <SphereCard
               key={result.sphereNumber}
               result={result}
-              threshold={isExtended ? 0 : threshold}
+              threshold={withinThreshold || isExtended ? 0 : threshold}
               playerColors={playerColors}
               hiddenPlayers={hiddenPlayers}
               isExtended={isExtended}

@@ -4,9 +4,9 @@ import './SphereCard.css'
 export default function SphereCard({
   result,
   threshold,
-  extendedResults,
   playerColors,
   hiddenPlayers,
+  isExtended,
 }) {
   const { sphereNumber, totalChecks, completedChecks, completionPercent, missingChecks } = result
   const isComplete = completionPercent === 100
@@ -15,11 +15,12 @@ export default function SphereCard({
   if (totalChecks === 0) return null
 
   return (
-    <div className={`sphere-card ${isComplete ? 'complete' : ''} ${meetsThreshold ? 'expanded' : 'dimmed'}`}>
+    <div className={`sphere-card ${isComplete ? 'complete' : ''} ${meetsThreshold ? 'expanded' : 'dimmed'} ${isExtended ? 'extended' : ''}`}>
       <div className="sphere-header">
         <span className="sphere-label">
           {isComplete && <span className="check-icon">&#10003; </span>}
           Sphere {sphereNumber}
+          {isExtended && <span className="extended-badge">Extended</span>}
         </span>
         <div className="sphere-progress-container">
           <div className="sphere-progress-bar">
@@ -42,19 +43,6 @@ export default function SphereCard({
             hiddenPlayers={hiddenPlayers}
           />
         </div>
-      )}
-
-      {extendedResults.map((ext) =>
-        ext.missingChecks.length > 0 ? (
-          <div className="sphere-extended" key={ext.sphereNumber}>
-            <div className="extended-label">Next Sphere: Sphere {ext.sphereNumber}</div>
-            <MissingChecksTable
-              missingChecks={ext.missingChecks}
-              playerColors={playerColors}
-              hiddenPlayers={hiddenPlayers}
-            />
-          </div>
-        ) : null
       )}
     </div>
   )

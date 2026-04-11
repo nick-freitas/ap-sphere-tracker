@@ -98,18 +98,22 @@ function App() {
         />
       )}
       <div className="sphere-list">
-        {sphereResults.map((result, i) => (
-          <SphereCard
-            key={result.sphereNumber}
-            result={result}
-            threshold={threshold}
-            extendedResults={extended && i === lastQualifyingIdx
-              ? sphereResults.slice(i + 1, i + 3)
-              : []}
-            playerColors={playerColors}
-            hiddenPlayers={hiddenPlayers}
-          />
-        ))}
+        {sphereResults.map((result, i) => {
+          const isExtended = extended
+            && lastQualifyingIdx >= 0
+            && i > lastQualifyingIdx
+            && i <= lastQualifyingIdx + 2
+          return (
+            <SphereCard
+              key={result.sphereNumber}
+              result={result}
+              threshold={isExtended ? 0 : threshold}
+              playerColors={playerColors}
+              hiddenPlayers={hiddenPlayers}
+              isExtended={isExtended}
+            />
+          )
+        })}
       </div>
     </div>
   )

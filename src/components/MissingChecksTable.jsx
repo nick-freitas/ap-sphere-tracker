@@ -21,7 +21,7 @@ export default function MissingChecksTable({ missingChecks, playerColors, hidden
       </thead>
       <tbody>
         {filtered.map((check, i) => (
-          <tr key={i} style={{ borderLeftColor: playerColors[check.player] || '#888' }}>
+          <tr key={`${check.player}-${check.location}`} style={{ borderLeftColor: playerColors[check.player] || '#888' }}>
             <td style={{ color: playerColors[check.player] || '#888' }}>
               {check.player}
             </td>

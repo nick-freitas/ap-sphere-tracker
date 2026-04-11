@@ -70,7 +70,7 @@ export default function InputSection({
           {trackerStatus.error
             ? `Error: ${trackerStatus.error}`
             : `Last updated: ${trackerStatus.lastFetch} ${trackerStatus.usingProxy ? '(via CORS proxy)' : ''}`}
-          {trackerStatus.nextRefresh && (
+          {trackerStatus.nextRefresh != null && (
             <span className="refresh-countdown">
               {' '}| Next refresh: {trackerStatus.nextRefresh}s
             </span>

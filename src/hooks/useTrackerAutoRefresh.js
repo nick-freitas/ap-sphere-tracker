@@ -7,7 +7,7 @@ const CORS_PROXY = 'https://corsproxy.io/?'
 export function useTrackerAutoRefresh(url) {
   const [checkedLocations, setCheckedLocations] = useState(new Map())
   const [status, setStatus] = useState(null)
-  const [usingProxy, setUsingProxy] = useState(false)
+  const usingProxyRef = useRef(false)
   const intervalRef = useRef(null)
   const countdownRef = useRef(null)
   const [countdown, setCountdown] = useState(null)
@@ -17,13 +17,13 @@ export function useTrackerAutoRefresh(url) {
 
     try {
       let response
-      const fetchUrl = usingProxy ? `${CORS_PROXY}${encodeURIComponent(url)}` : url
+      const fetchUrl = usingProxyRef.current ? `${CORS_PROXY}${encodeURIComponent(url)}` : url
 
       try {
         response = await fetch(fetchUrl)
       } catch (err) {
-        if (!usingProxy) {
-          setUsingProxy(true)
+        if (!usingProxyRef.current) {
+          usingProxyRef.current = true
           response = await fetch(`${CORS_PROXY}${encodeURIComponent(url)}`)
         } else {
           throw err
@@ -39,7 +39,7 @@ export function useTrackerAutoRefresh(url) {
       setCheckedLocations(parsed)
       setStatus({
         lastFetch: new Date().toLocaleTimeString(),
-        usingProxy,
+        usingProxy: usingProxyRef.current,
         error: null,
       })
       setCountdown(60)
@@ -49,7 +49,7 @@ export function useTrackerAutoRefresh(url) {
         error: err.message,
       }))
     }
-  }, [url, usingProxy])
+  }, [url])
 
   useEffect(() => {
     if (!url) {

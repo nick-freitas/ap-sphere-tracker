@@ -3,6 +3,11 @@ const NON_ITEMS = new Set([
   'Child Can Pass Time',
   'Adult Can Pass Time',
   'Can Access Fish',
+  'Jabu Jabus Belly Ruto In 1F Rescued',
+  'Open Floodgate',
+  'Dodongos Cavern Eyes Lit',
+  'Kakariko Village Gate Open',
+  'GC Woods Warp Open',
 ])
 
 const NON_LOCATIONS = new Set([

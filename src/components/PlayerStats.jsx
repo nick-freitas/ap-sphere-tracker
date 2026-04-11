@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import './PlayerStats.css'
 
-export default function PlayerStats({ spoilerData, checkedLocations, playerColors, hiddenPlayers }) {
+export default function PlayerStats({ spoilerData, checkedLocations, playerColors, hiddenPlayers, sphereResults, lastQualifyingIdx }) {
   const stats = useMemo(() => {
     if (!spoilerData) return []
 
@@ -36,10 +36,46 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
     return result
   }, [spoilerData, checkedLocations])
 
+  // A player is "locked" if they have no missing checks in qualifying spheres (0 through lastQualifyingIdx)
+  // For locked players, find the next sphere they have checks in
+  const lockedPlayers = useMemo(() => {
+    if (!sphereResults || lastQualifyingIdx < 0) return {}
+    const result = {}
+    if (spoilerData) {
+      for (const player of spoilerData.players) {
+        let hasMissing = false
+        for (let i = 0; i <= lastQualifyingIdx && i < sphereResults.length; i++) {
+          for (const check of sphereResults[i].missingChecks) {
+            if (check.player === player.name) {
+              hasMissing = true
+              break
+            }
+          }
+          if (hasMissing) break
+        }
+        if (!hasMissing) {
+          // Find next sphere with checks for this player
+          let nextSphere = null
+          for (let i = lastQualifyingIdx + 1; i < sphereResults.length; i++) {
+            for (const check of sphereResults[i].missingChecks) {
+              if (check.player === player.name) {
+                nextSphere = sphereResults[i].sphereNumber
+                break
+              }
+            }
+            if (nextSphere !== null) break
+          }
+          result[player.name] = nextSphere
+        }
+      }
+    }
+    return result
+  }, [spoilerData, sphereResults, lastQualifyingIdx])
+
   const visible = stats.filter((s) => !hiddenPlayers || !hiddenPlayers.has(s.name))
 
   const totalDone = visible.reduce((sum, s) => sum + s.done, 0)
-  const totalAll = visible.reduce((sum, s) => sum + s.total, 0)
+  const totalAll = stats.reduce((sum, s) => sum + s.total, 0)
   const totalPct = totalAll === 0 ? 100 : Math.round((totalDone / totalAll) * 100)
 
   if (stats.length === 0) return null
@@ -51,6 +87,12 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
           <div className="ps-info">
             <span className="ps-dot" style={{ background: playerColors[s.name] }} />
             <span className="ps-name">{s.name}</span>
+            {s.name in lockedPlayers && (
+              <span className="ps-lock" title="No remaining checks in current spheres - potentially locked/BK'd">
+                {'\uD83D\uDD12'}
+                {lockedPlayers[s.name] !== null && <span className="ps-next-sphere">S{lockedPlayers[s.name]}</span>}
+              </span>
+            )}
             <span className="ps-count">{s.done}/{s.total}</span>
           </div>
           <div className="ps-bar">

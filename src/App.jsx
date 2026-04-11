@@ -7,6 +7,7 @@ import InputSection from './components/InputSection'
 import SphereCard from './components/SphereCard'
 import PlayerLegend from './components/PlayerLegend'
 import PlayerStats from './components/PlayerStats'
+import PlayerConfigs from './components/PlayerConfigs'
 import defaultSpoilerUrl from './default-spoiler.txt?url'
 import defaultTrackerUrl from './default-tracker.txt?url'
 import './App.css'
@@ -19,6 +20,8 @@ function App() {
   const [threshold, setThreshold] = useState(70)
   const [extended, setExtended] = useState(false)
   const [hiddenPlayers, setHiddenPlayers] = useState(new Set())
+  const [activeTab, setActiveTab] = useState('spheres')
+  const [rawTrackerText, setRawTrackerText] = useState('')
   const [showSpoilers, setShowSpoilers] = useState(false)
   const [showSpoilerConfirm, setShowSpoilerConfirm] = useState(false)
   const [darkMode, setDarkMode] = useState(() => {
@@ -44,6 +47,7 @@ function App() {
     fetch(defaultTrackerUrl)
       .then((res) => res.text())
       .then((text) => {
+        setRawTrackerText(text)
         const parsed = parseTrackerLog(text)
         setCheckedLocations(parsed)
       })
@@ -56,6 +60,7 @@ function App() {
   }
 
   function handleTrackerText(text) {
+    setRawTrackerText(text)
     const parsed = parseTrackerLog(text)
     setCheckedLocations(parsed)
   }
@@ -77,15 +82,18 @@ function App() {
     return analyzeSpheres(spoilerData, checkedLocations)
   }, [spoilerData, checkedLocations])
 
-  // Find the index of the last sphere that meets the threshold
+  // Find the highest sphere in a continuous chain where all spheres meet the threshold
   // Sphere 0 (starting items) always qualifies as fallback
   const lastQualifyingIdx = useMemo(() => {
-    for (let i = sphereResults.length - 1; i >= 0; i--) {
+    let last = sphereResults.length > 0 ? 0 : -1
+    for (let i = 1; i < sphereResults.length; i++) {
       if (sphereResults[i].totalChecks > 0 && sphereResults[i].completionPercent >= threshold) {
-        return i
+        last = i
+      } else {
+        break
       }
     }
-    return sphereResults.length > 0 ? 0 : -1
+    return last
   }, [sphereResults, threshold])
 
   // Map each player to their highest sphere number
@@ -144,48 +152,76 @@ function App() {
         hasSpoiler={!!spoilerData}
         hasTracker={checkedLocations.size > 0}
       />
-      {spoilerData && (
-        <PlayerLegend
-          players={spoilerData.players}
-          playerColors={playerColors}
-          hiddenPlayers={hiddenPlayers}
-          onTogglePlayer={togglePlayer}
-          onSelectAll={() => setHiddenPlayers(new Set())}
-          onSelectNone={() => setHiddenPlayers(new Set(spoilerData.players.map(p => p.name)))}
-        />
-      )}
-      {spoilerData && (
-        <PlayerStats
-          spoilerData={spoilerData}
-          checkedLocations={checkedLocations}
-          playerColors={playerColors}
-          hiddenPlayers={hiddenPlayers}
-        />
-      )}
-      <div className="sphere-list">
-        {sphereResults.map((result, i) => {
-          const withinThreshold = lastQualifyingIdx >= 0 && i <= lastQualifyingIdx
-          const isExtended = extended
-            && lastQualifyingIdx >= 0
-            && i === lastQualifyingIdx + 1
-          return (
-            <SphereCard
-              key={result.sphereNumber}
-              result={result}
-              threshold={withinThreshold || isExtended ? 0 : threshold}
+      <div className="tabs">
+        <button className={`tab ${activeTab === 'spheres' ? 'active' : ''}`} onClick={() => setActiveTab('spheres')}>Spheres</button>
+        <button className={`tab ${activeTab === 'configs' ? 'active' : ''}`} onClick={() => setActiveTab('configs')}>Player Configs</button>
+        <button className={`tab ${activeTab === 'log' ? 'active' : ''}`} onClick={() => setActiveTab('log')}>Raw Log</button>
+      </div>
+
+      {activeTab === 'spheres' && (
+        <>
+          {spoilerData && (
+            <PlayerLegend
+              players={spoilerData.players}
               playerColors={playerColors}
               hiddenPlayers={hiddenPlayers}
-              isExtended={isExtended}
-              isCurrent={i === lastQualifyingIdx}
-              sphereEntries={spoilerData.spheres[i]?.entries || []}
-              checkedLocations={checkedLocations}
-              playerLastSphere={playerLastSphere}
-              showSpoilers={showSpoilers}
-              precollected={spoilerData.spheres[i]?.precollected}
+              onTogglePlayer={togglePlayer}
+              onSelectAll={() => setHiddenPlayers(new Set())}
+              onSelectNone={() => setHiddenPlayers(new Set(spoilerData.players.map(p => p.name)))}
             />
-          )
-        })}
-      </div>
+          )}
+          {spoilerData && (
+            <PlayerStats
+              spoilerData={spoilerData}
+              checkedLocations={checkedLocations}
+              playerColors={playerColors}
+              hiddenPlayers={hiddenPlayers}
+              sphereResults={sphereResults}
+              lastQualifyingIdx={lastQualifyingIdx}
+            />
+          )}
+          <div className="sphere-list">
+            {sphereResults.map((result, i) => {
+              const withinThreshold = lastQualifyingIdx >= 0 && i <= lastQualifyingIdx
+              const isExtended = extended
+                && lastQualifyingIdx >= 0
+                && i === lastQualifyingIdx + 1
+              return (
+                <SphereCard
+                  key={result.sphereNumber}
+                  result={result}
+                  threshold={withinThreshold || isExtended ? 0 : 101}
+                  playerColors={playerColors}
+                  hiddenPlayers={hiddenPlayers}
+                  isExtended={isExtended}
+                  isCurrent={i === lastQualifyingIdx}
+                  sphereEntries={spoilerData.spheres[i]?.entries || []}
+                  checkedLocations={checkedLocations}
+                  playerLastSphere={playerLastSphere}
+                  showSpoilers={showSpoilers}
+                  precollected={spoilerData.spheres[i]?.precollected}
+                />
+              )
+            })}
+          </div>
+        </>
+      )}
+
+      {activeTab === 'configs' && spoilerData && (
+        <PlayerConfigs
+          players={spoilerData.players}
+          playerColors={playerColors}
+        />
+      )}
+
+      {activeTab === 'log' && (
+        <div className="raw-log">
+          {rawTrackerText
+            ? <pre className="log-content">{rawTrackerText}</pre>
+            : <p className="log-empty">No tracker log loaded</p>
+          }
+        </div>
+      )}
     </div>
   )
 }

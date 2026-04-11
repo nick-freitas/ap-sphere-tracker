@@ -52,6 +52,20 @@
   font-size: 0.82rem;
 }
 
+.ps-lock {
+  font-size: 0.65rem;
+  cursor: help;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.ps-next-sphere {
+  font-size: 0.6rem;
+  color: var(--color-clay);
+  font-weight: 600;
+}
+
 .ps-count {
   font-size: 0.7rem;
   color: var(--color-text-muted);

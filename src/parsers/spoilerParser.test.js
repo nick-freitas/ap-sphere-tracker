@@ -52,11 +52,10 @@ describe('parseSpoilerLog', () => {
   describe('player parsing', () => {
     it('extracts all players with slot, name, and game', () => {
       const result = parseSpoilerLog(SAMPLE_SPOILER)
-      expect(result.players).toEqual([
-        { slot: 1, name: 'Alice', game: 'Ocarina of Time' },
-        { slot: 2, name: 'Bob', game: 'Super Metroid' },
-        { slot: 3, name: 'Charlie', game: 'A Link to the Past' },
-      ])
+      expect(result.players).toHaveLength(3)
+      expect(result.players[0]).toMatchObject({ slot: 1, name: 'Alice', game: 'Ocarina of Time' })
+      expect(result.players[1]).toMatchObject({ slot: 2, name: 'Bob', game: 'Super Metroid' })
+      expect(result.players[2]).toMatchObject({ slot: 3, name: 'Charlie', game: 'A Link to the Past' })
     })
   })
 

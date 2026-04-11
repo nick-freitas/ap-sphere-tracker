@@ -35,14 +35,27 @@ function parsePlayers(text) {
       const slot = parseInt(playerMatch[1], 10)
       const name = playerMatch[2]
       let game = ''
-      for (let j = i + 1; j < lines.length && j < i + 20; j++) {
-        const gameMatch = lines[j].match(/^Game:\s+(.+)$/)
-        if (gameMatch) {
-          game = gameMatch[1]
-          break
+      const config = []
+
+      for (let j = i + 1; j < lines.length; j++) {
+        const line = lines[j]
+        // Stop at next player, blank line before a section, or major section header
+        if (line.match(/^Player \d+:/) || line.match(/^Entrances:/) || line.match(/^Locations:/)) break
+
+        const settingMatch = line.match(/^([^:]+):\s*(.*)$/)
+        if (settingMatch) {
+          const key = settingMatch[1].trim()
+          const value = settingMatch[2].trim()
+          if (key === 'Game') {
+            game = value
+          }
+          if (value) {
+            config.push({ key, value })
+          }
         }
       }
-      players.push({ slot, name, game })
+
+      players.push({ slot, name, game, config })
     }
   }
 

@@ -1,0 +1,89 @@
+.player-configs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pc-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.pc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Karla', sans-serif;
+  color: var(--color-text);
+  transition: background 0.15s;
+}
+
+.pc-header:hover {
+  background: var(--color-hover-bg, rgba(74, 103, 65, 0.03));
+}
+
+.pc-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pc-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.pc-name {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.pc-game {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.pc-arrow {
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+}
+
+.pc-body {
+  padding: 0 1.25rem 1rem;
+}
+
+.pc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+.pc-table td {
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid var(--color-row-border, rgba(0, 0, 0, 0.03));
+  vertical-align: top;
+}
+
+.pc-key {
+  color: var(--color-text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  width: 40%;
+}
+
+.pc-value {
+  color: var(--color-text);
+  word-break: break-word;
+}

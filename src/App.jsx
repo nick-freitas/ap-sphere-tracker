@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { parseSpoilerLog } from './parsers/spoilerParser'
+import { parseTrackerLog } from './parsers/trackerParser'
 import { analyzeSpheres } from './engine/sphereAnalyzer'
-import { useTrackerAutoRefresh } from './hooks/useTrackerAutoRefresh'
 import Header from './components/Header'
 import InputSection from './components/InputSection'
 import SphereCard from './components/SphereCard'
@@ -12,16 +12,20 @@ const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i
 
 function App() {
   const [spoilerData, setSpoilerData] = useState(null)
-  const [trackerUrl, setTrackerUrl] = useState('')
+  const [checkedLocations, setCheckedLocations] = useState(new Map())
   const [threshold, setThreshold] = useState(75)
   const [extended, setExtended] = useState(false)
   const [hiddenPlayers, setHiddenPlayers] = useState(new Set())
-  const { checkedLocations, status: trackerStatus } = useTrackerAutoRefresh(trackerUrl)
 
   function handleSpoilerText(text) {
     const parsed = parseSpoilerLog(text)
     setSpoilerData(parsed)
     setHiddenPlayers(new Set())
+  }
+
+  function handleTrackerText(text) {
+    const parsed = parseTrackerLog(text)
+    setCheckedLocations(parsed)
   }
 
   function togglePlayer(name) {
@@ -60,10 +64,9 @@ function App() {
       />
       <InputSection
         onSpoilerParsed={handleSpoilerText}
-        onTrackerUrlSet={setTrackerUrl}
-        trackerUrl={trackerUrl}
-        trackerStatus={trackerStatus}
+        onTrackerParsed={handleTrackerText}
         hasSpoiler={!!spoilerData}
+        hasTracker={checkedLocations.size > 0}
       />
       {spoilerData && (
         <PlayerLegend

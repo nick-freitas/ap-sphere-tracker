@@ -3,28 +3,24 @@ import './InputSection.css'
 
 export default function InputSection({
   onSpoilerParsed,
-  onTrackerUrlSet,
-  trackerUrl,
-  trackerStatus,
+  onTrackerParsed,
   hasSpoiler,
+  hasTracker,
 }) {
-  const fileInputRef = useRef(null)
+  const spoilerInputRef = useRef(null)
+  const trackerInputRef = useRef(null)
 
-  function handleFileUpload(e) {
-    const file = e.target.files[0]
-    if (!file) return
+  function handleFileUpload(callback) {
+    return (e) => {
+      const file = e.target.files[0]
+      if (!file) return
 
-    const reader = new FileReader()
-    reader.onload = (event) => {
-      onSpoilerParsed(event.target.result)
+      const reader = new FileReader()
+      reader.onload = (event) => {
+        callback(event.target.result)
+      }
+      reader.readAsText(file)
     }
-    reader.readAsText(file)
-  }
-
-  function handleUrlSubmit(e) {
-    e.preventDefault()
-    const url = e.target.elements.trackerUrl.value.trim()
-    if (url) onTrackerUrlSet(url)
   }
 
   return (
@@ -35,48 +31,41 @@ export default function InputSection({
           <div className="file-upload">
             <button
               className="upload-btn"
-              onClick={() => fileInputRef.current?.click()}
+              onClick={() => spoilerInputRef.current?.click()}
             >
               {hasSpoiler ? 'Spoiler Loaded' : 'Upload Spoiler Log'}
             </button>
             <input
-              ref={fileInputRef}
+              ref={spoilerInputRef}
               id="spoiler-upload"
               type="file"
               accept=".txt"
-              onChange={handleFileUpload}
+              onChange={handleFileUpload(onSpoilerParsed)}
               hidden
             />
           </div>
         </div>
 
-        <form className="input-group" onSubmit={handleUrlSubmit}>
-          <label htmlFor="tracker-url">Tracker Log URL</label>
-          <div className="url-input-row">
+        <div className="input-group">
+          <label htmlFor="tracker-upload">Tracker Log</label>
+          <div className="file-upload">
+            <button
+              className="upload-btn"
+              onClick={() => trackerInputRef.current?.click()}
+            >
+              {hasTracker ? 'Tracker Loaded' : 'Upload Tracker Log'}
+            </button>
             <input
-              id="tracker-url"
-              name="trackerUrl"
-              type="url"
-              placeholder="https://example.com/tracker.txt"
-              defaultValue={trackerUrl}
+              ref={trackerInputRef}
+              id="tracker-upload"
+              type="file"
+              accept=".txt"
+              onChange={handleFileUpload(onTrackerParsed)}
+              hidden
             />
-            <button type="submit">Load</button>
           </div>
-        </form>
-      </div>
-
-      {trackerStatus && (
-        <div className={`tracker-status ${trackerStatus.error ? 'error' : ''}`}>
-          {trackerStatus.error
-            ? `Error: ${trackerStatus.error}`
-            : `Last updated: ${trackerStatus.lastFetch} ${trackerStatus.usingProxy ? '(via CORS proxy)' : ''}`}
-          {trackerStatus.nextRefresh != null && (
-            <span className="refresh-countdown">
-              {' '}| Next refresh: {trackerStatus.nextRefresh}s
-            </span>
-          )}
         </div>
-      )}
+      </div>
     </div>
   )
 }

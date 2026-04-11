@@ -103,8 +103,9 @@ function App() {
             key={result.sphereNumber}
             result={result}
             threshold={threshold}
-            extended={extended && i === lastQualifyingIdx}
-            nextResult={sphereResults[i + 1] || null}
+            extendedResults={extended && i === lastQualifyingIdx
+              ? sphereResults.slice(i + 1, i + 3)
+              : []}
             playerColors={playerColors}
             hiddenPlayers={hiddenPlayers}
           />

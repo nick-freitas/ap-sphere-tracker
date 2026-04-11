@@ -4,8 +4,7 @@ import './SphereCard.css'
 export default function SphereCard({
   result,
   threshold,
-  extended,
-  nextResult,
+  extendedResults,
   playerColors,
   hiddenPlayers,
 }) {
@@ -45,15 +44,17 @@ export default function SphereCard({
         </div>
       )}
 
-      {extended && meetsThreshold && nextResult && nextResult.missingChecks.length > 0 && (
-        <div className="sphere-extended">
-          <div className="extended-label">Next Sphere: Sphere {nextResult.sphereNumber}</div>
-          <MissingChecksTable
-            missingChecks={nextResult.missingChecks}
-            playerColors={playerColors}
-            hiddenPlayers={hiddenPlayers}
-          />
-        </div>
+      {extendedResults.map((ext) =>
+        ext.missingChecks.length > 0 ? (
+          <div className="sphere-extended" key={ext.sphereNumber}>
+            <div className="extended-label">Next Sphere: Sphere {ext.sphereNumber}</div>
+            <MissingChecksTable
+              missingChecks={ext.missingChecks}
+              playerColors={playerColors}
+              hiddenPlayers={hiddenPlayers}
+            />
+          </div>
+        ) : null
       )}
     </div>
   )

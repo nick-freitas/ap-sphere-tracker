@@ -1079,3 +1079,6 @@
 [2026-04-11 05:44:03,794]: (Team #1) Andrew sent Small Key (Turtle Rock) to Andrew (Turtle Rock - Eye Bridge - Top Right)
 [2026-04-11 05:44:10,141]: (Team #1) Andrew sent Deku Nuts (10) to Nick (Turtle Rock - Eye Bridge - Top Left)
 [2026-04-11 05:54:35,765]: (Team #1) Ryot sent Rupees (5) to Naizak (Rocket Barrel Ride - Bonus 2)
+[2026-04-11 05:57:07,060]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-04-11 06:17:23,160]: Notice (all): Ryot (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-11 06:33:27,273]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['DeathLink', 'AP'].

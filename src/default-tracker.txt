@@ -1082,3 +1082,30 @@
 [2026-04-11 05:57:07,060]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
 [2026-04-11 06:17:23,160]: Notice (all): Ryot (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-11 06:33:27,273]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-04-11 07:12:31,493]: (Team #1) Nick sent Lightning Urn x4 to TNNPE (ZF Iceberg Freestanding PoH)
+[2026-04-11 07:13:22,576]: (Team #1) Nick sent Gold Skulltula Token to Naizak (ZF Great Fairy Reward)
+[2026-04-11 07:17:24,420]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-11 07:17:24,653]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
+[2026-04-11 07:17:28,629]: (Team #1) Nick sent Dark Stoneplate Ring to TNNPE (Ice Cavern Hall Pot 2)
+[2026-04-11 07:17:29,335]: (Team #1) Nick sent Blue Rupee to Nick (Ice Cavern Hall Pot 1)
+[2026-04-11 07:17:38,394]: (Team #1) Nick sent Deku Stick (1) to Nick (Ice Cavern Spinning Blade Pot 2)
+[2026-04-11 07:17:39,409]: (Team #1) Nick sent Rupees (20) to Andrew (Ice Cavern Spinning Blade Pot 3)
+[2026-04-11 07:17:45,999]: (Team #1) Nick sent Olette Munny Pouch to Brian (Ice Cavern Spinning Blade Pot 1)
+[2026-04-11 07:21:58,251]: (Team #1) Nick sent Progressive Wallet to Nick (Ice Cavern Map Chest)
+[2026-04-11 07:22:08,032]: (Team #1) Nick sent Deku Seeds (30) to Nick (Ice Cavern Frozen Pot 1)
+[2026-04-11 07:37:46,923]: (Team #1) Nick sent Ember to TNNPE (Ice Cavern Near End Pot 2)
+[2026-04-11 07:37:48,813]: (Team #1) Nick sent Great Heavy Soul Arrow to TNNPE (Ice Cavern Near End Pot 1)
+[2026-04-11 07:38:08,597]: (Team #1) Nick sent Repair Powder to TNNPE (Ice Cavern Iron Boots Chest)
+[2026-04-11 07:38:08,724]: (Team #1) Nick sent Ice Cavern Map to Nick (Sheik in Ice Cavern)
+[2026-04-11 07:41:31,373]: (Team #1) Nick sent Black Iron Greatshield to TNNPE (Ice Cavern Compass Chest)
+[2026-04-11 07:41:47,950]: (Team #1) Nick sent Ice Cavern Compass to Nick (Ice Cavern Freestanding PoH)
+[2026-04-11 07:44:18,399]: (Team #1) Nick sent Wrath of the Gods to TNNPE (ZD King Zora Thawed)
+[2026-04-11 07:49:45,514]: (Team #1) Nick sent Siegbräu to TNNPE (ZD Shop Item 5)
+[2026-04-11 07:51:46,974]: (Team #1) Nick sent Bombs (5) to Nick (ZD Diving Minigame)
+[2026-04-11 07:52:41,750]: (Team #1) Nick sent Torn Page to Brian (ZD Chest)
+[2026-04-11 07:55:36,828]: (Team #1) Nick sent Song of Time to Naizak (GC Shop Item 6)
+[2026-04-11 08:00:42,078]: (Team #1) Nick sent Bonus Coin to Ryot (Market Bombchu Shop Item 3)
+[2026-04-11 08:04:33,434]: (Team #1) Nick sent Recovery Heart to Naizak (Song from Malon)
+[2026-04-11 08:05:57,090]: (Team #1) Nick sent Summon Boost to Brian (LLR Freestanding PoH)
+[2026-04-11 08:07:24,001]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink'].
+[2026-04-11 08:08:10,407]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

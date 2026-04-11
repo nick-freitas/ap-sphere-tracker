@@ -1285,3 +1285,14 @@
 [2026-04-11 22:05:55,276]: Notice (Player TNNPE in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
 [2026-04-11 22:09:46,612]: (Team #1) TNNPE sent Firelink Helm to TNNPE (US: Heavy Gem - Hawkwood)
 [2026-04-11 22:11:06,790]: Notice (all): TNNPE (Team #1) has left the game. Client(0.6.0), ['DeathLink'].
+[2026-04-11 22:13:36,041]: Notice (all): TNNPE (Team #1) playing Dark Souls III has joined. Client(0.6.0), ['DeathLink'].
+[2026-04-11 22:13:36,044]: Notice (Player TNNPE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-11 22:13:36,044]: Notice (Player TNNPE in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-11 22:15:49,564]: Notice (Team #1): [Hint]: TNNPE's Ember is at FS: Heavy Soul Arrow - Yoel/Yuria shop in TNNPE's World. (unspecified)
+[2026-04-11 22:15:49,564]: Notice (Team #1): [Hint]: Andrew's Rupees (50) is at FS: Soul Arrow - Yoel/Yuria shop in TNNPE's World. (unspecified)
+[2026-04-11 22:15:49,564]: Notice (Team #1): [Hint]: Naizak's Recovery Heart is at FS: Magic Shield - Yoel/Yuria shop in TNNPE's World. (unspecified)
+[2026-04-11 22:15:49,564]: Notice (Team #1): [Hint]: Naizak's Rupee (1) is at FS: Magic Weapon - Yoel/Yuria shop in TNNPE's World. (unspecified)
+[2026-04-11 22:15:49,564]: Notice (Team #1): [Hint]: TNNPE's Morne's Ring is at FS: Soul Greatsword - Yoel/Yuria shop in TNNPE's World. (unspecified)
+[2026-04-11 22:22:11,200]: (Team #1) TNNPE sent Huge Rupee to Nick (US: Irithyll Straight Sword - miniboss drop, by Road of Sacrifices)
+[2026-04-11 22:22:15,072]: (Team #1) TNNPE sent Recovery Heart to Naizak (US: Ember - tower basement, miniboss)
+[2026-04-11 22:33:35,772]: Notice (all): TNNPE (Team #1) has left the game. Client(0.6.0), ['DeathLink'].

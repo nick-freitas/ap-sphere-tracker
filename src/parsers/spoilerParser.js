@@ -1,3 +1,15 @@
+const NON_ITEMS = new Set([
+  'Time Travel',
+  'Child Can Pass Time',
+  'Adult Can Pass Time',
+  'Can Access Fish',
+])
+
+const NON_LOCATIONS = new Set([
+  'Links Pocket',
+  'Master Sword Pedestal',
+])
+
 export function parseSpoilerLog(text) {
   const players = parsePlayers(text)
   const spheres = parseSpheres(text)
@@ -72,8 +84,10 @@ function parseSphereEntries(block) {
     const itemParsed = parseNameAndPlayer(itemSide)
 
     if (locationParsed && itemParsed) {
-      // Skip non-item entries (subrules, logic events) where location equals item
+      // Skip non-item entries (subrules, logic events)
       if (locationParsed.name === itemParsed.name) continue
+      if (NON_ITEMS.has(itemParsed.name)) continue
+      if (NON_LOCATIONS.has(locationParsed.name)) continue
 
       entries.push({
         location: locationParsed.name,

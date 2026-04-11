@@ -21,12 +21,19 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
       }
     }
 
-    return spoilerData.players.map((p) => {
+    const result = spoilerData.players.map((p) => {
       const total = totals[p.name] || 0
       const done = checked[p.name] || 0
       const pct = total === 0 ? 100 : Math.round((done / total) * 100)
       return { name: p.name, game: p.game, total, done, pct }
     })
+
+    // Sort by highest percentage when tracker data is available
+    if (checkedLocations.size > 0) {
+      result.sort((a, b) => b.pct - a.pct)
+    }
+
+    return result
   }, [spoilerData, checkedLocations])
 
   if (stats.length === 0) return null

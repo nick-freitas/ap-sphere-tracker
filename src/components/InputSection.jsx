@@ -31,7 +31,7 @@ export default function InputSection({
             <span className="step-number">1</span>
             <div>
               <label htmlFor="spoiler-upload">Spoiler Log</label>
-              <p className="input-hint">The AP_*_Spoiler.txt from your seed</p>
+              <p className="input-hint">{hasSpoiler ? 'Upload a new one to override' : 'The AP_*_Spoiler.txt from your seed'}</p>
             </div>
           </div>
           <button

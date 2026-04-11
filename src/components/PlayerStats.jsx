@@ -36,36 +36,33 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
     return result
   }, [spoilerData, checkedLocations])
 
-  // A player is "locked" if they have no missing checks in qualifying spheres (0 through lastQualifyingIdx)
-  // For locked players, find the next sphere they have checks in
-  const lockedPlayers = useMemo(() => {
-    if (!sphereResults || lastQualifyingIdx < 0) return {}
+  // For each player, find their earliest sphere with unchecked items
+  // Also determine if they're "locked" (no missing checks in qualifying spheres)
+  const playerInfo = useMemo(() => {
+    if (!sphereResults || sphereResults.length === 0) return {}
     const result = {}
     if (spoilerData) {
       for (const player of spoilerData.players) {
-        let hasMissing = false
-        for (let i = 0; i <= lastQualifyingIdx && i < sphereResults.length; i++) {
+        let earliestUnchecked = null
+        let hasCheckInQualifying = false
+
+        for (let i = 0; i < sphereResults.length; i++) {
           for (const check of sphereResults[i].missingChecks) {
             if (check.player === player.name) {
-              hasMissing = true
+              if (earliestUnchecked === null) {
+                earliestUnchecked = sphereResults[i].sphereNumber
+              }
+              if (lastQualifyingIdx >= 0 && i <= lastQualifyingIdx) {
+                hasCheckInQualifying = true
+              }
               break
             }
           }
-          if (hasMissing) break
         }
-        if (!hasMissing) {
-          // Find next sphere with checks for this player
-          let nextSphere = null
-          for (let i = lastQualifyingIdx + 1; i < sphereResults.length; i++) {
-            for (const check of sphereResults[i].missingChecks) {
-              if (check.player === player.name) {
-                nextSphere = sphereResults[i].sphereNumber
-                break
-              }
-            }
-            if (nextSphere !== null) break
-          }
-          result[player.name] = nextSphere
+
+        result[player.name] = {
+          earliestUnchecked,
+          locked: lastQualifyingIdx >= 0 && !hasCheckInQualifying,
         }
       }
     }
@@ -87,10 +84,14 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
           <div className="ps-info">
             <span className="ps-dot" style={{ background: playerColors[s.name] }} />
             <span className="ps-name">{s.name}</span>
-            {s.name in lockedPlayers && (
+            {playerInfo[s.name]?.locked && (
               <span className="ps-lock" title="No remaining checks in current spheres - potentially locked/BK'd">
                 {'\uD83D\uDD12'}
-                {lockedPlayers[s.name] !== null && <span className="ps-next-sphere">S{lockedPlayers[s.name]}</span>}
+              </span>
+            )}
+            {playerInfo[s.name]?.earliestUnchecked != null && (
+              <span className="ps-earliest" title="Earliest sphere with unchecked items">
+                S{playerInfo[s.name].earliestUnchecked}
               </span>
             )}
             <span className="ps-count">{s.done}/{s.total}</span>

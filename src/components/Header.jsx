@@ -56,7 +56,7 @@ export default function Header({
         </div>
 
         <div className="toggle-control">
-          <label>Item Spoilers <span className="info-icon" data-tip="Reveal item names and recipients for missing checks (spoiler warning)">?</span></label>
+          <label>Item Owner Spoiler <span className="info-icon" data-tip="Reveal which player receives the item at each missing check location">?</span></label>
           <button
             type="button"
             className={`toggle-btn ${showSpoilers ? 'on danger' : ''}`}

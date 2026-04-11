@@ -82,19 +82,49 @@ function App() {
     return analyzeSpheres(spoilerData, checkedLocations)
   }, [spoilerData, checkedLocations])
 
-  // Find the highest sphere in a continuous chain where all spheres meet the threshold
-  // Sphere 0 (starting items) always qualifies as fallback
+  // Find the highest sphere in a continuous chain where the majority of players
+  // meet the threshold. "Majority" = more than half, or half if even number.
+  // Sphere 0 (starting items) always qualifies as fallback.
   const lastQualifyingIdx = useMemo(() => {
-    let last = sphereResults.length > 0 ? 0 : -1
+    if (!spoilerData || sphereResults.length === 0) return -1
+    let last = 0
+
     for (let i = 1; i < sphereResults.length; i++) {
-      if (sphereResults[i].totalChecks > 0 && sphereResults[i].completionPercent >= threshold) {
+      const sphere = spoilerData.spheres[i]
+      if (!sphere || sphere.entries.length === 0) break
+
+      // Compute per-player completion for this sphere
+      const playerTotals = {}
+      const playerDone = {}
+      for (const entry of sphere.entries) {
+        const owner = entry.locationOwner
+        playerTotals[owner] = (playerTotals[owner] || 0) + 1
+        const checks = checkedLocations.get(owner)
+        if (checks && checks.has(entry.location)) {
+          playerDone[owner] = (playerDone[owner] || 0) + 1
+        }
+      }
+
+      // Count how many players with checks in this sphere meet threshold
+      const playerNames = Object.keys(playerTotals)
+      const totalPlayers = playerNames.length
+      const majorityNeeded = Math.ceil(totalPlayers / 2)
+
+      let playersAbove = 0
+      for (const name of playerNames) {
+        const pct = Math.round(((playerDone[name] || 0) / playerTotals[name]) * 100)
+        if (pct >= threshold) playersAbove++
+      }
+
+      if (playersAbove >= majorityNeeded) {
         last = i
       } else {
         break
       }
     }
+
     return last
-  }, [sphereResults, threshold])
+  }, [spoilerData, sphereResults, checkedLocations, threshold])
 
   // Map each player to their highest sphere number
   const playerLastSphere = useMemo(() => {
@@ -138,7 +168,7 @@ function App() {
       {showSpoilerConfirm && (
         <div className="modal-overlay" onClick={() => setShowSpoilerConfirm(false)}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <p className="modal-text">Are you sure you want to show item spoilers for missing items?</p>
+            <p className="modal-text">Are you sure you want to reveal which player receives items at missing check locations?</p>
             <div className="modal-actions">
               <button className="modal-btn cancel" onClick={() => setShowSpoilerConfirm(false)}>Cancel</button>
               <button className="modal-btn confirm" onClick={() => { setShowSpoilers(true); setShowSpoilerConfirm(false) }}>Show Spoilers</button>
@@ -200,6 +230,7 @@ function App() {
                   playerLastSphere={playerLastSphere}
                   showSpoilers={showSpoilers}
                   precollected={spoilerData.spheres[i]?.precollected}
+                  displayThreshold={threshold}
                 />
               )
             })}

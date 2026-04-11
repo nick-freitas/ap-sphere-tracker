@@ -14,6 +14,7 @@ export default function SphereCard({
   playerLastSphere,
   showSpoilers,
   precollected,
+  displayThreshold,
 }) {
   const { sphereNumber, totalChecks, completedChecks, completionPercent, missingChecks } = result
   const isComplete = completionPercent === 100
@@ -143,6 +144,15 @@ export default function SphereCard({
               <span className="sp-pct">{p.pct}%</span>
             </div>
           ))}
+          {displayThreshold != null && (() => {
+            const playersAbove = playerBreakdown.filter((p) => p.pct >= displayThreshold).length
+            const totalPlayers = playerBreakdown.length
+            return (
+              <div className="sp-summary">
+                {playersAbove} of {totalPlayers} players at or above {displayThreshold}%
+              </div>
+            )
+          })()}
         </div>
       )}
 

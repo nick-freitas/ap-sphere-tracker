@@ -17,7 +17,7 @@ export default function MissingChecksTable({ missingChecks, playerColors, hidden
         <tr>
           <th>Player</th>
           <th>Location</th>
-          <th>Item</th>
+          {/* <th>Item</th> */}
           <th>Item Owner</th>
         </tr>
       </thead>
@@ -28,7 +28,7 @@ export default function MissingChecksTable({ missingChecks, playerColors, hidden
               {check.player}
             </td>
             <td style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem' }}>{check.location}</td>
-            <td className={blurClass} style={{ color: 'var(--color-moss)', fontWeight: 500 }}>{check.item}</td>
+            {/* <td className={blurClass} style={{ color: 'var(--color-moss)', fontWeight: 500 }}>{check.item}</td> */}
             <td className={blurClass} style={{ color: showSpoilers ? (playerColors[check.itemOwner] || 'var(--color-text)') : 'var(--color-text-muted)', fontWeight: 600 }}>
               {check.itemOwner}
             </td>

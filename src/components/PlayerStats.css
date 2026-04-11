@@ -53,17 +53,15 @@
 }
 
 .ps-lock {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   cursor: help;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.2rem;
 }
 
-.ps-next-sphere {
+.ps-earliest {
   font-size: 0.6rem;
   color: var(--color-clay);
   font-weight: 600;
+  cursor: help;
 }
 
 .ps-count {

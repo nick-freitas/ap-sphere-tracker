@@ -8,13 +8,14 @@ export default function Header({
 }) {
   return (
     <header className="header">
-      <h1 className="header-title">Archipelago Sphere Analyzer</h1>
+      <div className="brand">
+        <h1 className="header-title">Sphere Analyzer</h1>
+        <div className="brand-sub">Archipelago Multiworld Progression</div>
+      </div>
 
       <div className="header-controls">
         <div className="threshold-control">
-          <label htmlFor="threshold-slider">
-            Threshold: <span className="threshold-value">{threshold}%</span>
-          </label>
+          <label htmlFor="threshold-slider">Threshold</label>
           <input
             id="threshold-slider"
             type="range"
@@ -23,17 +24,18 @@ export default function Header({
             value={threshold}
             onChange={(e) => onThresholdChange(Number(e.target.value))}
           />
+          <span className="threshold-value">{threshold}%</span>
         </div>
 
-        <label className="toggle-control">
-          <span>Extended</span>
-          <input
-            type="checkbox"
-            checked={extended}
-            onChange={(e) => onExtendedChange(e.target.checked)}
+        <div className="toggle-control">
+          <label>Extended</label>
+          <button
+            type="button"
+            className={`toggle-btn ${extended ? 'on' : ''}`}
+            onClick={() => onExtendedChange(!extended)}
+            aria-pressed={extended}
           />
-          <span className="toggle-slider" />
-        </label>
+        </div>
       </div>
     </header>
   )

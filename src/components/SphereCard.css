@@ -1,13 +1,15 @@
 .sphere-card {
-  background: var(--color-surface);
+  background: var(--color-card);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 0.75rem;
   overflow: hidden;
+  transition: opacity 0.3s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 .sphere-card.dimmed {
-  opacity: 0.6;
+  opacity: 0.3;
 }
 
 .sphere-card.complete {
@@ -18,75 +20,100 @@
   opacity: 1;
 }
 
+.sphere-card.extended {
+  border-color: var(--color-clay);
+  border-style: dashed;
+}
+
 .sphere-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.6rem 1rem;
+  padding: 0.9rem 1.25rem;
   gap: 1rem;
 }
 
 .sphere-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.sphere-num {
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
   font-weight: 600;
-  font-size: 0.95rem;
-  white-space: nowrap;
+  color: var(--color-moss);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(74, 103, 65, 0.08);
+  flex-shrink: 0;
 }
 
 .check-icon {
-  color: var(--color-success);
+  color: var(--color-leaf);
+  font-size: 1rem;
+}
+
+.extended-badge {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  padding: 0.15rem 0.4rem;
+  border-radius: 100px;
+  background: rgba(196, 113, 58, 0.12);
+  color: var(--color-clay);
+  margin-left: 0.25rem;
 }
 
 .sphere-progress-container {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   flex: 1;
-  max-width: 350px;
+  max-width: 300px;
 }
 
 .sphere-progress-bar {
   flex: 1;
-  height: 8px;
-  background: var(--color-bg);
-  border-radius: 4px;
+  height: 6px;
+  background: var(--color-sand);
+  border-radius: 3px;
   overflow: hidden;
 }
 
 .sphere-progress-fill {
   height: 100%;
-  background: var(--color-accent);
-  border-radius: 4px;
-  transition: width 0.3s ease;
+  border-radius: 3px;
+  transition: width 0.8s ease;
+  background: var(--color-border);
+}
+
+.sphere-card.expanded .sphere-progress-fill {
+  background: linear-gradient(90deg, var(--color-moss), var(--color-leaf));
 }
 
 .sphere-card.complete .sphere-progress-fill {
-  background: var(--color-success);
+  background: var(--color-leaf);
 }
 
 .sphere-progress-text {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--color-text-muted);
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  min-width: 4em;
+  text-align: right;
 }
 
 .sphere-body {
-  padding: 0 1rem 0.75rem;
-}
-
-.sphere-card.extended {
-  border-color: var(--color-warning);
-  border-style: dashed;
-}
-
-.extended-badge {
-  font-size: 0.65rem;
-  color: var(--color-warning);
-  background: rgba(240, 165, 0, 0.15);
-  padding: 0.1rem 0.4rem;
-  border-radius: 4px;
-  margin-left: 0.5rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  vertical-align: middle;
+  padding: 0 1.25rem 1rem;
 }

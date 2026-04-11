@@ -17,11 +17,12 @@ export default function SphereCard({
   return (
     <div className={`sphere-card ${isComplete ? 'complete' : ''} ${meetsThreshold ? 'expanded' : 'dimmed'} ${isExtended ? 'extended' : ''}`}>
       <div className="sphere-header">
-        <span className="sphere-label">
-          {isComplete && <span className="check-icon">&#10003; </span>}
-          Sphere {sphereNumber}
+        <div className="sphere-label">
+          <span className="sphere-num">{sphereNumber}</span>
+          {isComplete && <span className="check-icon">&#10003;</span>}
+          <span>Sphere {sphereNumber}</span>
           {isExtended && <span className="extended-badge">Extended</span>}
-        </span>
+        </div>
         <div className="sphere-progress-container">
           <div className="sphere-progress-bar">
             <div

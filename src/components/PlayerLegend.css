@@ -2,25 +2,28 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.75rem;
 }
 
 .player-chip {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  background: var(--color-surface);
+  background: var(--color-card);
   border: 1px solid var(--color-border);
-  border-radius: 16px;
-  padding: 0.3rem 0.7rem;
+  border-radius: 100px;
+  padding: 0.3rem 0.7rem 0.3rem 0.55rem;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--color-text);
-  transition: opacity 0.2s;
+  font-weight: 500;
+  transition: all 0.2s;
 }
 
 .player-chip:hover {
-  border-color: var(--chip-color);
+  border-color: var(--color-moss);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
 
 .player-chip.hidden {
@@ -36,10 +39,12 @@
 }
 
 .player-name {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .player-game {
   color: var(--color-text-muted);
-  font-size: 0.75rem;
+  font-size: 0.65rem;
+  font-weight: 300;
+  font-style: italic;
 }

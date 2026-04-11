@@ -1,34 +1,36 @@
 .missing-checks-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .missing-checks-table th {
   text-align: left;
-  padding: 0.4rem 0.6rem;
+  padding: 0.4rem 0.5rem;
   color: var(--color-text-muted);
-  font-weight: 600;
-  border-bottom: 1px solid var(--color-border);
-  font-size: 0.8rem;
+  font-weight: 400;
+  border-bottom: 1px solid var(--color-sand);
+  font-size: 0.62rem;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.1em;
 }
 
 .missing-checks-table td {
-  padding: 0.35rem 0.6rem;
+  padding: 0.45rem 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .missing-checks-table tr {
-  border-left: 3px solid transparent;
+  border-left: none;
 }
 
-.missing-checks-table tbody tr:hover {
-  background: rgba(255, 255, 255, 0.03);
+.missing-checks-table tbody tr:hover td {
+  background: rgba(74, 103, 65, 0.03);
 }
 
 .no-missing {
-  color: var(--color-success);
+  color: var(--color-leaf);
   font-size: 0.85rem;
   padding: 0.5rem 0;
+  font-style: italic;
 }

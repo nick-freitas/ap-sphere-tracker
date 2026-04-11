@@ -1,5 +1,7 @@
 .app {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2.5rem 2rem;
+  position: relative;
+  z-index: 1;
 }

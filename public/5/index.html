@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sphere Analyzer — Forest</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#f4f1ea;
+    --card:#fffdf8;
+    --border:#d6cfc3;
+    --moss:#4a6741;
+    --forest:#2d4a27;
+    --bark:#6b5344;
+    --clay:#c4713a;
+    --sand:#e8dcc8;
+    --text:#3a352e;
+    --text-dim:#8a8178;
+    --leaf:#7ba05b;
+    --water:#5b8fa0;
+  }
+  body{
+    font-family:'Karla',sans-serif;background:var(--bg);color:var(--text);
+    min-height:100vh;
+  }
+  /* Subtle organic background pattern */
+  body::before{
+    content:'';position:fixed;inset:0;pointer-events:none;opacity:0.04;z-index:0;
+    background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c8 0 15 12 15 25S38 55 30 55 15 43 15 30 22 5 30 5z' fill='none' stroke='%234a6741' stroke-width='0.5'/%3E%3C/svg%3E");
+    background-size:60px 60px;
+  }
+
+  .w{max-width:900px;margin:0 auto;padding:2.5rem 2rem;position:relative;z-index:1}
+
+  /* Header */
+  header{
+    display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;
+    padding-bottom:1.5rem;margin-bottom:1.5rem;
+    border-bottom:2px solid var(--sand);
+  }
+  .brand h1{
+    font-family:'Lora',serif;font-size:1.8rem;font-weight:600;color:var(--forest);
+    letter-spacing:-0.01em;
+  }
+  .brand-sub{font-size:0.72rem;color:var(--text-dim);margin-top:0.2rem;font-style:italic}
+  /* Leaf accent next to title */
+  .brand h1::before{content:'&#127793; ';font-size:1.4rem}
+  .ctrls{display:flex;align-items:center;gap:1.5rem}
+  .ctrl{display:flex;align-items:center;gap:0.5rem}
+  .ctrl label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);font-weight:500}
+  .ctrl-v{font-family:'Lora',serif;font-size:1rem;color:var(--moss);font-weight:600}
+  input[type=range]{
+    -webkit-appearance:none;width:100px;height:4px;border-radius:2px;
+    background:var(--sand);
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;width:16px;height:16px;border-radius:50%;cursor:pointer;
+    background:var(--moss);border:2px solid var(--bg);
+  }
+  .tog{
+    width:40px;height:22px;border-radius:11px;cursor:pointer;position:relative;
+    background:var(--sand);border:1px solid var(--border);transition:background 0.3s;
+  }
+  .tog.on{background:var(--moss);border-color:var(--moss)}
+  .tog::after{
+    content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;
+    background:var(--card);transition:transform 0.3s;box-shadow:0 1px 3px rgba(0,0,0,0.15);
+  }
+  .tog.on::after{transform:translateX(18px)}
+
+  /* Inputs */
+  .inputs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+  .in{
+    background:var(--card);border:2px dashed var(--border);border-radius:12px;
+    padding:1.25rem;cursor:pointer;transition:all 0.2s;
+  }
+  .in:hover{border-color:var(--moss);background:#fefdf6}
+  .in-title{font-family:'Lora',serif;font-weight:600;font-size:0.9rem;color:var(--forest)}
+  .in-sub{font-size:0.7rem;color:var(--text-dim);margin-top:0.15rem;font-style:italic}
+  .in-st{font-size:0.68rem;margin-top:0.4rem;display:flex;align-items:center;gap:0.3rem}
+  .d{width:6px;height:6px;border-radius:50%;display:inline-block}
+  .d.g{background:var(--leaf);box-shadow:0 0 4px rgba(123,160,91,0.5)}
+  .d.w{background:var(--border)}
+
+  /* Players */
+  .players{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.75rem}
+  .pc{
+    font-size:0.78rem;padding:0.3rem 0.7rem 0.3rem 0.55rem;
+    border-radius:100px;background:var(--card);border:1px solid var(--border);
+    display:flex;align-items:center;gap:0.35rem;cursor:pointer;
+    transition:all 0.2s;font-weight:500;
+  }
+  .pc:hover{border-color:var(--moss);transform:translateY(-1px);box-shadow:0 3px 8px rgba(0,0,0,0.08)}
+  .pd{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .pg{font-size:0.65rem;color:var(--text-dim);font-weight:300;font-style:italic}
+
+  /* Spheres */
+  .sphere{
+    background:var(--card);border:1px solid var(--border);border-radius:12px;
+    margin-bottom:0.75rem;overflow:hidden;transition:opacity 0.3s;
+    box-shadow:0 1px 4px rgba(0,0,0,0.04);
+  }
+  .sh{display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1.25rem;gap:1rem}
+  .st{display:flex;align-items:center;gap:0.6rem}
+  .sn{
+    font-family:'Lora',serif;font-size:1.2rem;font-weight:600;color:var(--moss);
+    width:32px;height:32px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(74,103,65,0.08);
+  }
+  .sl{font-family:'Lora',serif;font-weight:500;font-size:0.9rem}
+  .sc{color:var(--leaf);font-size:1rem}
+  .sr{display:flex;align-items:center;gap:0.75rem}
+  .bar{width:180px;height:6px;background:var(--sand);border-radius:3px;overflow:hidden}
+  .bf{height:100%;border-radius:3px;transition:width 0.8s}
+  .bf.act{background:linear-gradient(90deg,var(--moss),var(--leaf))}
+  .bf.ok{background:var(--leaf)}
+  .bf.lo{background:var(--border)}
+  .sp{font-size:0.78rem;color:var(--text-dim);min-width:4em;text-align:right;font-variant-numeric:tabular-nums}
+
+  .sphere.done{opacity:0.5}
+  .sphere.dim{opacity:0.3}
+  .sphere.ext{border-color:var(--clay);border-style:dashed}
+  .eb{
+    font-size:0.6rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;
+    padding:0.15rem 0.4rem;border-radius:100px;
+    background:rgba(196,113,58,0.12);color:var(--clay);
+  }
+
+  .sb{padding:0 1.25rem 1rem}
+  .tbl{width:100%;border-collapse:collapse;font-size:0.8rem}
+  .tbl th{
+    text-align:left;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;
+    color:var(--text-dim);font-weight:400;padding:0.4rem 0.5rem;
+    border-bottom:1px solid var(--sand);
+  }
+  .tbl td{padding:0.45rem 0.5rem;border-bottom:1px solid rgba(0,0,0,0.03)}
+  .tbl tr:hover td{background:rgba(74,103,65,0.03)}
+  .tbl .n{font-weight:600}
+  .tbl .l{color:var(--text-dim);font-size:0.75rem}
+  .tbl .i{color:var(--moss);font-weight:500}
+
+  .w>*{opacity:0;animation:fi .45s ease forwards}
+  .w>*:nth-child(1){animation-delay:0s}
+  .w>*:nth-child(2){animation-delay:.05s}
+  .w>*:nth-child(3){animation-delay:.1s}
+  .w>*:nth-child(4){animation-delay:.15s}
+  .w>*:nth-child(5){animation-delay:.2s}
+  .w>*:nth-child(6){animation-delay:.25s}
+  .w>*:nth-child(7){animation-delay:.3s}
+  .w>*:nth-child(8){animation-delay:.35s}
+  @keyframes fi{to{opacity:1}}
+</style>
+</head>
+<body>
+<div class="w">
+  <header>
+    <div class="brand">
+      <h1>Sphere Analyzer</h1>
+      <div class="brand-sub">Archipelago Multiworld Progression</div>
+    </div>
+    <div class="ctrls">
+      <div class="ctrl">
+        <label>Threshold</label>
+        <input type="range" min="0" max="100" value="60" oninput="document.querySelector('.ctrl-v').textContent=this.value+'%'">
+        <span class="ctrl-v">60%</span>
+      </div>
+      <div class="ctrl">
+        <label>Extended</label>
+        <div class="tog on" onclick="this.classList.toggle('on')"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="inputs">
+    <div class="in">
+      <div class="in-title">Spoiler Log</div>
+      <div class="in-sub">AP_*_Spoiler.txt from your seed</div>
+      <div class="in-st"><span class="d g"></span> Loaded</div>
+    </div>
+    <div class="in">
+      <div class="in-title">Tracker Log</div>
+      <div class="in-sub">Server log .txt file</div>
+      <div class="in-st"><span class="d w"></span> Drop file here</div>
+    </div>
+  </div>
+
+  <div class="players">
+    <div class="pc"><span class="pd" style="background:#7c6dab"></span>Brian <span class="pg">KH2</span></div>
+    <div class="pc"><span class="pd" style="background:#5b9e5b"></span>Dan <span class="pg">SM</span></div>
+    <div class="pc"><span class="pd" style="background:#c4953a"></span>Nick <span class="pg">SoH</span></div>
+    <div class="pc"><span class="pd" style="background:#c76a6a"></span>Naizak <span class="pg">OoT</span></div>
+    <div class="pc"><span class="pd" style="background:#5b8fa0"></span>TNNPE <span class="pg">DS3</span></div>
+    <div class="pc"><span class="pd" style="background:#c4713a"></span>Ryot <span class="pg">DKC3</span></div>
+    <div class="pc"><span class="pd" style="background:#5ba07b"></span>Andrew <span class="pg">ALttP</span></div>
+  </div>
+
+  <div class="sphere done">
+    <div class="sh">
+      <div class="st"><span class="sn">1</span><span class="sc">&#10003;</span><span class="sl">Sphere One</span></div>
+      <div class="sr"><div class="bar"><div class="bf ok" style="width:100%"></div></div><span class="sp">18/18</span></div>
+    </div>
+  </div>
+
+  <div class="sphere">
+    <div class="sh">
+      <div class="st"><span class="sn">2</span><span class="sl">Sphere Two</span></div>
+      <div class="sr"><div class="bar"><div class="bf act" style="width:82%"></div></div><span class="sp">14/17</span></div>
+    </div>
+    <div class="sb">
+      <table class="tbl">
+        <thead><tr><th>Player</th><th>Location</th><th>Item</th><th>Sends To</th></tr></thead>
+        <tbody>
+          <tr><td class="n" style="color:#5b9e5b">Dan</td><td class="l">Missile (blue Brinstar middle)</td><td class="i">Hookshot</td><td class="n" style="color:#c4953a">Nick</td></tr>
+          <tr><td class="n" style="color:#c76a6a">Naizak</td><td class="l">GC Darunia Pot 1</td><td class="i">Progressive Sword</td><td class="n" style="color:#7c6dab">Brian</td></tr>
+          <tr><td class="n" style="color:#5b8fa0">TNNPE</td><td class="l">HWL: Ember - fountain #2</td><td class="i">Bear Coin</td><td class="n" style="color:#c4713a">Ryot</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sphere dim">
+    <div class="sh">
+      <div class="st"><span class="sn">3</span><span class="sl">Sphere Three</span></div>
+      <div class="sr"><div class="bar"><div class="bf lo" style="width:45%"></div></div><span class="sp">9/20</span></div>
+    </div>
+  </div>
+
+  <div class="sphere ext">
+    <div class="sh">
+      <div class="st"><span class="sn">4</span><span class="sl">Sphere Four</span> <span class="eb">Extended</span></div>
+      <div class="sr"><div class="bar"><div class="bf lo" style="width:0%"></div></div><span class="sp">0/15</span></div>
+    </div>
+    <div class="sb">
+      <table class="tbl">
+        <thead><tr><th>Player</th><th>Location</th><th>Item</th><th>Sends To</th></tr></thead>
+        <tbody>
+          <tr><td class="n" style="color:#c4953a">Nick</td><td class="l">Deku Tree Compass Room</td><td class="i">Bonus Coin</td><td class="n" style="color:#c4713a">Ryot</td></tr>
+          <tr><td class="n" style="color:#7c6dab">Brian</td><td class="l">(TT) Central Station Tent</td><td class="i">Deku Nuts (5)</td><td class="n" style="color:#c76a6a">Naizak</td></tr>
+          <tr><td class="n" style="color:#c4713a">Ryot</td><td class="l">Springin' Spiders - Bonus 1</td><td class="i">Deku Seeds (30)</td><td class="n" style="color:#c4953a">Nick</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

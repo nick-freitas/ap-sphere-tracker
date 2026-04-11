@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sphere Analyzer — Glass</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --glass:rgba(255,255,255,0.08);
+    --glass-border:rgba(255,255,255,0.15);
+    --glass-hover:rgba(255,255,255,0.12);
+    --text:#f0eef5;
+    --text-dim:rgba(240,238,245,0.5);
+    --accent:#a78bfa;
+    --accent2:#34d399;
+    --surface:rgba(15,10,30,0.6);
+  }
+  body{
+    font-family:'Outfit',sans-serif;
+    background:#0a0618;
+    color:var(--text);
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+  /* Animated gradient mesh */
+  .mesh{
+    position:fixed;inset:0;z-index:0;
+    background:
+      radial-gradient(ellipse 80% 60% at 10% 90%, rgba(167,139,250,0.4), transparent),
+      radial-gradient(ellipse 60% 80% at 90% 20%, rgba(52,211,153,0.3), transparent),
+      radial-gradient(ellipse 70% 50% at 50% 50%, rgba(251,146,60,0.2), transparent),
+      radial-gradient(ellipse 50% 70% at 80% 80%, rgba(236,72,153,0.25), transparent);
+    filter:blur(80px);
+    animation:meshDrift 20s ease-in-out infinite alternate;
+  }
+  @keyframes meshDrift{
+    0%{transform:scale(1) translate(0,0)}
+    33%{transform:scale(1.1) translate(-3%,2%)}
+    66%{transform:scale(0.95) translate(2%,-3%)}
+    100%{transform:scale(1.05) translate(-1%,1%)}
+  }
+  /* Grain overlay */
+  .grain{
+    position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0.35;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+  .wrapper{position:relative;z-index:2;max-width:960px;margin:0 auto;padding:2rem 1.5rem}
+
+  /* Glass panels */
+  .glass{
+    background:var(--glass);
+    backdrop-filter:blur(24px) saturate(1.4);
+    -webkit-backdrop-filter:blur(24px) saturate(1.4);
+    border:1px solid var(--glass-border);
+    border-radius:20px;
+    transition:background 0.3s;
+  }
+  .glass:hover{background:var(--glass-hover)}
+
+  /* Header */
+  header{
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;
+    padding:1.25rem 1.75rem;margin-bottom:1.5rem;
+  }
+  .logo{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;letter-spacing:-0.02em}
+  .logo span{color:var(--accent);font-style:italic;font-weight:300}
+  .controls{display:flex;align-items:center;gap:2rem}
+  .control-group{display:flex;align-items:center;gap:0.6rem}
+  .control-group label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim);font-weight:500}
+  .threshold-val{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--accent);min-width:2.5em;font-weight:600}
+  input[type=range]{
+    -webkit-appearance:none;width:120px;height:4px;border-radius:2px;
+    background:rgba(255,255,255,0.15);outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;width:18px;height:18px;border-radius:50%;
+    background:var(--accent);cursor:pointer;
+    box-shadow:0 0 20px rgba(167,139,250,0.5);
+  }
+  .toggle{
+    width:44px;height:24px;border-radius:12px;cursor:pointer;position:relative;
+    background:rgba(255,255,255,0.12);border:1px solid var(--glass-border);
+    transition:background 0.3s;
+  }
+  .toggle.on{background:rgba(167,139,250,0.4)}
+  .toggle::after{
+    content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;
+    background:var(--text);transition:transform 0.3s;
+  }
+  .toggle.on::after{transform:translateX(20px)}
+
+  /* Inputs */
+  .inputs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+  .upload-card{
+    padding:1.25rem;display:flex;align-items:center;gap:1rem;cursor:pointer;
+  }
+  .upload-icon{
+    width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    font-size:1.3rem;flex-shrink:0;
+  }
+  .upload-icon.loaded{background:rgba(52,211,153,0.2);color:var(--accent2)}
+  .upload-icon.pending{background:rgba(255,255,255,0.06);color:var(--text-dim)}
+  .upload-label{font-weight:500;font-size:0.9rem}
+  .upload-hint{font-size:0.72rem;color:var(--text-dim);margin-top:0.15rem}
+  .upload-status{font-size:0.7rem;margin-top:0.3rem;display:flex;align-items:center;gap:0.35rem}
+  .dot{width:6px;height:6px;border-radius:50%;display:inline-block}
+  .dot.green{background:var(--accent2);box-shadow:0 0 8px rgba(52,211,153,0.6)}
+  .dot.gray{background:rgba(255,255,255,0.3)}
+
+  /* Players */
+  .players{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem}
+  .player-chip{
+    padding:0.35rem 0.75rem;border-radius:100px;font-size:0.78rem;font-weight:500;
+    display:flex;align-items:center;gap:0.4rem;
+    background:var(--glass);border:1px solid var(--glass-border);
+    backdrop-filter:blur(16px);cursor:pointer;transition:all 0.2s;
+  }
+  .player-chip:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+  .player-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .player-game{color:var(--text-dim);font-size:0.68rem;margin-left:0.15rem}
+
+  /* Sphere cards */
+  .sphere{padding:0;margin-bottom:1rem;overflow:hidden}
+  .sphere-head{
+    display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;
+    gap:1rem;
+  }
+  .sphere-name{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;display:flex;align-items:center;gap:0.5rem}
+  .sphere-name .num{color:var(--accent);font-size:1.4rem}
+  .check-mark{color:var(--accent2);font-size:1.1rem}
+  .progress-wrap{flex:1;max-width:300px;display:flex;align-items:center;gap:0.75rem}
+  .progress-track{flex:1;height:6px;border-radius:3px;background:rgba(255,255,255,0.08);overflow:hidden}
+  .progress-fill{height:100%;border-radius:3px;transition:width 1s cubic-bezier(0.22,1,0.36,1)}
+  .progress-text{font-size:0.78rem;color:var(--text-dim);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .sphere.complete{opacity:0.5}
+  .sphere.complete .progress-fill{background:var(--accent2)}
+  .sphere.dimmed{opacity:0.35}
+  .sphere.active .progress-fill{
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+  }
+
+  /* Missing checks */
+  .sphere-body{padding:0 1.5rem 1.25rem}
+  .checks-table{width:100%;border-collapse:collapse;font-size:0.82rem}
+  .checks-table th{
+    text-align:left;padding:0.5rem 0.6rem;font-size:0.68rem;text-transform:uppercase;
+    letter-spacing:0.08em;color:var(--text-dim);font-weight:500;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .checks-table td{padding:0.45rem 0.6rem}
+  .checks-table tbody tr{
+    border-bottom:1px solid rgba(255,255,255,0.03);
+    transition:background 0.2s;
+  }
+  .checks-table tbody tr:hover{background:rgba(255,255,255,0.04)}
+  .checks-table .player-name{font-weight:500}
+  .checks-table .location{color:var(--text-dim)}
+  .checks-table .item{color:var(--accent)}
+  .checks-table .owner{font-weight:500}
+
+  /* Extended badge */
+  .ext-badge{
+    font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;
+    padding:0.2rem 0.5rem;border-radius:100px;
+    background:rgba(251,146,60,0.2);color:#fb923c;font-weight:600;
+  }
+
+  /* Stagger entrance */
+  .wrapper > *{
+    opacity:0;transform:translateY(20px);
+    animation:fadeUp 0.6s ease forwards;
+  }
+  .wrapper > *:nth-child(1){animation-delay:0s}
+  .wrapper > *:nth-child(2){animation-delay:0.08s}
+  .wrapper > *:nth-child(3){animation-delay:0.14s}
+  .wrapper > *:nth-child(4){animation-delay:0.18s}
+  .wrapper > *:nth-child(5){animation-delay:0.22s}
+  .wrapper > *:nth-child(6){animation-delay:0.26s}
+  .wrapper > *:nth-child(7){animation-delay:0.30s}
+  .wrapper > *:nth-child(8){animation-delay:0.34s}
+  @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="mesh"></div>
+<div class="grain"></div>
+<div class="wrapper">
+  <header class="glass">
+    <div class="logo">Sphere <span>Analyzer</span></div>
+    <div class="controls">
+      <div class="control-group">
+        <label>Threshold</label>
+        <input type="range" min="0" max="100" value="60" oninput="document.querySelector('.threshold-val').textContent=this.value+'%'">
+        <span class="threshold-val">60%</span>
+      </div>
+      <div class="control-group">
+        <label>Extended</label>
+        <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="inputs">
+    <div class="upload-card glass">
+      <div class="upload-icon loaded">&#8593;</div>
+      <div>
+        <div class="upload-label">Spoiler Log</div>
+        <div class="upload-hint">AP_*_Spoiler.txt</div>
+        <div class="upload-status"><span class="dot green"></span> Loaded</div>
+      </div>
+    </div>
+    <div class="upload-card glass">
+      <div class="upload-icon pending">&#8593;</div>
+      <div>
+        <div class="upload-label">Tracker Log</div>
+        <div class="upload-hint">Server log .txt</div>
+        <div class="upload-status"><span class="dot gray"></span> Awaiting file</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="players">
+    <div class="player-chip"><span class="player-dot" style="background:#a78bfa"></span>Brian <span class="player-game">KH2</span></div>
+    <div class="player-chip"><span class="player-dot" style="background:#34d399"></span>Dan <span class="player-game">SM</span></div>
+    <div class="player-chip"><span class="player-dot" style="background:#fbbf24"></span>Nick <span class="player-game">SoH</span></div>
+    <div class="player-chip"><span class="player-dot" style="background:#f472b6"></span>Naizak <span class="player-game">OoT</span></div>
+    <div class="player-chip"><span class="player-dot" style="background:#60a5fa"></span>TNNPE <span class="player-game">DS3</span></div>
+    <div class="player-chip"><span class="player-dot" style="background:#fb923c"></span>Ryot <span class="player-game">DKC3</span></div>
+    <div class="player-chip"><span class="player-dot" style="background:#2dd4bf"></span>Andrew <span class="player-game">ALttP</span></div>
+  </div>
+
+  <!-- Sphere 1: Complete -->
+  <div class="sphere glass complete">
+    <div class="sphere-head">
+      <div class="sphere-name"><span class="check-mark">&#10003;</span> <span class="num">1</span> Sphere One</div>
+      <div class="progress-wrap">
+        <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
+        <span class="progress-text">18/18</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sphere 2: Active -->
+  <div class="sphere glass active">
+    <div class="sphere-head">
+      <div class="sphere-name"><span class="num">2</span> Sphere Two</div>
+      <div class="progress-wrap">
+        <div class="progress-track"><div class="progress-fill" style="width:82%"></div></div>
+        <span class="progress-text">14/17 &middot; 82%</span>
+      </div>
+    </div>
+    <div class="sphere-body">
+      <table class="checks-table">
+        <thead><tr><th>Player</th><th>Location</th><th>Item</th><th>Sends To</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="player-name" style="color:#34d399">Dan</td>
+            <td class="location">Missile (blue Brinstar middle)</td>
+            <td class="item">Hookshot</td>
+            <td class="owner" style="color:#fbbf24">Nick</td>
+          </tr>
+          <tr>
+            <td class="player-name" style="color:#f472b6">Naizak</td>
+            <td class="location">GC Darunia Pot 1</td>
+            <td class="item">Progressive Sword</td>
+            <td class="owner" style="color:#a78bfa">Brian</td>
+          </tr>
+          <tr>
+            <td class="player-name" style="color:#60a5fa">TNNPE</td>
+            <td class="location">HWL: Ember - fountain #2</td>
+            <td class="item">Bear Coin</td>
+            <td class="owner" style="color:#fb923c">Ryot</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Sphere 3: Dimmed, below threshold -->
+  <div class="sphere glass dimmed">
+    <div class="sphere-head">
+      <div class="sphere-name"><span class="num">3</span> Sphere Three</div>
+      <div class="progress-wrap">
+        <div class="progress-track"><div class="progress-fill active" style="width:45%;background:rgba(255,255,255,0.2)"></div></div>
+        <span class="progress-text">9/20 &middot; 45%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sphere 4: Extended -->
+  <div class="sphere glass" style="border-color:rgba(251,146,60,0.3);border-style:dashed">
+    <div class="sphere-head">
+      <div class="sphere-name"><span class="num">4</span> Sphere Four <span class="ext-badge">Extended</span></div>
+      <div class="progress-wrap">
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        <span class="progress-text">0/15</span>
+      </div>
+    </div>
+    <div class="sphere-body">
+      <table class="checks-table">
+        <thead><tr><th>Player</th><th>Location</th><th>Item</th><th>Sends To</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="player-name" style="color:#fbbf24">Nick</td>
+            <td class="location">Deku Tree Compass Room</td>
+            <td class="item">Bonus Coin</td>
+            <td class="owner" style="color:#fb923c">Ryot</td>
+          </tr>
+          <tr>
+            <td class="player-name" style="color:#a78bfa">Brian</td>
+            <td class="location">(TT) Central Station Tent</td>
+            <td class="item">Deku Nuts (5)</td>
+            <td class="owner" style="color:#f472b6">Naizak</td>
+          </tr>
+          <tr>
+            <td class="player-name" style="color:#fb923c">Ryot</td>
+            <td class="location">Springin' Spiders - Bonus 1</td>
+            <td class="item">Deku Seeds (30)</td>
+            <td class="owner" style="color:#fbbf24">Nick</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

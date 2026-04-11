@@ -1,21 +1,25 @@
 .input-section {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .input-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  flex-wrap: wrap;
-  align-items: stretch;
 }
 
 .input-group {
-  flex: 1;
-  min-width: 250px;
+  background: var(--color-card);
+  border: 2px dashed var(--color-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.input-group:hover {
+  border-color: var(--color-moss);
+  background: #fefdf6;
 }
 
 .input-step {
@@ -29,51 +33,55 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: var(--color-accent);
-  color: white;
-  font-size: 0.75rem;
+  background: var(--color-moss);
+  color: var(--color-card);
+  font-size: 0.7rem;
   font-weight: 700;
   flex-shrink: 0;
 }
 
 .input-step label {
   display: block;
-  font-size: 0.9rem;
+  font-family: 'Lora', serif;
   font-weight: 600;
-  color: var(--color-text);
+  font-size: 0.9rem;
+  color: var(--color-forest);
 }
 
 .input-hint {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--color-text-muted);
   margin-top: 0.1rem;
+  font-style: italic;
 }
 
 .input-divider {
-  width: 1px;
-  background: var(--color-border);
-  align-self: stretch;
+  display: none;
 }
 
 .upload-btn {
-  background: var(--color-surface-alt);
+  background: var(--color-bg);
   color: var(--color-text);
   border: 1px solid var(--color-border);
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 0.5rem 1rem;
   cursor: pointer;
   width: 100%;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-family: 'Karla', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s;
 }
 
 .upload-btn:hover {
-  background: var(--color-accent);
+  border-color: var(--color-moss);
+  color: var(--color-forest);
 }
 
 .upload-btn.loaded {
-  border-color: var(--color-success);
-  color: var(--color-success);
+  border-color: var(--color-leaf);
+  color: var(--color-moss);
 }

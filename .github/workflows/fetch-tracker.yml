@@ -7,6 +7,12 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   fetch:
@@ -43,3 +49,31 @@ jobs:
           git add src/default-tracker.txt src/tracker-meta.json
           git commit -m "chore: update tracker log $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
+
+      - uses: actions/setup-node@v4
+        if: steps.diff.outputs.changed == 'true'
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Build
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          npm ci
+          npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.diff.outputs.changed == 'true'
+        with:
+          path: dist
+
+  deploy:
+    needs: fetch
+    runs-on: ubuntu-latest
+    if: needs.fetch.result == 'success'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

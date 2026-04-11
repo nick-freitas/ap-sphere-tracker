@@ -1,3 +1,4 @@
+import trackerMeta from '../tracker-meta.json'
 import './Header.css'
 
 export default function Header({
@@ -6,11 +7,18 @@ export default function Header({
   extended,
   onExtendedChange,
 }) {
+  const lastUpdated = trackerMeta?.fetchedAt
+    ? new Date(trackerMeta.fetchedAt).toLocaleString()
+    : null
+
   return (
     <header className="header">
       <div className="brand">
         <h1 className="header-title">Sphere Analyzer</h1>
-        <div className="brand-sub">Archipelago Multiworld Progression</div>
+        <div className="brand-sub">
+          Archipelago Multiworld Progression
+          {lastUpdated && <span className="last-updated"> · Log updated {lastUpdated}</span>}
+        </div>
       </div>
 
       <div className="header-controls">

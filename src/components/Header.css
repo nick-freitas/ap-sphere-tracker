@@ -24,6 +24,12 @@
   font-style: italic;
 }
 
+.last-updated {
+  color: var(--color-moss);
+  font-style: normal;
+  font-size: 0.68rem;
+}
+
 .header-controls {
   display: flex;
   align-items: center;

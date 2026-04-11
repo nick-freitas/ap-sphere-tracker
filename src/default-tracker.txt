@@ -1280,3 +1280,8 @@
 [2026-04-11 20:40:15,935]: Loaded save file with 998 received items for 7 players
 [2026-04-11 20:40:16,188]: Hosting game at archipelago.gg:58657
 [2026-04-11 20:40:27,221]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-11 22:05:55,275]: Notice (all): TNNPE (Team #1) playing Dark Souls III has joined. Client(0.6.0), ['DeathLink'].
+[2026-04-11 22:05:55,275]: Notice (Player TNNPE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-11 22:05:55,276]: Notice (Player TNNPE in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-11 22:09:46,612]: (Team #1) TNNPE sent Firelink Helm to TNNPE (US: Heavy Gem - Hawkwood)
+[2026-04-11 22:11:06,790]: Notice (all): TNNPE (Team #1) has left the game. Client(0.6.0), ['DeathLink'].

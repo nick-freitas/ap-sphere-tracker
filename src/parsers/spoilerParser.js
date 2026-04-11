@@ -72,6 +72,9 @@ function parseSphereEntries(block) {
     const itemParsed = parseNameAndPlayer(itemSide)
 
     if (locationParsed && itemParsed) {
+      // Skip non-item entries (subrules, logic events) where location equals item
+      if (locationParsed.name === itemParsed.name) continue
+
       entries.push({
         location: locationParsed.name,
         locationOwner: locationParsed.player,

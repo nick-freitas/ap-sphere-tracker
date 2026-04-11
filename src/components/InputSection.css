@@ -10,6 +10,7 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  align-items: stretch;
 }
 
 .input-group {
@@ -17,11 +18,44 @@
   min-width: 250px;
 }
 
-.input-group label {
+.input-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.input-step label {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.input-hint {
+  font-size: 0.75rem;
   color: var(--color-text-muted);
-  margin-bottom: 0.25rem;
+  margin-top: 0.1rem;
+}
+
+.input-divider {
+  width: 1px;
+  background: var(--color-border);
+  align-self: stretch;
 }
 
 .upload-btn {
@@ -37,4 +71,9 @@
 
 .upload-btn:hover {
   background: var(--color-accent);
+}
+
+.upload-btn.loaded {
+  border-color: var(--color-success);
+  color: var(--color-success);
 }

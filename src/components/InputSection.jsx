@@ -27,43 +27,53 @@ export default function InputSection({
     <div className="input-section">
       <div className="input-row">
         <div className="input-group">
-          <label htmlFor="spoiler-upload">Spoiler Log</label>
-          <div className="file-upload">
-            <button
-              className="upload-btn"
-              onClick={() => spoilerInputRef.current?.click()}
-            >
-              {hasSpoiler ? 'Spoiler Loaded' : 'Upload Spoiler Log'}
-            </button>
-            <input
-              ref={spoilerInputRef}
-              id="spoiler-upload"
-              type="file"
-              accept=".txt"
-              onChange={handleFileUpload(onSpoilerParsed)}
-              hidden
-            />
+          <div className="input-step">
+            <span className="step-number">1</span>
+            <div>
+              <label htmlFor="spoiler-upload">Spoiler Log</label>
+              <p className="input-hint">The AP_*_Spoiler.txt from your seed</p>
+            </div>
           </div>
+          <button
+            className={`upload-btn ${hasSpoiler ? 'loaded' : ''}`}
+            onClick={() => spoilerInputRef.current?.click()}
+          >
+            {hasSpoiler ? 'Spoiler Loaded' : 'Upload Spoiler Log'}
+          </button>
+          <input
+            ref={spoilerInputRef}
+            id="spoiler-upload"
+            type="file"
+            accept=".txt,.log,text/plain"
+            onChange={handleFileUpload(onSpoilerParsed)}
+            hidden
+          />
         </div>
 
+        <div className="input-divider" />
+
         <div className="input-group">
-          <label htmlFor="tracker-upload">Tracker Log</label>
-          <div className="file-upload">
-            <button
-              className="upload-btn"
-              onClick={() => trackerInputRef.current?.click()}
-            >
-              {hasTracker ? 'Tracker Loaded' : 'Upload Tracker Log'}
-            </button>
-            <input
-              ref={trackerInputRef}
-              id="tracker-upload"
-              type="file"
-              accept=".txt"
-              onChange={handleFileUpload(onTrackerParsed)}
-              hidden
-            />
+          <div className="input-step">
+            <span className="step-number">2</span>
+            <div>
+              <label htmlFor="tracker-upload">Tracker Log</label>
+              <p className="input-hint">The server log .txt file</p>
+            </div>
           </div>
+          <button
+            className={`upload-btn ${hasTracker ? 'loaded' : ''}`}
+            onClick={() => trackerInputRef.current?.click()}
+          >
+            {hasTracker ? 'Tracker Loaded' : 'Upload Tracker Log'}
+          </button>
+          <input
+            ref={trackerInputRef}
+            id="tracker-upload"
+            type="file"
+            accept=".txt,.log,text/plain"
+            onChange={handleFileUpload(onTrackerParsed)}
+            hidden
+          />
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i
 function App() {
   const [spoilerData, setSpoilerData] = useState(null)
   const [checkedLocations, setCheckedLocations] = useState(new Map())
-  const [threshold, setThreshold] = useState(75)
+  const [threshold, setThreshold] = useState(60)
   const [extended, setExtended] = useState(false)
   const [hiddenPlayers, setHiddenPlayers] = useState(new Set())
 
@@ -44,6 +44,16 @@ function App() {
     if (!spoilerData) return []
     return analyzeSpheres(spoilerData, checkedLocations)
   }, [spoilerData, checkedLocations])
+
+  // Find the index of the last sphere that meets the threshold — extended only shows the next sphere after that one
+  const lastQualifyingIdx = useMemo(() => {
+    for (let i = sphereResults.length - 1; i >= 0; i--) {
+      if (sphereResults[i].totalChecks > 0 && sphereResults[i].completionPercent >= threshold) {
+        return i
+      }
+    }
+    return -1
+  }, [sphereResults, threshold])
 
   const playerColors = useMemo(() => {
     if (!spoilerData) return {}
@@ -82,7 +92,7 @@ function App() {
             key={result.sphereNumber}
             result={result}
             threshold={threshold}
-            extended={extended}
+            extended={extended && i === lastQualifyingIdx}
             nextResult={sphereResults[i + 1] || null}
             playerColors={playerColors}
             hiddenPlayers={hiddenPlayers}

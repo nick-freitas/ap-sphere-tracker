@@ -110,6 +110,29 @@ describe('parseSpoilerLog', () => {
       })
     })
 
+    it('filters out non-item entries where location equals item', () => {
+      const spoilerWithSubrule = `Archipelago Version 0.6.5  -  Seed: 99
+
+Players:                         1
+
+Player 1: Alice
+Game:                            Ocarina of Time
+
+
+Playthrough:
+
+1: {
+  Real Location (Alice): Real Item (Alice)
+  Some Subrule 1 (Alice): Some Subrule 1 (Alice)
+}
+
+Paths:
+`
+      const result = parseSpoilerLog(spoilerWithSubrule)
+      expect(result.spheres[0].entries).toHaveLength(1)
+      expect(result.spheres[0].entries[0].location).toBe('Real Location')
+    })
+
     it('returns correct number of spheres', () => {
       const result = parseSpoilerLog(SAMPLE_SPOILER)
       expect(result.spheres).toHaveLength(3)

@@ -2,7 +2,11 @@ name: Fetch Tracker Log
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Every hour
+    # Every 30 min outside 2-8am ET (6-12 UTC)
+    - cron: '0,30 0-5 * * *'
+    - cron: '0,30 12-23 * * *'
+    # Every hour during 2-8am ET (6-12 UTC)
+    - cron: '0 6-11 * * *'
   workflow_dispatch:       # Manual trigger
 
 permissions:

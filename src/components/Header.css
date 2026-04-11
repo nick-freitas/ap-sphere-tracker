@@ -1,0 +1,87 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-title {
+  font-size: 1.3rem;
+  color: var(--color-text);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.threshold-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.threshold-control label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.threshold-value {
+  color: var(--color-accent);
+  font-weight: bold;
+  display: inline-block;
+  min-width: 2.5em;
+}
+
+.threshold-control input[type="range"] {
+  width: 120px;
+  accent-color: var(--color-accent);
+}
+
+.toggle-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.toggle-control input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-slider {
+  width: 40px;
+  height: 22px;
+  background: var(--color-border);
+  border-radius: 11px;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.toggle-slider::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-text);
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+}
+
+.toggle-control input:checked + .toggle-slider {
+  background: var(--color-accent);
+}
+
+.toggle-control input:checked + .toggle-slider::after {
+  transform: translateX(18px);
+}

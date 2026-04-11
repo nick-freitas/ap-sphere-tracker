@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import { parseSpoilerLog } from './parsers/spoilerParser'
 import { useTrackerAutoRefresh } from './hooks/useTrackerAutoRefresh'
+import Header from './components/Header'
 import InputSection from './components/InputSection'
 import './App.css'
 
 function App() {
   const [spoilerData, setSpoilerData] = useState(null)
   const [trackerUrl, setTrackerUrl] = useState('')
+  const [threshold, setThreshold] = useState(75)
+  const [extended, setExtended] = useState(false)
   const { checkedLocations, status: trackerStatus } = useTrackerAutoRefresh(trackerUrl)
 
   function handleSpoilerText(text) {
@@ -16,7 +19,12 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Archipelago Sphere Analyzer</h1>
+      <Header
+        threshold={threshold}
+        onThresholdChange={setThreshold}
+        extended={extended}
+        onExtendedChange={setExtended}
+      />
       <InputSection
         onSpoilerParsed={handleSpoilerText}
         onTrackerUrlSet={setTrackerUrl}
@@ -24,12 +32,6 @@ function App() {
         trackerStatus={trackerStatus}
         hasSpoiler={!!spoilerData}
       />
-      {spoilerData && (
-        <p>{spoilerData.players.length} players loaded, {spoilerData.spheres.length} spheres found</p>
-      )}
-      {checkedLocations.size > 0 && (
-        <p>{checkedLocations.size} players tracked</p>
-      )}
     </div>
   )
 }

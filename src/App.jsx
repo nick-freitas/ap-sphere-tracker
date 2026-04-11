@@ -8,6 +8,7 @@ import SphereCard from './components/SphereCard'
 import PlayerLegend from './components/PlayerLegend'
 import PlayerStats from './components/PlayerStats'
 import defaultSpoilerUrl from './default-spoiler.txt?url'
+import defaultTrackerUrl from './default-tracker.txt?url'
 import './App.css'
 
 const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i})`)
@@ -19,13 +20,19 @@ function App() {
   const [extended, setExtended] = useState(false)
   const [hiddenPlayers, setHiddenPlayers] = useState(new Set())
 
-  // Load the bundled default spoiler log on startup
+  // Load the bundled default spoiler and tracker logs on startup
   useEffect(() => {
     fetch(defaultSpoilerUrl)
       .then((res) => res.text())
       .then((text) => {
         const parsed = parseSpoilerLog(text)
         setSpoilerData(parsed)
+      })
+    fetch(defaultTrackerUrl)
+      .then((res) => res.text())
+      .then((text) => {
+        const parsed = parseTrackerLog(text)
+        setCheckedLocations(parsed)
       })
   }, [])
 

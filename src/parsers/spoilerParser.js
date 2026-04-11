@@ -8,6 +8,7 @@ const NON_ITEMS = new Set([
 const NON_LOCATIONS = new Set([
   'Links Pocket',
   'Master Sword Pedestal',
+  'Flute Activation Spot',
 ])
 
 export function parseSpoilerLog(text) {

@@ -67,6 +67,18 @@ function App() {
     return -1
   }, [sphereResults, threshold])
 
+  // Map each player to their highest sphere number
+  const playerLastSphere = useMemo(() => {
+    if (!spoilerData) return {}
+    const last = {}
+    for (const sphere of spoilerData.spheres) {
+      for (const entry of sphere.entries) {
+        last[entry.locationOwner] = sphere.number
+      }
+    }
+    return last
+  }, [spoilerData])
+
   const playerColors = useMemo(() => {
     if (!spoilerData) return {}
     const colors = {}
@@ -119,6 +131,9 @@ function App() {
               playerColors={playerColors}
               hiddenPlayers={hiddenPlayers}
               isExtended={isExtended}
+              sphereEntries={spoilerData.spheres[i]?.entries || []}
+              checkedLocations={checkedLocations}
+              playerLastSphere={playerLastSphere}
             />
           )
         })}

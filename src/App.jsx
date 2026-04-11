@@ -6,6 +6,7 @@ import Header from './components/Header'
 import InputSection from './components/InputSection'
 import SphereCard from './components/SphereCard'
 import PlayerLegend from './components/PlayerLegend'
+import PlayerStats from './components/PlayerStats'
 import defaultSpoilerUrl from './default-spoiler.txt?url'
 import './App.css'
 
@@ -95,6 +96,13 @@ function App() {
           playerColors={playerColors}
           hiddenPlayers={hiddenPlayers}
           onTogglePlayer={togglePlayer}
+        />
+      )}
+      {spoilerData && (
+        <PlayerStats
+          spoilerData={spoilerData}
+          checkedLocations={checkedLocations}
+          playerColors={playerColors}
         />
       )}
       <div className="sphere-list">

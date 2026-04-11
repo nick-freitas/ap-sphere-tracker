@@ -1,0 +1,67 @@
+.player-stats {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.ps-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+}
+
+.ps-row + .ps-row {
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.ps-info {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 140px;
+}
+
+.ps-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ps-name {
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.ps-count {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.ps-bar {
+  flex: 1;
+  height: 5px;
+  background: var(--color-sand);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.ps-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s ease;
+  opacity: 0.7;
+}
+
+.ps-pct {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  min-width: 2.5em;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}

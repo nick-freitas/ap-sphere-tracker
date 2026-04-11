@@ -1204,3 +1204,21 @@
 [2026-04-11 17:14:35,108]: Notice (all): Naizak (Team #1) playing Ocarina of Time has joined. Client(0.6.5), ['AP'].
 [2026-04-11 17:14:35,108]: Notice (Player Naizak in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
 [2026-04-11 17:14:44,663]: Notice (all): Naizak (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-04-11 17:30:43,040]: (Team #1) Naizak sent Rupee (1) to Naizak (HF Open Grotto Chest)
+[2026-04-11 17:30:49,056]: (Team #1) Naizak sent Purple Rupee to Nick (HF Open Grotto Beehive 2)
+[2026-04-11 17:30:55,056]: (Team #1) Naizak sent Cosmic Belt to Brian (HF Open Grotto Beehive 1)
+[2026-04-11 17:34:06,328]: (Team #1) Naizak sent Arrows (5) to Naizak (ZF Great Fairy Reward)
+[2026-04-11 17:34:45,873]: (Team #1) Naizak sent Titanite Scale to TNNPE (ZF Near Jabu Pot 4)
+[2026-04-11 17:34:48,376]: (Team #1) Naizak sent Soul of the Deacons of the Deep to TNNPE (ZF Near Jabu Pot 3)
+[2026-04-11 17:34:55,389]: (Team #1) Naizak sent Greatshield of Glory to TNNPE (ZF Near Jabu Pot 1)
+[2026-04-11 17:34:55,888]: (Team #1) Naizak sent Pyromancy Flame to TNNPE (ZF Near Jabu Pot 2)
+[2026-04-11 17:40:27,712]: (Team #1) Naizak sent Piece of Heart to Nick (Bottom of the Well MQ GS West Inner Room)
+[2026-04-11 17:40:39,728]: (Team #1) Naizak sent Recovery Heart to Nick (Bottom of the Well MQ Map Chest)
+[2026-04-11 17:41:00,252]: (Team #1) Naizak sent Drive Gauge Up to Brian (Bottom of the Well MQ Center Room Right Pot 1)
+[2026-04-11 17:41:02,856]: (Team #1) Naizak sent Large Titanite Shard to TNNPE (Bottom of the Well MQ Center Room Right Pot 3)
+[2026-04-11 17:41:04,859]: (Team #1) Naizak sent Twinkling Titanite to TNNPE (Bottom of the Well MQ Center Room Right Pot 2)
+[2026-04-11 17:41:32,464]: (Team #1) Naizak sent Windmill Key to Nick (Bottom of the Well MQ East Inner Room Pot 3)
+[2026-04-11 17:41:37,891]: (Team #1) Naizak sent Progressive Bomb Bag to Nick (Bottom of the Well MQ East Inner Room Pot 2)
+[2026-04-11 17:41:47,598]: (Team #1) Naizak sent Sun Princess Ring to TNNPE (Bottom of the Well MQ East Inner Room Freestanding Key)
+[2026-04-11 17:41:49,904]: (Team #1) Naizak sent Rupee (1) to Naizak (Bottom of the Well MQ East Inner Room Pot 1)
+[2026-04-11 17:45:02,064]: (Team #1) Naizak sent Huge Rupee to Nick (Bottom of the Well MQ GS Basement)

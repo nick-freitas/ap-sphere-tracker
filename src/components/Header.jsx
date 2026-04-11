@@ -37,7 +37,7 @@ export default function Header({
           <input
             id="threshold-slider"
             type="range"
-            min="20"
+            min="60"
             max="100"
             value={threshold}
             onChange={(e) => onThresholdChange(Number(e.target.value))}

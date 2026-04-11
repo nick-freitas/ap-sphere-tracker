@@ -11,14 +11,14 @@ export default defineConfig({
           // Serve /1/ through /5/ as static prototype pages
           const match = req.url.match(/^\/archipelago-sphere\/(\d+)\/?$/)
           if (match) {
-            req.url = `/archipelago-sphere/${match[1]}/index.html`
+            req.url = `/ap-sphere-tracker/${match[1]}/index.html`
           }
           next()
         })
       },
     },
   ],
-  base: '/archipelago-sphere/',
+  base: '/ap-sphere-tracker/',
   test: {
     environment: 'node',
   },

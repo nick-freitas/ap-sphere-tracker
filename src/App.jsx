@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { parseSpoilerLog } from './parsers/spoilerParser'
+import { useTrackerAutoRefresh } from './hooks/useTrackerAutoRefresh'
 import InputSection from './components/InputSection'
 import './App.css'
 
 function App() {
   const [spoilerData, setSpoilerData] = useState(null)
   const [trackerUrl, setTrackerUrl] = useState('')
-  const [trackerStatus, setTrackerStatus] = useState(null)
+  const { checkedLocations, status: trackerStatus } = useTrackerAutoRefresh(trackerUrl)
 
   function handleSpoilerText(text) {
     const parsed = parseSpoilerLog(text)
@@ -25,6 +26,9 @@ function App() {
       />
       {spoilerData && (
         <p>{spoilerData.players.length} players loaded, {spoilerData.spheres.length} spheres found</p>
+      )}
+      {checkedLocations.size > 0 && (
+        <p>{checkedLocations.size} players tracked</p>
       )}
     </div>
   )

@@ -84,12 +84,23 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
           <div className="ps-info">
             <span className="ps-dot" style={{ background: playerColors[s.name] }} />
             <span className="ps-name">{s.name}</span>
-            {playerInfo[s.name]?.locked && (
-              <span className="ps-lock" title="No remaining checks in current spheres - potentially locked/BK'd">
-                {'\uD83D\uDD12'}
-              </span>
-            )}
-            {playerInfo[s.name]?.earliestUnchecked != null && (
+            {playerInfo[s.name]?.locked && (() => {
+              const currentSphereNum = lastQualifyingIdx >= 0 && sphereResults[lastQualifyingIdx]
+                ? sphereResults[lastQualifyingIdx].sphereNumber : 0
+              const earliest = playerInfo[s.name].earliestUnchecked
+              const isNextSphere = earliest === currentSphereNum + 1
+              const spheresAway = earliest != null ? earliest - currentSphereNum : null
+              const circleClass = isNextSphere ? 'ps-lock-circle yellow' : 'ps-lock-circle red'
+              const tooltip = isNextSphere
+                ? `Possibly locked — next progression checks are in Sphere ${earliest} (next sphere). These checks may or may not be reachable yet. Non-progression checks may still be available in-game, keep playing!`
+                : `Likely locked — next progression checks are ${spheresAway} sphere${spheresAway > 1 ? 's' : ''} away (Sphere ${earliest}). Non-progression checks may still be available in-game, keep playing!`
+              return (
+                <span className={circleClass} data-tip={tooltip}>
+                  {'\uD83D\uDD12'}{earliest != null ? ` S${earliest}` : ''}
+                </span>
+              )
+            })()}
+            {!playerInfo[s.name]?.locked && playerInfo[s.name]?.earliestUnchecked != null && (
               <span className="ps-earliest" title="Earliest sphere with unchecked items">
                 S{playerInfo[s.name].earliestUnchecked}
               </span>

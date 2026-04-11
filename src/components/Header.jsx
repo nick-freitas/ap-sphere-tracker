@@ -1,6 +1,19 @@
 import trackerMeta from '../tracker-meta.json'
 import './Header.css'
 
+function timeAgo(dateStr) {
+  const date = new Date(dateStr)
+  const now = new Date()
+  const diffMs = now - date
+  const diffMin = Math.floor(diffMs / 60000)
+  if (diffMin < 1) return '(just now)'
+  if (diffMin < 60) return `(${diffMin} minute${diffMin === 1 ? '' : 's'} ago)`
+  const diffHr = Math.floor(diffMin / 60)
+  if (diffHr < 24) return `(${diffHr} hour${diffHr === 1 ? '' : 's'} ago)`
+  const diffDay = Math.floor(diffHr / 24)
+  return `(${diffDay} day${diffDay === 1 ? '' : 's'} ago)`
+}
+
 export default function Header({
   threshold,
   onThresholdChange,
@@ -10,26 +23,41 @@ export default function Header({
   onSpoilerToggle,
   darkMode,
   onDarkModeToggle,
+  lastCheckTime,
+  currentSphere,
+  totalSpheres,
 }) {
   const lastUpdated = trackerMeta?.fetchedAt
     ? new Date(trackerMeta.fetchedAt).toLocaleString()
     : null
+  const lastUpdatedAgo = trackerMeta?.fetchedAt ? timeAgo(trackerMeta.fetchedAt) : null
+
+  const lastCheckDate = lastCheckTime ? new Date(lastCheckTime.replace(',', '.')) : null
+  const lastCheckFormatted = lastCheckDate ? lastCheckDate.toLocaleString() : null
+  const lastCheckAgo = lastCheckDate ? timeAgo(lastCheckDate) : null
 
   return (
     <header className="header">
       <div className="brand">
-        <div className="brand-top">
-          <h1 className="header-title">AP Sphere Tracker</h1>
-          <button className="theme-toggle" onClick={onDarkModeToggle} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
-            {darkMode ? '\u2600' : '\u263D'}
-          </button>
-        </div>
-        {lastUpdated && (
+        <h1 className="header-title">AP Sphere Tracker</h1>
+        {totalSpheres > 0 && (
+          <div className="header-subtitle">
+            Current Sphere: {currentSphere} of {totalSpheres} ({Math.round((currentSphere / totalSpheres) * 100)}%)
+          </div>
+        )}
+
+        {(lastUpdated || lastCheckFormatted) && (
           <div className="brand-sub">
-            <span className="last-updated">Log updated {lastUpdated}</span>
+            {lastUpdated && <span className="last-updated">Log updated {lastUpdated} {lastUpdatedAgo}</span>}
+            {lastUpdated && lastCheckFormatted && <span className="last-updated"> | </span>}
+            {lastCheckFormatted && <span className="last-updated">Last Check {lastCheckFormatted} {lastCheckAgo}</span>}
           </div>
         )}
       </div>
+
+      <button className="theme-toggle" onClick={onDarkModeToggle} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
+        {darkMode ? '\u2600' : '\u263D'}
+      </button>
 
       <div className="header-controls">
         <div className="threshold-control">

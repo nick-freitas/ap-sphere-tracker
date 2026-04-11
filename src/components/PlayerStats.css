@@ -52,9 +52,51 @@
   font-size: 0.82rem;
 }
 
-.ps-lock {
-  font-size: 0.6rem;
+.ps-lock-circle {
+  font-size: 0.58rem;
+  font-weight: 600;
+  padding: 0.1rem 0.35rem;
+  border-radius: 100px;
   cursor: help;
+  white-space: nowrap;
+  position: relative;
+}
+
+.ps-lock-circle::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-card);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 0.68rem;
+  font-weight: 400;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  white-space: normal;
+  width: 260px;
+  line-height: 1.4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 10;
+}
+
+.ps-lock-circle:hover::after {
+  opacity: 1;
+}
+
+.ps-lock-circle.yellow {
+  background: rgba(240, 165, 0, 0.15);
+  color: #c89600;
+}
+
+.ps-lock-circle.red {
+  background: rgba(192, 57, 43, 0.12);
+  color: #c0392b;
 }
 
 .ps-earliest {

@@ -37,6 +37,10 @@
   font-weight: 600;
 }
 
+.tab-spacer {
+  flex: 1;
+}
+
 .raw-log {
   background: var(--color-card);
   border: 1px solid var(--color-border);

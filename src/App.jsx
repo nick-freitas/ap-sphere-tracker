@@ -1,5 +1,5 @@
-import { useState, useEffect, useMemo } from 'react'
-import { parseSpoilerLog } from './parsers/spoilerParser'
+import { useState, useEffect, useMemo, useRef } from 'react'
+import { parseSpoilerLog, parseIgnoreList, validateIgnoreLists, DEFAULT_IGNORE_ITEMS, DEFAULT_IGNORE_LOCATIONS } from './parsers/spoilerParser'
 import { parseTrackerLog } from './parsers/trackerParser'
 import { analyzeSpheres } from './engine/sphereAnalyzer'
 import Header from './components/Header'
@@ -8,6 +8,7 @@ import SphereCard from './components/SphereCard'
 import PlayerLegend from './components/PlayerLegend'
 import PlayerStats from './components/PlayerStats'
 import PlayerConfigs from './components/PlayerConfigs'
+import OptionsPage from './components/OptionsPage'
 import defaultSpoilerUrl from './default-spoiler.txt?url'
 import defaultTrackerUrl from './default-tracker.txt?url'
 import './App.css'
@@ -17,6 +18,7 @@ const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i
 function App() {
   const [spoilerData, setSpoilerData] = useState(null)
   const [checkedLocations, setCheckedLocations] = useState(new Map())
+  const [lastCheckTime, setLastCheckTime] = useState(null)
   const [threshold, setThreshold] = useState(70)
   const [extended, setExtended] = useState(false)
   const [hiddenPlayers, setHiddenPlayers] = useState(new Set())
@@ -28,6 +30,21 @@ function App() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches
   })
 
+  // Ignore lists — load from localStorage or use defaults
+  const [ignoreItemsText, setIgnoreItemsText] = useState(() => {
+    return localStorage.getItem('ap-ignore-items') || DEFAULT_IGNORE_ITEMS
+  })
+  const [ignoreLocationsText, setIgnoreLocationsText] = useState(() => {
+    return localStorage.getItem('ap-ignore-locations') || DEFAULT_IGNORE_LOCATIONS
+  })
+  const [validationErrors, setValidationErrors] = useState(null)
+
+  // Keep raw spoiler text for re-parsing and validation
+  const rawSpoilerTextRef = useRef('')
+
+  const ignoreItems = useMemo(() => parseIgnoreList(ignoreItemsText), [ignoreItemsText])
+  const ignoreLocations = useMemo(() => parseIgnoreList(ignoreLocationsText), [ignoreLocationsText])
+
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
   }, [darkMode])
@@ -36,33 +53,79 @@ function App() {
     setDarkMode((prev) => !prev)
   }
 
+  function parseSpoilerWithIgnores(text) {
+    return parseSpoilerLog(text, ignoreItems, ignoreLocations)
+  }
+
   // Load the bundled default spoiler and tracker logs on startup
   useEffect(() => {
     fetch(defaultSpoilerUrl)
       .then((res) => res.text())
       .then((text) => {
-        const parsed = parseSpoilerLog(text)
+        rawSpoilerTextRef.current = text
+        const parsed = parseSpoilerWithIgnores(text)
         setSpoilerData(parsed)
+        const errors = validateIgnoreLists(text, ignoreItems, ignoreLocations)
+        if (errors.invalidItems.length > 0 || errors.invalidLocations.length > 0) {
+          setValidationErrors(errors)
+        }
       })
     fetch(defaultTrackerUrl)
       .then((res) => res.text())
       .then((text) => {
         setRawTrackerText(text)
-        const parsed = parseTrackerLog(text)
+        const { checkedLocations: parsed, lastCheckTime: lct } = parseTrackerLog(text)
         setCheckedLocations(parsed)
+        setLastCheckTime(lct)
       })
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleSpoilerText(text) {
-    const parsed = parseSpoilerLog(text)
+    rawSpoilerTextRef.current = text
+    const parsed = parseSpoilerWithIgnores(text)
     setSpoilerData(parsed)
     setHiddenPlayers(new Set())
+    const errors = validateIgnoreLists(text, ignoreItems, ignoreLocations)
+    if (errors.invalidItems.length > 0 || errors.invalidLocations.length > 0) {
+      setValidationErrors(errors)
+    } else {
+      setValidationErrors(null)
+    }
   }
 
   function handleTrackerText(text) {
     setRawTrackerText(text)
-    const parsed = parseTrackerLog(text)
+    const { checkedLocations: parsed, lastCheckTime: lct } = parseTrackerLog(text)
     setCheckedLocations(parsed)
+    setLastCheckTime(lct)
+  }
+
+  function handleOptionsSave(itemsText, locationsText) {
+    // Validate against the raw spoiler
+    const items = parseIgnoreList(itemsText)
+    const locations = parseIgnoreList(locationsText)
+
+    if (rawSpoilerTextRef.current) {
+      const errors = validateIgnoreLists(rawSpoilerTextRef.current, items, locations)
+      if (errors.invalidItems.length > 0 || errors.invalidLocations.length > 0) {
+        setValidationErrors(errors)
+        // Still save — just show warnings
+      } else {
+        setValidationErrors(null)
+      }
+    }
+
+    // Save to localStorage
+    localStorage.setItem('ap-ignore-items', itemsText)
+    localStorage.setItem('ap-ignore-locations', locationsText)
+    setIgnoreItemsText(itemsText)
+    setIgnoreLocationsText(locationsText)
+
+    // Re-parse spoiler with new ignore lists
+    if (rawSpoilerTextRef.current) {
+      const parsed = parseSpoilerLog(rawSpoilerTextRef.current, items, locations)
+      setSpoilerData(parsed)
+    }
   }
 
   function togglePlayer(name) {
@@ -93,7 +156,6 @@ function App() {
       const sphere = spoilerData.spheres[i]
       if (!sphere || sphere.entries.length === 0) break
 
-      // Compute per-player completion for this sphere
       const playerTotals = {}
       const playerDone = {}
       for (const entry of sphere.entries) {
@@ -105,7 +167,6 @@ function App() {
         }
       }
 
-      // Count how many players with checks in this sphere meet threshold
       const playerNames = Object.keys(playerTotals)
       const totalPlayers = playerNames.length
       const majorityNeeded = Math.ceil(totalPlayers / 2)
@@ -164,6 +225,9 @@ function App() {
         }}
         darkMode={darkMode}
         onDarkModeToggle={toggleDarkMode}
+        lastCheckTime={lastCheckTime}
+        currentSphere={lastQualifyingIdx >= 0 && sphereResults[lastQualifyingIdx] ? sphereResults[lastQualifyingIdx].sphereNumber : 0}
+        totalSpheres={sphereResults.length > 0 ? sphereResults[sphereResults.length - 1].sphereNumber : 0}
       />
       {showSpoilerConfirm && (
         <div className="modal-overlay" onClick={() => setShowSpoilerConfirm(false)}>
@@ -184,8 +248,10 @@ function App() {
       />
       <div className="tabs">
         <button className={`tab ${activeTab === 'spheres' ? 'active' : ''}`} onClick={() => setActiveTab('spheres')}>Spheres</button>
-        <button className={`tab ${activeTab === 'configs' ? 'active' : ''}`} onClick={() => setActiveTab('configs')}>Player Configs</button>
         <button className={`tab ${activeTab === 'log' ? 'active' : ''}`} onClick={() => setActiveTab('log')}>Raw Log</button>
+        <button className={`tab ${activeTab === 'configs' ? 'active' : ''}`} onClick={() => setActiveTab('configs')}>Player Configs</button>
+        <div className="tab-spacer" />
+        <button className={`tab ${activeTab === 'options' ? 'active' : ''}`} onClick={() => setActiveTab('options')}>Options</button>
       </div>
 
       {activeTab === 'spheres' && (
@@ -242,6 +308,15 @@ function App() {
         <PlayerConfigs
           players={spoilerData.players}
           playerColors={playerColors}
+        />
+      )}
+
+      {activeTab === 'options' && (
+        <OptionsPage
+          ignoreItemsText={ignoreItemsText}
+          ignoreLocationsText={ignoreLocationsText}
+          onSave={handleOptionsSave}
+          validationErrors={validationErrors}
         />
       )}
 

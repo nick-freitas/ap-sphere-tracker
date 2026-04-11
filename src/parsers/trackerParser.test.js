@@ -12,40 +12,45 @@ const SAMPLE_TRACKER = `[2026-04-10 23:00:00,000]: Loading embedded data package
 `
 
 describe('parseTrackerLog', () => {
-  it('returns a map of player names to sets of checked locations', () => {
-    const result = parseTrackerLog(SAMPLE_TRACKER)
-    expect(result).toBeInstanceOf(Map)
+  it('returns checkedLocations map and lastCheckTime', () => {
+    const { checkedLocations } = parseTrackerLog(SAMPLE_TRACKER)
+    expect(checkedLocations).toBeInstanceOf(Map)
   })
 
   it('extracts checked locations for each player', () => {
-    const result = parseTrackerLog(SAMPLE_TRACKER)
-    expect(result.get('Alice')).toEqual(new Set(['KF Links House Pot', 'Location B']))
-    expect(result.get('Bob')).toEqual(new Set(['Missile (blue Brinstar middle)', 'Some Location']))
-    expect(result.get('Charlie')).toEqual(new Set(['Sanctuary']))
+    const { checkedLocations } = parseTrackerLog(SAMPLE_TRACKER)
+    expect(checkedLocations.get('Alice')).toEqual(new Set(['KF Links House Pot', 'Location B']))
+    expect(checkedLocations.get('Bob')).toEqual(new Set(['Missile (blue Brinstar middle)', 'Some Location']))
+    expect(checkedLocations.get('Charlie')).toEqual(new Set(['Sanctuary']))
   })
 
   it('ignores non-send lines (notices, hints, loading)', () => {
-    const result = parseTrackerLog(SAMPLE_TRACKER)
-    expect(result.size).toBe(3)
+    const { checkedLocations } = parseTrackerLog(SAMPLE_TRACKER)
+    expect(checkedLocations.size).toBe(3)
   })
 
   it('handles items with parentheses like Bombs (5)', () => {
-    const result = parseTrackerLog(SAMPLE_TRACKER)
-    expect(result.get('Alice').has('Location B')).toBe(true)
+    const { checkedLocations } = parseTrackerLog(SAMPLE_TRACKER)
+    expect(checkedLocations.get('Alice').has('Location B')).toBe(true)
   })
 
   it('handles items with parentheses like Piece of Heart (WINNER)', () => {
-    const result = parseTrackerLog(SAMPLE_TRACKER)
-    expect(result.get('Bob').has('Some Location')).toBe(true)
+    const { checkedLocations } = parseTrackerLog(SAMPLE_TRACKER)
+    expect(checkedLocations.get('Bob').has('Some Location')).toBe(true)
   })
 
   it('handles locations with parentheses like Missile (blue Brinstar middle)', () => {
-    const result = parseTrackerLog(SAMPLE_TRACKER)
-    expect(result.get('Bob').has('Missile (blue Brinstar middle)')).toBe(true)
+    const { checkedLocations } = parseTrackerLog(SAMPLE_TRACKER)
+    expect(checkedLocations.get('Bob').has('Missile (blue Brinstar middle)')).toBe(true)
   })
 
   it('returns empty map for empty input', () => {
-    const result = parseTrackerLog('')
-    expect(result.size).toBe(0)
+    const { checkedLocations } = parseTrackerLog('')
+    expect(checkedLocations.size).toBe(0)
+  })
+
+  it('returns the last check timestamp', () => {
+    const { lastCheckTime } = parseTrackerLog(SAMPLE_TRACKER)
+    expect(lastCheckTime).toBe('2026-04-10 23:07:00,000')
   })
 })

@@ -1,27 +1,71 @@
-const NON_ITEMS = new Set([
-  'Time Travel',
-  'Child Can Pass Time',
-  'Adult Can Pass Time',
-  'Can Access Fish',
-  'Jabu Jabus Belly Ruto In 1F Rescued',
-  'Open Floodgate',
-  'Dodongos Cavern Eyes Lit',
-  'Kakariko Village Gate Open',
-  'GC Woods Warp Open',
-  'Dodongos Cavern Stairs Room Door',
-  'GC Stop Rolling Goron As Adult',
-])
+export const DEFAULT_IGNORE_ITEMS = `# Game logic events (not real items)
+Time Travel
+Child Can Pass Time
+Adult Can Pass Time
+Can Access Fish
+Jabu Jabus Belly Ruto In 1F Rescued
+Open Floodgate
+Dodongos Cavern Eyes Lit
+Kakariko Village Gate Open
+GC Woods Warp Open
+Dodongos Cavern Stairs Room Door
+GC Stop Rolling Goron As Adult`
 
-const NON_LOCATIONS = new Set([
-  'Links Pocket',
-  'Master Sword Pedestal',
-  'Market ToT Master Sword',
-  'Flute Activation Spot',
-])
+export const DEFAULT_IGNORE_LOCATIONS = `# Non-item locations
+Links Pocket
+Master Sword Pedestal
+Market ToT Master Sword
+Flute Activation Spot
 
-export function parseSpoilerLog(text) {
+# Glitched
+(100Acre) Rabbit's House Mythril Crystal`
+
+export function parseIgnoreList(text) {
+  if (!text) return new Set()
+  return new Set(
+    text.split('\n')
+      .map((line) => line.trim())
+      .filter((line) => line && !line.startsWith('//') && !line.startsWith('#'))
+  )
+}
+
+export function validateIgnoreLists(spoilerText, ignoreItems, ignoreLocations) {
+  // Collect all item names and location names from the Locations section
+  const allItems = new Set()
+  const allLocations = new Set()
+
+  const locationsIdx = spoilerText.indexOf('\nLocations:\n')
+  if (locationsIdx !== -1) {
+    const locText = spoilerText.substring(locationsIdx)
+    const nextSection = locText.substring(1).match(/\n[A-Z][a-z]+:\n/)
+    const end = nextSection ? nextSection.index + 1 : locText.length
+    const block = locText.substring(0, end)
+
+    for (const line of block.split('\n')) {
+      const trimmed = line.trim()
+      if (!trimmed || !trimmed.includes(': ')) continue
+      const sepIdx = trimmed.indexOf('): ')
+      if (sepIdx === -1) continue
+      const locSide = trimmed.substring(0, sepIdx + 1)
+      const itemSide = trimmed.substring(sepIdx + 3)
+      const loc = parseNameAndPlayer(locSide)
+      const item = parseNameAndPlayer(itemSide)
+      if (loc) allLocations.add(loc.name)
+      if (item) allItems.add(item.name)
+    }
+  }
+
+  const invalidItems = [...ignoreItems].filter((name) => !allItems.has(name))
+  const invalidLocations = [...ignoreLocations].filter((name) => !allLocations.has(name))
+
+  return { invalidItems, invalidLocations }
+}
+
+export function parseSpoilerLog(text, ignoreItems, ignoreLocations) {
+  const nonItems = ignoreItems || new Set()
+  const nonLocations = ignoreLocations || new Set()
   const players = parsePlayers(text)
-  const spheres = parseSpheres(text)
+  const spheres = parseSpheres(text, nonItems, nonLocations)
   return { players, spheres }
 }
 
@@ -62,7 +106,7 @@ function parsePlayers(text) {
   return players
 }
 
-function parseSpheres(text) {
+function parseSpheres(text, nonItems, nonLocations) {
   const playthroughIdx = text.indexOf('\nPlaythrough:\n')
   if (playthroughIdx === -1) return []
 
@@ -84,7 +128,7 @@ function parseSpheres(text) {
     if (number === 0) {
       spheres.push({ number, entries: [], precollected: parsePrecollected(block) })
     } else {
-      const entries = parseSphereEntries(block)
+      const entries = parseSphereEntries(block, nonItems, nonLocations)
       spheres.push({ number, entries })
     }
   }
@@ -106,7 +150,7 @@ function parsePrecollected(block) {
   return items
 }
 
-function parseSphereEntries(block) {
+function parseSphereEntries(block, nonItems, nonLocations) {
   const entries = []
   const lines = block.split('\n')
 
@@ -126,8 +170,8 @@ function parseSphereEntries(block) {
     if (locationParsed && itemParsed) {
       // Skip non-item entries (subrules, logic events)
       if (locationParsed.name === itemParsed.name) continue
-      if (NON_ITEMS.has(itemParsed.name)) continue
-      if (NON_LOCATIONS.has(locationParsed.name)) continue
+      if (nonItems.has(itemParsed.name)) continue
+      if (nonLocations.has(locationParsed.name)) continue
 
       entries.push({
         location: locationParsed.name,

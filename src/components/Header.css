@@ -1,18 +1,11 @@
 .header {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
   flex-wrap: wrap;
   gap: 1.5rem;
   padding-bottom: 1.5rem;
   margin-bottom: 1.5rem;
   border-bottom: 2px solid var(--color-sand);
-}
-
-.brand-top {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
 }
 
 .header-title {
@@ -27,15 +20,17 @@
   background: none;
   border: 1px solid var(--color-border);
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   color: var(--color-text-muted);
   transition: all 0.2s;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .theme-toggle:hover {
@@ -92,6 +87,14 @@
 
 .info-icon:hover::after {
   opacity: 1;
+}
+
+.header-subtitle {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-moss);
+  letter-spacing: -0.01em;
 }
 
 .brand-sub {

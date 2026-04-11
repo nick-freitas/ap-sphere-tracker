@@ -16,7 +16,7 @@ const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i
 function App() {
   const [spoilerData, setSpoilerData] = useState(null)
   const [checkedLocations, setCheckedLocations] = useState(new Map())
-  const [threshold, setThreshold] = useState(60)
+  const [threshold, setThreshold] = useState(70)
   const [extended, setExtended] = useState(false)
   const [hiddenPlayers, setHiddenPlayers] = useState(new Set())
 

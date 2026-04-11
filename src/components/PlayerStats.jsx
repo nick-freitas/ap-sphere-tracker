@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import './PlayerStats.css'
 
-export default function PlayerStats({ spoilerData, checkedLocations, playerColors }) {
+export default function PlayerStats({ spoilerData, checkedLocations, playerColors, hiddenPlayers }) {
   const stats = useMemo(() => {
     if (!spoilerData) return []
 
@@ -36,11 +36,17 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
     return result
   }, [spoilerData, checkedLocations])
 
+  const visible = stats.filter((s) => !hiddenPlayers || !hiddenPlayers.has(s.name))
+
+  const totalDone = visible.reduce((sum, s) => sum + s.done, 0)
+  const totalAll = visible.reduce((sum, s) => sum + s.total, 0)
+  const totalPct = totalAll === 0 ? 100 : Math.round((totalDone / totalAll) * 100)
+
   if (stats.length === 0) return null
 
   return (
     <div className="player-stats">
-      {stats.map((s) => (
+      {visible.map((s) => (
         <div className="ps-row" key={s.name}>
           <div className="ps-info">
             <span className="ps-dot" style={{ background: playerColors[s.name] }} />
@@ -59,6 +65,24 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
           <span className="ps-pct">{s.pct}%</span>
         </div>
       ))}
+      <div className="ps-row ps-total">
+        <div className="ps-info">
+          <span className="ps-dot" style={{ background: 'var(--color-moss)' }} />
+          <span className="ps-name">Total</span>
+          <span className="ps-count">{totalDone}/{totalAll}</span>
+        </div>
+        <div className="ps-bar">
+          <div
+            className="ps-fill"
+            style={{
+              width: `${totalPct}%`,
+              background: 'var(--color-moss)',
+              opacity: 1,
+            }}
+          />
+        </div>
+        <span className="ps-pct">{totalPct}%</span>
+      </div>
     </div>
   )
 }

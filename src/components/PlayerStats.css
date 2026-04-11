@@ -18,6 +18,21 @@
   border-top: 1px solid rgba(0, 0, 0, 0.03);
 }
 
+.ps-total {
+  border-top: 2px solid var(--color-sand) !important;
+  padding-top: 0.5rem;
+  margin-top: 0.15rem;
+}
+
+.ps-total .ps-name {
+  font-family: 'Lora', serif;
+}
+
+.ps-total .ps-pct {
+  color: var(--color-moss);
+  font-weight: 600;
+}
+
 .ps-info {
   display: flex;
   align-items: center;

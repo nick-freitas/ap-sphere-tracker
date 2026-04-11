@@ -20,6 +20,10 @@
   opacity: 1;
 }
 
+.sphere-card.current {
+  border-left: 3px solid var(--color-moss);
+}
+
 .sphere-card.extended {
   border-color: var(--color-clay);
   border-style: dashed;
@@ -60,6 +64,18 @@
 .check-icon {
   color: var(--color-leaf);
   font-size: 1rem;
+}
+
+.current-badge {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  padding: 0.15rem 0.4rem;
+  border-radius: 100px;
+  background: rgba(74, 103, 65, 0.15);
+  color: var(--color-moss);
+  margin-left: 0.25rem;
 }
 
 .extended-badge {
@@ -179,4 +195,39 @@
 
 .sphere-body {
   padding: 0 1.25rem 1rem;
+}
+
+.completed-section {
+  border-top: 1px solid var(--color-section-border);
+}
+
+.completed-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+  padding: 0.6rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Karla', sans-serif;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  text-align: left;
+  transition: color 0.2s;
+}
+
+.completed-toggle:hover {
+  color: var(--color-moss);
+}
+
+.completed-arrow {
+  font-size: 0.6rem;
+}
+
+.completed-body {
+  padding: 0 1.25rem 1rem;
+  background: var(--color-completed-bg);
+  border-radius: 0 0 12px 12px;
 }

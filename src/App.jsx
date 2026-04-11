@@ -19,6 +19,19 @@ function App() {
   const [threshold, setThreshold] = useState(70)
   const [extended, setExtended] = useState(false)
   const [hiddenPlayers, setHiddenPlayers] = useState(new Set())
+  const [showSpoilers, setShowSpoilers] = useState(false)
+  const [showSpoilerConfirm, setShowSpoilerConfirm] = useState(false)
+  const [darkMode, setDarkMode] = useState(() => {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+  })
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
+  }, [darkMode])
+
+  function toggleDarkMode() {
+    setDarkMode((prev) => !prev)
+  }
 
   // Load the bundled default spoiler and tracker logs on startup
   useEffect(() => {
@@ -102,7 +115,28 @@ function App() {
         onThresholdChange={setThreshold}
         extended={extended}
         onExtendedChange={setExtended}
+        showSpoilers={showSpoilers}
+        onSpoilerToggle={() => {
+          if (showSpoilers) {
+            setShowSpoilers(false)
+          } else {
+            setShowSpoilerConfirm(true)
+          }
+        }}
+        darkMode={darkMode}
+        onDarkModeToggle={toggleDarkMode}
       />
+      {showSpoilerConfirm && (
+        <div className="modal-overlay" onClick={() => setShowSpoilerConfirm(false)}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <p className="modal-text">Are you sure you want to show item spoilers for missing items?</p>
+            <div className="modal-actions">
+              <button className="modal-btn cancel" onClick={() => setShowSpoilerConfirm(false)}>Cancel</button>
+              <button className="modal-btn confirm" onClick={() => { setShowSpoilers(true); setShowSpoilerConfirm(false) }}>Show Spoilers</button>
+            </div>
+          </div>
+        </div>
+      )}
       <InputSection
         onSpoilerParsed={handleSpoilerText}
         onTrackerParsed={handleTrackerText}
@@ -115,6 +149,8 @@ function App() {
           playerColors={playerColors}
           hiddenPlayers={hiddenPlayers}
           onTogglePlayer={togglePlayer}
+          onSelectAll={() => setHiddenPlayers(new Set())}
+          onSelectNone={() => setHiddenPlayers(new Set(spoilerData.players.map(p => p.name)))}
         />
       )}
       {spoilerData && (
@@ -122,6 +158,7 @@ function App() {
           spoilerData={spoilerData}
           checkedLocations={checkedLocations}
           playerColors={playerColors}
+          hiddenPlayers={hiddenPlayers}
         />
       )}
       <div className="sphere-list">
@@ -138,9 +175,11 @@ function App() {
               playerColors={playerColors}
               hiddenPlayers={hiddenPlayers}
               isExtended={isExtended}
+              isCurrent={i === lastQualifyingIdx}
               sphereEntries={spoilerData.spheres[i]?.entries || []}
               checkedLocations={checkedLocations}
               playerLastSphere={playerLastSphere}
+              showSpoilers={showSpoilers}
             />
           )
         })}

@@ -28,6 +28,12 @@
   background: rgba(74, 103, 65, 0.03);
 }
 
+.spoiler-blur {
+  filter: blur(5px);
+  user-select: none;
+  transition: filter 0.3s;
+}
+
 .no-missing {
   color: var(--color-leaf);
   font-size: 0.85rem;

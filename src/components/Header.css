@@ -9,12 +9,89 @@
   border-bottom: 2px solid var(--color-sand);
 }
 
+.brand-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
 .header-title {
   font-family: 'Lora', serif;
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--color-forest);
   letter-spacing: -0.01em;
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-moss);
+  color: var(--color-moss);
+}
+
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  cursor: help;
+  vertical-align: middle;
+  margin-left: 0.2rem;
+  position: relative;
+}
+
+.info-icon:hover {
+  border-color: var(--color-moss);
+  color: var(--color-moss);
+}
+
+.info-icon::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-card);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 0.68rem;
+  font-weight: 400;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  white-space: normal;
+  width: 200px;
+  line-height: 1.4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 10;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.info-icon:hover::after {
+  opacity: 1;
 }
 
 .brand-sub {
@@ -31,9 +108,10 @@
 }
 
 .header-controls {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  width: 100%;
 }
 
 .threshold-control {
@@ -123,4 +201,9 @@
 
 .toggle-btn.on::after {
   transform: translateX(18px);
+}
+
+.toggle-btn.danger {
+  background: #c0392b;
+  border-color: #c0392b;
 }

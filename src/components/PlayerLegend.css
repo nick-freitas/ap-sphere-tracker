@@ -3,6 +3,31 @@
   flex-wrap: wrap;
   gap: 0.4rem;
   margin-bottom: 1.75rem;
+  align-items: center;
+}
+
+.legend-actions {
+  display: flex;
+  gap: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.legend-btn {
+  font-family: 'Karla', sans-serif;
+  font-size: 0.65rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+
+.legend-btn:hover {
+  border-color: var(--color-moss);
+  color: var(--color-moss);
 }
 
 .player-chip {

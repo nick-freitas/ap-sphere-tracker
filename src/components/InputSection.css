@@ -19,7 +19,6 @@
 
 .input-group:hover {
   border-color: var(--color-moss);
-  background: #fefdf6;
 }
 
 .input-step {

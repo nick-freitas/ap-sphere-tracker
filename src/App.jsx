@@ -5,6 +5,7 @@ import { useTrackerAutoRefresh } from './hooks/useTrackerAutoRefresh'
 import Header from './components/Header'
 import InputSection from './components/InputSection'
 import SphereCard from './components/SphereCard'
+import PlayerLegend from './components/PlayerLegend'
 import './App.css'
 
 const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i})`)
@@ -14,11 +15,25 @@ function App() {
   const [trackerUrl, setTrackerUrl] = useState('')
   const [threshold, setThreshold] = useState(75)
   const [extended, setExtended] = useState(false)
+  const [hiddenPlayers, setHiddenPlayers] = useState(new Set())
   const { checkedLocations, status: trackerStatus } = useTrackerAutoRefresh(trackerUrl)
 
   function handleSpoilerText(text) {
     const parsed = parseSpoilerLog(text)
     setSpoilerData(parsed)
+    setHiddenPlayers(new Set())
+  }
+
+  function togglePlayer(name) {
+    setHiddenPlayers((prev) => {
+      const next = new Set(prev)
+      if (next.has(name)) {
+        next.delete(name)
+      } else {
+        next.add(name)
+      }
+      return next
+    })
   }
 
   const sphereResults = useMemo(() => {
@@ -50,6 +65,14 @@ function App() {
         trackerStatus={trackerStatus}
         hasSpoiler={!!spoilerData}
       />
+      {spoilerData && (
+        <PlayerLegend
+          players={spoilerData.players}
+          playerColors={playerColors}
+          hiddenPlayers={hiddenPlayers}
+          onTogglePlayer={togglePlayer}
+        />
+      )}
       <div className="sphere-list">
         {sphereResults.map((result, i) => (
           <SphereCard
@@ -59,7 +82,7 @@ function App() {
             extended={extended}
             nextResult={sphereResults[i + 1] || null}
             playerColors={playerColors}
-            hiddenPlayers={null}
+            hiddenPlayers={hiddenPlayers}
           />
         ))}
       </div>

@@ -1,0 +1,45 @@
+.player-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.player-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--color-text);
+  transition: opacity 0.2s;
+}
+
+.player-chip:hover {
+  border-color: var(--chip-color);
+}
+
+.player-chip.hidden {
+  opacity: 0.35;
+}
+
+.player-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--chip-color);
+  flex-shrink: 0;
+}
+
+.player-name {
+  font-weight: 600;
+}
+
+.player-game {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}

@@ -17,6 +17,8 @@ concurrency:
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
 
@@ -70,7 +72,7 @@ jobs:
   deploy:
     needs: fetch
     runs-on: ubuntu-latest
-    if: needs.fetch.result == 'success'
+    if: needs.fetch.outputs.changed == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

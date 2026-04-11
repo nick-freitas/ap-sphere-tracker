@@ -9,6 +9,7 @@ const NON_ITEMS = new Set([
   'Kakariko Village Gate Open',
   'GC Woods Warp Open',
   'Dodongos Cavern Stairs Room Door',
+  'GC Stop Rolling Goron As Adult',
 ])
 
 const NON_LOCATIONS = new Set([

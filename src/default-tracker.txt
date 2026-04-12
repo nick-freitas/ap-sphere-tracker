@@ -1319,3 +1319,6 @@
 [2026-04-12 00:31:53,629]: (Team #1) TNNPE sent Deep Ring to TNNPE (RS: Sorcerer Robe - water beneath stronghold)
 [2026-04-12 00:31:53,629]: (Team #1) TNNPE sent Titanite Shard to TNNPE (RS: Sorcerer Hood - water beneath stronghold)
 [2026-04-12 00:31:58,051]: (Team #1) TNNPE sent Herald Trousers to TNNPE (RS: Sage Ring - water beneath stronghold)
+[2026-04-12 00:32:59,598]: (Team #1) TNNPE sent Sunset Leggings to TNNPE (RS: Green Blossom - water beneath stronghold)
+[2026-04-12 00:33:32,897]: (Team #1) TNNPE sent Purple Rupee to Nick (RS: Golden Falcon Shield - path from stronghold right room to Farron Keep)
+[2026-04-12 00:34:13,676]: (Team #1) TNNPE sent Titanite Scale x2 to TNNPE (RS: Ring of Sacrifice - stronghold, drop from right room balcony)

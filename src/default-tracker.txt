@@ -1776,3 +1776,11 @@
 [2026-04-12 07:34:49,161]: (Team #1) Brian sent Potion to Brian ((TWTNW2) Saix Bonus: Sora Slot 1)
 [2026-04-12 07:34:59,141]: (Team #1) Brian sent Piece of Heart to Nick ((TWTNW2) Saix Secret Ansem Report 12)
 [2026-04-12 07:35:31,274]: (Team #1) Brian sent Piece of Heart to Naizak ((TWTNW3) Secret Ansem Report 11 (Pre-Xemnas 1))
+[2026-04-12 07:37:26,559]: (Team #1) Brian sent Estus Shard to TNNPE ((TWTNW3) Ruin and Creation's Passage Mythril Stone)
+[2026-04-12 07:37:38,757]: (Team #1) Brian sent Power Boost to Brian ((TWTNW3) Ruin and Creation's Passage AP Boost)
+[2026-04-12 07:37:47,077]: (Team #1) Brian sent Magic Boost to Brian ((TWTNW3) Ruin and Creation's Passage Mythril Crystal)
+[2026-04-12 07:38:28,096]: (Team #1) Brian sent Painting Guardian Hood to TNNPE ((TWTNW3) Ruin and Creation's Passage Orichalcum)
+[2026-04-12 07:39:29,058]: (Team #1) Brian sent Bombs (5) to Nick ((TWTNW2) Naught's Skyway Mythril Crystal)
+[2026-04-12 07:39:36,017]: (Team #1) Brian sent Granny's Potion Shop Key to Nick ((TWTNW2) Naught's Skyway Orichalcum)
+[2026-04-12 07:49:25,944]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 07:49:26,165]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].

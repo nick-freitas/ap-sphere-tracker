@@ -18,7 +18,9 @@ Market ToT Master Sword
 Flute Activation Spot
 
 # Glitched
-(100Acre) Rabbit's House Mythril Crystal`
+(100Acre) Rabbit's House Mythril Crystal
+Kak Potion Shop Item 1
+ZD Shop Item 1`
 
 export function parseIgnoreList(text) {
   if (!text) return new Set()

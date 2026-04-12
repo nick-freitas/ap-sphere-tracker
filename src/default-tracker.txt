@@ -1893,3 +1893,21 @@
 [2026-04-12 19:40:10,624]: (Team #1) Dan sent Gold Skulltula Token to Naizak (Missile (above Crocomire))
 [2026-04-12 19:42:08,711]: (Team #1) Brian sent AP Boost to Brian (Limit level 5)
 [2026-04-12 19:45:15,816]: (Team #1) Dan sent Arrows (10) to Nick (X-Ray Scope)
+[2026-04-12 20:20:29,812]: Notice (all): Brian: !hint skill and crossbones
+[2026-04-12 20:20:29,815]: Notice (Team #1): [Hint]: Brian's Skill and Crossbones is at ZF Hidden Cave Pot 2 in Nick's World. (priority)
+[2026-04-12 20:20:29,816]: Notice (Team #1): [Hint]: Brian's Skill and Crossbones is at Market Lost Dog House Crate in Nick's World. (priority)
+[2026-04-12 20:22:48,249]: Notice (all): Brian: !hint once more
+[2026-04-12 20:22:48,251]: Notice (Team #1): [Hint]: Brian's Once More is at FK: Crown of Dusk - by white tree in TNNPE's World. (priority)
+[2026-04-12 20:22:48,252]: Notice (Player Brian in team 1): Hint was previously used, no points deducted.
+[2026-04-12 20:28:05,535]: Notice (all): Dan (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 20:28:08,369]: Notice (all): Dan (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-12 20:29:40,206]: Notice (all): Naizak (Team #1) playing Ocarina of Time has joined. Client(0.6.5), ['AP'].
+[2026-04-12 20:29:40,206]: Notice (Player Naizak in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-12 20:30:07,085]: Notice (all): Naizak (Team #1) has changed tags from ['AP'] to ['DeathLink', 'AP'].
+[2026-04-12 20:31:22,848]: Notice (all): Brian: !hint master form
+[2026-04-12 20:31:22,850]: Notice (Team #1): [Hint]: Brian's Master Form is at LLR Grotto Beehive in Naizak's World. (priority)
+[2026-04-12 20:40:25,766]: Notice (all): Brian: !hint recipes
+[2026-04-12 20:40:25,768]: Notice (Player Brian in team 1): Didn't find something that closely matches 'recipes', did you mean 'Genie'? (42% sure)
+[2026-04-12 20:44:09,979]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 20:44:24,422]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 20:44:25,275]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

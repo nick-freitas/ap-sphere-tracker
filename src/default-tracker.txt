@@ -1936,3 +1936,42 @@
 [2026-04-12 21:12:56,938]: Notice (all): Naizak: !hint iron boots
 [2026-04-12 21:12:56,939]: Notice (Team #1): [Hint]: Naizak's Iron Boots is at AP: Ricard's Rapier - belfry, NPC drop in TNNPE's World. (priority)
 [2026-04-12 21:12:56,939]: Notice (Player Naizak in team 1): Hint was previously used, no points deducted.
+[2026-04-12 21:15:28,130]: Notice (all): Nick (Team #1) viewing Ship of Harkinian has joined. Client(0.6.7), ['AP', 'TextOnly'].
+[2026-04-12 21:15:28,131]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-12 21:15:37,105]: Notice (all): Nick: !hint Silver Gauntlet
+[2026-04-12 21:15:37,107]: Notice (Player Nick in team 1): Didn't find something that closely matches 'Silver Gauntlet', did you mean 'Silver Scale'? (60% sure)
+[2026-04-12 21:15:43,665]: Notice (all): Nick: !hint Gauntlet
+[2026-04-12 21:15:43,667]: Notice (Player Nick in team 1): Didn't find something that closely matches 'Gauntlet', did you mean 'Giant Wallet'? (50% sure)
+[2026-04-12 21:16:04,092]: Notice (all): Nick: !hint Silver Gauntlets
+[2026-04-12 21:16:04,095]: Notice (Player Nick in team 1): Didn't find something that closely matches 'Silver Gauntlets', did you mean 'Silver Scale'? (56% sure)
+[2026-04-12 21:16:32,863]: Notice (all): Nick: !items
+[2026-04-12 21:16:32,863]: Notice (Player Nick in team 1): Could not find command items. Known commands: help, license, options, admin, players, status, release, collect, countdown, remaining, missing, checked, alias, getitem, hint, hint_location, video
+[2026-04-12 21:16:49,612]: Notice (all): Nick: !hint progressive strength
+[2026-04-12 21:16:49,614]: Notice (Player Nick in team 1): Didn't find something that closely matches 'progressive strength', did you mean 'Progressive Slingshot'? (71% sure)
+[2026-04-12 21:16:52,588]: Notice (all): Nick: !hint progressive strength updated
+[2026-04-12 21:16:52,592]: Notice (Player Nick in team 1): Didn't find something that closely matches 'progressive strength updated', did you mean 'Progressive Slingshot'? (60% sure)
+[2026-04-12 21:16:55,984]: Notice (all): Nick: !hint progressive strength upgrader
+[2026-04-12 21:16:55,987]: Notice (Player Nick in team 1): Didn't find something that closely matches 'progressive strength upgrader', did you mean 'Strength Upgrade'? (55% sure)
+[2026-04-12 21:20:19,853]: Notice (all): Andrew: !hint pegasus boots
+[2026-04-12 21:20:19,854]: Notice (Team #1): [Hint]: Andrew's Pegasus Boots is at Jabu Jabus Belly Barinade Pot 4 in Naizak's World at Kakariko Village -> Bottom of the Well. (priority)
+[2026-04-12 21:21:01,377]: Notice (all): Naizak: !hint song of storms
+[2026-04-12 21:21:01,379]: Notice (Team #1): [Hint]: Naizak's Song of Storms is at FS: Grave Key - Mortician's Ashes in TNNPE's World. (priority)
+[2026-04-12 21:23:43,856]: (Team #1) Nick sent Arrows (10) to Naizak (LLR Talons House Pot 1)
+[2026-04-12 21:23:46,274]: (Team #1) Nick sent Rupees (5) to Naizak (LLR Talons House Pot 3)
+[2026-04-12 21:23:46,407]: (Team #1) Nick sent Deep Braille Divine Tome to TNNPE (LLR Talons House Pot 2)
+[2026-04-12 21:24:30,541]: (Team #1) Andrew sent Small Key (Thieves Town) to Andrew (Thieves' Town - Boss)
+[2026-04-12 21:25:01,590]: (Team #1) Nick sent Arrows (10) to Andrew (LLR Talons Chickens)
+[2026-04-12 21:26:28,969]: (Team #1) Andrew sent Small Key (Thieves Town) to Andrew (Thieves' Town - Spike Switch Pot Key)
+[2026-04-12 21:28:42,342]: (Team #1) Andrew sent Small Key (Thieves Town) to Andrew (Thieves' Town - Blind's Cell)
+[2026-04-12 21:32:10,070]: (Team #1) Nick sent Black Iron Gauntlets to TNNPE (Market Shooting Gallery)
+[2026-04-12 21:35:33,684]: (Team #1) Nick sent Drang Armor to TNNPE (Kak Man on Roof)
+[2026-04-12 21:35:55,072]: Notice (all): Brian: !hint identity disk
+[2026-04-12 21:35:55,075]: Notice (Team #1): [Hint]: Brian's Identity Disk is at GF Break Room Back Pot in Nick's World. (found)
+[2026-04-12 21:35:55,075]: Notice (Team #1): [Hint]: Brian's Identity Disk is at Bottom of the Well Right Bottom Fake Wall Chest in Nick's World. (priority)
+[2026-04-12 21:41:15,722]: Notice (all): Andrew: !hint progressive sword
+[2026-04-12 21:41:15,723]: Notice (Team #1): [Hint]: Andrew's Progressive Sword is at (PR2) Seadrift Row Mythril Crystal in Brian's World. (priority)
+[2026-04-12 21:41:15,724]: Notice (Team #1): [Hint]: Andrew's Progressive Sword is at Jabu Jabus Belly Barinade Pot 2 in Nick's World. (priority)
+[2026-04-12 21:41:15,724]: Notice (Team #1): [Hint]: Andrew's Progressive Sword is at (HB2) Crystal Fissure Energy Crystal in Brian's World. (priority)
+[2026-04-12 21:41:15,724]: Notice (Team #1): [Hint]: Andrew's Progressive Sword is at Dodongos Cavern GS Back Room in Naizak's World at Kakariko Village -> Bottom of the Well. (priority)
+[2026-04-12 21:41:15,724]: Notice (Player Andrew in team 1): Hint was previously used, no points deducted.
+[2026-04-12 21:46:59,773]: (Team #1) Brian sent Potion to Brian (Wisdom level 2)

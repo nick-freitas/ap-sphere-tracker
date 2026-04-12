@@ -1864,3 +1864,13 @@
 [2026-04-12 17:21:12,534]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-12 17:22:22,531]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-12 17:36:59,770]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 19:06:15,645]: Shutting down due to inactivity.
+[2026-04-12 19:06:15,930]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 19:06:15,945]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 19:07:15,684]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-12 19:07:15,685]: Loading embedded data package for game Ship of Harkinian
+[2026-04-12 19:07:15,685]: Loading embedded data package for game Dark Souls III
+[2026-04-12 19:07:15,699]: Loaded save file with 1411 received items for 7 players
+[2026-04-12 19:07:15,751]: Hosting game at archipelago.gg:58657
+[2026-04-12 19:07:17,666]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 19:07:25,994]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

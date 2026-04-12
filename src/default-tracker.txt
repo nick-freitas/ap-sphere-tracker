@@ -1874,3 +1874,22 @@
 [2026-04-12 19:07:15,751]: Hosting game at archipelago.gg:58657
 [2026-04-12 19:07:17,666]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-12 19:07:25,994]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 19:21:03,263]: Notice (all): Brian (Team #1) tracking Kingdom Hearts 2 has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 19:21:11,135]: Notice (all): Brian (Team #1) playing Kingdom Hearts 2 has joined. Client(0.6.5), ['AP'].
+[2026-04-12 19:21:11,136]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-12 19:21:58,535]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
+[2026-04-12 19:22:07,812]: Notice (all): Brian (Team #1) playing Kingdom Hearts 2 has joined. Client(0.6.5), ['AP'].
+[2026-04-12 19:22:07,812]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-12 19:23:30,446]: Notice (all): Dan (Team #1) playing Super Metroid has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-12 19:23:30,446]: Notice (Player Dan in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-12 19:24:26,048]: Notice (all): Dan (Team #1) tracking Super Metroid has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 19:26:55,141]: (Team #1) Dan sent Rupee (1) to Naizak (Missile (bubble Norfair green door))
+[2026-04-12 19:28:08,703]: (Team #1) Dan sent Rupees (20) to Naizak (Missile (Norfair Reserve Tank))
+[2026-04-12 19:28:17,487]: (Team #1) Dan sent Recovery Heart to Naizak (Reserve Tank, Norfair)
+[2026-04-12 19:35:43,248]: (Team #1) Brian sent Peter Pan to Brian ((TWTNW3) Xemnas 1 Bonus: Sora Slot 1)
+[2026-04-12 19:35:43,248]: (Team #1) Brian sent Talon's House Key to Nick ((TWTNW3) Xemnas 1 Bonus: Sora Slot 2)
+[2026-04-12 19:35:57,117]: (Team #1) Brian sent Megalixir to Brian ((TWTNW3) Xemnas 1 Secret Ansem Report 13)
+[2026-04-12 19:37:10,911]: (Team #1) Brian sent High Drive Recovery to Brian (Limit level 4)
+[2026-04-12 19:40:10,624]: (Team #1) Dan sent Gold Skulltula Token to Naizak (Missile (above Crocomire))
+[2026-04-12 19:42:08,711]: (Team #1) Brian sent AP Boost to Brian (Limit level 5)
+[2026-04-12 19:45:15,816]: (Team #1) Dan sent Arrows (10) to Nick (X-Ray Scope)

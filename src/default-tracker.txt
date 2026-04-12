@@ -1859,3 +1859,8 @@
 [2026-04-12 17:06:22,788]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['Tracker', 'TextOnly'].
 [2026-04-12 17:06:22,788]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
 [2026-04-12 17:06:25,530]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 17:20:28,150]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['Tracker', 'TextOnly'].
+[2026-04-12 17:21:11,692]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 17:21:12,534]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 17:22:22,531]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 17:36:59,770]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

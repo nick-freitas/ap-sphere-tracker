@@ -1911,3 +1911,28 @@
 [2026-04-12 20:44:09,979]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-12 20:44:24,422]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-12 20:44:25,275]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 20:50:06,919]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-12 20:50:06,920]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-12 20:51:30,204]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 20:54:24,898]: Notice (all): Ryot (Team #1) viewing Donkey Kong Country 3 has joined. Client(0.6.6), ['AP', 'TextOnly'].
+[2026-04-12 20:54:24,898]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-12 20:54:33,583]: (Team #1) Andrew sent Twinkling Titanite to TNNPE (Old Man)
+[2026-04-12 20:54:39,546]: Notice (all): Ryot: !hint Progressive Boat Upgrade
+[2026-04-12 20:54:39,547]: Notice (Team #1): [Hint]: Ryot's Progressive Boat Upgrade is at Graveyard Dampes Grave Pot 5 in Nick's World. (found)
+[2026-04-12 20:54:39,547]: Notice (Team #1): [Hint]: Ryot's Progressive Boat Upgrade is at Market Guard House Child Pot 19 in Naizak's World. (found)
+[2026-04-12 20:54:39,547]: Notice (Team #1): [Hint]: Ryot's Progressive Boat Upgrade is at Missile (left Maridia sand pit room) in Dan's World. (priority)
+[2026-04-12 20:55:46,473]: Notice (all): Dan (Team #1) playing Super Metroid has joined. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-04-12 20:55:46,474]: Notice (Player Dan in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-12 20:56:18,023]: Notice (all): Brian: !hint membership card
+[2026-04-12 20:56:18,025]: Notice (Team #1): [Hint]: Brian's Membership Card is at Link's Uncle in Andrew's World at Kakariko Well Cave. (found)
+[2026-04-12 20:56:18,026]: Notice (Team #1): [Hint]: Brian's Membership Card is at Shadow Temple Invisible Spikes Chest in Naizak's World at Lake Hylia -> Water Temple Lobby. (priority)
+[2026-04-12 20:56:23,825]: Notice (all): Dan (Team #1) has left the game. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-04-12 20:57:25,999]: Notice (all): Ryot (Team #1) has stopped viewing the game. Client(0.6.6), ['AP', 'TextOnly'].
+[2026-04-12 20:58:36,565]: (Team #1) Andrew sent Rupee (1) to Naizak (Sick Kid)
+[2026-04-12 21:07:42,025]: (Team #1) Andrew sent Piece of Heart to Andrew (Pyramid Fairy - Left)
+[2026-04-12 21:07:43,700]: (Team #1) Andrew sent Max HP Up to Brian (Pyramid Fairy - Right)
+[2026-04-12 21:10:15,496]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink'].
+[2026-04-12 21:10:15,496]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-12 21:12:56,938]: Notice (all): Naizak: !hint iron boots
+[2026-04-12 21:12:56,939]: Notice (Team #1): [Hint]: Naizak's Iron Boots is at AP: Ricard's Rapier - belfry, NPC drop in TNNPE's World. (priority)
+[2026-04-12 21:12:56,939]: Notice (Player Naizak in team 1): Hint was previously used, no points deducted.

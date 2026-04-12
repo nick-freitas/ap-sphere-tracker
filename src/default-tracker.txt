@@ -1824,3 +1824,12 @@
 [2026-04-12 12:44:24,756]: (Team #1) Dan sent Kakariko Shooting Gallery Key to Nick (Missile (below Ice Beam))
 [2026-04-12 12:48:24,191]: (Team #1) Dan sent Gold Skulltula Token to Naizak (Energy Tank, Crocomire)
 [2026-04-12 12:49:10,200]: (Team #1) Dan sent Red Rupee to Nick (Power Bomb (Crocomire))
+[2026-04-12 12:50:14,683]: (Team #1) Dan sent Rupee (1) to Naizak (Missile (below Crocomire))
+[2026-04-12 12:52:09,981]: (Team #1) Dan sent Progressive Wallet to Naizak (Grapple Beam)
+[2026-04-12 12:53:17,739]: (Team #1) Dan sent Deku Stick (1) to Naizak (Missile (Grapple Beam))
+[2026-04-12 13:01:37,467]: (Team #1) Dan sent Deku Nuts (5) to Naizak (Missile (Wave Beam))
+[2026-04-12 13:01:53,096]: (Team #1) Dan sent Aerial Recovery to Brian (Wave Beam)
+[2026-04-12 13:04:20,339]: (Team #1) Dan sent Rupee (1) to Naizak (Speed Booster)
+[2026-04-12 13:04:56,769]: (Team #1) Dan sent Brigand Hood to TNNPE (Missile (Speed Booster))
+[2026-04-12 13:18:09,457]: Notice (all): Dan (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 13:18:13,001]: Notice (all): Dan (Team #1) has left the game. Client(0.6.6), ['DeathLink', 'AP'].

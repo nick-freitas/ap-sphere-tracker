@@ -1846,3 +1846,16 @@
 [2026-04-12 15:05:15,802]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
 [2026-04-12 15:05:26,932]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-12 15:05:28,411]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 17:05:15,243]: Shutting down due to inactivity.
+[2026-04-12 17:05:15,505]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 17:05:15,556]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['Tracker', 'TextOnly'].
+[2026-04-12 17:05:15,557]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 17:06:15,470]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-12 17:06:15,471]: Loading embedded data package for game Ship of Harkinian
+[2026-04-12 17:06:15,471]: Loading embedded data package for game Dark Souls III
+[2026-04-12 17:06:15,482]: Loaded save file with 1411 received items for 7 players
+[2026-04-12 17:06:15,638]: Hosting game at archipelago.gg:58657
+[2026-04-12 17:06:17,311]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 17:06:22,788]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['Tracker', 'TextOnly'].
+[2026-04-12 17:06:22,788]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-12 17:06:25,530]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

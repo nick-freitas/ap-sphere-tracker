@@ -1810,3 +1810,17 @@
 [2026-04-12 11:41:21,785]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['Tracker', 'TextOnly'].
 [2026-04-12 11:41:21,786]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
 [2026-04-12 11:41:25,325]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 12:26:23,599]: Notice (all): Dan (Team #1) playing Super Metroid has joined. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-04-12 12:26:23,599]: Notice (Player Dan in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-12 12:27:16,243]: Notice (all): Dan (Team #1) tracking Super Metroid has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 12:27:48,366]: Notice (all): Dan (Team #1) has left the game. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-04-12 12:28:06,228]: Notice (all): Dan (Team #1) playing Super Metroid has joined. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-04-12 12:28:06,228]: Notice (Player Dan in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-12 12:28:13,403]: Notice (all): Dan (Team #1) has left the game. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-04-12 12:28:29,297]: Notice (all): Dan (Team #1) playing Super Metroid has joined. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-04-12 12:28:29,297]: Notice (Player Dan in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-12 12:33:47,518]: (Team #1) Dan sent Rupees (50) to Andrew (Ice Beam)
+[2026-04-12 12:39:17,410]: (Team #1) Dan sent Arrows (10) to Naizak (Missile (lava room))
+[2026-04-12 12:44:24,756]: (Team #1) Dan sent Kakariko Shooting Gallery Key to Nick (Missile (below Ice Beam))
+[2026-04-12 12:48:24,191]: (Team #1) Dan sent Gold Skulltula Token to Naizak (Energy Tank, Crocomire)
+[2026-04-12 12:49:10,200]: (Team #1) Dan sent Red Rupee to Nick (Power Bomb (Crocomire))

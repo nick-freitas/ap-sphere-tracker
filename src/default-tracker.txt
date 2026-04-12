@@ -1784,3 +1784,16 @@
 [2026-04-12 07:39:36,017]: (Team #1) Brian sent Granny's Potion Shop Key to Nick ((TWTNW2) Naught's Skyway Orichalcum)
 [2026-04-12 07:49:25,944]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-12 07:49:26,165]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
+[2026-04-12 09:39:36,019]: Shutting down due to inactivity.
+[2026-04-12 09:39:36,275]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 09:39:36,280]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['Tracker', 'TextOnly'].
+[2026-04-12 09:39:36,302]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 09:40:14,965]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-12 09:40:14,965]: Loading embedded data package for game Ship of Harkinian
+[2026-04-12 09:40:14,965]: Loading embedded data package for game Dark Souls III
+[2026-04-12 09:40:14,978]: Loaded save file with 1399 received items for 7 players
+[2026-04-12 09:40:14,990]: Hosting game at archipelago.gg:58657
+[2026-04-12 09:40:22,839]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 09:40:28,057]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-12 09:40:42,791]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['Tracker', 'TextOnly'].
+[2026-04-12 09:40:42,792]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.

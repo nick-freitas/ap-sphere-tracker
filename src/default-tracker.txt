@@ -1296,3 +1296,26 @@
 [2026-04-11 22:22:11,200]: (Team #1) TNNPE sent Huge Rupee to Nick (US: Irithyll Straight Sword - miniboss drop, by Road of Sacrifices)
 [2026-04-11 22:22:15,072]: (Team #1) TNNPE sent Recovery Heart to Naizak (US: Ember - tower basement, miniboss)
 [2026-04-11 22:33:35,772]: Notice (all): TNNPE (Team #1) has left the game. Client(0.6.0), ['DeathLink'].
+[2026-04-12 00:13:03,316]: Notice (all): TNNPE (Team #1) playing Dark Souls III has joined. Client(0.6.0), ['DeathLink'].
+[2026-04-12 00:13:03,317]: Notice (Player TNNPE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-12 00:13:03,317]: Notice (Player TNNPE in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-12 00:16:10,939]: (Team #1) TNNPE sent Secret Ansem's Report 8 to Brian (RS: Sellsword Helm - keep perimeter balcony)
+[2026-04-12 00:16:10,939]: (Team #1) TNNPE sent Rupees (20) to Naizak (RS: Sellsword Armor - keep perimeter balcony)
+[2026-04-12 00:16:10,939]: (Team #1) TNNPE sent Heavy Gem to TNNPE (RS: Sellsword Trousers - keep perimeter balcony)
+[2026-04-12 00:16:10,939]: (Team #1) TNNPE sent Lightning Gem to TNNPE (RS: Sellsword Gauntlet - keep perimeter balcony)
+[2026-04-12 00:16:23,172]: (Team #1) TNNPE sent Sharp Gem to TNNPE (RS: Farron Coal - keep perimeter)
+[2026-04-12 00:17:28,997]: (Team #1) TNNPE sent Pierce Shield to TNNPE (RS: Sellsword Twinblades - keep perimeter)
+[2026-04-12 00:22:03,850]: (Team #1) TNNPE sent Recovery Heart to Naizak (RS: Great Club - NPC drop by Farron Keep)
+[2026-04-12 00:25:32,866]: (Team #1) TNNPE sent Soul Greatsword to TNNPE (RS: Homeward Bone - balcony by Farron Keep)
+[2026-04-12 00:29:43,126]: (Team #1) TNNPE sent Rusted Coin x2 to TNNPE (RS: Exile Greatsword - NPC drop by Farron Keep)
+[2026-04-12 00:30:07,838]: (Team #1) TNNPE sent Dung Pie x3 to TNNPE (GA: Onikiri and Ubadachi - outside 5F, NPC drop)
+[2026-04-12 00:30:16,139]: (Team #1) TNNPE sent Deku Nuts (5) to Naizak (RS: Large Soul of an Unknown Traveler - left of stairs to Farron Keep)
+[2026-04-12 00:30:30,654]: (Team #1) TNNPE sent Rupees (5) to Naizak (RS: Fallen Knight Helm - water's edge by Farron Keep)
+[2026-04-12 00:30:30,654]: (Team #1) TNNPE sent Red Rupee to Nick (RS: Fallen Knight Gauntlets - water's edge by Farron Keep)
+[2026-04-12 00:30:30,654]: (Team #1) TNNPE sent Ember to TNNPE (RS: Fallen Knight Armor - water's edge by Farron Keep)
+[2026-04-12 00:30:30,654]: (Team #1) TNNPE sent Golden Scroll to TNNPE (RS: Fallen Knight Trousers - water's edge by Farron Keep)
+[2026-04-12 00:31:53,629]: (Team #1) TNNPE sent Rupee (1) to Naizak (RS: Sorcerer Gloves - water beneath stronghold)
+[2026-04-12 00:31:53,629]: (Team #1) TNNPE sent Deku Seeds (30) to Nick (RS: Sorcerer Trousers - water beneath stronghold)
+[2026-04-12 00:31:53,629]: (Team #1) TNNPE sent Deep Ring to TNNPE (RS: Sorcerer Robe - water beneath stronghold)
+[2026-04-12 00:31:53,629]: (Team #1) TNNPE sent Titanite Shard to TNNPE (RS: Sorcerer Hood - water beneath stronghold)
+[2026-04-12 00:31:58,051]: (Team #1) TNNPE sent Herald Trousers to TNNPE (RS: Sage Ring - water beneath stronghold)

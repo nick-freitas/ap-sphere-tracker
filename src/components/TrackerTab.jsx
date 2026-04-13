@@ -214,7 +214,7 @@ export default function TrackerTab({
 
   const allPlayerProgress = useMemo(() => {
     if (!spoilerData) return []
-    return spoilerData.players.map((p) => {
+    const rows = spoilerData.players.map((p) => {
       const locations = spoilerData.playerLocations.get(p.name) || []
       const checks = checkedLocations.get(p.name) || new Set()
       const total = locations.length
@@ -222,7 +222,19 @@ export default function TrackerTab({
       const percent = total === 0 ? 0 : Math.round((found / total) * 100)
       return { name: p.name, found, total, percent }
     })
+    // Sort by completion percent (highest first). ES2019+ Array.sort is
+    // stable, so ties preserve the original spoiler slot order.
+    rows.sort((a, b) => b.percent - a.percent)
+    return rows
   }, [spoilerData, checkedLocations])
+
+  const sortedPlayers = useMemo(() => {
+    if (!spoilerData) return []
+    const playerByName = new Map(spoilerData.players.map((p) => [p.name, p]))
+    return allPlayerProgress
+      .map((row) => playerByName.get(row.name))
+      .filter(Boolean)
+  }, [spoilerData, allPlayerProgress])
 
   const currentPlayerTracker = useMemo(() => {
     if (!spoilerData || !selectedPlayer) return { rows: [], totalCount: 0, foundCount: 0 }
@@ -267,7 +279,7 @@ export default function TrackerTab({
   return (
     <div className="tracker-tab">
       <PlayerSidebar
-        players={spoilerData.players}
+        players={sortedPlayers}
         playerColors={playerColors}
         selectedPlayer={selectedPlayer}
         onSelectedPlayerChange={onSelectedPlayerChange}

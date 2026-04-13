@@ -102,8 +102,6 @@ function parseLocations(text) {
     const itemParsed = parseNameAndPlayer(itemSide)
     if (!locationParsed || !itemParsed) continue
 
-    if (locationParsed.name === itemParsed.name) continue
-
     if (!result.has(locationParsed.player)) {
       result.set(locationParsed.player, [])
     }
@@ -149,8 +147,6 @@ function parseSphereEntries(block) {
     const itemParsed = parseNameAndPlayer(itemSide)
 
     if (locationParsed && itemParsed) {
-      if (locationParsed.name === itemParsed.name) continue
-
       entries.push({
         location: locationParsed.name,
         locationOwner: locationParsed.player,

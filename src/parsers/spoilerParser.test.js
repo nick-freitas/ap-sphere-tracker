@@ -140,8 +140,8 @@ describe('parseSpoilerLogRaw', () => {
       })
     })
 
-    it('filters out non-item entries where location equals item', () => {
-      const spoilerWithSubrule = `Archipelago Version 0.6.5  -  Seed: 99
+    it('raw parser retains entries where location name equals item name', () => {
+      const text = `Archipelago Version 0.6.5  -  Seed: 99
 
 Players:                         1
 
@@ -149,18 +149,24 @@ Player 1: Alice
 Game:                            Ocarina of Time
 
 
+Locations:
+
+Some Subrule 1 (Alice): Some Subrule 1 (Alice)
+Real Location (Alice): Real Item (Alice)
+
+
 Playthrough:
 
 1: {
-  Real Location (Alice): Real Item (Alice)
   Some Subrule 1 (Alice): Some Subrule 1 (Alice)
+  Real Location (Alice): Real Item (Alice)
 }
 
 Paths:
 `
-      const result = parseSpoilerLogRaw(spoilerWithSubrule)
-      expect(result.spheres[0].entries).toHaveLength(1)
-      expect(result.spheres[0].entries[0].location).toBe('Real Location')
+      const result = parseSpoilerLogRaw(text)
+      expect(result.spheres[0].entries).toHaveLength(2)
+      expect(result.playerLocations.get('Alice')).toHaveLength(2)
     })
 
     it('returns correct number of spheres', () => {
@@ -251,12 +257,6 @@ Paths:
       item: 'Small Key (Forest Temple)',
       itemOwner: 'Alice',
     })
-  })
-
-  it('skips self-reference entries where location equals item', () => {
-    const result = parseSpoilerLogRaw(LOCATIONS_SPOILER)
-    const alice = result.playerLocations.get('Alice')
-    expect(alice.find((l) => l.location === 'Some Subrule')).toBeUndefined()
   })
 
   it('stops at Playthrough: section boundary', () => {

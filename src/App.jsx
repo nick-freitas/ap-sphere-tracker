@@ -9,6 +9,8 @@ import PlayerLegend from './components/PlayerLegend'
 import PlayerStats from './components/PlayerStats'
 import PlayerConfigs from './components/PlayerConfigs'
 import OptionsPage from './components/OptionsPage'
+import TrackerTab from './components/TrackerTab'
+import { computePrioritySet } from './engine/playerTracker'
 import defaultSpoilerUrl from './default-spoiler.txt?url'
 import defaultTrackerUrl from './default-tracker.txt?url'
 import './App.css'
@@ -29,6 +31,9 @@ function App() {
   const [darkMode, setDarkMode] = useState(() => {
     return window.matchMedia('(prefers-color-scheme: dark)').matches
   })
+  const [trackerSelectedPlayer, setTrackerSelectedPlayer] = useState(null)
+  const [trackerSearchQuery, setTrackerSearchQuery] = useState('')
+  const [trackerHideFound, setTrackerHideFound] = useState(false)
 
   // Ignore lists — load from localStorage or use defaults
   const [ignoreItemsText, setIgnoreItemsText] = useState(() => {
@@ -208,6 +213,11 @@ function App() {
     return colors
   }, [spoilerData])
 
+  const prioritySet = useMemo(
+    () => (spoilerData ? computePrioritySet(spoilerData.spheres) : new Set()),
+    [spoilerData]
+  )
+
   return (
     <div className="app">
       <Header
@@ -248,6 +258,7 @@ function App() {
       />
       <div className="tabs">
         <button className={`tab ${activeTab === 'spheres' ? 'active' : ''}`} onClick={() => setActiveTab('spheres')}>Spheres</button>
+        <button className={`tab ${activeTab === 'tracker' ? 'active' : ''}`} onClick={() => setActiveTab('tracker')}>Tracker</button>
         <button className={`tab ${activeTab === 'log' ? 'active' : ''}`} onClick={() => setActiveTab('log')}>Raw Log</button>
         <button className={`tab ${activeTab === 'configs' ? 'active' : ''}`} onClick={() => setActiveTab('configs')}>Player Configs</button>
         <div className="tab-spacer" />
@@ -302,6 +313,21 @@ function App() {
             })}
           </div>
         </>
+      )}
+
+      {activeTab === 'tracker' && spoilerData && (
+        <TrackerTab
+          spoilerData={spoilerData}
+          checkedLocations={checkedLocations}
+          prioritySet={prioritySet}
+          playerColors={playerColors}
+          selectedPlayer={trackerSelectedPlayer}
+          onSelectedPlayerChange={setTrackerSelectedPlayer}
+          searchQuery={trackerSearchQuery}
+          onSearchQueryChange={setTrackerSearchQuery}
+          hideFound={trackerHideFound}
+          onHideFoundChange={setTrackerHideFound}
+        />
       )}
 
       {activeTab === 'configs' && spoilerData && (

@@ -13,6 +13,14 @@ import json
 import os
 import sys
 
+# When this script is invoked with a path prefix (e.g. `python3 /abs/path/to/this.py`),
+# Python adds the script's own directory to sys.path — NOT the current working directory.
+# That means `from worlds import ...` won't find AP's worlds package even when the user
+# has cd'd into an Archipelago source checkout. Prepending the cwd makes the import work
+# regardless of invocation style, matching the "cd into AP, run the script" mental model
+# the README documents.
+sys.path.insert(0, os.getcwd())
+
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)

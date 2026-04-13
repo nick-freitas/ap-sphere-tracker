@@ -9,6 +9,8 @@ import PlayerLegend from './components/PlayerLegend'
 import PlayerStats from './components/PlayerStats'
 import PlayerConfigs from './components/PlayerConfigs'
 import OptionsPage from './components/OptionsPage'
+import TrackerTab from './components/TrackerTab'
+import { computePrioritySet } from './engine/playerTracker'
 import defaultSpoilerUrl from './default-spoiler.txt?url'
 import defaultTrackerUrl from './default-tracker.txt?url'
 import './App.css'
@@ -18,6 +20,7 @@ const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i
 function App() {
   const [spoilerData, setSpoilerData] = useState(null)
   const [checkedLocations, setCheckedLocations] = useState(new Map())
+  const [hints, setHints] = useState([])
   const [lastCheckTime, setLastCheckTime] = useState(null)
   const [threshold, setThreshold] = useState(70)
   const [extended, setExtended] = useState(false)
@@ -29,6 +32,9 @@ function App() {
   const [darkMode, setDarkMode] = useState(() => {
     return window.matchMedia('(prefers-color-scheme: dark)').matches
   })
+  const [trackerSelectedPlayer, setTrackerSelectedPlayer] = useState(null)
+  const [trackerSearchQuery, setTrackerSearchQuery] = useState('')
+  const [trackerHideFound, setTrackerHideFound] = useState(false)
 
   // Ignore lists — load from localStorage or use defaults
   const [ignoreItemsText, setIgnoreItemsText] = useState(() => {
@@ -74,9 +80,10 @@ function App() {
       .then((res) => res.text())
       .then((text) => {
         setRawTrackerText(text)
-        const { checkedLocations: parsed, lastCheckTime: lct } = parseTrackerLog(text)
+        const { checkedLocations: parsed, lastCheckTime: lct, hints: parsedHints } = parseTrackerLog(text)
         setCheckedLocations(parsed)
         setLastCheckTime(lct)
+        setHints(parsedHints)
       })
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -95,9 +102,10 @@ function App() {
 
   function handleTrackerText(text) {
     setRawTrackerText(text)
-    const { checkedLocations: parsed, lastCheckTime: lct } = parseTrackerLog(text)
+    const { checkedLocations: parsed, lastCheckTime: lct, hints: parsedHints } = parseTrackerLog(text)
     setCheckedLocations(parsed)
     setLastCheckTime(lct)
+    setHints(parsedHints)
   }
 
   function handleOptionsSave(itemsText, locationsText) {
@@ -208,6 +216,11 @@ function App() {
     return colors
   }, [spoilerData])
 
+  const prioritySet = useMemo(
+    () => (spoilerData ? computePrioritySet(spoilerData.spheres) : new Set()),
+    [spoilerData]
+  )
+
   return (
     <div className="app">
       <Header
@@ -248,6 +261,7 @@ function App() {
       />
       <div className="tabs">
         <button className={`tab ${activeTab === 'spheres' ? 'active' : ''}`} onClick={() => setActiveTab('spheres')}>Spheres</button>
+        <button className={`tab ${activeTab === 'tracker' ? 'active' : ''}`} onClick={() => setActiveTab('tracker')}>Tracker</button>
         <button className={`tab ${activeTab === 'log' ? 'active' : ''}`} onClick={() => setActiveTab('log')}>Raw Log</button>
         <button className={`tab ${activeTab === 'configs' ? 'active' : ''}`} onClick={() => setActiveTab('configs')}>Player Configs</button>
         <div className="tab-spacer" />
@@ -302,6 +316,22 @@ function App() {
             })}
           </div>
         </>
+      )}
+
+      {activeTab === 'tracker' && spoilerData && (
+        <TrackerTab
+          spoilerData={spoilerData}
+          checkedLocations={checkedLocations}
+          hints={hints}
+          prioritySet={prioritySet}
+          playerColors={playerColors}
+          selectedPlayer={trackerSelectedPlayer}
+          onSelectedPlayerChange={setTrackerSelectedPlayer}
+          searchQuery={trackerSearchQuery}
+          onSearchQueryChange={setTrackerSearchQuery}
+          hideFound={trackerHideFound}
+          onHideFoundChange={setTrackerHideFound}
+        />
       )}
 
       {activeTab === 'configs' && spoilerData && (

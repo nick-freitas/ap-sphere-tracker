@@ -16,6 +16,7 @@ Links Pocket
 Master Sword Pedestal
 Market ToT Master Sword
 Flute Activation Spot
+Water Temple East Lower Water Low From High
 
 # Glitched
 (100Acre) Rabbit's House Mythril Crystal

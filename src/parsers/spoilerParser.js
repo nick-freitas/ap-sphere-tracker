@@ -66,7 +66,8 @@ export function parseSpoilerLog(text, ignoreItems, ignoreLocations) {
   const nonLocations = ignoreLocations || new Set()
   const players = parsePlayers(text)
   const spheres = parseSpheres(text, nonItems, nonLocations)
-  return { players, spheres }
+  const playerLocations = parseLocations(text, nonItems, nonLocations)
+  return { players, spheres, playerLocations }
 }
 
 function parsePlayers(text) {
@@ -134,6 +135,50 @@ function parseSpheres(text, nonItems, nonLocations) {
   }
 
   return spheres
+}
+
+function parseLocations(text, nonItems, nonLocations) {
+  const result = new Map()
+
+  const locationsIdx = text.indexOf('\nLocations:\n')
+  if (locationsIdx === -1) return result
+
+  const locText = text.substring(locationsIdx)
+  // Find the next top-level section header (e.g. "Playthrough:")
+  const nextSectionMatch = locText.substring(1).match(/\n[A-Z][a-z]+:\n/)
+  const end = nextSectionMatch ? nextSectionMatch.index + 1 : locText.length
+  const block = locText.substring(0, end)
+
+  for (const line of block.split('\n')) {
+    const trimmed = line.trim()
+    if (!trimmed || !trimmed.includes(': ')) continue
+
+    const separatorIdx = findSeparatorIndex(trimmed)
+    if (separatorIdx === -1) continue
+
+    const locationSide = trimmed.substring(0, separatorIdx + 1)
+    const itemSide = trimmed.substring(separatorIdx + 3)
+
+    const locationParsed = parseNameAndPlayer(locationSide)
+    const itemParsed = parseNameAndPlayer(itemSide)
+    if (!locationParsed || !itemParsed) continue
+
+    // Match the exact filter discipline used by parseSphereEntries
+    if (locationParsed.name === itemParsed.name) continue
+    if (nonItems.has(itemParsed.name)) continue
+    if (nonLocations.has(locationParsed.name)) continue
+
+    if (!result.has(locationParsed.player)) {
+      result.set(locationParsed.player, [])
+    }
+    result.get(locationParsed.player).push({
+      location: locationParsed.name,
+      item: itemParsed.name,
+      itemOwner: itemParsed.player,
+    })
+  }
+
+  return result
 }
 
 function parsePrecollected(block) {

@@ -143,3 +143,111 @@ Paths:
     })
   })
 })
+
+describe('parseLocations (via parseSpoilerLog)', () => {
+  const LOCATIONS_SPOILER = `Archipelago Version 0.6.5  -  Seed: 42
+
+Players:                         2
+
+Player 1: Alice
+Game:                            Ocarina of Time
+
+Player 2: Bob
+Game:                            A Link to the Past
+
+
+Entrances:
+
+
+Locations:
+
+KF Kokiri Sword Chest (Alice): Kokiri Sword (Alice)
+HF Open Grotto (Alice): Bombs (5) (Bob)
+Links Pocket (Alice): Spirit Medallion (Alice)
+Some Subrule (Alice): Some Subrule (Alice)
+Floodgate (Alice): Open Floodgate (Alice)
+Mushroom (Bob): Retaliating Slash (Bob)
+Missile (blue Brinstar middle) (Bob): Small Key (Forest Temple) (Alice)
+
+
+Playthrough:
+
+0: {
+  Starting Item (Alice)
+}
+1: {
+  KF Kokiri Sword Chest (Alice): Kokiri Sword (Alice)
+}
+
+Paths:
+`
+
+  it('returns a Map keyed by locationOwner', () => {
+    const result = parseSpoilerLog(LOCATIONS_SPOILER)
+    expect(result.playerLocations).toBeInstanceOf(Map)
+    expect(result.playerLocations.size).toBe(2)
+    expect(result.playerLocations.has('Alice')).toBe(true)
+    expect(result.playerLocations.has('Bob')).toBe(true)
+  })
+
+  it('extracts each entry with location, item, and itemOwner', () => {
+    const result = parseSpoilerLog(LOCATIONS_SPOILER)
+    const bob = result.playerLocations.get('Bob')
+    expect(bob).toContainEqual({
+      location: 'Mushroom',
+      item: 'Retaliating Slash',
+      itemOwner: 'Bob',
+    })
+    expect(bob).toContainEqual({
+      location: 'Missile (blue Brinstar middle)',
+      item: 'Small Key (Forest Temple)',
+      itemOwner: 'Alice',
+    })
+  })
+
+  it('skips self-reference entries where location equals item', () => {
+    const result = parseSpoilerLog(LOCATIONS_SPOILER)
+    const alice = result.playerLocations.get('Alice')
+    expect(alice.find((l) => l.location === 'Some Subrule')).toBeUndefined()
+  })
+
+  it('respects explicit ignore lists passed in', () => {
+    const ignoreItems = new Set(['Kokiri Sword'])
+    const ignoreLocations = new Set(['Mushroom'])
+    const result = parseSpoilerLog(LOCATIONS_SPOILER, ignoreItems, ignoreLocations)
+    const alice = result.playerLocations.get('Alice')
+    const bob = result.playerLocations.get('Bob')
+    expect(alice.find((l) => l.location === 'KF Kokiri Sword Chest')).toBeUndefined()
+    expect(bob.find((l) => l.location === 'Mushroom')).toBeUndefined()
+  })
+
+  it('stops at Playthrough: section boundary', () => {
+    const result = parseSpoilerLog(LOCATIONS_SPOILER)
+    // If parsing bled into Playthrough, we'd get duplicate Kokiri Sword Chest entries
+    const alice = result.playerLocations.get('Alice')
+    const matches = alice.filter((l) => l.location === 'KF Kokiri Sword Chest')
+    expect(matches).toHaveLength(1)
+  })
+
+  it('returns an empty Map when no Locations section exists', () => {
+    const noLocations = `Archipelago Version 0.6.5
+
+Players:                         1
+
+Player 1: Alice
+Game:                            Ocarina of Time
+
+
+Playthrough:
+
+1: {
+  Loc (Alice): Item (Alice)
+}
+
+Paths:
+`
+    const result = parseSpoilerLog(noLocations)
+    expect(result.playerLocations).toBeInstanceOf(Map)
+    expect(result.playerLocations.size).toBe(0)
+  })
+})

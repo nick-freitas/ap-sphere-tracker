@@ -35,3 +35,23 @@ export function buildPlayerTracker(playerName, spoilerData, checkedLocations, pr
 
   return { rows, totalCount, foundCount }
 }
+
+export function buildPlayerHints(playerName, hints, checkedLocations) {
+  const playerChecks = checkedLocations.get(playerName) || new Set()
+
+  const rows = hints
+    .filter((h) => h.locationOwner === playerName)
+    .map((h) => ({
+      location: h.location,
+      item: h.item,
+      itemOwner: h.receiver,
+      found: playerChecks.has(h.location),
+    }))
+
+  rows.sort((a, b) => a.location.localeCompare(b.location))
+
+  const totalCount = rows.length
+  const foundCount = rows.filter((r) => r.found).length
+
+  return { rows, totalCount, foundCount }
+}

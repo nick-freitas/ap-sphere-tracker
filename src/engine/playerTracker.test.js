@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { computePrioritySet } from './playerTracker'
 import { buildPlayerTracker } from './playerTracker'
+import { buildPlayerHints } from './playerTracker'
 
 describe('computePrioritySet', () => {
   it('returns an empty set when spheres array is empty', () => {
@@ -149,5 +150,103 @@ describe('buildPlayerTracker', () => {
         priority: false,
       },
     ])
+  })
+})
+
+describe('buildPlayerHints', () => {
+  // Naizak's Boomerang is at Nick's Market Guard House Pot 30 → shows on Nick's tab
+  // Brian's Sword is at Nick's Kakariko Potion Shop → shows on Nick's tab
+  // Dan's Arrows is at Alice's Sanctuary → does NOT show on Nick's tab
+  const hints = [
+    {
+      receiver: 'Naizak',
+      item: 'Boomerang',
+      location: 'Market Guard House Pot 30',
+      locationOwner: 'Nick',
+      entrance: null,
+      status: 'priority',
+      timestamp: 't1',
+    },
+    {
+      receiver: 'Brian',
+      item: 'Master Sword',
+      location: 'Kakariko Potion Shop',
+      locationOwner: 'Nick',
+      entrance: null,
+      status: 'unspecified',
+      timestamp: 't2',
+    },
+    {
+      receiver: 'Dan',
+      item: 'Arrows',
+      location: 'Sanctuary',
+      locationOwner: 'Alice',
+      entrance: null,
+      status: 'priority',
+      timestamp: 't3',
+    },
+  ]
+
+  it('returns empty array for a player with no hints in their world', () => {
+    const result = buildPlayerHints('Charlie', hints, new Map())
+    expect(result).toEqual({ rows: [], totalCount: 0, foundCount: 0 })
+  })
+
+  it('returns only hints where locationOwner matches the player', () => {
+    const result = buildPlayerHints('Nick', hints, new Map())
+    expect(result.rows).toHaveLength(2)
+    expect(result.rows.every((r) => ['Market Guard House Pot 30', 'Kakariko Potion Shop'].includes(r.location))).toBe(true)
+  })
+
+  it('carries location, item, and itemOwner (the receiver) through to rows', () => {
+    const result = buildPlayerHints('Nick', hints, new Map())
+    const boomerang = result.rows.find((r) => r.location === 'Market Guard House Pot 30')
+    expect(boomerang).toEqual({
+      location: 'Market Guard House Pot 30',
+      item: 'Boomerang',
+      itemOwner: 'Naizak',
+      found: false,
+    })
+  })
+
+  it('marks hints as found when the location appears in checkedLocations for that player', () => {
+    const checked = new Map([
+      ['Nick', new Set(['Market Guard House Pot 30'])],
+    ])
+    const result = buildPlayerHints('Nick', hints, checked)
+    const byLocation = Object.fromEntries(result.rows.map((r) => [r.location, r.found]))
+    expect(byLocation['Market Guard House Pot 30']).toBe(true)
+    expect(byLocation['Kakariko Potion Shop']).toBe(false)
+  })
+
+  it('keeps found hints in the list (does not drop them)', () => {
+    const checked = new Map([
+      ['Nick', new Set(['Market Guard House Pot 30', 'Kakariko Potion Shop'])],
+    ])
+    const result = buildPlayerHints('Nick', hints, checked)
+    expect(result.rows).toHaveLength(2)
+    expect(result.rows.every((r) => r.found)).toBe(true)
+  })
+
+  it('sorts rows alphabetically by location name', () => {
+    const result = buildPlayerHints('Nick', hints, new Map())
+    expect(result.rows.map((r) => r.location)).toEqual([
+      'Kakariko Potion Shop',
+      'Market Guard House Pot 30',
+    ])
+  })
+
+  it('returns totalCount and foundCount counts', () => {
+    const checked = new Map([
+      ['Nick', new Set(['Market Guard House Pot 30'])],
+    ])
+    const result = buildPlayerHints('Nick', hints, checked)
+    expect(result.totalCount).toBe(2)
+    expect(result.foundCount).toBe(1)
+  })
+
+  it('returns empty for an empty hints array', () => {
+    const result = buildPlayerHints('Nick', [], new Map())
+    expect(result).toEqual({ rows: [], totalCount: 0, foundCount: 0 })
   })
 })

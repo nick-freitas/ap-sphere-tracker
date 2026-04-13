@@ -20,6 +20,7 @@ const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i
 function App() {
   const [spoilerData, setSpoilerData] = useState(null)
   const [checkedLocations, setCheckedLocations] = useState(new Map())
+  const [hints, setHints] = useState([])
   const [lastCheckTime, setLastCheckTime] = useState(null)
   const [threshold, setThreshold] = useState(70)
   const [extended, setExtended] = useState(false)
@@ -79,9 +80,10 @@ function App() {
       .then((res) => res.text())
       .then((text) => {
         setRawTrackerText(text)
-        const { checkedLocations: parsed, lastCheckTime: lct } = parseTrackerLog(text)
+        const { checkedLocations: parsed, lastCheckTime: lct, hints: parsedHints } = parseTrackerLog(text)
         setCheckedLocations(parsed)
         setLastCheckTime(lct)
+        setHints(parsedHints)
       })
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -100,9 +102,10 @@ function App() {
 
   function handleTrackerText(text) {
     setRawTrackerText(text)
-    const { checkedLocations: parsed, lastCheckTime: lct } = parseTrackerLog(text)
+    const { checkedLocations: parsed, lastCheckTime: lct, hints: parsedHints } = parseTrackerLog(text)
     setCheckedLocations(parsed)
     setLastCheckTime(lct)
+    setHints(parsedHints)
   }
 
   function handleOptionsSave(itemsText, locationsText) {
@@ -319,6 +322,7 @@ function App() {
         <TrackerTab
           spoilerData={spoilerData}
           checkedLocations={checkedLocations}
+          hints={hints}
           prioritySet={prioritySet}
           playerColors={playerColors}
           selectedPlayer={trackerSelectedPlayer}

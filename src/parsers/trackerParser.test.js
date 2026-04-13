@@ -127,6 +127,16 @@ describe('parseTrackerLog hint parsing', () => {
     expect(hints[0].locationOwner).toBe('TNNPE')
   })
 
+  it('handles locations whose name itself ends with " in <something>" before the world', () => {
+    // Real fixture from a Dark Souls 3 randomizer log: location name has " in RS"
+    // as a meaningful suffix (Region Snippet abbreviation), and the regex must
+    // backtrack to the LAST " in " before "'s World" — not the first.
+    const log = `[t]: Notice (Team #1): [Hint]: Nick's Blue Rupee is at FS: Exile Mask - shop after killing NPCs in RS in TNNPE's World. (unspecified)\n`
+    const { hints } = parseTrackerLog(log)
+    expect(hints[0].location).toBe('FS: Exile Mask - shop after killing NPCs in RS')
+    expect(hints[0].locationOwner).toBe('TNNPE')
+  })
+
   it('deduplicates identical hints, keeping the latest status', () => {
     const log = [
       `[t1]: Notice (Team #1): [Hint]: Dan's Wave Beam is at Water Temple Boss Key Chest in Nick's World. (priority)`,

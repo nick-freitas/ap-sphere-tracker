@@ -75,8 +75,11 @@ function parseSendLine(line) {
 
 function parseHintLine(line) {
   // Match: [timestamp]: Notice (Team #N): [Hint]: <receiver>'s <item> is at <location> in <locationOwner>'s World[ at <entrance>]. (<status>)
+  // The location group is GREEDY so it backtracks to the LAST " in " before
+  // "'s World" — necessary when a location name itself contains " in " as a
+  // substring (e.g. "FS: Exile Mask - shop after killing NPCs in RS").
   const match = line.match(
-    /^\[([^\]]+)\].*?\[Hint\]: (.+?)'s (.+?) is at (.+?) in (.+?)'s World(?: at (.+?))?\. \((\w+)\)$/
+    /^\[([^\]]+)\].*?\[Hint\]: (.+?)'s (.+?) is at (.+) in (.+?)'s World(?: at (.+?))?\. \((\w+)\)$/
   )
 
   if (!match) return null

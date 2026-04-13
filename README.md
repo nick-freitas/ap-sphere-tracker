@@ -41,22 +41,53 @@ To filter out randomizer logic events (like `Time Travel` or `Open Floodgate`), 
 
 If you see a "missing datapackages" error when loading a spoiler, it means the seed uses a game whose datapackage hasn't been committed yet. Ask the tracker maintainer to add it — or, if you maintain the deployment yourself, follow the steps below.
 
-### Requirements
+### Why this needs a separate AP source checkout
 
-- A **source checkout** of Archipelago (`git clone https://github.com/ArchipelagoMW/Archipelago`). The packaged `.app` / `.exe` builds **cannot** be used — their Python modules are frozen by PyInstaller and can't be imported by an external script. You need actual `.py` source files on disk.
-- Any unofficial apworlds you want to bundle should be placed in the source checkout's `custom_worlds/` folder before running the script.
+The extract script imports Archipelago's `worlds` module to enumerate every registered apworld and call each one's `get_data_package_data()` method. That import chain pulls in `BaseClasses`, `NetUtils`, `Options`, and other AP core modules.
+
+The packaged **Archipelago `.app` (macOS) or `.exe` (Windows) builds will not work** for this — PyInstaller inlines those core modules inside the frozen executable binaries, so an external `python3` process has nothing to import from. You need actual `.py` source files on disk. The only way to get them is to clone AP's GitHub repository.
+
+This is a one-time setup that only the tracker maintainer has to do. Your playgroup and everyone else visiting the deployed tracker benefits from whatever datapackages you commit, with zero requirements on their end.
+
+### One-time setup: clone AP source and create a venv
+
+```bash
+# Clone a shallow copy of Archipelago somewhere outside this repo
+git clone --depth 1 https://github.com/ArchipelagoMW/Archipelago ~/ap-source
+cd ~/ap-source
+
+# Create and activate a Python 3.11 virtualenv, then install AP's deps
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+You can check out a specific AP version tag instead of `main` if you want the datapackage checksums to match a specific AP release — just `git checkout <tag>` after cloning.
 
 ### Running the script
 
-1. Copy any `.apworld` files you want to extract into the source checkout's `custom_worlds/` directory. (On macOS, custom apworlds you installed via the launcher typically live in `~/Library/Application Support/Archipelago/worlds/`.)
-2. From the source checkout root (the folder containing `Generate.py`), run:
-   ```bash
-   python3 /path/to/ap-sphere-tracker/scripts/extract_datapackages.py \
-     --output /path/to/ap-sphere-tracker/public/datapackages \
-     --merge-index
-   ```
-   The `--merge-index` flag preserves existing entries in `index.json` and adds new ones. Re-running the script is idempotent — unchanged games overwrite with identical content, changed games get new entries.
-3. Commit the new files in `public/datapackages/` and redeploy. The tracker will pick them up on next load.
+From the cloned AP source folder (with the venv activated):
+
+```bash
+cd ~/ap-source
+source .venv/bin/activate
+
+# (Optional) If you want to bundle unofficial apworlds, drop them into custom_worlds/
+# first. On macOS, custom .apworld files installed via the Archipelago launcher
+# typically live in ~/Library/Application Support/Archipelago/worlds/
+cp ~/Library/Application\ Support/Archipelago/worlds/*.apworld custom_worlds/
+
+# Run the extract script, pointing at this tracker repo's public/datapackages/
+python3 /path/to/ap-sphere-tracker/scripts/extract_datapackages.py \
+  --output /path/to/ap-sphere-tracker/public/datapackages \
+  --merge-index
+
+deactivate
+```
+
+The `--merge-index` flag preserves existing entries in `index.json` and adds new ones. Re-running the script is idempotent: unchanged games overwrite with identical content, changed games get new entries.
+
+Then commit the new files in `public/datapackages/` and redeploy. The tracker will pick them up on next load.
 
 ## Tech stack
 

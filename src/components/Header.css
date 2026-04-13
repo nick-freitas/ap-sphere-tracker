@@ -8,6 +8,11 @@
   border-bottom: 2px solid var(--color-sand);
 }
 
+.brand {
+  flex: 1;
+  min-width: 0;
+}
+
 .header-title {
   font-family: 'Lora', serif;
   font-size: 1.8rem;
@@ -209,4 +214,20 @@
 .toggle-btn.danger {
   background: #c0392b;
   border-color: #c0392b;
+}
+
+@media (max-width: 720px) {
+  .header-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .threshold-control {
+    grid-column: 1 / -1;
+  }
+
+  .threshold-control input[type="range"] {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+  }
 }

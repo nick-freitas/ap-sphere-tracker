@@ -109,6 +109,7 @@ function PlayerSidebar({ players, playerColors, selectedPlayer, onSelectedPlayer
         return (
           <button
             key={p.slot}
+            type="button"
             className={`tracker-sidebar-btn ${isActive ? 'active' : ''}`}
             onClick={() => onSelectedPlayerChange(p.name)}
             style={isActive ? { borderLeftColor: color } : undefined}

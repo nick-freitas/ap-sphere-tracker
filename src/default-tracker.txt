@@ -4170,3 +4170,29 @@
 [2026-04-13 20:50:45,051]: (Team #1) Brian sent Magic Boost to Brian ((HT) Oogie Boogie Bonus: Goofy Slot 1)
 [2026-04-13 20:50:45,051]: (Team #1) Brian sent Elixir to Brian ((HT) Oogie Boogie Bonus: Sora Slot 1)
 [2026-04-13 20:50:57,261]: (Team #1) Brian sent Rupees (5) to Naizak ((HT) Oogie Boogie Magnet Element)
+[2026-04-13 20:56:34,094]: (Team #1) Brian sent Magic Boost to Brian ((LoD2) Throne Room Palace Map)
+[2026-04-13 20:56:36,935]: (Team #1) Brian sent Arrow Upgrade (+5) to Andrew ((LoD2) Throne Room Ogre Shield)
+[2026-04-13 20:56:39,854]: (Team #1) Brian sent Megalixir to Brian ((LoD2) Throne Room Orichalcum)
+[2026-04-13 20:56:41,601]: (Team #1) Brian sent Hero's Crest to Brian ((LoD2) Throne Room Mythril Crystal)
+[2026-04-13 20:56:41,601]: (Team #1) Brian sent Reaction Boost to Brian (Hero's Crest Slot)
+[2026-04-13 20:56:44,512]: (Team #1) Brian sent High Drive Recovery to Brian ((LoD2) Throne Room Torn Pages)
+[2026-04-13 20:56:47,423]: (Team #1) Brian sent DK Coin to Ryot ((LoD2) Throne Room Queen Recipe)
+[2026-04-13 20:56:59,635]: (Team #1) Brian sent Boss Heart Container to Andrew ((LoD2) Throne Room AP Boost 2)
+[2026-04-13 20:57:03,704]: (Team #1) Brian sent Ether to Brian ((LoD2) Throne Room AP Boost)
+[2026-04-13 21:00:20,281]: (Team #1) Brian sent Ether to Brian ((LoD2) Storm Rider Bonus: Goofy Slot 1)
+[2026-04-13 21:00:20,281]: (Team #1) Brian sent Tent to Brian ((LoD2) Storm Rider Bonus: Sora Slot 1)
+[2026-04-13 21:04:46,733]: (Team #1) Brian sent Boss Heart Container to Andrew (Master level 2)
+[2026-04-13 21:04:46,733]: (Team #1) Brian sent Light Arrow to Nick (Master level 3)
+[2026-04-13 21:08:13,834]: (Team #1) Brian sent Bonus Coin to Ryot (Master level 5)
+[2026-04-13 21:08:26,625]: (Team #1) Brian sent Magnet Element to Brian (Master level 6)
+[2026-04-13 21:10:28,721]: (Team #1) Brian sent Grappling Beam to Dan (Master level 7)
+[2026-04-13 21:15:07,216]: (Team #1) Brian sent Sardonyx Ring to Brian (Final level 7)
+[2026-04-13 21:17:22,823]: (Team #1) Brian sent High Drive Recovery to Brian (Wisdom level 7)
+[2026-04-13 21:18:14,476]: Notice (all): Dan (Team #1) playing Super Metroid has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-13 21:18:14,477]: Notice (Player Dan in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-13 21:18:42,487]: Notice (all): Dan (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-13 21:19:00,755]: Notice (all): Dan (Team #1) playing Super Metroid has joined. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-04-13 21:19:00,756]: Notice (Player Dan in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-13 21:19:34,021]: Notice (all): Dan (Team #1) tracking Super Metroid has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 21:21:45,792]: (Team #1) Brian sent Bounty to Brian (Valor level 7)
+[2026-04-13 21:22:34,448]: (Team #1) Dan sent Rupee (1) to Naizak (Energy Tank, Brinstar Gate)

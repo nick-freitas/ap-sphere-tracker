@@ -38,10 +38,6 @@ export default function TrackerTab({
   playerColors,
   selectedPlayer,
   onSelectedPlayerChange,
-  searchQuery, // eslint-disable-line no-unused-vars
-  onSearchQueryChange, // eslint-disable-line no-unused-vars
-  hideFound, // eslint-disable-line no-unused-vars
-  onHideFoundChange, // eslint-disable-line no-unused-vars
 }) {
   // Default / recover selectedPlayer when the spoiler changes.
   useEffect(() => {

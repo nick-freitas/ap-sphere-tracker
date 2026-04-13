@@ -1,4 +1,5 @@
 import { useEffect, useMemo } from 'react'
+import { buildPlayerTracker } from '../engine/playerTracker'
 import './TrackerTab.css'
 
 function PlayerProgressList({ rows, selectedPlayer, playerColors, onSelectedPlayerChange }) {
@@ -39,6 +40,60 @@ function PlayerProgressList({ rows, selectedPlayer, playerColors, onSelectedPlay
   )
 }
 
+function LocationRow({ row, playerColors }) {
+  return (
+    <tr className={row.found ? 'tracker-row found' : 'tracker-row'}>
+      <td className="tracker-cell-check">
+        <span className={`tracker-check ${row.found ? 'filled' : ''}`} aria-label={row.found ? 'Found' : 'Not found'}>
+          {row.found ? '\u2713' : ''}
+        </span>
+      </td>
+      <td className="tracker-cell-location">{row.location}</td>
+      <td className="tracker-cell-item">{row.found ? row.item : ''}</td>
+      <td
+        className="tracker-cell-owner"
+        style={row.found ? { color: playerColors[row.itemOwner] || 'var(--color-text)', fontWeight: 600 } : undefined}
+      >
+        {row.found ? row.itemOwner : ''}
+      </td>
+    </tr>
+  )
+}
+
+function LocationTable({ rows, playerColors }) {
+  const priorityRows = rows.filter((r) => r.priority)
+  const remainingRows = rows.filter((r) => !r.priority)
+
+  return (
+    <div className="tracker-table-wrap">
+      {priorityRows.length > 0 && (
+        <>
+          <h3 className="tracker-section-heading">— Priority —</h3>
+          <table className="tracker-table">
+            <tbody>
+              {priorityRows.map((row) => (
+                <LocationRow key={`p-${row.location}`} row={row} playerColors={playerColors} />
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+      {remainingRows.length > 0 && (
+        <>
+          <h3 className="tracker-section-heading">— Remaining —</h3>
+          <table className="tracker-table">
+            <tbody>
+              {remainingRows.map((row) => (
+                <LocationRow key={`r-${row.location}`} row={row} playerColors={playerColors} />
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+    </div>
+  )
+}
+
 function PlayerSidebar({ players, playerColors, selectedPlayer, onSelectedPlayerChange, allPlayerProgress }) {
   const progressByName = useMemo(() => {
     const map = {}
@@ -71,6 +126,7 @@ function PlayerSidebar({ players, playerColors, selectedPlayer, onSelectedPlayer
 export default function TrackerTab({
   spoilerData,
   checkedLocations,
+  prioritySet,
   playerColors,
   selectedPlayer,
   onSelectedPlayerChange,
@@ -96,6 +152,11 @@ export default function TrackerTab({
     })
   }, [spoilerData, checkedLocations])
 
+  const currentPlayerTracker = useMemo(() => {
+    if (!spoilerData || !selectedPlayer) return { rows: [], totalCount: 0, foundCount: 0 }
+    return buildPlayerTracker(selectedPlayer, spoilerData, checkedLocations, prioritySet)
+  }, [spoilerData, selectedPlayer, checkedLocations, prioritySet])
+
   if (!spoilerData) return null
 
   return (
@@ -114,6 +175,11 @@ export default function TrackerTab({
           playerColors={playerColors}
           onSelectedPlayerChange={onSelectedPlayerChange}
         />
+        {currentPlayerTracker.rows.length === 0 ? (
+          <p className="tracker-placeholder">No locations for this player.</p>
+        ) : (
+          <LocationTable rows={currentPlayerTracker.rows} playerColors={playerColors} />
+        )}
       </div>
     </div>
   )

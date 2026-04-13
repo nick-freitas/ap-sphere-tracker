@@ -8,7 +8,6 @@ import SphereCard from './components/SphereCard'
 import PlayerLegend from './components/PlayerLegend'
 import PlayerStats from './components/PlayerStats'
 import PlayerConfigs from './components/PlayerConfigs'
-import OptionsPage from './components/OptionsPage'
 import TrackerTab from './components/TrackerTab'
 import PlayerLogTab from './components/PlayerLogTab'
 import defaultSpoilerUrl from './default-spoiler.txt?url'
@@ -264,8 +263,6 @@ function App() {
         <button className={`tab ${activeTab === 'player-log' ? 'active' : ''}`} onClick={() => setActiveTab('player-log')}>Player Log</button>
         <button className={`tab ${activeTab === 'log' ? 'active' : ''}`} onClick={() => setActiveTab('log')}>Raw Log</button>
         <button className={`tab ${activeTab === 'configs' ? 'active' : ''}`} onClick={() => setActiveTab('configs')}>Player Configs</button>
-        <div className="tab-spacer" />
-        <button className={`tab ${activeTab === 'options' ? 'active' : ''}`} onClick={() => setActiveTab('options')}>Options</button>
       </div>
 
       {activeTab === 'spheres' && (
@@ -373,15 +370,6 @@ function App() {
         <PlayerConfigs
           players={spoilerData.players}
           playerColors={playerColors}
-        />
-      )}
-
-      {activeTab === 'options' && (
-        <OptionsPage
-          ignoreItemsText={ignoreItemsText}
-          ignoreLocationsText={ignoreLocationsText}
-          onSave={handleOptionsSave}
-          validationErrors={validationErrors}
         />
       )}
 

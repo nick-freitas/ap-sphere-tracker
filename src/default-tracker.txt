@@ -4052,3 +4052,26 @@
 [2026-04-13 14:57:49,262]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
 [2026-04-13 14:57:49,278]: Notice (all): Brian (Team #1) playing Kingdom Hearts 2 has joined. Client(0.6.5), ['AP'].
 [2026-04-13 14:57:49,278]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-13 16:43:55,600]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 16:44:03,424]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 16:44:44,859]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink'].
+[2026-04-13 16:44:44,860]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-13 16:53:19,980]: (Team #1) Nick sent Progressive Slingshot to Nick (ZF Hidden Cave Pot 1)
+[2026-04-13 16:53:20,108]: (Team #1) Nick sent Skill and Crossbones to Brian (ZF Hidden Cave Pot 2)
+[2026-04-13 16:53:23,472]: (Team #1) Nick sent Strength Upgrade to Nick (ZF Hidden Cave Pot 3)
+[2026-04-13 16:57:07,299]: (Team #1) Nick sent Gerudo Membership Card to Naizak (OGC Great Fairy Reward)
+[2026-04-13 17:00:33,843]: Notice (all): Nick (Team #1) viewing Ship of Harkinian has joined. Client(0.6.7), ['TextOnly', 'AP'].
+[2026-04-13 17:00:33,844]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-13 17:00:39,392]: Notice (all): Nick: !hint Zoras Tunic
+[2026-04-13 17:00:39,394]: Notice (Team #1): [Hint]: Nick's Zora Tunic is at (PR) Town Mythril Shard in Brian's World. (priority)
+[2026-04-13 17:00:57,055]: Notice (all): Nick: !hint Boomerang
+[2026-04-13 17:00:57,057]: Notice (Team #1): [Hint]: Nick's Boomerang is at Water Temple River Pot 1 in Nick's World. (priority)
+[2026-04-13 17:00:57,057]: Notice (Player Nick in team 1): Hint was previously used, no points deducted.
+[2026-04-13 17:04:41,388]: (Team #1) Nick sent Spirit Temple Compass to Nick (Spirit Temple Compass Chest)
+[2026-04-13 17:12:40,405]: (Team #1) Nick sent Recovery Heart to Naizak (Spirit Temple Child Bridge Chest)
+[2026-04-13 17:12:49,558]: (Team #1) Nick sent Rupees (5) to Naizak (Spirit Temple Anubis Pot 3)
+[2026-04-13 17:13:14,704]: (Team #1) Nick sent Super Missile to Dan (Spirit Temple Anubis Pot 4)
+[2026-04-13 17:13:20,703]: (Team #1) Nick sent Mirror Shield to Nick (Spirit Temple Anubis Pot 1)
+[2026-04-13 17:13:24,892]: (Team #1) Nick sent Bonus Coin to Ryot (Spirit Temple Anubis Pot 2)
+[2026-04-13 17:19:33,429]: (Team #1) Nick sent Goofy Auto Change to Brian (Spirit Temple Child Early Torches Chest)
+[2026-04-13 17:29:49,275]: (Team #1) Nick sent Power Bomb to Dan (Graveyard Heart Piece Grave Chest)

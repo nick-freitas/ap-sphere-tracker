@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
-import { parseSpoilerLog, parseIgnoreList, validateIgnoreLists, DEFAULT_IGNORE_ITEMS, DEFAULT_IGNORE_LOCATIONS } from './parsers/spoilerParser'
+import { parseSpoilerLogRaw } from './parsers/spoilerParser'
 import { parseTrackerLog } from './parsers/trackerParser'
 import { analyzeSpheres } from './engine/sphereAnalyzer'
 import Header from './components/Header'
@@ -40,20 +40,8 @@ function App() {
   const [trackerSearchQuery, setTrackerSearchQuery] = useState('')
   const [trackerHideFound, setTrackerHideFound] = useState(false)
 
-  // Ignore lists — load from localStorage or use defaults
-  const [ignoreItemsText, setIgnoreItemsText] = useState(() => {
-    return localStorage.getItem('ap-ignore-items') || DEFAULT_IGNORE_ITEMS
-  })
-  const [ignoreLocationsText, setIgnoreLocationsText] = useState(() => {
-    return localStorage.getItem('ap-ignore-locations') || DEFAULT_IGNORE_LOCATIONS
-  })
-  const [validationErrors, setValidationErrors] = useState(null)
-
-  // Keep raw spoiler text for re-parsing and validation
+  // Keep raw spoiler text for re-parsing
   const rawSpoilerTextRef = useRef('')
-
-  const ignoreItems = useMemo(() => parseIgnoreList(ignoreItemsText), [ignoreItemsText])
-  const ignoreLocations = useMemo(() => parseIgnoreList(ignoreLocationsText), [ignoreLocationsText])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
@@ -63,22 +51,14 @@ function App() {
     setDarkMode((prev) => !prev)
   }
 
-  function parseSpoilerWithIgnores(text) {
-    return parseSpoilerLog(text, ignoreItems, ignoreLocations)
-  }
-
   // Load the bundled default spoiler and tracker logs on startup
   useEffect(() => {
     fetch(defaultSpoilerUrl)
       .then((res) => res.text())
       .then((text) => {
         rawSpoilerTextRef.current = text
-        const parsed = parseSpoilerWithIgnores(text)
+        const parsed = parseSpoilerLogRaw(text)
         setSpoilerData(parsed)
-        const errors = validateIgnoreLists(text, ignoreItems, ignoreLocations)
-        if (errors.invalidItems.length > 0 || errors.invalidLocations.length > 0) {
-          setValidationErrors(errors)
-        }
       })
     fetch(defaultTrackerUrl)
       .then((res) => res.text())
@@ -94,15 +74,9 @@ function App() {
 
   function handleSpoilerText(text) {
     rawSpoilerTextRef.current = text
-    const parsed = parseSpoilerWithIgnores(text)
+    const parsed = parseSpoilerLogRaw(text)
     setSpoilerData(parsed)
     setHiddenPlayers(new Set())
-    const errors = validateIgnoreLists(text, ignoreItems, ignoreLocations)
-    if (errors.invalidItems.length > 0 || errors.invalidLocations.length > 0) {
-      setValidationErrors(errors)
-    } else {
-      setValidationErrors(null)
-    }
   }
 
   function handleTrackerText(text) {
@@ -112,34 +86,6 @@ function App() {
     setLastCheckTime(lct)
     setHints(parsedHints)
     setLogEvents(events)
-  }
-
-  function handleOptionsSave(itemsText, locationsText) {
-    // Validate against the raw spoiler
-    const items = parseIgnoreList(itemsText)
-    const locations = parseIgnoreList(locationsText)
-
-    if (rawSpoilerTextRef.current) {
-      const errors = validateIgnoreLists(rawSpoilerTextRef.current, items, locations)
-      if (errors.invalidItems.length > 0 || errors.invalidLocations.length > 0) {
-        setValidationErrors(errors)
-        // Still save — just show warnings
-      } else {
-        setValidationErrors(null)
-      }
-    }
-
-    // Save to localStorage
-    localStorage.setItem('ap-ignore-items', itemsText)
-    localStorage.setItem('ap-ignore-locations', locationsText)
-    setIgnoreItemsText(itemsText)
-    setIgnoreLocationsText(locationsText)
-
-    // Re-parse spoiler with new ignore lists
-    if (rawSpoilerTextRef.current) {
-      const parsed = parseSpoilerLog(rawSpoilerTextRef.current, items, locations)
-      setSpoilerData(parsed)
-    }
   }
 
   function togglePlayer(name) {

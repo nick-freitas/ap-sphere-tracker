@@ -20,7 +20,7 @@ const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i
 function App() {
   const [spoilerData, setSpoilerData] = useState(null)
   const [missingGames, setMissingGames] = useState([])
-  const [loadingDatapackages, setLoadingDatapackages] = useState(false)
+  const [loadingDatapackages, setLoadingDatapackages] = useState(true)
   const [checkedLocations, setCheckedLocations] = useState(new Map())
   const [hints, setHints] = useState([])
   const [lastCheckTime, setLastCheckTime] = useState(null)
@@ -58,10 +58,15 @@ function App() {
     fetch('/ap-sphere-tracker/default-spoiler.txt')
       .then((res) => (res.ok ? res.text() : null))
       .then((text) => {
-        if (text == null) return
+        if (text == null) {
+          setLoadingDatapackages(false)
+          return
+        }
         handleSpoilerText(text)
       })
-      .catch(() => {})
+      .catch(() => {
+        setLoadingDatapackages(false)
+      })
 
     fetch('/ap-sphere-tracker/default-tracker.txt')
       .then((res) => (res.ok ? res.text() : null))
@@ -280,7 +285,7 @@ function App() {
       </div>
 
       {loadingDatapackages && (
-        <div style={{ textAlign: 'center', padding: '4rem' }}>
+        <div style={{ textAlign: 'center', padding: '4rem' }} aria-live="polite">
           <p>Loading game data…</p>
         </div>
       )}

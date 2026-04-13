@@ -32,6 +32,7 @@ function LogControls({ receiving, onReceivingChange, sending, onSendingChange, s
         type="text"
         className="player-log-search"
         placeholder="Search location or item..."
+        aria-label="Search location or item"
         value={searchQuery}
         onChange={(e) => onSearchQueryChange(e.target.value)}
       />
@@ -84,7 +85,11 @@ export default function PlayerLogTab({
   searchQuery,
   onSearchQueryChange,
 }) {
-  // Default / recover selectedPlayer when the spoiler changes (mirrors TrackerTab).
+  // Re-run only when spoilerData changes: if the new spoiler doesn't include
+  // the currently-selected player, fall back to the first player. Deps
+  // intentionally omit selectedPlayer/onSelectedPlayerChange — the closure
+  // captures the current value at fire time, and we don't want a selection
+  // change to re-trigger this recovery check. Mirrors TrackerTab's pattern.
   useEffect(() => {
     if (!spoilerData) return
     const names = spoilerData.players.map((p) => p.name)
@@ -121,10 +126,10 @@ export default function PlayerLogTab({
           searchQuery={searchQuery}
           onSearchQueryChange={onSearchQueryChange}
         />
-        {neitherToggle ? (
-          <p className="player-log-empty">Toggle Receiving or Sending to see events.</p>
-        ) : noEvents ? (
+        {noEvents ? (
           <p className="player-log-empty">No tracker log loaded.</p>
+        ) : neitherToggle ? (
+          <p className="player-log-empty">Toggle Receiving or Sending to see events.</p>
         ) : filteredRows.length === 0 ? (
           <p className="player-log-empty">No events match the current filters.</p>
         ) : (

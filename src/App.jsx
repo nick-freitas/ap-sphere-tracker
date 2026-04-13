@@ -162,10 +162,30 @@ function App() {
   // Find the highest sphere in a continuous chain where the majority of players
   // meet the threshold. "Majority" = more than half, or half if even number.
   // Sphere 0 (starting items) always qualifies as fallback.
-  const lastQualifyingIdx = useMemo(() => {
-    if (!spoilerData || sphereResults.length === 0) return -1
-    let last = 0
+  //
+  // Then apply a second constraint: cap the current sphere so that no more
+  // than 5 incomplete spheres sit strictly before it. If the threshold-based
+  // current would leave more than 5 incompletes in its wake, walk backwards
+  // until the count drops back to ≤ 5. This bounds the "in flight" workload
+  // shown to the user.
+  //
+  // Returns an object exposing both the threshold-based index (what the
+  // current would be without the cap) and the capped index (what actually
+  // gets rendered), plus the list of incomplete sphere numbers that sit
+  // before the capped current. The capped sphere's tooltip uses this list
+  // to explain why it was pinned there.
+  const sphereProgressState = useMemo(() => {
+    if (!spoilerData || sphereResults.length === 0) {
+      return {
+        cappedIdx: -1,
+        thresholdIdx: -1,
+        isCapped: false,
+        incompleteNumbersBeforeCapped: [],
+      }
+    }
 
+    // Phase 1 — threshold-based walk forward
+    let thresholdIdx = 0
     for (let i = 1; i < sphereResults.length; i++) {
       const sphere = spoilerData.spheres[i]
       if (!sphere || sphere.entries.length === 0) break
@@ -192,14 +212,41 @@ function App() {
       }
 
       if (playersAbove >= majorityNeeded) {
-        last = i
+        thresholdIdx = i
       } else {
         break
       }
     }
 
-    return last
+    // Phase 2 — apply the "≤ 5 incomplete before current" cap.
+    let cappedIdx = thresholdIdx
+    let incompleteBefore = 0
+    for (let j = 0; j < cappedIdx; j++) {
+      if (sphereResults[j].completionPercent < 100) incompleteBefore++
+    }
+    while (cappedIdx > 0 && incompleteBefore > 5) {
+      cappedIdx--
+      if (sphereResults[cappedIdx].completionPercent < 100) incompleteBefore--
+    }
+
+    // Collect the incomplete sphere numbers that sit strictly before the
+    // capped current. If the cap kicked in, this list has exactly 5 entries.
+    const incompleteNumbersBeforeCapped = []
+    for (let j = 0; j < cappedIdx; j++) {
+      if (sphereResults[j].completionPercent < 100) {
+        incompleteNumbersBeforeCapped.push(sphereResults[j].sphereNumber)
+      }
+    }
+
+    return {
+      cappedIdx,
+      thresholdIdx,
+      isCapped: thresholdIdx !== cappedIdx,
+      incompleteNumbersBeforeCapped,
+    }
   }, [spoilerData, sphereResults, checkedLocations, threshold])
+
+  const lastQualifyingIdx = sphereProgressState.cappedIdx
 
   // Map each player to their highest sphere number
   const playerLastSphere = useMemo(() => {
@@ -303,6 +350,24 @@ function App() {
               const isExtended = extended
                 && lastQualifyingIdx >= 0
                 && i === lastQualifyingIdx + 1
+              // How many positions behind the current sphere this sphere
+              // is. 0 for the current sphere, positive for past, negative
+              // for future. SphereCard uses this to decide whether to show
+              // the red "falling behind" indicator and to render a tooltip
+              // with the exact count (e.g. "7 spheres behind current").
+              const spheresBehind = lastQualifyingIdx >= 0 ? lastQualifyingIdx - i : 0
+              const isCurrentCard = i === lastQualifyingIdx
+              // Pass cap-info only to the current sphere, and only when the
+              // cap actually pulled it back. Contains the threshold-based
+              // "real" target sphere number + the incomplete sphere numbers
+              // blocking progress.
+              const capInfo = isCurrentCard && sphereProgressState.isCapped
+                ? {
+                    thresholdSphereNumber:
+                      sphereResults[sphereProgressState.thresholdIdx]?.sphereNumber,
+                    incompleteNumbers: sphereProgressState.incompleteNumbersBeforeCapped,
+                  }
+                : null
               return (
                 <SphereCard
                   key={result.sphereNumber}
@@ -311,7 +376,9 @@ function App() {
                   playerColors={playerColors}
                   hiddenPlayers={hiddenPlayers}
                   isExtended={isExtended}
-                  isCurrent={i === lastQualifyingIdx}
+                  isCurrent={isCurrentCard}
+                  spheresBehind={spheresBehind}
+                  capInfo={capInfo}
                   sphereEntries={spoilerData.spheres[i]?.entries || []}
                   checkedLocations={checkedLocations}
                   playerLastSphere={playerLastSphere}

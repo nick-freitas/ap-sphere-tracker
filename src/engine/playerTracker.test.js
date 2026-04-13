@@ -249,4 +249,46 @@ describe('buildPlayerHints', () => {
     const result = buildPlayerHints('Nick', [], new Map())
     expect(result).toEqual({ rows: [], totalCount: 0, foundCount: 0 })
   })
+
+  it('includes incoming hints where receiver matches the player', () => {
+    const result = buildPlayerHints('Naizak', hints, new Map())
+    expect(result.rows).toEqual([
+      {
+        location: 'Market Guard House Pot 30',
+        item: '',
+        itemOwner: 'Nick',
+        found: false,
+      },
+    ])
+  })
+
+  it('marks incoming hints as found using the location owner\'s checkedLocations', () => {
+    const checked = new Map([
+      ['Nick', new Set(['Market Guard House Pot 30'])],
+    ])
+    const result = buildPlayerHints('Naizak', hints, checked)
+    expect(result.rows[0].found).toBe(true)
+  })
+
+  it('merges outgoing and incoming hints for a player into one sorted list', () => {
+    const extra = {
+      receiver: 'Nick',
+      item: 'Bombs',
+      location: 'Desert Temple',
+      locationOwner: 'Alice',
+      entrance: null,
+      status: 'priority',
+      timestamp: 't4',
+    }
+    const result = buildPlayerHints('Nick', [...hints, extra], new Map())
+    expect(result.rows.map((r) => r.location)).toEqual([
+      'Desert Temple',            // incoming, alphabetically first
+      'Kakariko Potion Shop',     // outgoing
+      'Market Guard House Pot 30', // outgoing
+    ])
+    const desert = result.rows.find((r) => r.location === 'Desert Temple')
+    expect(desert.item).toBe('')
+    expect(desert.itemOwner).toBe('Alice')
+    expect(result.totalCount).toBe(3)
+  })
 })

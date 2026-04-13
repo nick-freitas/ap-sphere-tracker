@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { buildPlayerTracker, buildPlayerHints } from '../engine/playerTracker'
 import './TrackerTab.css'
+import PlayerSidebar from './PlayerSidebar'
 
 function parseConfigLocationList(config, key) {
   if (!config) return new Set()
@@ -189,34 +190,6 @@ function LocationTable({ rows, allRows, hintRows, allHintRows, playerColors }) {
   )
 }
 
-function PlayerSidebar({ players, playerColors, selectedPlayer, onSelectedPlayerChange, allPlayerProgress }) {
-  const progressByName = useMemo(() => {
-    const map = {}
-    for (const p of allPlayerProgress) map[p.name] = p.percent
-    return map
-  }, [allPlayerProgress])
-
-  return (
-    <div className="tracker-sidebar">
-      {players.map((p) => {
-        const isActive = p.name === selectedPlayer
-        const color = playerColors[p.name]
-        return (
-          <button
-            key={p.slot}
-            type="button"
-            className={`tracker-sidebar-btn ${isActive ? 'active' : ''}`}
-            onClick={() => onSelectedPlayerChange(p.name)}
-          >
-            <span className="tracker-sidebar-dot" style={{ background: color }} />
-            <span className="tracker-sidebar-name" style={{ color }}>{p.name}</span>
-            <span className="tracker-sidebar-pct">{progressByName[p.name] ?? 0}%</span>
-          </button>
-        )
-      })}
-    </div>
-  )
-}
 
 export default function TrackerTab({
   spoilerData,

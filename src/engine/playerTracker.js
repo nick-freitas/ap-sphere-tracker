@@ -39,8 +39,8 @@ export function buildPlayerTracker(playerName, spoilerData, checkedLocations, pr
 export function buildPlayerHints(playerName, hints, checkedLocations) {
   const playerChecks = checkedLocations.get(playerName) || new Set()
 
-  // Outgoing: hinted items in this player's world that other players are waiting for.
-  // These show the item name and the receiving player in the owner column.
+  // Outgoing (sending): hinted items in this player's world that other players
+  // are waiting for. The owner column shows the receiving player.
   const outgoing = hints
     .filter((h) => h.locationOwner === playerName && h.receiver !== playerName)
     .map((h) => ({
@@ -48,11 +48,12 @@ export function buildPlayerHints(playerName, hints, checkedLocations) {
       item: h.item,
       itemOwner: h.receiver,
       found: playerChecks.has(h.location),
+      direction: 'sending',
     }))
 
-  // Incoming: hinted items in other players' worlds that this player will receive.
-  // The owner column shows the location owner (whose world has the item) so the
-  // player knows where to find it.
+  // Incoming (receiving): hinted items in other players' worlds that this
+  // player will receive. The owner column shows the location owner (whose
+  // world has the item) so the player knows where to find it.
   const incoming = hints
     .filter((h) => h.receiver === playerName && h.locationOwner !== playerName)
     .map((h) => {
@@ -62,6 +63,7 @@ export function buildPlayerHints(playerName, hints, checkedLocations) {
         item: h.item,
         itemOwner: h.locationOwner,
         found: ownerChecks.has(h.location),
+        direction: 'receiving',
       }
     })
 

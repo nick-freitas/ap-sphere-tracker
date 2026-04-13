@@ -122,20 +122,48 @@ function LocationTable({ rows, allRows, hintRows, allHintRows, playerColors }) {
               {' '}Hints — {hintsFound} / {hintsTotal} ({hintsPercent}%)
             </button>
           </h3>
-          {!hintsCollapsed && hintRows.length > 0 && (
-            <table className="tracker-table">
-              <tbody>
-                {hintRows.map((row) => (
-                  <LocationRow
-                    key={`h-${row.location}`}
-                    row={row}
-                    playerColors={playerColors}
-                    alwaysShowItem
-                  />
-                ))}
-              </tbody>
-            </table>
-          )}
+          {!hintsCollapsed && (() => {
+            const receivingRows = hintRows.filter((r) => r.direction === 'receiving')
+            const sendingRows = hintRows.filter((r) => r.direction === 'sending')
+            return (
+              <>
+                {receivingRows.length > 0 && (
+                  <>
+                    <h4 className="tracker-subsection-heading">Receiving</h4>
+                    <table className="tracker-table">
+                      <tbody>
+                        {receivingRows.map((row) => (
+                          <LocationRow
+                            key={`h-r-${row.location}-${row.itemOwner}`}
+                            row={row}
+                            playerColors={playerColors}
+                            alwaysShowItem
+                          />
+                        ))}
+                      </tbody>
+                    </table>
+                  </>
+                )}
+                {sendingRows.length > 0 && (
+                  <>
+                    <h4 className="tracker-subsection-heading">Sending</h4>
+                    <table className="tracker-table">
+                      <tbody>
+                        {sendingRows.map((row) => (
+                          <LocationRow
+                            key={`h-s-${row.location}-${row.itemOwner}`}
+                            row={row}
+                            playerColors={playerColors}
+                            alwaysShowItem
+                          />
+                        ))}
+                      </tbody>
+                    </table>
+                  </>
+                )}
+              </>
+            )
+          })()}
         </>
       )}
       {priorityRows.length > 0 && (

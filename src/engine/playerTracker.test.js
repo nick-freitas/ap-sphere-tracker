@@ -206,6 +206,7 @@ describe('buildPlayerHints', () => {
       item: 'Boomerang',
       itemOwner: 'Naizak',
       found: false,
+      direction: 'sending',
     })
   })
 
@@ -258,6 +259,7 @@ describe('buildPlayerHints', () => {
         item: 'Boomerang',
         itemOwner: 'Nick',
         found: false,
+        direction: 'receiving',
       },
     ])
   })

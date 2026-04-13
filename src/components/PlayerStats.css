@@ -99,6 +99,11 @@
   color: #c0392b;
 }
 
+.ps-lock-circle.green {
+  background: rgba(46, 139, 87, 0.15);
+  color: #2e8b57;
+}
+
 .ps-earliest {
   font-size: 0.6rem;
   color: var(--color-clay);

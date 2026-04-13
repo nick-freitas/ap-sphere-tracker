@@ -4034,3 +4034,21 @@
 [2026-04-13 13:05:29,139]: Notice (all): Andrew: !hint Cane of Somaria
 [2026-04-13 13:05:29,141]: Notice (Team #1): [Hint]: Andrew's Cane of Somaria is at Jabu Jabus Belly Barinade Pot 5 in Nick's World. (priority)
 [2026-04-13 13:50:21,461]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 14:56:18,482]: Shutting down due to inactivity.
+[2026-04-13 14:56:18,745]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
+[2026-04-13 14:56:18,751]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 14:56:18,760]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-13 14:56:18,762]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 14:56:18,770]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 14:57:15,393]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-13 14:57:15,394]: Loading embedded data package for game Ship of Harkinian
+[2026-04-13 14:57:15,394]: Loading embedded data package for game Dark Souls III
+[2026-04-13 14:57:15,411]: Loaded save file with 3262 received items for 7 players
+[2026-04-13 14:57:15,447]: Hosting game at archipelago.gg:58657
+[2026-04-13 14:57:16,528]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 14:57:16,611]: Notice (all): Brian (Team #1) tracking Kingdom Hearts 2 has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 14:57:20,610]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 14:57:49,262]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-13 14:57:49,262]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-13 14:57:49,278]: Notice (all): Brian (Team #1) playing Kingdom Hearts 2 has joined. Client(0.6.5), ['AP'].
+[2026-04-13 14:57:49,278]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.

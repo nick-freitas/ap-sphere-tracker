@@ -3929,3 +3929,9 @@
 [2026-04-13 06:21:45,246]: (Team #1) Naizak sent Recovery Heart to Naizak (Shadow Temple Boss Key Chest)
 [2026-04-13 06:22:02,762]: (Team #1) Naizak sent Deku Nuts (10) to Nick (Shadow Temple Spike Walls Left Chest)
 [2026-04-13 06:22:47,819]: (Team #1) Naizak sent Donald Hyper Healing to Brian (Shadow Temple Near Boss Pot 2)
+[2026-04-13 07:03:29,355]: (Team #1) Naizak sent Biggoron Sword to Naizak (LW Target in Woods)
+[2026-04-13 07:19:31,977]: Notice (all): Nick (Team #1) has stopped viewing the game. Client(0.6.7), ['AP', 'TextOnly'].
+[2026-04-13 07:23:07,042]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 07:35:11,382]: (Team #1) Naizak sent Rupees (5) to Naizak (Ganons Castle Forest Trial Pot 2)
+[2026-04-13 07:37:11,010]: (Team #1) Naizak sent Recovery Heart to Nick (Ganons Castle Shadow Trial Like Like Pot 1)
+[2026-04-13 07:39:20,630]: (Team #1) Naizak sent Red Rupee to Nick (Ganons Castle Shadow Trial Pot 2)

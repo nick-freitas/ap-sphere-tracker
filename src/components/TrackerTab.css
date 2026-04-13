@@ -150,6 +150,8 @@
 }
 
 .tracker-section-toggle {
+  display: block;
+  width: 100%;
   font: inherit;
   color: inherit;
   text-transform: inherit;

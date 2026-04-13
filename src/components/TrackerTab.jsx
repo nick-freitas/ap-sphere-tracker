@@ -130,6 +130,10 @@ export default function TrackerTab({
   playerColors,
   selectedPlayer,
   onSelectedPlayerChange,
+  searchQuery,
+  onSearchQueryChange,
+  hideFound,
+  onHideFoundChange,
 }) {
   // Default / recover selectedPlayer when the spoiler changes.
   useEffect(() => {
@@ -157,6 +161,15 @@ export default function TrackerTab({
     return buildPlayerTracker(selectedPlayer, spoilerData, checkedLocations, prioritySet)
   }, [spoilerData, selectedPlayer, checkedLocations, prioritySet])
 
+  const filteredRows = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase()
+    return currentPlayerTracker.rows.filter((row) => {
+      if (hideFound && row.found) return false
+      if (query && !row.location.toLowerCase().includes(query)) return false
+      return true
+    })
+  }, [currentPlayerTracker.rows, searchQuery, hideFound])
+
   if (!spoilerData) return null
 
   return (
@@ -175,10 +188,27 @@ export default function TrackerTab({
           playerColors={playerColors}
           onSelectedPlayerChange={onSelectedPlayerChange}
         />
-        {currentPlayerTracker.rows.length === 0 ? (
-          <p className="tracker-placeholder">No locations for this player.</p>
+        <div className="tracker-controls">
+          <input
+            type="text"
+            className="tracker-search"
+            placeholder="Search locations..."
+            value={searchQuery}
+            onChange={(e) => onSearchQueryChange(e.target.value)}
+          />
+          <label className="tracker-hide-found">
+            <input
+              type="checkbox"
+              checked={hideFound}
+              onChange={(e) => onHideFoundChange(e.target.checked)}
+            />
+            Hide found
+          </label>
+        </div>
+        {filteredRows.length === 0 ? (
+          <p className="tracker-placeholder">No locations match the current filter.</p>
         ) : (
-          <LocationTable rows={currentPlayerTracker.rows} playerColors={playerColors} />
+          <LocationTable rows={filteredRows} playerColors={playerColors} />
         )}
       </div>
     </div>

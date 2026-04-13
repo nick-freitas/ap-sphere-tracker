@@ -207,3 +207,38 @@
   padding: 0.375rem 0.5rem;
   white-space: nowrap;
 }
+
+.tracker-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.tracker-search {
+  flex: 1;
+  min-width: 0;
+  font-family: 'Karla', sans-serif;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text);
+}
+
+.tracker-search:focus {
+  outline: none;
+  border-color: var(--color-moss);
+}
+
+.tracker-hide-found {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: 'Karla', sans-serif;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+}

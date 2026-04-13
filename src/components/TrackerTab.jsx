@@ -115,7 +115,7 @@ function LocationTable({ rows, allRows, hintRows, allHintRows, playerColors }) {
               onClick={() => setHintsCollapsed((v) => !v)}
             >
               <span className="tracker-caret" aria-hidden="true">{hintsCollapsed ? '▶' : '▼'}</span>
-              {' '}Hints — {hintsFound} / {hintsTotal} ({hintsPercent}%)
+              {' '}Hints: {hintsFound} / {hintsTotal} ({hintsPercent}%)
             </button>
           </h3>
           {!hintsCollapsed && (() => {
@@ -172,7 +172,7 @@ function LocationTable({ rows, allRows, hintRows, allHintRows, playerColors }) {
               onClick={() => setLocationsCollapsed((v) => !v)}
             >
               <span className="tracker-caret" aria-hidden="true">{locationsCollapsed ? '▶' : '▼'}</span>
-              {' '}Locations — {locationsFound} / {locationsTotal} ({locationsPercent}%)
+              {' '}Locations: {locationsFound} / {locationsTotal} ({locationsPercent}%)
             </button>
           </h3>
           {!locationsCollapsed && (

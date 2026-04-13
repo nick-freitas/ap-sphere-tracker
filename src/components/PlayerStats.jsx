@@ -88,7 +88,7 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
               const earliest = playerInfo[s.name].earliestUnchecked
               if (earliest == null) {
                 return (
-                  <span className="ps-lock-circle green" data-tip="Run complete — all locations found!">
+                  <span className="ps-lock-circle green" data-tip="Run complete! Every location found.">
                     {'\u2B50'}
                   </span>
                 )
@@ -99,8 +99,8 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
               const spheresAway = earliest - currentSphereNum
               const circleClass = isNextSphere ? 'ps-lock-circle yellow' : 'ps-lock-circle red'
               const tooltip = isNextSphere
-                ? `Possibly locked — next progression checks are in Sphere ${earliest} (next sphere). These checks may or may not be reachable yet. Non-progression checks may still be available in-game, keep playing!`
-                : `Likely locked — next progression checks are ${spheresAway} sphere${spheresAway > 1 ? 's' : ''} away (Sphere ${earliest}). Non-progression checks may still be available in-game, keep playing!`
+                ? `Possibly locked. Your next progression check is in the next sphere (Sphere ${earliest}), which might not be reachable yet. Non-progression checks may still be available. Keep playing!`
+                : `Likely locked. Your next progression checks are ${spheresAway} sphere${spheresAway > 1 ? 's' : ''} away (Sphere ${earliest}). Non-progression checks may still be available. Keep playing!`
               return (
                 <span className={circleClass} data-tip={tooltip}>
                   {'\uD83D\uDD12'} S{earliest}

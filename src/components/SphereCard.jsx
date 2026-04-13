@@ -2,6 +2,13 @@ import { useMemo, useState } from 'react'
 import MissingChecksTable from './MissingChecksTable'
 import './SphereCard.css'
 
+function formatIncompleteList(numbers) {
+  if (!numbers || numbers.length === 0) return ''
+  if (numbers.length === 1) return `${numbers[0]}`
+  if (numbers.length === 2) return `${numbers[0]} and ${numbers[1]}`
+  return `${numbers.slice(0, -1).join(', ')}, and ${numbers[numbers.length - 1]}`
+}
+
 export default function SphereCard({
   result,
   threshold,
@@ -9,6 +16,8 @@ export default function SphereCard({
   hiddenPlayers,
   isExtended,
   isCurrent,
+  spheresBehind,
+  capInfo,
   sphereEntries,
   checkedLocations,
   playerLastSphere,
@@ -20,6 +29,7 @@ export default function SphereCard({
   const isComplete = completionPercent === 100
   const meetsThreshold = completionPercent >= threshold
   const isSphereZero = sphereNumber === 0
+  const isFallingBehind = spheresBehind >= 4 && !isComplete
   const [showCompleted, setShowCompleted] = useState(false)
   const [showPrecollected, setShowPrecollected] = useState(false)
 
@@ -103,6 +113,8 @@ export default function SphereCard({
     meetsThreshold ? 'expanded' : 'dimmed',
     isExtended ? 'extended' : '',
     isCurrent ? 'current' : '',
+    isFallingBehind ? 'falling-behind' : '',
+    capInfo ? 'current-capped' : '',
   ].filter(Boolean).join(' ')
 
   return (
@@ -111,8 +123,26 @@ export default function SphereCard({
         <div className="sphere-label">
           <span className="sphere-num">{sphereNumber}</span>
           {isComplete && <span className="check-icon">&#10003;</span>}
+          {isFallingBehind && (
+            <span
+              className="warning-icon"
+              data-tip={`${spheresBehind} spheres behind current and not complete`}
+            >&#9888;</span>
+          )}
+          {capInfo && (
+            <span
+              className="caution-icon"
+              data-tip={
+                `This sphere is marked as current because Spheres ${formatIncompleteList(capInfo.incompleteNumbers)} `
+                + `are incomplete. The actual current sphere would be Sphere ${capInfo.thresholdSphereNumber}. `
+                + `Complete prior incomplete spheres to progress.`
+              }
+            >&#9888;</span>
+          )}
           <span>Sphere {sphereNumber}</span>
-          {isCurrent && <span className="current-badge">Current</span>}
+          {isCurrent && (
+            <span className={`current-badge ${capInfo ? 'current-badge-capped' : ''}`}>Current</span>
+          )}
           {isExtended && <span className="extended-badge">Upcoming</span>}
         </div>
         <div className="sphere-progress-container">

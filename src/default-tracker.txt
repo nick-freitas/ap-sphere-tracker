@@ -3935,3 +3935,120 @@
 [2026-04-13 07:35:11,382]: (Team #1) Naizak sent Rupees (5) to Naizak (Ganons Castle Forest Trial Pot 2)
 [2026-04-13 07:37:11,010]: (Team #1) Naizak sent Recovery Heart to Nick (Ganons Castle Shadow Trial Like Like Pot 1)
 [2026-04-13 07:39:20,630]: (Team #1) Naizak sent Red Rupee to Nick (Ganons Castle Shadow Trial Pot 2)
+[2026-04-13 07:42:47,334]: (Team #1) Naizak sent Small Key (Ganons Castle) to Naizak (Ganons Castle Spirit Trial Pot 2)
+[2026-04-13 07:50:01,414]: (Team #1) Naizak sent DK Coin to Ryot (Spirit Temple MQ Statue Room Lullaby Chest)
+[2026-04-13 08:01:36,878]: (Team #1) Naizak sent Blue Rupee to Nick (Spirit Temple MQ Entrance Back Right Chest)
+[2026-04-13 08:05:12,598]: (Team #1) Naizak sent Arrows (10) to Andrew (Spirit Temple MQ Child Hammer Switch Chest)
+[2026-04-13 08:06:18,662]: (Team #1) Naizak sent Blizzard Element to Brian (Spirit Temple MQ Silver Block Hallway Chest)
+[2026-04-13 08:13:35,105]: (Team #1) Naizak sent Recovery Heart to Naizak (Water Temple MQ Storage Room Pot 2)
+[2026-04-13 08:13:36,166]: (Team #1) Naizak sent Arrows (10) to Naizak (Water Temple MQ Storage Room Pot 3)
+[2026-04-13 08:13:38,739]: (Team #1) Naizak sent Oathkeeper to Brian (Water Temple MQ Storage Room Pot 1)
+[2026-04-13 08:13:42,606]: (Team #1) Naizak sent Boss Key (Water Temple) to Naizak (Water Temple MQ Storage Room Crate 6)
+[2026-04-13 08:13:56,626]: (Team #1) Naizak sent Arrows (5) to Naizak (Water Temple MQ Storage Room Crate 4)
+[2026-04-13 08:14:01,643]: (Team #1) Naizak sent Rupees (5) to Naizak (Water Temple MQ Storage Room Crate 7)
+[2026-04-13 08:14:02,699]: (Team #1) Naizak sent Huge Rupee to Nick (Water Temple MQ Storage Room Crate 3)
+[2026-04-13 08:14:06,630]: (Team #1) Naizak sent Missile to Dan (Water Temple MQ Storage Room Crate 1)
+[2026-04-13 08:20:03,486]: (Team #1) Naizak sent Cosmic Chain to Brian (Water Temple MQ Before Upper Water Switch Lower Crate 3)
+[2026-04-13 08:20:09,998]: (Team #1) Naizak sent Arrows (10) to Nick (Water Temple MQ Before Upper Water Switch Lower Crate 4)
+[2026-04-13 08:20:11,998]: (Team #1) Naizak sent Piece of Heart to Nick (Water Temple MQ Before Upper Water Switch Lower Crate 2)
+[2026-04-13 08:20:15,621]: (Team #1) Naizak sent Boss Heart Container to Andrew (Water Temple MQ Before Upper Water Switch Lower Crate 6)
+[2026-04-13 08:20:34,518]: (Team #1) Naizak sent Blue Rupee to Nick (Water Temple MQ Before Upper Water Switch Lower Crate 5)
+[2026-04-13 08:20:41,020]: (Team #1) Naizak sent Deku Stick (1) to Nick (Water Temple MQ Before Upper Water Switch Pot 3)
+[2026-04-13 08:20:43,031]: (Team #1) Naizak sent Rupee (1) to Naizak (Water Temple MQ Before Upper Water Switch Pot 2)
+[2026-04-13 08:21:11,558]: (Team #1) Naizak sent Rupees (20) to Andrew (Water Temple MQ Before Upper Water Switch Upper Crate 2)
+[2026-04-13 08:23:17,178]: (Team #1) Naizak sent Deku Nuts (10) to Nick (Dodongos Cavern Boss Room Chest)
+[2026-04-13 08:33:14,839]: (Team #1) Naizak sent Rupee (1) to Naizak (Fire Temple MQ Near Boss Chest)
+[2026-04-13 08:35:56,499]: (Team #1) Naizak sent Rupees (50) to Andrew (Fire Temple MQ Boss Key Chest)
+[2026-04-13 08:36:01,519]: (Team #1) Naizak sent Farore's Wind to Nick (Fire Temple MQ Boss Key Chest Room Pot)
+[2026-04-13 08:41:58,318]: (Team #1) Naizak sent Rupees (50) to Andrew (Fire Temple MQ Lower Lizalfos Maze Crate 1)
+[2026-04-13 08:42:02,322]: (Team #1) Naizak sent Power Bomb to Dan (Fire Temple MQ Lower Lizalfos Maze Crate 3)
+[2026-04-13 08:42:04,325]: (Team #1) Naizak sent Boss Key (Fire Temple) to Naizak (Fire Temple MQ Lower Lizalfos Maze Crate 2)
+[2026-04-13 08:42:12,338]: (Team #1) Naizak sent Abas Chain to Brian (Fire Temple MQ Lizalfos Maze Lower Chest)
+[2026-04-13 08:43:11,398]: (Team #1) Naizak sent Bombs (5) to Naizak (Fire Temple MQ Upper Lizalfos Maze Crate 3)
+[2026-04-13 08:43:18,898]: (Team #1) Naizak sent Huge Rupee to Nick (Fire Temple MQ Lizalfos Maze Upper Chest)
+[2026-04-13 08:43:24,406]: (Team #1) Naizak sent Progressive Mail to Andrew (Fire Temple MQ Upper Lizalfos Maze Crate 1)
+[2026-04-13 08:44:24,966]: (Team #1) Naizak sent Rupees (5) to Naizak (Fire Temple MQ Lizalfos Maze Side Room Chest)
+[2026-04-13 08:45:28,526]: (Team #1) Naizak sent Namine Sketches to Brian (Fire Temple MQ Shortcut Crate 1)
+[2026-04-13 08:45:42,539]: (Team #1) Naizak sent Deku Stick (1) to Nick (Fire Temple MQ Shortcut Crate 3)
+[2026-04-13 08:45:43,599]: (Team #1) Naizak sent Small Key (Fire Temple) to Naizak (Fire Temple MQ Shortcut Crate 5)
+[2026-04-13 08:45:51,551]: (Team #1) Naizak sent Lens of Truth to Nick (Fire Temple MQ Shortcut Crate 6)
+[2026-04-13 08:53:08,987]: (Team #1) Naizak sent Deku Nuts (10) to Nick (Fire Temple MQ GS Skull On Fire)
+[2026-04-13 08:56:13,682]: (Team #1) Naizak sent Small Key (Fire Temple) to Naizak (Fire Temple MQ Shoot Torch On Wall Room Right Crate 1)
+[2026-04-13 08:56:59,722]: (Team #1) Naizak sent Piece of Heart to Andrew (Fire Temple MQ Shoot Torch On Wall Room Pot 1)
+[2026-04-13 08:57:00,786]: (Team #1) Naizak sent Rupee (1) to Naizak (Fire Temple MQ Shoot Torch On Wall Room Pot 2)
+[2026-04-13 09:00:06,410]: (Team #1) Naizak sent Lucky Emblem to Brian (Fire Temple MQ Shoot Torch On Wall Room Left Crate 1)
+[2026-04-13 09:03:20,094]: (Team #1) Naizak sent Krematoa Cog to Ryot (Fire Temple MQ Flame Maze Left Pot 1)
+[2026-04-13 09:03:54,634]: (Team #1) Naizak sent Deku Seeds (30) to Nick (Fire Temple MQ GS Flame Maze Center)
+[2026-04-13 09:07:03,322]: (Team #1) Naizak sent Energy Tank to Dan (Fire Temple MQ GS Flame Maze Side Room)
+[2026-04-13 09:07:22,345]: (Team #1) Naizak sent Rupees (20) to Andrew (Fire Temple MQ Flame Maze Right Pot 2)
+[2026-04-13 09:08:58,438]: (Team #1) Naizak sent Form Boost to Brian (Fire Temple MQ Flame Maze Right Upper Pot 1)
+[2026-04-13 09:10:02,494]: (Team #1) Naizak sent Small Key (Fire Temple) to Naizak (Fire Temple MQ Freestanding Key)
+[2026-04-13 09:12:21,639]: (Team #1) Naizak sent Bonus Coin to Ryot (Fire Temple MQ Chest On Fire)
+[2026-04-13 09:20:04,598]: (Team #1) Naizak sent Premium Mushroom to Brian (Spirit Temple Twinrova Heart)
+[2026-04-13 09:28:24,814]: Notice (all): Naizak (Team #1) has left the game. Client(0.6.5), ['DeathLink', 'AP'].
+[2026-04-13 11:20:04,598]: Shutting down due to inactivity.
+[2026-04-13 11:20:04,848]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-13 11:20:04,849]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 11:20:04,861]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
+[2026-04-13 11:20:04,866]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 11:20:14,906]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-13 11:20:14,907]: Loading embedded data package for game Ship of Harkinian
+[2026-04-13 11:20:14,907]: Loading embedded data package for game Dark Souls III
+[2026-04-13 11:20:14,923]: Loaded save file with 3235 received items for 7 players
+[2026-04-13 11:20:14,954]: Hosting game at archipelago.gg:58657
+[2026-04-13 11:20:15,773]: Notice (all): Brian (Team #1) tracking Kingdom Hearts 2 has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 11:20:17,671]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 11:20:25,330]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-13 11:20:25,331]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-13 11:20:25,380]: Notice (all): Brian (Team #1) playing Kingdom Hearts 2 has joined. Client(0.6.5), ['AP'].
+[2026-04-13 11:20:25,380]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-13 12:13:14,752]: (Team #1) Andrew sent Proof of Connection to Brian (Hobo)
+[2026-04-13 12:14:37,311]: (Team #1) Andrew sent DK Coin to Ryot (Zora's Ledge)
+[2026-04-13 12:15:09,405]: (Team #1) Andrew sent Red Rupee to Nick (Cave 45)
+[2026-04-13 12:16:32,174]: (Team #1) Andrew sent Strength Upgrade to Nick (Bonk Rock Cave)
+[2026-04-13 12:21:10,068]: (Team #1) Andrew sent Blue Rupee to Nick (Skull Woods - Boss)
+[2026-04-13 12:27:56,956]: (Team #1) Andrew sent Small Key (Hyrule Castle) to Andrew (Hyrule Castle - Map Chest)
+[2026-04-13 12:27:56,956]: (Team #1) Andrew sent Small Key (Hyrule Castle) to Andrew (Hyrule Castle - Map Guard Key Drop)
+[2026-04-13 12:28:39,854]: (Team #1) Andrew sent Arrows (30) to Naizak (Hyrule Castle - Boomerang Guard Key Drop)
+[2026-04-13 12:28:44,836]: (Team #1) Andrew sent Small Key (Hyrule Castle) to Andrew (Hyrule Castle - Boomerang Chest)
+[2026-04-13 12:29:19,308]: (Team #1) Andrew sent Gold Skulltula Token to Naizak (Hyrule Castle - Big Key Drop)
+[2026-04-13 12:35:22,354]: (Team #1) Andrew sent Small Key (Hyrule Castle) to Andrew (Sewers - Dark Cross)
+[2026-04-13 12:36:02,933]: (Team #1) Andrew sent Rupees (5) to Naizak (Sewers - Key Rat Key Drop)
+[2026-04-13 12:38:54,062]: (Team #1) Andrew sent Dampe's Hut Key to Nick (Pyramid)
+[2026-04-13 12:40:46,223]: (Team #1) Andrew sent Rupees (5) to Naizak (Catfish)
+[2026-04-13 12:42:30,151]: (Team #1) Andrew sent Sun's Song to Nick (Paradox Cave Upper - Right)
+[2026-04-13 12:42:32,862]: (Team #1) Andrew sent Scan to Brian (Paradox Cave Upper - Left)
+[2026-04-13 12:43:02,779]: (Team #1) Andrew sent Deku Seeds (30) to Nick (Paradox Cave Lower - Middle)
+[2026-04-13 12:43:07,189]: (Team #1) Andrew sent Arrows (10) to Naizak (Paradox Cave Lower - Right)
+[2026-04-13 12:43:08,731]: (Team #1) Andrew sent Rupee (1) to Naizak (Paradox Cave Lower - Far Right)
+[2026-04-13 12:43:27,100]: (Team #1) Andrew sent Bonus Coin to Ryot (Light World Death Mountain Shop Center)
+[2026-04-13 12:43:29,680]: (Team #1) Andrew sent Missile to Dan (Light World Death Mountain Shop Right)
+[2026-04-13 12:45:39,893]: (Team #1) Andrew sent Small Key (Desert Palace) to Andrew (Desert Palace - Map Chest)
+[2026-04-13 12:45:56,529]: (Team #1) Andrew sent Arrows (5) to Nick (Desert Palace - Torch)
+[2026-04-13 12:46:28,266]: (Team #1) Andrew sent Big Key (Desert Palace) to Andrew (Desert Palace - Big Key Chest)
+[2026-04-13 12:47:00,260]: (Team #1) Andrew sent Piece of Heart to Nick (Desert Palace - Big Chest)
+[2026-04-13 12:56:10,183]: (Team #1) Andrew sent Small Key (Palace of Darkness) to Andrew (Palace of Darkness - Map Chest)
+[2026-04-13 12:56:18,482]: (Team #1) Andrew sent Small Key (Palace of Darkness) to Andrew (Palace of Darkness - The Arena - Ledge)
+[2026-04-13 13:03:54,156]: Notice (all): Andrew: !hint Hookshot
+[2026-04-13 13:03:54,157]: Notice (Team #1): [Hint]: Andrew's Hookshot is at Shadow Temple Map Chest Pot 2 in Nick's World. (priority)
+[2026-04-13 13:05:29,139]: Notice (all): Andrew: !hint Cane of Somaria
+[2026-04-13 13:05:29,141]: Notice (Team #1): [Hint]: Andrew's Cane of Somaria is at Jabu Jabus Belly Barinade Pot 5 in Nick's World. (priority)
+[2026-04-13 13:50:21,461]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 14:56:18,482]: Shutting down due to inactivity.
+[2026-04-13 14:56:18,745]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
+[2026-04-13 14:56:18,751]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 14:56:18,760]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-13 14:56:18,762]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 14:56:18,770]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 14:57:15,393]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-13 14:57:15,394]: Loading embedded data package for game Ship of Harkinian
+[2026-04-13 14:57:15,394]: Loading embedded data package for game Dark Souls III
+[2026-04-13 14:57:15,411]: Loaded save file with 3262 received items for 7 players
+[2026-04-13 14:57:15,447]: Hosting game at archipelago.gg:58657
+[2026-04-13 14:57:16,528]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 14:57:16,611]: Notice (all): Brian (Team #1) tracking Kingdom Hearts 2 has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 14:57:20,610]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 14:57:49,262]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-13 14:57:49,262]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-13 14:57:49,278]: Notice (all): Brian (Team #1) playing Kingdom Hearts 2 has joined. Client(0.6.5), ['AP'].
+[2026-04-13 14:57:49,278]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.

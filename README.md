@@ -33,22 +33,30 @@ Cross-references an Archipelago spoiler log with a server tracker log to show:
 - Filters out non-item entries using per-game Archipelago datapackages
 - Player color coding throughout all views
 
-## Generating datapackages
+## Generating datapackages (maintainer workflow)
 
 To filter out randomizer logic events (like `Time Travel` or `Open Floodgate`), the tracker needs each game's **datapackage** — the canonical map of real item and location names that Archipelago itself uses. Datapackages live in `public/datapackages/` as `<checksum>.json` files, with a single `index.json` manifest mapping game names to checksums.
 
-The tracker ships with datapackages for whichever games the maintainer has already bundled. If your seed uses a game that isn't bundled, the tracker shows a "missing datapackages" error listing the affected games.
+**End users never run this workflow.** The tracker ships with datapackages committed to `public/datapackages/` by whoever maintains the deployment. If you're just using the live site, skip this section entirely.
 
-To add a new game's datapackage:
+If you see a "missing datapackages" error when loading a spoiler, it means the seed uses a game whose datapackage hasn't been committed yet. Ask the tracker maintainer to add it — or, if you maintain the deployment yourself, follow the steps below.
 
-1. Make sure Archipelago is installed on your machine (the same install you used to generate the seed).
-2. Copy `scripts/extract_datapackages.py` into your Archipelago install folder (the directory containing `Generate.py`).
-3. Run:
+### Requirements
+
+- A **source checkout** of Archipelago (`git clone https://github.com/ArchipelagoMW/Archipelago`). The packaged `.app` / `.exe` builds **cannot** be used — their Python modules are frozen by PyInstaller and can't be imported by an external script. You need actual `.py` source files on disk.
+- Any unofficial apworlds you want to bundle should be placed in the source checkout's `custom_worlds/` folder before running the script.
+
+### Running the script
+
+1. Copy any `.apworld` files you want to extract into the source checkout's `custom_worlds/` directory. (On macOS, custom apworlds you installed via the launcher typically live in `~/Library/Application Support/Archipelago/worlds/`.)
+2. From the source checkout root (the folder containing `Generate.py`), run:
    ```bash
-   python extract_datapackages.py --output /path/to/ap-sphere-tracker/public/datapackages --merge-index
+   python3 /path/to/ap-sphere-tracker/scripts/extract_datapackages.py \
+     --output /path/to/ap-sphere-tracker/public/datapackages \
+     --merge-index
    ```
-   The `--merge-index` flag preserves existing entries in `index.json` and adds new ones. Re-running the script is idempotent.
-4. Commit the new files in `public/datapackages/` and redeploy. The tracker will pick them up on next load.
+   The `--merge-index` flag preserves existing entries in `index.json` and adds new ones. Re-running the script is idempotent — unchanged games overwrite with identical content, changed games get new entries.
+3. Commit the new files in `public/datapackages/` and redeploy. The tracker will pick them up on next load.
 
 ## Tech stack
 

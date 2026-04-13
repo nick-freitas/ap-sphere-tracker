@@ -10,8 +10,6 @@ import PlayerStats from './components/PlayerStats'
 import PlayerConfigs from './components/PlayerConfigs'
 import TrackerTab from './components/TrackerTab'
 import PlayerLogTab from './components/PlayerLogTab'
-import defaultSpoilerUrl from './default-spoiler.txt?url'
-import defaultTrackerUrl from './default-tracker.txt?url'
 import './App.css'
 
 const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i})`)
@@ -50,25 +48,23 @@ function App() {
     setDarkMode((prev) => !prev)
   }
 
-  // Load the bundled default spoiler and tracker logs on startup
+  // Load the default spoiler and tracker logs on startup from public/
   useEffect(() => {
-    fetch(defaultSpoilerUrl)
-      .then((res) => res.text())
+    fetch('/ap-sphere-tracker/default-spoiler.txt')
+      .then((res) => (res.ok ? res.text() : null))
       .then((text) => {
-        rawSpoilerTextRef.current = text
-        const parsed = parseSpoilerLogRaw(text)
-        setSpoilerData(parsed)
+        if (text == null) return
+        handleSpoilerText(text)
       })
-    fetch(defaultTrackerUrl)
-      .then((res) => res.text())
+      .catch(() => {})
+
+    fetch('/ap-sphere-tracker/default-tracker.txt')
+      .then((res) => (res.ok ? res.text() : null))
       .then((text) => {
-        setRawTrackerText(text)
-        const { checkedLocations: parsed, lastCheckTime: lct, hints: parsedHints, events } = parseTrackerLog(text)
-        setCheckedLocations(parsed)
-        setLastCheckTime(lct)
-        setHints(parsedHints)
-        setLogEvents(events)
+        if (text == null) return
+        handleTrackerText(text)
       })
+      .catch(() => {})
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleSpoilerText(text) {

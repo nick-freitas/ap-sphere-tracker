@@ -115,7 +115,7 @@
   background: linear-gradient(
     to bottom,
     var(--color-hint-bg) 50%,
-    color-mix(in srgb, var(--row-color) 25%, transparent) 50%
+    color-mix(in srgb, var(--row-color) 18%, transparent) 50%
   );
 }
 
@@ -141,4 +141,9 @@
 
 .player-log-cell-item {
   min-width: 10rem;
+}
+
+.player-log-progression-star {
+  color: gold;
+  font-style: normal;
 }

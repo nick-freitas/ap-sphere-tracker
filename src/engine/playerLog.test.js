@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { buildPlayerLog } from './playerLog'
+import { buildPlayerLog, computeProgressionSet } from './playerLog'
 
 const sentEvent = (overrides = {}) => ({
   type: 'sent',
@@ -148,5 +148,70 @@ describe('buildPlayerLog', () => {
     expect(result[0].item).toBe('newest')
     expect(result[1].item).toBe('middle')
     expect(result[2].item).toBe('oldest')
+  })
+})
+
+describe('computeProgressionSet', () => {
+  it('returns an empty set for null or undefined spheres', () => {
+    expect(computeProgressionSet(null)).toEqual(new Set())
+    expect(computeProgressionSet(undefined)).toEqual(new Set())
+  })
+
+  it('returns an empty set for an empty spheres array', () => {
+    expect(computeProgressionSet([])).toEqual(new Set())
+  })
+
+  it('skips sphere 0 (precollected / starting items)', () => {
+    const spheres = [
+      {
+        number: 0,
+        entries: [
+          // Hypothetical: sphere 0 normally has no entries, but guard anyway.
+          { location: 'Links Pocket', locationOwner: 'Alice', item: 'Starter', itemOwner: 'Alice' },
+        ],
+      },
+    ]
+    const result = computeProgressionSet(spheres)
+    expect(result.size).toBe(0)
+  })
+
+  it('collects entries from non-zero spheres keyed by locationOwner and location', () => {
+    const spheres = [
+      { number: 0, entries: [] },
+      {
+        number: 1,
+        entries: [
+          { location: 'KF Kokiri Sword Chest', locationOwner: 'Alice', item: 'Kokiri Sword', itemOwner: 'Alice' },
+          { location: 'Sanctuary', locationOwner: 'Bob', item: 'Bow', itemOwner: 'Alice' },
+        ],
+      },
+      {
+        number: 2,
+        entries: [
+          { location: 'Deku Tree Map Chest', locationOwner: 'Alice', item: 'Map', itemOwner: 'Charlie' },
+        ],
+      },
+    ]
+    const result = computeProgressionSet(spheres)
+    expect(result.size).toBe(3)
+    expect(result.has('Alice\u0000KF Kokiri Sword Chest')).toBe(true)
+    expect(result.has('Bob\u0000Sanctuary')).toBe(true)
+    expect(result.has('Alice\u0000Deku Tree Map Chest')).toBe(true)
+  })
+
+  it('handles the same location name in two different worlds as two distinct keys', () => {
+    const spheres = [
+      {
+        number: 1,
+        entries: [
+          { location: 'Mushroom', locationOwner: 'Alice', item: 'X', itemOwner: 'Alice' },
+          { location: 'Mushroom', locationOwner: 'Bob', item: 'Y', itemOwner: 'Bob' },
+        ],
+      },
+    ]
+    const result = computeProgressionSet(spheres)
+    expect(result.size).toBe(2)
+    expect(result.has('Alice\u0000Mushroom')).toBe(true)
+    expect(result.has('Bob\u0000Mushroom')).toBe(true)
   })
 })

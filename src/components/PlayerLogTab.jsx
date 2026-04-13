@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react'
 import PlayerSidebar from './PlayerSidebar'
-import { buildPlayerLog } from '../engine/playerLog'
+import { buildPlayerLog, computeProgressionSet } from '../engine/playerLog'
 import './PlayerLogTab.css'
 
 function formatTime(timestamp) {
@@ -40,13 +40,18 @@ function LogControls({ receiving, onReceivingChange, sending, onSendingChange, s
   )
 }
 
-function EventRow({ row, playerColors }) {
+function EventRow({ row, playerColors, progressionSet }) {
   const time = formatTime(row.timestamp)
-  const rowColor = row.type === 'hint'
+  const isHint = row.type === 'hint'
+  const rowColor = isHint
     ? (playerColors[row.receiver] || 'var(--color-text)')
     : (playerColors[row.sender] || 'var(--color-text)')
 
-  const wrap = (value) => (row.type === 'hint' ? `[${value}]` : value)
+  const wrap = (value) => (isHint ? `[${value}]` : value)
+
+  // Star-prefix the location if this event's (locationOwner, location) pair
+  // appears in any playthrough sphere — indicating it was a progression item.
+  const isProgression = progressionSet.has(`${row.sender}\u0000${row.location}`)
 
   return (
     <tr
@@ -60,7 +65,20 @@ function EventRow({ row, playerColors }) {
       >
         {wrap(row.sender)}
       </td>
-      <td className="player-log-cell-location">{wrap(row.location)}</td>
+      <td
+        className="player-log-cell-location"
+        title={isProgression ? 'Progression item' : undefined}
+      >
+        {isHint && 'Hint ['}
+        {isProgression && (
+          <>
+            <span className="player-log-progression-star" aria-label="Progression item">★</span>
+            {' '}
+          </>
+        )}
+        {row.location}
+        {isHint && ']'}
+      </td>
       <td className="player-log-cell-item">{wrap(row.item)}</td>
       <td
         className="player-log-cell-owner"
@@ -102,6 +120,11 @@ export default function PlayerLogTab({
     if (!selectedPlayer) return []
     return buildPlayerLog(selectedPlayer, logEvents, { receiving, sending, searchQuery })
   }, [selectedPlayer, logEvents, receiving, sending, searchQuery])
+
+  const progressionSet = useMemo(
+    () => computeProgressionSet(spoilerData?.spheres),
+    [spoilerData]
+  )
 
   if (!spoilerData) return null
 
@@ -150,6 +173,7 @@ export default function PlayerLogTab({
                     key={`${row.type}-${row.timestamp}-${row.location}-${row.item}-${i}`}
                     row={row}
                     playerColors={playerColors}
+                    progressionSet={progressionSet}
                   />
                 ))}
               </tbody>

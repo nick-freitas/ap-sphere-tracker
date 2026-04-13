@@ -3802,3 +3802,5 @@
 [2026-04-13 03:03:53,969]: (Team #1) Brian sent Elixir to Brian ((DC) Minnie Escort Bonus: Sora Slot 1)
 [2026-04-13 03:04:16,717]: (Team #1) Naizak sent Hammer to Andrew (Water Temple MQ Lizalfos Hallway Gate Pot 2)
 [2026-04-13 03:04:23,155]: (Team #1) Naizak sent Recovery Heart to Nick (Water Temple MQ Lizalfos Hallway Gate Crate 2)
+[2026-04-13 03:06:52,771]: (Team #1) Brian sent AP Boost to Brian (Valor level 2)
+[2026-04-13 03:07:08,079]: (Team #1) Brian sent Donald Damage Control to Brian (Precious Mushroom Slot)

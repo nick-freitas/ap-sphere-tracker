@@ -3,6 +3,10 @@ import { buildPlayerTracker, buildPlayerHints } from '../engine/playerTracker'
 import './TrackerTab.css'
 
 function PlayerProgressList({ rows, selectedPlayer, playerColors, onSelectedPlayerChange }) {
+  const totalFound = rows.reduce((sum, r) => sum + r.found, 0)
+  const totalAll = rows.reduce((sum, r) => sum + r.total, 0)
+  const totalPercent = totalAll === 0 ? 0 : Math.round((totalFound / totalAll) * 100)
+
   return (
     <div className="tracker-progress-list">
       {rows.map((row) => {
@@ -36,6 +40,20 @@ function PlayerProgressList({ rows, selectedPlayer, playerColors, onSelectedPlay
           </button>
         )
       })}
+      {rows.length > 0 && (
+        <div className="tracker-progress-row tracker-progress-total">
+          <span className="tracker-progress-name">Total</span>
+          <div className="tracker-progress-bar">
+            <div
+              className="tracker-progress-fill"
+              style={{ width: `${totalPercent}%`, background: 'var(--color-moss)' }}
+            />
+          </div>
+          <span className="tracker-progress-count">
+            {totalFound}/{totalAll} ({totalPercent}%)
+          </span>
+        </div>
+      )}
     </div>
   )
 }
@@ -104,20 +122,48 @@ function LocationTable({ rows, allRows, hintRows, allHintRows, playerColors }) {
               {' '}Hints — {hintsFound} / {hintsTotal} ({hintsPercent}%)
             </button>
           </h3>
-          {!hintsCollapsed && hintRows.length > 0 && (
-            <table className="tracker-table">
-              <tbody>
-                {hintRows.map((row) => (
-                  <LocationRow
-                    key={`h-${row.location}`}
-                    row={row}
-                    playerColors={playerColors}
-                    alwaysShowItem
-                  />
-                ))}
-              </tbody>
-            </table>
-          )}
+          {!hintsCollapsed && (() => {
+            const receivingRows = hintRows.filter((r) => r.direction === 'receiving')
+            const sendingRows = hintRows.filter((r) => r.direction === 'sending')
+            return (
+              <>
+                {receivingRows.length > 0 && (
+                  <>
+                    <h4 className="tracker-subsection-heading">Receiving</h4>
+                    <table className="tracker-table">
+                      <tbody>
+                        {receivingRows.map((row) => (
+                          <LocationRow
+                            key={`h-r-${row.location}-${row.itemOwner}`}
+                            row={row}
+                            playerColors={playerColors}
+                            alwaysShowItem
+                          />
+                        ))}
+                      </tbody>
+                    </table>
+                  </>
+                )}
+                {sendingRows.length > 0 && (
+                  <>
+                    <h4 className="tracker-subsection-heading">Sending</h4>
+                    <table className="tracker-table">
+                      <tbody>
+                        {sendingRows.map((row) => (
+                          <LocationRow
+                            key={`h-s-${row.location}-${row.itemOwner}`}
+                            row={row}
+                            playerColors={playerColors}
+                            alwaysShowItem
+                          />
+                        ))}
+                      </tbody>
+                    </table>
+                  </>
+                )}
+              </>
+            )
+          })()}
         </>
       )}
       {priorityRows.length > 0 && (
@@ -254,12 +300,14 @@ export default function TrackerTab({
     })
   }, [currentPlayerTracker.rows, searchQuery, hideFound])
 
-  // Hints respect searchQuery but NOT hideFound — found hints stay visible as history.
   const filteredHintRows = useMemo(() => {
     const query = searchQuery.trim().toLowerCase()
-    if (!query) return currentPlayerHints.rows
-    return currentPlayerHints.rows.filter((row) => row.location.toLowerCase().includes(query))
-  }, [currentPlayerHints.rows, searchQuery])
+    return currentPlayerHints.rows.filter((row) => {
+      if (hideFound && row.found) return false
+      if (query && !row.location.toLowerCase().includes(query)) return false
+      return true
+    })
+  }, [currentPlayerHints.rows, searchQuery, hideFound])
 
   if (!spoilerData) return null
 

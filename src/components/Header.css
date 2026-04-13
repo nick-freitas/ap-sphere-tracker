@@ -210,3 +210,13 @@
   background: #c0392b;
   border-color: #c0392b;
 }
+
+@media (max-width: 720px) {
+  .header-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .threshold-control {
+    grid-column: 1 / -1;
+  }
+}

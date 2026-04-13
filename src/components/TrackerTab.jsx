@@ -1,5 +1,5 @@
-import { useEffect, useMemo } from 'react'
-import { buildPlayerTracker } from '../engine/playerTracker'
+import { useEffect, useMemo, useState } from 'react'
+import { buildPlayerTracker, buildPlayerHints } from '../engine/playerTracker'
 import './TrackerTab.css'
 
 function PlayerProgressList({ rows, selectedPlayer, playerColors, onSelectedPlayerChange }) {
@@ -40,7 +40,8 @@ function PlayerProgressList({ rows, selectedPlayer, playerColors, onSelectedPlay
   )
 }
 
-function LocationRow({ row, playerColors }) {
+function LocationRow({ row, playerColors, alwaysShowItem }) {
+  const showItem = alwaysShowItem || row.found
   return (
     <tr className={row.found ? 'tracker-row found' : 'tracker-row'}>
       <td className="tracker-cell-check">
@@ -49,45 +50,122 @@ function LocationRow({ row, playerColors }) {
         </span>
       </td>
       <td className="tracker-cell-location">{row.location}</td>
-      <td className="tracker-cell-item">{row.found ? row.item : ''}</td>
+      <td className="tracker-cell-item">{showItem ? row.item : ''}</td>
       <td
         className="tracker-cell-owner"
-        style={row.found ? { color: playerColors[row.itemOwner] || 'var(--color-text)', fontWeight: 600 } : undefined}
+        style={showItem ? { color: playerColors[row.itemOwner] || 'var(--color-text)', fontWeight: 600 } : undefined}
       >
-        {row.found ? row.itemOwner : ''}
+        {showItem ? row.itemOwner : ''}
       </td>
     </tr>
   )
 }
 
-function LocationTable({ rows, playerColors }) {
+function LocationTable({ rows, allRows, hintRows, allHintRows, playerColors }) {
+  const [hintsCollapsed, setHintsCollapsed] = useState(false)
+  const [priorityCollapsed, setPriorityCollapsed] = useState(false)
+  const [remainingCollapsed, setRemainingCollapsed] = useState(false)
+
   const priorityRows = rows.filter((r) => r.priority)
   const remainingRows = rows.filter((r) => !r.priority)
 
+  let priorityTotal = 0
+  let priorityFound = 0
+  let remainingTotal = 0
+  let remainingFound = 0
+  for (const row of allRows) {
+    if (row.priority) {
+      priorityTotal++
+      if (row.found) priorityFound++
+    } else {
+      remainingTotal++
+      if (row.found) remainingFound++
+    }
+  }
+  const priorityPercent = priorityTotal === 0 ? 0 : Math.round((priorityFound / priorityTotal) * 100)
+  const remainingPercent = remainingTotal === 0 ? 0 : Math.round((remainingFound / remainingTotal) * 100)
+
+  const hintsTotal = allHintRows.length
+  const hintsFound = allHintRows.filter((r) => r.found).length
+  const hintsPercent = hintsTotal === 0 ? 0 : Math.round((hintsFound / hintsTotal) * 100)
+
   return (
     <div className="tracker-table-wrap">
+      {allHintRows.length > 0 && (
+        <>
+          <h3 className="tracker-section-heading">
+            <button
+              type="button"
+              className="tracker-section-toggle"
+              aria-expanded={!hintsCollapsed}
+              onClick={() => setHintsCollapsed((v) => !v)}
+            >
+              <span className="tracker-caret" aria-hidden="true">{hintsCollapsed ? '▶' : '▼'}</span>
+              {' '}Hints — {hintsFound} / {hintsTotal} ({hintsPercent}%)
+            </button>
+          </h3>
+          {!hintsCollapsed && hintRows.length > 0 && (
+            <table className="tracker-table">
+              <tbody>
+                {hintRows.map((row) => (
+                  <LocationRow
+                    key={`h-${row.location}`}
+                    row={row}
+                    playerColors={playerColors}
+                    alwaysShowItem
+                  />
+                ))}
+              </tbody>
+            </table>
+          )}
+        </>
+      )}
       {priorityRows.length > 0 && (
         <>
-          <h3 className="tracker-section-heading">— Priority —</h3>
-          <table className="tracker-table">
-            <tbody>
-              {priorityRows.map((row) => (
-                <LocationRow key={`p-${row.location}`} row={row} playerColors={playerColors} />
-              ))}
-            </tbody>
-          </table>
+          <h3 className="tracker-section-heading">
+            <button
+              type="button"
+              className="tracker-section-toggle"
+              aria-expanded={!priorityCollapsed}
+              onClick={() => setPriorityCollapsed((v) => !v)}
+            >
+              <span className="tracker-caret" aria-hidden="true">{priorityCollapsed ? '▶' : '▼'}</span>
+              {' '}Priority — {priorityFound} / {priorityTotal} ({priorityPercent}%)
+            </button>
+          </h3>
+          {!priorityCollapsed && (
+            <table className="tracker-table">
+              <tbody>
+                {priorityRows.map((row) => (
+                  <LocationRow key={`p-${row.location}`} row={row} playerColors={playerColors} />
+                ))}
+              </tbody>
+            </table>
+          )}
         </>
       )}
       {remainingRows.length > 0 && (
         <>
-          <h3 className="tracker-section-heading">— Remaining —</h3>
-          <table className="tracker-table">
-            <tbody>
-              {remainingRows.map((row) => (
-                <LocationRow key={`r-${row.location}`} row={row} playerColors={playerColors} />
-              ))}
-            </tbody>
-          </table>
+          <h3 className="tracker-section-heading">
+            <button
+              type="button"
+              className="tracker-section-toggle"
+              aria-expanded={!remainingCollapsed}
+              onClick={() => setRemainingCollapsed((v) => !v)}
+            >
+              <span className="tracker-caret" aria-hidden="true">{remainingCollapsed ? '▶' : '▼'}</span>
+              {' '}Remaining — {remainingFound} / {remainingTotal} ({remainingPercent}%)
+            </button>
+          </h3>
+          {!remainingCollapsed && (
+            <table className="tracker-table">
+              <tbody>
+                {remainingRows.map((row) => (
+                  <LocationRow key={`r-${row.location}`} row={row} playerColors={playerColors} />
+                ))}
+              </tbody>
+            </table>
+          )}
         </>
       )}
     </div>
@@ -112,7 +190,6 @@ function PlayerSidebar({ players, playerColors, selectedPlayer, onSelectedPlayer
             type="button"
             className={`tracker-sidebar-btn ${isActive ? 'active' : ''}`}
             onClick={() => onSelectedPlayerChange(p.name)}
-            style={isActive ? { borderLeftColor: color } : undefined}
           >
             <span className="tracker-sidebar-dot" style={{ background: color }} />
             <span className="tracker-sidebar-name" style={{ color }}>{p.name}</span>
@@ -127,6 +204,7 @@ function PlayerSidebar({ players, playerColors, selectedPlayer, onSelectedPlayer
 export default function TrackerTab({
   spoilerData,
   checkedLocations,
+  hints,
   prioritySet,
   playerColors,
   selectedPlayer,
@@ -162,6 +240,11 @@ export default function TrackerTab({
     return buildPlayerTracker(selectedPlayer, spoilerData, checkedLocations, prioritySet)
   }, [spoilerData, selectedPlayer, checkedLocations, prioritySet])
 
+  const currentPlayerHints = useMemo(() => {
+    if (!selectedPlayer) return { rows: [], totalCount: 0, foundCount: 0 }
+    return buildPlayerHints(selectedPlayer, hints || [], checkedLocations)
+  }, [selectedPlayer, hints, checkedLocations])
+
   const filteredRows = useMemo(() => {
     const query = searchQuery.trim().toLowerCase()
     return currentPlayerTracker.rows.filter((row) => {
@@ -170,6 +253,13 @@ export default function TrackerTab({
       return true
     })
   }, [currentPlayerTracker.rows, searchQuery, hideFound])
+
+  // Hints respect searchQuery but NOT hideFound — found hints stay visible as history.
+  const filteredHintRows = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase()
+    if (!query) return currentPlayerHints.rows
+    return currentPlayerHints.rows.filter((row) => row.location.toLowerCase().includes(query))
+  }, [currentPlayerHints.rows, searchQuery])
 
   if (!spoilerData) return null
 
@@ -206,10 +296,16 @@ export default function TrackerTab({
             Hide found
           </label>
         </div>
-        {filteredRows.length === 0 ? (
+        {filteredRows.length === 0 && filteredHintRows.length === 0 ? (
           <p className="tracker-placeholder">No locations match the current filter.</p>
         ) : (
-          <LocationTable rows={filteredRows} playerColors={playerColors} />
+          <LocationTable
+            rows={filteredRows}
+            allRows={currentPlayerTracker.rows}
+            hintRows={filteredHintRows}
+            allHintRows={currentPlayerHints.rows}
+            playerColors={playerColors}
+          />
         )}
       </div>
     </div>

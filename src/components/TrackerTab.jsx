@@ -1,6 +1,43 @@
 import { useEffect, useMemo } from 'react'
-import { buildPlayerTracker } from '../engine/playerTracker'
 import './TrackerTab.css'
+
+function PlayerProgressList({ rows, selectedPlayer, playerColors, onSelectedPlayerChange }) {
+  return (
+    <div className="tracker-progress-list">
+      {rows.map((row) => {
+        const isActive = row.name === selectedPlayer
+        const color = playerColors[row.name]
+        return (
+          <button
+            key={row.name}
+            type="button"
+            className={`tracker-progress-row ${isActive ? 'active' : 'muted'}`}
+            onClick={() => onSelectedPlayerChange(row.name)}
+          >
+            <span
+              className="tracker-progress-name"
+              style={{ color: isActive ? color : 'var(--color-text-muted)' }}
+            >
+              {row.name}
+            </span>
+            <div className="tracker-progress-bar">
+              <div
+                className="tracker-progress-fill"
+                style={{
+                  width: `${row.percent}%`,
+                  background: isActive ? color : 'var(--color-text-muted)',
+                }}
+              />
+            </div>
+            <span className="tracker-progress-count">
+              {row.found}/{row.total} ({row.percent}%)
+            </span>
+          </button>
+        )
+      })}
+    </div>
+  )
+}
 
 function PlayerSidebar({ players, playerColors, selectedPlayer, onSelectedPlayerChange, allPlayerProgress }) {
   const progressByName = useMemo(() => {
@@ -34,7 +71,6 @@ function PlayerSidebar({ players, playerColors, selectedPlayer, onSelectedPlayer
 export default function TrackerTab({
   spoilerData,
   checkedLocations,
-  prioritySet,
   playerColors,
   selectedPlayer,
   onSelectedPlayerChange,
@@ -60,11 +96,6 @@ export default function TrackerTab({
     })
   }, [spoilerData, checkedLocations])
 
-  const currentPlayerTracker = useMemo(() => {
-    if (!spoilerData || !selectedPlayer) return { rows: [], totalCount: 0, foundCount: 0 }
-    return buildPlayerTracker(selectedPlayer, spoilerData, checkedLocations, prioritySet)
-  }, [spoilerData, selectedPlayer, checkedLocations, prioritySet])
-
   if (!spoilerData) return null
 
   return (
@@ -77,9 +108,12 @@ export default function TrackerTab({
         allPlayerProgress={allPlayerProgress}
       />
       <div className="tracker-main">
-        <p className="tracker-placeholder">
-          Selected: {selectedPlayer || '(none)'} — {currentPlayerTracker.foundCount}/{currentPlayerTracker.totalCount} locations found
-        </p>
+        <PlayerProgressList
+          rows={allPlayerProgress}
+          selectedPlayer={selectedPlayer}
+          playerColors={playerColors}
+          onSelectedPlayerChange={onSelectedPlayerChange}
+        />
       </div>
     </div>
   )

@@ -2,6 +2,8 @@ import { useState, useEffect, useMemo, useRef } from 'react'
 import { parseSpoilerLogRaw } from './parsers/spoilerParser'
 import { parseTrackerLog } from './parsers/trackerParser'
 import { analyzeSpheres } from './engine/sphereAnalyzer'
+import { resolveDatapackages } from './services/datapackageService'
+import { applyEventFilter } from './engine/eventFilter'
 import Header from './components/Header'
 import InputSection from './components/InputSection'
 import SphereCard from './components/SphereCard'
@@ -10,12 +12,15 @@ import PlayerStats from './components/PlayerStats'
 import PlayerConfigs from './components/PlayerConfigs'
 import TrackerTab from './components/TrackerTab'
 import PlayerLogTab from './components/PlayerLogTab'
+import ErrorCard from './components/ErrorCard'
 import './App.css'
 
 const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i})`)
 
 function App() {
   const [spoilerData, setSpoilerData] = useState(null)
+  const [missingGames, setMissingGames] = useState([])
+  const [loadingDatapackages, setLoadingDatapackages] = useState(false)
   const [checkedLocations, setCheckedLocations] = useState(new Map())
   const [hints, setHints] = useState([])
   const [lastCheckTime, setLastCheckTime] = useState(null)
@@ -67,11 +72,24 @@ function App() {
       .catch(() => {})
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  function handleSpoilerText(text) {
+  async function handleSpoilerText(text) {
     rawSpoilerTextRef.current = text
-    const parsed = parseSpoilerLogRaw(text)
-    setSpoilerData(parsed)
-    setHiddenPlayers(new Set())
+    setLoadingDatapackages(true)
+    setMissingGames([])
+    try {
+      const rawParsed = parseSpoilerLogRaw(text)
+      const { datapackages, missingGames: missing } = await resolveDatapackages(rawParsed.players)
+      if (missing.length > 0) {
+        setMissingGames(missing)
+        setSpoilerData(null)
+        return
+      }
+      const filtered = applyEventFilter(rawParsed, datapackages)
+      setSpoilerData(filtered)
+      setHiddenPlayers(new Set())
+    } finally {
+      setLoadingDatapackages(false)
+    }
   }
 
   function handleTrackerText(text) {
@@ -261,7 +279,33 @@ function App() {
         <button className={`tab ${activeTab === 'configs' ? 'active' : ''}`} onClick={() => setActiveTab('configs')}>Player Configs</button>
       </div>
 
-      {activeTab === 'spheres' && (
+      {loadingDatapackages && (
+        <div style={{ textAlign: 'center', padding: '4rem' }}>
+          <p>Loading game data…</p>
+        </div>
+      )}
+
+      {!loadingDatapackages && missingGames.length > 0 && (
+        <ErrorCard
+          title="Cannot analyze seed: missing datapackages"
+          body="This seed uses the following games, but their datapackages are not bundled with the tracker:"
+          items={missingGames}
+          fixSteps={[
+            <>Run <code>python scripts/extract_datapackages.py --output &lt;repo&gt;/public/datapackages --merge-index</code> in your Archipelago install folder.</>,
+            <>Commit the new files in <code>public/datapackages/</code> and redeploy.</>,
+            'Reload this page.',
+          ]}
+        />
+      )}
+
+      {!loadingDatapackages && missingGames.length === 0 && spoilerData === null && (
+        <ErrorCard
+          title="No spoiler log loaded"
+          body="Upload a spoiler log (AP_*_Spoiler.txt from your seed) to begin analysis."
+        />
+      )}
+
+      {!loadingDatapackages && missingGames.length === 0 && spoilerData !== null && activeTab === 'spheres' && (
         <>
           {spoilerData && (
             <PlayerLegend
@@ -331,7 +375,7 @@ function App() {
         </>
       )}
 
-      {activeTab === 'tracker' && spoilerData && (
+      {!loadingDatapackages && missingGames.length === 0 && spoilerData !== null && activeTab === 'tracker' && (
         <TrackerTab
           spoilerData={spoilerData}
           checkedLocations={checkedLocations}
@@ -346,7 +390,7 @@ function App() {
         />
       )}
 
-      {activeTab === 'player-log' && spoilerData && (
+      {!loadingDatapackages && missingGames.length === 0 && spoilerData !== null && activeTab === 'player-log' && (
         <PlayerLogTab
           spoilerData={spoilerData}
           logEvents={logEvents}
@@ -362,14 +406,14 @@ function App() {
         />
       )}
 
-      {activeTab === 'configs' && spoilerData && (
+      {!loadingDatapackages && missingGames.length === 0 && spoilerData !== null && activeTab === 'configs' && (
         <PlayerConfigs
           players={spoilerData.players}
           playerColors={playerColors}
         />
       )}
 
-      {activeTab === 'log' && (
+      {!loadingDatapackages && missingGames.length === 0 && spoilerData !== null && activeTab === 'log' && (
         <div className="raw-log">
           {rawTrackerText
             ? <pre className="log-content">{reversedRawTrackerText}</pre>

@@ -2,20 +2,29 @@ export function parseTrackerLog(text) {
   const checkedLocations = new Map()
   let lastCheckTime = null
   const hintMap = new Map()
+  const events = []
 
-  if (!text) return { checkedLocations, lastCheckTime, hints: [] }
+  if (!text) return { checkedLocations, lastCheckTime, hints: [], events }
 
   const lines = text.split('\n')
 
   for (const line of lines) {
     const sendParsed = parseSendLine(line)
     if (sendParsed) {
-      const { sender, location, timestamp } = sendParsed
+      const { sender, item, receiver, location, timestamp } = sendParsed
       if (!checkedLocations.has(sender)) {
         checkedLocations.set(sender, new Set())
       }
       checkedLocations.get(sender).add(location)
       if (timestamp) lastCheckTime = timestamp
+      events.push({
+        type: 'sent',
+        timestamp,
+        sender,
+        item,
+        receiver,
+        location,
+      })
       continue
     }
 
@@ -30,16 +39,27 @@ export function parseTrackerLog(text) {
       } else {
         hintMap.set(key, hintParsed)
       }
+      events.push({
+        type: 'hint',
+        timestamp: hintParsed.timestamp,
+        sender: hintParsed.locationOwner,
+        item: hintParsed.item,
+        receiver: hintParsed.receiver,
+        location: hintParsed.location,
+        status: hintParsed.status,
+      })
     }
   }
 
-  return { checkedLocations, lastCheckTime, hints: Array.from(hintMap.values()) }
+  return { checkedLocations, lastCheckTime, hints: Array.from(hintMap.values()), events }
 }
 
 function parseSendLine(line) {
   // Match: [timestamp]: (Team #N) Sender sent Item to Receiver (Location)
+  // Uses the final ' (' before the trailing ')' as the location boundary so
+  // items or receiver names that happen to contain ' (' are preserved.
   const match = line.match(
-    /^\[([^\]]+)\].*\(Team #\d+\) (.+?) sent .+ to .+? \((.+)\)$/
+    /^\[([^\]]+)\].*\(Team #\d+\) (.+?) sent (.+) to (.+?) \((.+)\)$/
   )
 
   if (!match) return null
@@ -47,7 +67,9 @@ function parseSendLine(line) {
   return {
     timestamp: match[1],
     sender: match[2],
-    location: match[3],
+    item: match[3],
+    receiver: match[4],
+    location: match[5],
   }
 }
 

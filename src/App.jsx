@@ -221,6 +221,11 @@ function App() {
     [spoilerData]
   )
 
+  const reversedRawTrackerText = useMemo(
+    () => rawTrackerText.trimEnd().split('\n').reverse().join('\n'),
+    [rawTrackerText]
+  )
+
   return (
     <div className="app">
       <Header
@@ -353,7 +358,7 @@ function App() {
       {activeTab === 'log' && (
         <div className="raw-log">
           {rawTrackerText
-            ? <pre className="log-content">{rawTrackerText}</pre>
+            ? <pre className="log-content">{reversedRawTrackerText}</pre>
             : <p className="log-empty">No tracker log loaded</p>
           }
         </div>

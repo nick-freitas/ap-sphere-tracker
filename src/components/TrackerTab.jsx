@@ -3,6 +3,10 @@ import { buildPlayerTracker, buildPlayerHints } from '../engine/playerTracker'
 import './TrackerTab.css'
 
 function PlayerProgressList({ rows, selectedPlayer, playerColors, onSelectedPlayerChange }) {
+  const totalFound = rows.reduce((sum, r) => sum + r.found, 0)
+  const totalAll = rows.reduce((sum, r) => sum + r.total, 0)
+  const totalPercent = totalAll === 0 ? 0 : Math.round((totalFound / totalAll) * 100)
+
   return (
     <div className="tracker-progress-list">
       {rows.map((row) => {
@@ -36,6 +40,20 @@ function PlayerProgressList({ rows, selectedPlayer, playerColors, onSelectedPlay
           </button>
         )
       })}
+      {rows.length > 0 && (
+        <div className="tracker-progress-row tracker-progress-total">
+          <span className="tracker-progress-name">Total</span>
+          <div className="tracker-progress-bar">
+            <div
+              className="tracker-progress-fill"
+              style={{ width: `${totalPercent}%`, background: 'var(--color-moss)' }}
+            />
+          </div>
+          <span className="tracker-progress-count">
+            {totalFound}/{totalAll} ({totalPercent}%)
+          </span>
+        </div>
+      )}
     </div>
   )
 }

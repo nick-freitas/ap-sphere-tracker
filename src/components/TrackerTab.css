@@ -134,6 +134,28 @@
   white-space: nowrap;
 }
 
+.tracker-progress-total {
+  border-top: 2px solid var(--color-sand);
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
+  cursor: default;
+  opacity: 1;
+}
+
+.tracker-progress-total:hover {
+  background: none;
+}
+
+.tracker-progress-total .tracker-progress-name {
+  font-family: 'Lora', serif;
+  color: var(--color-moss);
+}
+
+.tracker-progress-total .tracker-progress-count {
+  color: var(--color-moss);
+  font-weight: 600;
+}
+
 .tracker-table-wrap {
   margin-top: 0.5rem;
 }

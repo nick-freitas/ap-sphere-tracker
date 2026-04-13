@@ -4196,3 +4196,12 @@
 [2026-04-13 21:19:34,021]: Notice (all): Dan (Team #1) tracking Super Metroid has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-13 21:21:45,792]: (Team #1) Brian sent Bounty to Brian (Valor level 7)
 [2026-04-13 21:22:34,448]: (Team #1) Dan sent Rupee (1) to Naizak (Energy Tank, Brinstar Gate)
+[2026-04-13 21:24:29,763]: (Team #1) Brian sent Rupees (50) to Naizak (Limit level 7)
+[2026-04-13 21:32:35,049]: (Team #1) Dan sent Deku Stick (1) to Nick (Super Missile (Wrecked Ship left))
+[2026-04-13 21:33:09,515]: (Team #1) Dan sent Rupees (5) to Naizak (Right Super, Wrecked Ship)
+[2026-04-13 21:33:54,815]: (Team #1) Dan sent Bonus Coin to Ryot (Missile (Wrecked Ship middle))
+[2026-04-13 21:35:26,597]: (Team #1) Dan sent Bear Coin to Ryot (Missile (Wrecked Ship top))
+[2026-04-13 21:38:12,422]: (Team #1) Dan sent Rupee (1) to Naizak (Gravity Suit)
+[2026-04-13 21:38:49,688]: (Team #1) Dan sent Reflect Element to Brian (Missile (Gravity Suit))
+[2026-04-13 21:40:18,287]: (Team #1) Dan sent Rupees (50) to Andrew (Reserve Tank, Wrecked Ship)
+[2026-04-13 21:44:11,676]: (Team #1) Brian sent Bounty to Brian ((Post TT3: Betwixt and Between) Data Axel)

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { buildPlayerTracker, buildPlayerHints } from '../engine/playerTracker'
 import './TrackerTab.css'
+import PlayerSidebar from './PlayerSidebar'
 
 function parseConfigLocationList(config, key) {
   if (!config) return new Set()
@@ -189,34 +190,6 @@ function LocationTable({ rows, allRows, hintRows, allHintRows, playerColors }) {
   )
 }
 
-function PlayerSidebar({ players, playerColors, selectedPlayer, onSelectedPlayerChange, allPlayerProgress }) {
-  const progressByName = useMemo(() => {
-    const map = {}
-    for (const p of allPlayerProgress) map[p.name] = p.percent
-    return map
-  }, [allPlayerProgress])
-
-  return (
-    <div className="tracker-sidebar">
-      {players.map((p) => {
-        const isActive = p.name === selectedPlayer
-        const color = playerColors[p.name]
-        return (
-          <button
-            key={p.slot}
-            type="button"
-            className={`tracker-sidebar-btn ${isActive ? 'active' : ''}`}
-            onClick={() => onSelectedPlayerChange(p.name)}
-          >
-            <span className="tracker-sidebar-dot" style={{ background: color }} />
-            <span className="tracker-sidebar-name" style={{ color }}>{p.name}</span>
-            <span className="tracker-sidebar-pct">{progressByName[p.name] ?? 0}%</span>
-          </button>
-        )
-      })}
-    </div>
-  )
-}
 
 export default function TrackerTab({
   spoilerData,
@@ -241,7 +214,7 @@ export default function TrackerTab({
 
   const allPlayerProgress = useMemo(() => {
     if (!spoilerData) return []
-    return spoilerData.players.map((p) => {
+    const rows = spoilerData.players.map((p) => {
       const locations = spoilerData.playerLocations.get(p.name) || []
       const checks = checkedLocations.get(p.name) || new Set()
       const total = locations.length
@@ -249,7 +222,19 @@ export default function TrackerTab({
       const percent = total === 0 ? 0 : Math.round((found / total) * 100)
       return { name: p.name, found, total, percent }
     })
+    // Sort by completion percent (highest first). ES2019+ Array.sort is
+    // stable, so ties preserve the original spoiler slot order.
+    rows.sort((a, b) => b.percent - a.percent)
+    return rows
   }, [spoilerData, checkedLocations])
+
+  const sortedPlayers = useMemo(() => {
+    if (!spoilerData) return []
+    const playerByName = new Map(spoilerData.players.map((p) => [p.name, p]))
+    return allPlayerProgress
+      .map((row) => playerByName.get(row.name))
+      .filter(Boolean)
+  }, [spoilerData, allPlayerProgress])
 
   const currentPlayerTracker = useMemo(() => {
     if (!spoilerData || !selectedPlayer) return { rows: [], totalCount: 0, foundCount: 0 }
@@ -294,7 +279,7 @@ export default function TrackerTab({
   return (
     <div className="tracker-tab">
       <PlayerSidebar
-        players={spoilerData.players}
+        players={sortedPlayers}
         playerColors={playerColors}
         selectedPlayer={selectedPlayer}
         onSelectedPlayerChange={onSelectedPlayerChange}

@@ -16,6 +16,7 @@
   --color-bg-pattern-stroke: %234a6741;
   --color-completed-bg: rgba(74, 103, 65, 0.06);
   --color-hover-bg: rgba(74, 103, 65, 0.03);
+  --color-hint-bg: rgba(120, 115, 105, 0.18);
   --color-row-border: rgba(0, 0, 0, 0.03);
   --color-section-border: rgba(0, 0, 0, 0.05);
   --color-modal-overlay: rgba(0, 0, 0, 0.4);
@@ -48,6 +49,7 @@
   --color-bg-pattern-stroke: %237ba05b;
   --color-completed-bg: rgba(123, 160, 91, 0.08);
   --color-hover-bg: rgba(123, 160, 91, 0.05);
+  --color-hint-bg: rgba(150, 145, 135, 0.18);
   --color-row-border: rgba(255, 255, 255, 0.03);
   --color-section-border: rgba(255, 255, 255, 0.06);
   --color-modal-overlay: rgba(0, 0, 0, 0.6);

@@ -127,6 +127,16 @@ describe('parseTrackerLog hint parsing', () => {
     expect(hints[0].locationOwner).toBe('TNNPE')
   })
 
+  it('handles locations whose name itself ends with " in <something>" before the world', () => {
+    // Real fixture from a Dark Souls 3 randomizer log: location name has " in RS"
+    // as a meaningful suffix (Region Snippet abbreviation), and the regex must
+    // backtrack to the LAST " in " before "'s World" — not the first.
+    const log = `[t]: Notice (Team #1): [Hint]: Nick's Blue Rupee is at FS: Exile Mask - shop after killing NPCs in RS in TNNPE's World. (unspecified)\n`
+    const { hints } = parseTrackerLog(log)
+    expect(hints[0].location).toBe('FS: Exile Mask - shop after killing NPCs in RS')
+    expect(hints[0].locationOwner).toBe('TNNPE')
+  })
+
   it('deduplicates identical hints, keeping the latest status', () => {
     const log = [
       `[t1]: Notice (Team #1): [Hint]: Dan's Wave Beam is at Water Temple Boss Key Chest in Nick's World. (priority)`,
@@ -146,5 +156,108 @@ describe('parseTrackerLog hint parsing', () => {
     expect(checkedLocations.size).toBe(1)
     expect(checkedLocations.get('Alice')).toEqual(new Set(['KF Links House Pot']))
     expect(hints).toHaveLength(1)
+  })
+})
+
+describe('parseTrackerLog events array', () => {
+  it('returns an empty events array for empty input', () => {
+    const { events } = parseTrackerLog('')
+    expect(events).toEqual([])
+  })
+
+  it('returns an empty events array when only join/notice lines are present', () => {
+    const log = [
+      `[2026-04-10 23:00:00,000]: Loading embedded data package for game Ocarina of Time`,
+      `[2026-04-10 23:01:00,000]: Notice (all): Alice (Team #1) playing Ocarina of Time has joined. Client(0.6.5), ['AP'].`,
+    ].join('\n')
+    const { events } = parseTrackerLog(log)
+    expect(events).toEqual([])
+  })
+
+  it('extracts sent-line events with type, timestamp, sender, item, receiver, location', () => {
+    const log = `[2026-04-10 23:02:00,000]: (Team #1) Alice sent Hookshot to Bob (KF Links House Pot)\n`
+    const { events } = parseTrackerLog(log)
+    expect(events).toHaveLength(1)
+    expect(events[0]).toEqual({
+      type: 'sent',
+      timestamp: '2026-04-10 23:02:00,000',
+      sender: 'Alice',
+      item: 'Hookshot',
+      receiver: 'Bob',
+      location: 'KF Links House Pot',
+    })
+  })
+
+  it('extracts hint-line events with type, timestamp, sender (= locationOwner), receiver, item, location, status', () => {
+    const log = `[2026-04-10 23:05:00,000]: Notice (Team #1): [Hint]: Alice's Bow is at Sanctuary in Charlie's World. (priority)\n`
+    const { events } = parseTrackerLog(log)
+    expect(events).toHaveLength(1)
+    expect(events[0]).toEqual({
+      type: 'hint',
+      timestamp: '2026-04-10 23:05:00,000',
+      sender: 'Charlie',
+      item: 'Bow',
+      receiver: 'Alice',
+      location: 'Sanctuary',
+      status: 'priority',
+    })
+  })
+
+  it('preserves chronological (file) order with interleaved sent and hint lines', () => {
+    const log = [
+      `[2026-04-10 23:02:00,000]: (Team #1) Alice sent Hookshot to Bob (KF Links House Pot)`,
+      `[2026-04-10 23:05:00,000]: Notice (Team #1): [Hint]: Alice's Bow is at Sanctuary in Charlie's World. (priority)`,
+      `[2026-04-10 23:06:00,000]: (Team #1) Charlie sent Bow to Alice (Sanctuary)`,
+    ].join('\n')
+    const { events } = parseTrackerLog(log)
+    expect(events.map((e) => e.type)).toEqual(['sent', 'hint', 'sent'])
+    expect(events[0].timestamp).toBe('2026-04-10 23:02:00,000')
+    expect(events[1].timestamp).toBe('2026-04-10 23:05:00,000')
+    expect(events[2].timestamp).toBe('2026-04-10 23:06:00,000')
+  })
+
+  it('preserves self-send events (sender === receiver) as a single entry', () => {
+    const log = `[2026-04-10 23:04:00,000]: (Team #1) Alice sent Bombs (5) to Alice (Location B)\n`
+    const { events } = parseTrackerLog(log)
+    expect(events).toHaveLength(1)
+    expect(events[0].sender).toBe('Alice')
+    expect(events[0].receiver).toBe('Alice')
+    expect(events[0].item).toBe('Bombs (5)')
+    expect(events[0].location).toBe('Location B')
+  })
+
+  it('extracts items that contain parentheses like Piece of Heart (WINNER)', () => {
+    const log = `[2026-04-10 23:07:00,000]: (Team #1) Bob sent Piece of Heart (WINNER) to Bob (Some Location)\n`
+    const { events } = parseTrackerLog(log)
+    expect(events[0].item).toBe('Piece of Heart (WINNER)')
+    expect(events[0].location).toBe('Some Location')
+  })
+
+  it('extracts locations that contain parentheses like Missile (blue Brinstar middle)', () => {
+    const log = `[2026-04-10 23:03:00,000]: (Team #1) Bob sent Red Rupee to Alice (Missile (blue Brinstar middle))\n`
+    const { events } = parseTrackerLog(log)
+    expect(events[0].location).toBe('Missile (blue Brinstar middle)')
+    expect(events[0].item).toBe('Red Rupee')
+  })
+
+  it('extracts item names that contain the substring " to "', () => {
+    // Contrived but plausible — some custom games have item names with "to" in them.
+    // The greedy item capture must find the LAST " to " (the real receiver boundary),
+    // not the first one.
+    const log = `[2026-04-10 23:08:00,000]: (Team #1) Alice sent Sword of Boots to Gloves to Bob (Chest)\n`
+    const { events } = parseTrackerLog(log)
+    expect(events).toHaveLength(1)
+    expect(events[0].item).toBe('Sword of Boots to Gloves')
+    expect(events[0].receiver).toBe('Bob')
+    expect(events[0].location).toBe('Chest')
+  })
+
+  it('existing checkedLocations and hints outputs are unchanged', () => {
+    const { checkedLocations, hints } = parseTrackerLog(SAMPLE_TRACKER)
+    expect(checkedLocations.get('Alice')).toEqual(new Set(['KF Links House Pot', 'Location B']))
+    expect(checkedLocations.get('Bob')).toEqual(new Set(['Missile (blue Brinstar middle)', 'Some Location']))
+    expect(checkedLocations.get('Charlie')).toEqual(new Set(['Sanctuary']))
+    expect(hints).toHaveLength(1)
+    expect(hints[0].receiver).toBe('Alice')
   })
 })

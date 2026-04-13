@@ -75,14 +75,15 @@ export function validateIgnoreLists(spoilerText, ignoreItems, ignoreLocations) {
 export function parseSpoilerLog(text, ignoreItems, ignoreLocations) {
   const nonItems = ignoreItems || new Set()
   const nonLocations = ignoreLocations || new Set()
-  const players = parsePlayers(text)
+  const { players, headerCounts } = parsePlayers(text)
   const spheres = parseSpheres(text, nonItems, nonLocations)
   const playerLocations = parseLocations(text, nonItems, nonLocations)
-  return { players, spheres, playerLocations }
+  return { players, spheres, playerLocations, headerCounts }
 }
 
 function parsePlayers(text) {
   const players = []
+  const headerCounts = new Map()
   const lines = text.split('\n')
 
   for (let i = 0; i < lines.length; i++) {
@@ -105,6 +106,10 @@ function parsePlayers(text) {
           if (key === 'Game') {
             game = value
           }
+          if (key === 'Location Count') {
+            const n = parseInt(value, 10)
+            if (!Number.isNaN(n)) headerCounts.set(name, n)
+          }
           if (value) {
             config.push({ key, value })
           }
@@ -115,7 +120,7 @@ function parsePlayers(text) {
     }
   }
 
-  return players
+  return { players, headerCounts }
 }
 
 function parseSpheres(text, nonItems, nonLocations) {

@@ -2,6 +2,37 @@ import { readFileSync } from 'node:fs'
 import { describe, it, expect } from 'vitest'
 import { parseSpoilerLog } from './spoilerParser'
 
+const SAMPLE_SPOILER_WITH_COUNTS = `Archipelago Version 0.6.5  -  Seed: 12345
+
+Players:                         3
+
+Player 1: Alice
+Game:                            Ocarina of Time
+Location Count:                  271
+Logic Rules:                     Glitchless
+
+Player 2: Bob
+Game:                            Super Metroid
+Location Count:                  643
+Logic Rules:                     Glitchless
+
+Player 3: Charlie
+Game:                            A Link to the Past
+Location Count:                  100
+Logic Rules:                     Glitchless
+
+
+Locations:
+
+
+Playthrough:
+
+0: {
+}
+
+Paths:
+`
+
 const SAMPLE_SPOILER = `Archipelago Version 0.6.5  -  Seed: 12345
 
 Filling Algorithm:               balanced
@@ -141,6 +172,22 @@ Paths:
       const result = parseSpoilerLog(SAMPLE_SPOILER)
       expect(result.spheres[1].entries).toHaveLength(4)
       expect(result.spheres[2].entries).toHaveLength(2)
+    })
+  })
+
+  describe('header counts', () => {
+    it('extracts Location Count per player from the header', () => {
+      const result = parseSpoilerLog(SAMPLE_SPOILER_WITH_COUNTS)
+      expect(result.headerCounts).toBeInstanceOf(Map)
+      expect(result.headerCounts.get('Alice')).toBe(271)
+      expect(result.headerCounts.get('Bob')).toBe(643)
+      expect(result.headerCounts.get('Charlie')).toBe(100)
+    })
+
+    it('returns an empty Map when no Location Count lines are present', () => {
+      const result = parseSpoilerLog(SAMPLE_SPOILER)
+      expect(result.headerCounts).toBeInstanceOf(Map)
+      expect(result.headerCounts.size).toBe(0)
     })
   })
 })

@@ -4078,3 +4078,6 @@
 [2026-04-13 17:38:37,936]: (Team #1) Nick sent Gold Skulltula Token to Naizak (Water Temple Dragon Chest)
 [2026-04-13 17:49:38,876]: (Team #1) Nick sent Boomerang to Nick (Water Temple River Pot 1)
 [2026-04-13 17:54:51,914]: (Team #1) Nick sent Arrows (10) to Nick (Water Temple Central Pillar Chest)
+[2026-04-13 18:35:33,314]: (Team #1) Nick sent Ultima Weapon to Brian (Jabu Jabus Belly Boomerang Chest)
+[2026-04-13 18:36:32,313]: (Team #1) Nick sent Blue Rupee to Nick (Jabu Jabus Belly Map Chest)
+[2026-04-13 18:37:21,707]: (Team #1) Nick sent Purple Rupee to Nick (Jabu Jabus Belly Compass Chest)

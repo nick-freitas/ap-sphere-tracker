@@ -4216,3 +4216,26 @@
 [2026-04-13 22:14:02,525]: (Team #1) Dan sent Piece of Heart to Nick (Missile (yellow Maridia false wall))
 [2026-04-13 22:14:40,193]: (Team #1) Dan sent Disney Castle Key to Brian (Missile (yellow Maridia super missile))
 [2026-04-13 22:14:43,847]: (Team #1) Dan sent Arrows (10) to Nick (Super Missile (yellow Maridia))
+[2026-04-13 22:26:21,818]: (Team #1) Dan sent Arrows (10) to Naizak (Screw Attack)
+[2026-04-13 22:29:18,255]: (Team #1) Dan sent Rupee (1) to Naizak (Power Bomb (Power Bombs of shame))
+[2026-04-13 22:35:26,025]: (Team #1) Dan sent Elven Bandana to Brian (Energy Tank, Ridley)
+[2026-04-13 22:39:25,592]: Notice (all): Ryot (Team #1) tracking Donkey Kong Country 3 has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 22:39:49,519]: (Team #1) Brian sent Power Boost to Brian ((Post BC2: Ballroom) Data Xaldin)
+[2026-04-13 22:40:29,012]: Notice (all): Ryot (Team #1) playing Donkey Kong Country 3 has joined. Client(0.6.6), ['AP'].
+[2026-04-13 22:40:29,012]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-13 22:40:29,024]: Notice (all): Ryot (Team #1) playing Donkey Kong Country 3 has joined. Client(0.6.6), ['AP'].
+[2026-04-13 22:40:29,024]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-13 22:41:11,478]: (Team #1) Brian sent Bear Coin to Ryot ((TR) Cornerstone Hill Frost Shard)
+[2026-04-13 22:41:11,598]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-04-13 22:41:15,961]: (Team #1) Brian sent DK Coin to Ryot ((TR) Cornerstone Hill Map)
+[2026-04-13 22:41:19,752]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-04-13 22:41:21,617]: Notice (all): Ryot (Team #1) playing Donkey Kong Country 3 has joined. Client(0.6.6), ['AP'].
+[2026-04-13 22:41:21,618]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-13 22:41:59,454]: (Team #1) Dan sent Bonus Coin to Ryot (Missile (lower Norfair above fire flea room))
+[2026-04-13 22:42:09,785]: (Team #1) Brian sent Gold Ring to Brian ((TR) Pier Hi-Potion)
+[2026-04-13 22:43:11,715]: (Team #1) Brian sent Boss Heart Container to Andrew ((TR) Waterway Mythril Stone)
+[2026-04-13 22:43:15,813]: (Team #1) Brian sent Drive Recovery to Brian ((TR) Waterway AP Boost)
+[2026-04-13 22:43:28,077]: (Team #1) Brian sent Piece of Heart to Andrew ((TR) Waterway Frost Stone)
+[2026-04-13 22:43:34,290]: (Team #1) Ryot sent Bear Coin to Ryot (Undercover Cove)
+[2026-04-13 22:46:51,838]: (Team #1) Ryot sent Finishing Plus to Brian (Tearaway Toboggan - Bonus 1)
+[2026-04-13 22:47:49,224]: (Team #1) Brian sent Rupee (1) to Naizak ((TR) Window of Time Map)

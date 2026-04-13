@@ -4075,3 +4075,6 @@
 [2026-04-13 17:13:24,892]: (Team #1) Nick sent Bonus Coin to Ryot (Spirit Temple Anubis Pot 2)
 [2026-04-13 17:19:33,429]: (Team #1) Nick sent Goofy Auto Change to Brian (Spirit Temple Child Early Torches Chest)
 [2026-04-13 17:29:49,275]: (Team #1) Nick sent Power Bomb to Dan (Graveyard Heart Piece Grave Chest)
+[2026-04-13 17:38:37,936]: (Team #1) Nick sent Gold Skulltula Token to Naizak (Water Temple Dragon Chest)
+[2026-04-13 17:49:38,876]: (Team #1) Nick sent Boomerang to Nick (Water Temple River Pot 1)
+[2026-04-13 17:54:51,914]: (Team #1) Nick sent Arrows (10) to Nick (Water Temple Central Pillar Chest)

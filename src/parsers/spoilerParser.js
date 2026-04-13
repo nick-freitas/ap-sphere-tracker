@@ -27,6 +27,7 @@ Kak Potion Shop Item 5
 Kak Potion Shop Item 6
 Kak Potion Shop Item 7
 Kak Potion Shop Item 8
+Kak Bazaar Item 1
 ZD Shop Item 1`
 
 export function parseIgnoreList(text) {

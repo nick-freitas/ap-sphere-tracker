@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs'
 import { describe, it, expect } from 'vitest'
 import { parseSpoilerLog } from './spoilerParser'
 
@@ -249,5 +250,14 @@ Paths:
     const result = parseSpoilerLog(noLocations)
     expect(result.playerLocations).toBeInstanceOf(Map)
     expect(result.playerLocations.size).toBe(0)
+  })
+
+  it('handles the real-world test-data fixture (7 players, non-empty rows)', () => {
+    const fixturePath = new URL('../../test-data/AP_30073646564439677477_Spoiler.txt', import.meta.url)
+    const text = readFileSync(fixturePath, 'utf8')
+    const result = parseSpoilerLog(text)
+    expect(result.playerLocations.size).toBe(7)
+    const totalRows = [...result.playerLocations.values()].reduce((sum, arr) => sum + arr.length, 0)
+    expect(totalRows).toBeGreaterThan(0)
   })
 })

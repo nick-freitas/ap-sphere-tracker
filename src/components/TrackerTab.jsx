@@ -2,6 +2,13 @@ import { useEffect, useMemo, useState } from 'react'
 import { buildPlayerTracker, buildPlayerHints } from '../engine/playerTracker'
 import './TrackerTab.css'
 
+function parseConfigLocationList(config, key) {
+  if (!config) return new Set()
+  const entry = config.find((c) => c.key === key)
+  if (!entry || !entry.value) return new Set()
+  return new Set(entry.value.split(',').map((s) => s.trim()).filter(Boolean))
+}
+
 function PlayerProgressList({ rows, selectedPlayer, playerColors, onSelectedPlayerChange }) {
   const totalFound = rows.reduce((sum, r) => sum + r.found, 0)
   const totalAll = rows.reduce((sum, r) => sum + r.total, 0)
@@ -67,7 +74,11 @@ function LocationRow({ row, playerColors, alwaysShowItem }) {
           {row.found ? '\u2713' : ''}
         </span>
       </td>
-      <td className="tracker-cell-location">{row.location}</td>
+      <td className="tracker-cell-location">
+        {row.location}
+        {row.excluded && <span className="tracker-location-tag tracker-location-tag-excluded"> (excluded)</span>}
+        {row.forcedPriority && <span className="tracker-location-tag tracker-location-tag-priority"> (forced priority)</span>}
+      </td>
       <td className="tracker-cell-item">{showItem ? row.item : ''}</td>
       <td
         className="tracker-cell-owner"
@@ -242,7 +253,17 @@ export default function TrackerTab({
 
   const currentPlayerTracker = useMemo(() => {
     if (!spoilerData || !selectedPlayer) return { rows: [], totalCount: 0, foundCount: 0 }
-    return buildPlayerTracker(selectedPlayer, spoilerData, checkedLocations)
+    const result = buildPlayerTracker(selectedPlayer, spoilerData, checkedLocations)
+    const player = spoilerData.players.find((p) => p.name === selectedPlayer)
+    const excludedSet = parseConfigLocationList(player?.config, 'Excluded Locations')
+    const forcedPrioritySet = parseConfigLocationList(player?.config, 'Priority Locations')
+    if (excludedSet.size === 0 && forcedPrioritySet.size === 0) return result
+    const taggedRows = result.rows.map((row) => ({
+      ...row,
+      excluded: excludedSet.has(row.location),
+      forcedPriority: forcedPrioritySet.has(row.location),
+    }))
+    return { ...result, rows: taggedRows }
   }, [spoilerData, selectedPlayer, checkedLocations])
 
   const currentPlayerHints = useMemo(() => {

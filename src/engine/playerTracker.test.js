@@ -255,7 +255,7 @@ describe('buildPlayerHints', () => {
     expect(result.rows).toEqual([
       {
         location: 'Market Guard House Pot 30',
-        item: '',
+        item: 'Boomerang',
         itemOwner: 'Nick',
         found: false,
       },
@@ -287,7 +287,7 @@ describe('buildPlayerHints', () => {
       'Market Guard House Pot 30', // outgoing
     ])
     const desert = result.rows.find((r) => r.location === 'Desert Temple')
-    expect(desert.item).toBe('')
+    expect(desert.item).toBe('Bombs')
     expect(desert.itemOwner).toBe('Alice')
     expect(result.totalCount).toBe(3)
   })

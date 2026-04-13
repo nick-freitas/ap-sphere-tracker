@@ -51,15 +51,15 @@ export function buildPlayerHints(playerName, hints, checkedLocations) {
     }))
 
   // Incoming: hinted items in other players' worlds that this player will receive.
-  // The item name is hidden (the player already knows what they hinted); the owner
-  // column shows the location owner (whose world has the item).
+  // The owner column shows the location owner (whose world has the item) so the
+  // player knows where to find it.
   const incoming = hints
     .filter((h) => h.receiver === playerName && h.locationOwner !== playerName)
     .map((h) => {
       const ownerChecks = checkedLocations.get(h.locationOwner) || new Set()
       return {
         location: h.location,
-        item: '',
+        item: h.item,
         itemOwner: h.locationOwner,
         found: ownerChecks.has(h.location),
       }

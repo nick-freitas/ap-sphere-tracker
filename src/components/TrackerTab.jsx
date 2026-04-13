@@ -81,27 +81,11 @@ function LocationRow({ row, playerColors, alwaysShowItem }) {
 
 function LocationTable({ rows, allRows, hintRows, allHintRows, playerColors }) {
   const [hintsCollapsed, setHintsCollapsed] = useState(false)
-  const [priorityCollapsed, setPriorityCollapsed] = useState(false)
-  const [remainingCollapsed, setRemainingCollapsed] = useState(false)
+  const [locationsCollapsed, setLocationsCollapsed] = useState(false)
 
-  const priorityRows = rows.filter((r) => r.priority)
-  const remainingRows = rows.filter((r) => !r.priority)
-
-  let priorityTotal = 0
-  let priorityFound = 0
-  let remainingTotal = 0
-  let remainingFound = 0
-  for (const row of allRows) {
-    if (row.priority) {
-      priorityTotal++
-      if (row.found) priorityFound++
-    } else {
-      remainingTotal++
-      if (row.found) remainingFound++
-    }
-  }
-  const priorityPercent = priorityTotal === 0 ? 0 : Math.round((priorityFound / priorityTotal) * 100)
-  const remainingPercent = remainingTotal === 0 ? 0 : Math.round((remainingFound / remainingTotal) * 100)
+  const locationsTotal = allRows.length
+  const locationsFound = allRows.filter((r) => r.found).length
+  const locationsPercent = locationsTotal === 0 ? 0 : Math.round((locationsFound / locationsTotal) * 100)
 
   const hintsTotal = allHintRows.length
   const hintsFound = allHintRows.filter((r) => r.found).length
@@ -166,48 +150,24 @@ function LocationTable({ rows, allRows, hintRows, allHintRows, playerColors }) {
           })()}
         </>
       )}
-      {priorityRows.length > 0 && (
+      {rows.length > 0 && (
         <>
           <h3 className="tracker-section-heading">
             <button
               type="button"
               className="tracker-section-toggle"
-              aria-expanded={!priorityCollapsed}
-              onClick={() => setPriorityCollapsed((v) => !v)}
+              aria-expanded={!locationsCollapsed}
+              onClick={() => setLocationsCollapsed((v) => !v)}
             >
-              <span className="tracker-caret" aria-hidden="true">{priorityCollapsed ? '▶' : '▼'}</span>
-              {' '}Priority — {priorityFound} / {priorityTotal} ({priorityPercent}%)
+              <span className="tracker-caret" aria-hidden="true">{locationsCollapsed ? '▶' : '▼'}</span>
+              {' '}Locations — {locationsFound} / {locationsTotal} ({locationsPercent}%)
             </button>
           </h3>
-          {!priorityCollapsed && (
+          {!locationsCollapsed && (
             <table className="tracker-table">
               <tbody>
-                {priorityRows.map((row) => (
-                  <LocationRow key={`p-${row.location}`} row={row} playerColors={playerColors} />
-                ))}
-              </tbody>
-            </table>
-          )}
-        </>
-      )}
-      {remainingRows.length > 0 && (
-        <>
-          <h3 className="tracker-section-heading">
-            <button
-              type="button"
-              className="tracker-section-toggle"
-              aria-expanded={!remainingCollapsed}
-              onClick={() => setRemainingCollapsed((v) => !v)}
-            >
-              <span className="tracker-caret" aria-hidden="true">{remainingCollapsed ? '▶' : '▼'}</span>
-              {' '}Remaining — {remainingFound} / {remainingTotal} ({remainingPercent}%)
-            </button>
-          </h3>
-          {!remainingCollapsed && (
-            <table className="tracker-table">
-              <tbody>
-                {remainingRows.map((row) => (
-                  <LocationRow key={`r-${row.location}`} row={row} playerColors={playerColors} />
+                {rows.map((row) => (
+                  <LocationRow key={`l-${row.location}`} row={row} playerColors={playerColors} />
                 ))}
               </tbody>
             </table>
@@ -251,7 +211,6 @@ export default function TrackerTab({
   spoilerData,
   checkedLocations,
   hints,
-  prioritySet,
   playerColors,
   selectedPlayer,
   onSelectedPlayerChange,
@@ -283,8 +242,8 @@ export default function TrackerTab({
 
   const currentPlayerTracker = useMemo(() => {
     if (!spoilerData || !selectedPlayer) return { rows: [], totalCount: 0, foundCount: 0 }
-    return buildPlayerTracker(selectedPlayer, spoilerData, checkedLocations, prioritySet)
-  }, [spoilerData, selectedPlayer, checkedLocations, prioritySet])
+    return buildPlayerTracker(selectedPlayer, spoilerData, checkedLocations)
+  }, [spoilerData, selectedPlayer, checkedLocations])
 
   const currentPlayerHints = useMemo(() => {
     if (!selectedPlayer) return { rows: [], totalCount: 0, foundCount: 0 }

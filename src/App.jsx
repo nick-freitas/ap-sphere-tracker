@@ -10,7 +10,6 @@ import PlayerStats from './components/PlayerStats'
 import PlayerConfigs from './components/PlayerConfigs'
 import OptionsPage from './components/OptionsPage'
 import TrackerTab from './components/TrackerTab'
-import { computePrioritySet } from './engine/playerTracker'
 import defaultSpoilerUrl from './default-spoiler.txt?url'
 import defaultTrackerUrl from './default-tracker.txt?url'
 import './App.css'
@@ -216,11 +215,6 @@ function App() {
     return colors
   }, [spoilerData])
 
-  const prioritySet = useMemo(
-    () => (spoilerData ? computePrioritySet(spoilerData.spheres) : new Set()),
-    [spoilerData]
-  )
-
   const reversedRawTrackerText = useMemo(
     () => rawTrackerText.trimEnd().split('\n').reverse().join('\n'),
     [rawTrackerText]
@@ -328,7 +322,6 @@ function App() {
           spoilerData={spoilerData}
           checkedLocations={checkedLocations}
           hints={hints}
-          prioritySet={prioritySet}
           playerColors={playerColors}
           selectedPlayer={trackerSelectedPlayer}
           onSelectedPlayerChange={setTrackerSelectedPlayer}

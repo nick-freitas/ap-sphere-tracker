@@ -254,12 +254,14 @@ export default function TrackerTab({
     })
   }, [currentPlayerTracker.rows, searchQuery, hideFound])
 
-  // Hints respect searchQuery but NOT hideFound — found hints stay visible as history.
   const filteredHintRows = useMemo(() => {
     const query = searchQuery.trim().toLowerCase()
-    if (!query) return currentPlayerHints.rows
-    return currentPlayerHints.rows.filter((row) => row.location.toLowerCase().includes(query))
-  }, [currentPlayerHints.rows, searchQuery])
+    return currentPlayerHints.rows.filter((row) => {
+      if (hideFound && row.found) return false
+      if (query && !row.location.toLowerCase().includes(query)) return false
+      return true
+    })
+  }, [currentPlayerHints.rows, searchQuery, hideFound])
 
   if (!spoilerData) return null
 

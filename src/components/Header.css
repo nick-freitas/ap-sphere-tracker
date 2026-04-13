@@ -8,6 +8,11 @@
   border-bottom: 2px solid var(--color-sand);
 }
 
+.brand {
+  flex: 1;
+  min-width: 0;
+}
+
 .header-title {
   font-family: 'Lora', serif;
   font-size: 1.8rem;

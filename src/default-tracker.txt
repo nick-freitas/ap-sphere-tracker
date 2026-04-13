@@ -4239,3 +4239,82 @@
 [2026-04-13 22:43:34,290]: (Team #1) Ryot sent Bear Coin to Ryot (Undercover Cove)
 [2026-04-13 22:46:51,838]: (Team #1) Ryot sent Finishing Plus to Brian (Tearaway Toboggan - Bonus 1)
 [2026-04-13 22:47:49,224]: (Team #1) Brian sent Rupee (1) to Naizak ((TR) Window of Time Map)
+[2026-04-13 22:48:45,327]: (Team #1) Brian sent Tent to Brian ((TR) Boat Pete Bonus: Sora Slot 1)
+[2026-04-13 22:48:45,328]: (Team #1) Brian sent Red Rupee to Nick ((TR) Boat Pete Bonus: Donald Slot 2)
+[2026-04-13 22:50:28,539]: (Team #1) Ryot sent Huge Rupee to Nick (Tearaway Toboggan - Flag)
+[2026-04-13 22:50:57,301]: (Team #1) Brian sent Magnet Element to Brian ((TR) Future Pete Bonus: Sora Slot 2)
+[2026-04-13 22:50:57,302]: (Team #1) Brian sent Bombs (5) to Naizak ((TR) Future Pete Bonus: Sora Slot 1)
+[2026-04-13 22:50:57,633]: Notice (all): Ryot: !hint Krematoa Cog
+[2026-04-13 22:50:57,633]: Notice (Team #1): [Hint]: Ryot's Krematoa Cog is at (OC) The Lock Caverns Map in Brian's World. (found)
+[2026-04-13 22:50:57,634]: Notice (Team #1): [Hint]: Ryot's Krematoa Cog is at Sheik in Forest in Nick's World. (found)
+[2026-04-13 22:50:57,634]: Notice (Team #1): [Hint]: Ryot's Krematoa Cog is at (CoR) Engine Chamber Remembrance Crystal in Brian's World. (found)
+[2026-04-13 22:50:57,634]: Notice (Team #1): [Hint]: Ryot's Krematoa Cog is at Fire Temple MQ Flame Maze Left Pot 1 in Naizak's World at Desert Colossus -> Spirit Temple Lobby. (found)
+[2026-04-13 22:50:57,634]: Notice (Team #1): [Hint]: Ryot's Krematoa Cog is at Rocket Rush - Flag in Ryot's World. (priority)
+[2026-04-13 22:51:14,820]: (Team #1) Brian sent Elixir to Brian ((TR) Monochrome)
+[2026-04-13 22:57:43,341]: (Team #1) Ryot sent Donald MP Hastega to Brian (Barrel Drop Bounce - Bonus 2)
+[2026-04-13 23:05:32,816]: (Team #1) Ryot sent Rupees (5) to Naizak (Barrel Drop Bounce - Flag)
+[2026-04-13 23:06:09,668]: Notice (all): Dan (Team #1) has completed their goal.
+[2026-04-13 23:06:09,668]: Notice (all): Dan (Team #1) has collected their items from other worlds.
+[2026-04-13 23:06:09,668]: (Team #1) Andrew sent Missile to Dan (Ice Palace - Iced T Room)
+[2026-04-13 23:06:09,668]: (Team #1) Andrew sent Power Bomb to Dan (Ganons Tower - Big Key Chest)
+[2026-04-13 23:06:09,669]: (Team #1) Brian sent Power Bomb to Dan ((PR2) Grim Reaper 2 Bonus: Donald Slot 1)
+[2026-04-13 23:06:09,669]: (Team #1) Dan sent Energy Tank to Dan (Energy Tank, Firefleas)
+[2026-04-13 23:06:09,669]: (Team #1) Naizak sent Energy Tank to Dan (Gerudo Training Ground MQ Maze Right Side Chest)
+[2026-04-13 23:06:09,670]: (Team #1) Naizak sent Missile to Dan (Gerudo Training Ground MQ Ice Arrows Chest)
+[2026-04-13 23:06:09,670]: (Team #1) Naizak sent Missile to Dan (Hideout 3 Torch Jail Crate)
+[2026-04-13 23:06:09,670]: (Team #1) Naizak sent Super Missile to Dan (Gerudo Training Ground MQ Dinolfos Chest)
+[2026-04-13 23:06:09,670]: (Team #1) Naizak sent Super Missile to Dan (Forest Temple Green Poe Room Pot 1)
+[2026-04-13 23:06:09,670]: (Team #1) Naizak sent Super Missile to Dan (Water Temple MQ Central Pillar Lower Crate 7)
+[2026-04-13 23:06:09,670]: (Team #1) Naizak sent Ice Beam to Dan (Fire Temple Volvagia Heart)
+[2026-04-13 23:06:09,670]: (Team #1) Naizak sent Spazer to Dan (Market Bombchu Shop Item 8)
+[2026-04-13 23:06:09,671]: (Team #1) Nick sent Missile to Dan (Ganon's Castle Shadow Trial Front Chest)
+[2026-04-13 23:06:09,671]: (Team #1) Nick sent Power Bomb to Dan (Spirit Temple Central Chamber Pot 5)
+[2026-04-13 23:06:09,671]: (Team #1) Nick sent Plasma Beam to Dan (Ganon's Castle Spirit Trial Pot 1)
+[2026-04-13 23:06:09,671]: (Team #1) Ryot sent Missile to Dan (Criss Kross Cliffs - Bonus 2)
+[2026-04-13 23:06:09,672]: (Team #1) Ryot sent Super Missile to Dan (Konveyor Rope Klash - Bonus 2)
+[2026-04-13 23:06:09,672]: (Team #1) Ryot sent Power Bomb to Dan (Demolition Drain-Pipe - Bonus 1)
+[2026-04-13 23:06:09,672]: Notice (all): Dan (Team #1) has released all remaining items from their world.
+[2026-04-13 23:06:09,673]: (Team #1) Dan sent Auto Valor to Brian (Super Missile (Crateria))
+[2026-04-13 23:06:09,673]: (Team #1) Dan sent Deku Nuts (5) to Naizak (Super Missile (Gold Torizo))
+[2026-04-13 23:06:09,673]: (Team #1) Dan sent Deku Stick (1) to Naizak (Power Bomb (right Maridia sand pit room))
+[2026-04-13 23:06:09,673]: (Team #1) Dan sent Recovery Heart to Naizak (Power Bomb (lower Norfair above fire flea room))
+[2026-04-13 23:06:09,673]: (Team #1) Dan sent Rupee (1) to Naizak (Missile (green Maridia shinespark))
+[2026-04-13 23:06:09,673]: (Team #1) Dan sent Rupees (5) to Naizak (Missile (lower Norfair near Wave Beam))
+[2026-04-13 23:06:09,673]: (Team #1) Dan sent Huge Rupee to Nick (Plasma Beam)
+[2026-04-13 23:06:09,673]: (Team #1) Dan sent Arrows (5) to Nick (Super Missile (green Maridia))
+[2026-04-13 23:06:09,673]: (Team #1) Dan sent Deku Stick (1) to Nick (Spring Ball)
+[2026-04-13 23:07:04,660]: Notice (all): Dan (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 23:07:05,413]: Notice (all): Dan (Team #1) has left the game. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-04-13 23:07:14,353]: (Team #1) Andrew sent Small Key (Turtle Rock) to Andrew (Turtle Rock - Compass Chest)
+[2026-04-13 23:07:47,509]: (Team #1) Andrew sent Recovery Heart to Naizak (Turtle Rock - Pokey 1 Key Drop)
+[2026-04-13 23:08:18,786]: (Team #1) Andrew sent Small Key (Turtle Rock) to Andrew (Turtle Rock - Chain Chomps)
+[2026-04-13 23:11:10,092]: Notice (all): Brian: !hint scimitar
+[2026-04-13 23:11:10,094]: Notice (Team #1): [Hint]: Brian's Scimitar is at Skull Woods - Map Chest in Andrew's World at Skull Woods Second Section Door (East). (found)
+[2026-04-13 23:11:10,094]: Notice (Team #1): [Hint]: Brian's Scimitar is at Ganon's Castle Water Trial Pot 1 in Nick's World. (priority)
+[2026-04-13 23:11:28,772]: Notice (all): Brian: !hint grim claw
+[2026-04-13 23:11:28,773]: Notice (Player Brian in team 1): Didn't find something that closely matches 'grim claw', did you mean 'Beast's Claw'? (41% sure)
+[2026-04-13 23:11:42,678]: (Team #1) Ryot sent Bonus Coin to Ryot (Krack-Shot Kroc - DK Coin)
+[2026-04-13 23:11:52,279]: (Team #1) Ryot sent Rupees (5) to Naizak (Krack-Shot Kroc - Flag)
+[2026-04-13 23:12:03,524]: Notice (all): Brian: !hint bone fist
+[2026-04-13 23:12:03,526]: Notice (Team #1): [Hint]: Brian's Bone Fist is at (STT) Mansion Basement Corridor Hi-Potion in Brian's World. (found)
+[2026-04-13 23:12:03,526]: Notice (Team #1): [Hint]: Brian's Bone Fist is at Criss Kross Cliffs - DK Coin in Ryot's World. (priority)
+[2026-04-13 23:12:42,078]: Notice (all): Brian: !hint skill and crossbones
+[2026-04-13 23:12:42,080]: Notice (Team #1): [Hint]: Brian's Skill and Crossbones is at ZF Hidden Cave Pot 2 in Nick's World. (found)
+[2026-04-13 23:12:42,080]: Notice (Team #1): [Hint]: Brian's Skill and Crossbones is at Market Lost Dog House Crate in Nick's World. (priority)
+[2026-04-13 23:12:42,080]: Notice (Player Brian in team 1): Hint was previously used, no points deducted.
+[2026-04-13 23:13:16,206]: (Team #1) Ryot sent Bombchus to Naizak (Lemguin Lunge - DK Coin)
+[2026-04-13 23:14:22,435]: Notice (all): Nick: !hint Dins Fire
+[2026-04-13 23:14:22,437]: Notice (Team #1): [Hint]: Nick's Din's Fire is at (Post OC2: Cave of the Dead Inner Chamber) Zexion Bonus: Goofy Slot 1 in Brian's World. (priority)
+[2026-04-13 23:14:48,149]: Notice (all): Nick: !hint Market Dog House Key
+[2026-04-13 23:14:48,151]: Notice (Player Nick in team 1): Didn't find something that closely matches 'Market Dog House Key', did you mean 'Guard House Key'? (60% sure)
+[2026-04-13 23:15:01,754]: Notice (all): Nick: !hint Market Lost Dog House Key
+[2026-04-13 23:15:01,757]: Notice (Player Nick in team 1): Didn't find something that closely matches 'Market Lost Dog House Key', did you mean 'Market Potion Shop Key'? (64% sure)
+[2026-04-13 23:15:06,111]: Notice (all): Nick: !hint Market Lost Dog Key
+[2026-04-13 23:15:06,114]: Notice (Player Nick in team 1): Didn't find something that closely matches 'Market Lost Dog Key', did you mean 'Market Potion Shop Key'? (63% sure)
+[2026-04-13 23:15:14,062]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 23:15:22,304]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 23:15:32,254]: Notice (all): Nick: !hint Richard's House Key
+[2026-04-13 23:15:32,258]: Notice (Team #1): [Hint]: Nick's Richard's House Key is at Ice Cavern MQ Compass Room Pot 1 in Naizak's World at Ganons Castle Grounds -> Ganons Castle Lobby. (priority)
+[2026-04-13 23:15:53,316]: (Team #1) Ryot sent Lucky Emblem to Brian (Lemguin Lunge - Flag)
+[2026-04-13 23:19:59,667]: (Team #1) Ryot sent Tourmaline Ring to Brian (Bleak's House)
+[2026-04-13 23:22:18,701]: (Team #1) Ryot sent Max HP Up to Brian (Buzzer Barrage - Bonus 1)

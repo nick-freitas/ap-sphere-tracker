@@ -77,4 +77,27 @@ describe('resolveDatapackages (index manifest)', () => {
     expect(result.missingGames).toEqual([])
     expect(result.datapackages.size).toBe(1)
   })
+
+  it('returns a missingGames entry when the per-package fetch fails', async () => {
+    mockFetch([
+      ['index.json', { 'Ocarina of Time': 'oot123' }],
+      // Deliberately no mock for oot123.json — mockFetch default returns 404.
+    ])
+    const players = [{ slot: 1, name: 'Alice', game: 'Ocarina of Time' }]
+    const result = await resolveDatapackages(players)
+    expect(result.missingGames).toEqual(['Ocarina of Time'])
+    expect(result.datapackages.has('Ocarina of Time')).toBe(false)
+  })
+
+  it('caches index and per-package fetches across calls within a session', async () => {
+    mockFetch([
+      ['index.json', { 'Ocarina of Time': 'oot123' }],
+      ['oot123.json', { item_name_to_id: {}, location_name_to_id: {} }],
+    ])
+    const players = [{ slot: 1, name: 'Alice', game: 'Ocarina of Time' }]
+    await resolveDatapackages(players)
+    await resolveDatapackages(players)
+    // index.json fetched once, oot123.json fetched once — total 2 fetch calls for 2 resolves.
+    expect(global.fetch).toHaveBeenCalledTimes(2)
+  })
 })

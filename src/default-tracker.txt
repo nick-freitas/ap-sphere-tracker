@@ -4002,3 +4002,13 @@
 [2026-04-13 11:20:25,331]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
 [2026-04-13 11:20:25,380]: Notice (all): Brian (Team #1) playing Kingdom Hearts 2 has joined. Client(0.6.5), ['AP'].
 [2026-04-13 11:20:25,380]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-13 12:13:14,752]: (Team #1) Andrew sent Proof of Connection to Brian (Hobo)
+[2026-04-13 12:14:37,311]: (Team #1) Andrew sent DK Coin to Ryot (Zora's Ledge)
+[2026-04-13 12:15:09,405]: (Team #1) Andrew sent Red Rupee to Nick (Cave 45)
+[2026-04-13 12:16:32,174]: (Team #1) Andrew sent Strength Upgrade to Nick (Bonk Rock Cave)
+[2026-04-13 12:21:10,068]: (Team #1) Andrew sent Blue Rupee to Nick (Skull Woods - Boss)
+[2026-04-13 12:27:56,956]: (Team #1) Andrew sent Small Key (Hyrule Castle) to Andrew (Hyrule Castle - Map Chest)
+[2026-04-13 12:27:56,956]: (Team #1) Andrew sent Small Key (Hyrule Castle) to Andrew (Hyrule Castle - Map Guard Key Drop)
+[2026-04-13 12:28:39,854]: (Team #1) Andrew sent Arrows (30) to Naizak (Hyrule Castle - Boomerang Guard Key Drop)
+[2026-04-13 12:28:44,836]: (Team #1) Andrew sent Small Key (Hyrule Castle) to Andrew (Hyrule Castle - Boomerang Chest)
+[2026-04-13 12:29:19,308]: (Team #1) Andrew sent Gold Skulltula Token to Naizak (Hyrule Castle - Big Key Drop)

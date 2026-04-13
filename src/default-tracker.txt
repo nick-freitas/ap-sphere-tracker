@@ -4097,3 +4097,12 @@
 [2026-04-13 18:52:07,332]: (Team #1) Nick sent Rupee (1) to Naizak (Jabu Jabus Belly Basement Pot 1)
 [2026-04-13 18:52:07,736]: (Team #1) Nick sent DK Coin to Ryot (Jabu Jabus Belly Basement Pot 3)
 [2026-04-13 18:52:11,671]: (Team #1) Nick sent Pureblood to Brian (Jabu Jabus Belly Basement Pot 2)
+[2026-04-13 19:29:26,365]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 19:29:32,606]: Notice (all): Brian (Team #1) tracking Kingdom Hearts 2 has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-13 19:29:47,915]: (Team #1) Brian sent Drive Boost to Brian (Oathkeeper Slot)
+[2026-04-13 19:29:47,915]: (Team #1) Brian sent Draw to Brian (Ultima Weapon Slot)
+[2026-04-13 19:29:47,916]: (Team #1) Brian sent Thunder Boost to Brian (Bond of Flame Slot)
+[2026-04-13 19:29:47,916]: (Team #1) Brian sent MP Rage to Brian (Fenrir Slot)
+[2026-04-13 19:29:47,916]: (Team #1) Brian sent MP Haste to Brian (Pureblood Slot)
+[2026-04-13 19:29:47,916]: (Team #1) Brian sent Damage Control to Brian (Detection Saber Slot)
+[2026-04-13 19:29:47,916]: (Team #1) Brian sent Donald Jackpot to Brian (Premium Mushroom Slot)

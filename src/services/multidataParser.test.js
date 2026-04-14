@@ -236,3 +236,61 @@ describe('parsePickle — memoization', () => {
     expect(result[1]).toBe(result[0]) // same object reference
   })
 })
+
+describe('parsePickle — class references', () => {
+  it('creates a class-reference placeholder via STACK_GLOBAL', () => {
+    // "NetUtils" "NetworkSlot" STACK_GLOBAL STOP
+    const bytes = new Uint8Array([
+      0x8c, 0x08, 0x4e, 0x65, 0x74, 0x55, 0x74, 0x69, 0x6c, 0x73,   // "NetUtils"
+      0x8c, 0x0b, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x53, 0x6c, 0x6f, 0x74, // "NetworkSlot"
+      0x93,                                                          // STACK_GLOBAL
+      0x2e,                                                          // STOP
+    ])
+    expect(parsePickle(bytes)).toEqual({
+      __class: 'reference',
+      module: 'NetUtils',
+      name: 'NetworkSlot',
+    })
+  })
+
+  it('instantiates an object via REDUCE', () => {
+    // class_ref, (args_tuple), REDUCE, STOP
+    // → { __class: "instance", module: "m", name: "C", args: [...] }
+    const bytes = new Uint8Array([
+      0x8c, 0x01, 0x6d,                                              // "m"
+      0x8c, 0x01, 0x43,                                              // "C"
+      0x93,                                                          // STACK_GLOBAL
+      0x28, 0x4b, 0x2a, 0x74,                                        // MARK, BININT1 42, TUPLE → (42,)
+      0x52,                                                          // REDUCE
+      0x2e,                                                          // STOP
+    ])
+    expect(parsePickle(bytes)).toEqual({
+      __class: 'instance',
+      module: 'm',
+      name: 'C',
+      args: [42],
+      state: null,
+    })
+  })
+
+  it('applies state via BUILD', () => {
+    // Like REDUCE, but then BUILD with a state dict
+    const bytes = new Uint8Array([
+      0x8c, 0x01, 0x6d,                                              // "m"
+      0x8c, 0x01, 0x43,                                              // "C"
+      0x93,                                                          // STACK_GLOBAL
+      0x29,                                                          // EMPTY_TUPLE
+      0x52,                                                          // REDUCE
+      0x7d, 0x28, 0x8c, 0x01, 0x78, 0x4b, 0x07, 0x75,                // {"x": 7}
+      0x62,                                                          // BUILD
+      0x2e,                                                          // STOP
+    ])
+    expect(parsePickle(bytes)).toEqual({
+      __class: 'instance',
+      module: 'm',
+      name: 'C',
+      args: [],
+      state: { x: 7 },
+    })
+  })
+})

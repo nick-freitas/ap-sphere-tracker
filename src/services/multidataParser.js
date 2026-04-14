@@ -28,6 +28,9 @@ const OP = {
   LONG_BINGET: 0x6a,
   BINPUT: 0x71,
   LONG_BINPUT: 0x72,
+  STACK_GLOBAL: 0x93,
+  REDUCE: 0x52,
+  BUILD: 0x62,
 }
 
 const MARK_SENTINEL = Symbol('pickle.MARK')
@@ -226,6 +229,30 @@ export function parsePickle(bytes) {
       case OP.LONG_BINPUT: {
         const idx = reader.readUint32LE()
         memo[idx] = stack[stack.length - 1]
+        break
+      }
+      case OP.STACK_GLOBAL: {
+        const name = stack.pop()
+        const module = stack.pop()
+        stack.push({ __class: 'reference', module, name })
+        break
+      }
+      case OP.REDUCE: {
+        const args = stack.pop()
+        const classRef = stack.pop()
+        stack.push({
+          __class: 'instance',
+          module: classRef.module,
+          name: classRef.name,
+          args,
+          state: null,
+        })
+        break
+      }
+      case OP.BUILD: {
+        const state = stack.pop()
+        const instance = stack[stack.length - 1]
+        instance.state = state
         break
       }
       default:

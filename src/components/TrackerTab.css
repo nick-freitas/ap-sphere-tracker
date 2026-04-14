@@ -248,14 +248,4 @@
   border-color: var(--color-moss);
 }
 
-.tracker-hide-found {
-  display: flex;
-  align-items: center;
-  gap: 0.375rem;
-  font-family: 'Karla', sans-serif;
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  white-space: nowrap;
-}
 

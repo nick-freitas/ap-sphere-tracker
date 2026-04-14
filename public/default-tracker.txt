@@ -4718,3 +4718,294 @@
 [2026-04-14 03:12:17,725]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
 [2026-04-14 03:12:17,725]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
 [2026-04-14 03:12:24,135]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 05:12:15,870]: Shutting down due to inactivity.
+[2026-04-14 05:12:16,119]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 05:12:16,135]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 05:13:15,003]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-14 05:13:15,004]: Loading embedded data package for game Ship of Harkinian
+[2026-04-14 05:13:15,004]: Loading embedded data package for game Dark Souls III
+[2026-04-14 05:13:15,058]: Loaded save file with 3729 received items for 7 players
+[2026-04-14 05:13:15,086]: Hosting game at archipelago.gg:58657
+[2026-04-14 05:13:26,057]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 05:13:46,708]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 05:13:46,708]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 07:13:15,094]: Shutting down due to inactivity.
+[2026-04-14 07:13:15,354]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 07:13:15,361]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 07:14:15,176]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-14 07:14:15,177]: Loading embedded data package for game Ship of Harkinian
+[2026-04-14 07:14:15,177]: Loading embedded data package for game Dark Souls III
+[2026-04-14 07:14:15,197]: Loaded save file with 3729 received items for 7 players
+[2026-04-14 07:14:15,222]: Hosting game at archipelago.gg:58657
+[2026-04-14 07:14:25,268]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 07:14:45,959]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 07:14:45,959]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 09:14:15,231]: Shutting down due to inactivity.
+[2026-04-14 09:14:15,490]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 09:14:15,511]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 09:15:14,741]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-14 09:15:14,741]: Loading embedded data package for game Ship of Harkinian
+[2026-04-14 09:15:14,741]: Loading embedded data package for game Dark Souls III
+[2026-04-14 09:15:14,770]: Loaded save file with 3729 received items for 7 players
+[2026-04-14 09:15:14,781]: Hosting game at archipelago.gg:58657
+[2026-04-14 09:15:25,471]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 09:15:45,990]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 09:15:45,990]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 11:15:14,789]: Shutting down due to inactivity.
+[2026-04-14 11:15:15,068]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 11:15:15,071]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 11:16:14,717]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-14 11:16:14,718]: Loading embedded data package for game Ship of Harkinian
+[2026-04-14 11:16:14,718]: Loading embedded data package for game Dark Souls III
+[2026-04-14 11:16:14,739]: Loaded save file with 3729 received items for 7 players
+[2026-04-14 11:16:14,747]: Hosting game at archipelago.gg:58657
+[2026-04-14 11:16:24,940]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 11:16:45,573]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 11:16:45,573]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 12:26:19,568]: (Team #1) Andrew sent Rupees (5) to Naizak (Spike Cave)
+[2026-04-14 12:31:17,254]: (Team #1) Andrew sent Recovery Heart to Naizak (Floating Island)
+[2026-04-14 12:32:06,714]: (Team #1) Andrew sent Small Key (Desert Palace) to Andrew (Desert Palace - Desert Tiles 1 Pot Key)
+[2026-04-14 12:32:32,829]: (Team #1) Andrew sent Small Key (Desert Palace) to Andrew (Desert Palace - Beamos Hall Pot Key)
+[2026-04-14 12:32:44,077]: (Team #1) Andrew sent Small Key (Desert Palace) to Andrew (Desert Palace - Desert Tiles 2 Pot Key)
+[2026-04-14 12:33:24,319]: (Team #1) Andrew sent Arrows (5) to Naizak (Desert Palace - Boss)
+[2026-04-14 12:34:34,272]: (Team #1) Andrew sent Lucky Emblem to Brian (Library)
+[2026-04-14 12:38:47,540]: (Team #1) Andrew sent Rupee (1) to Naizak (Hookshot Cave - Top Right)
+[2026-04-14 12:38:58,213]: (Team #1) Andrew sent Max HP Up to Brian (Hookshot Cave - Top Left)
+[2026-04-14 12:42:14,864]: (Team #1) Andrew sent Small Key (Ice Palace) to Andrew (Ice Palace - Jelly Key Drop)
+[2026-04-14 12:42:39,919]: (Team #1) Andrew sent Small Key (Ice Palace) to Andrew (Ice Palace - Compass Chest)
+[2026-04-14 12:46:41,541]: (Team #1) Andrew sent Small Key (Ice Palace) to Andrew (Ice Palace - Many Pots Pot Key)
+[2026-04-14 12:49:36,522]: (Team #1) Andrew sent Small Key (Ice Palace) to Andrew (Ice Palace - Spike Room)
+[2026-04-14 12:50:28,636]: (Team #1) Andrew sent Gold Skulltula Token to Naizak (Ice Palace - Map Chest)
+[2026-04-14 12:52:10,941]: (Team #1) Andrew sent Big Key (Ice Palace) to Andrew (Ice Palace - Freezor Chest)
+[2026-04-14 12:52:21,290]: (Team #1) Andrew sent Small Key (Ice Palace) to Andrew (Ice Palace - Big Chest)
+[2026-04-14 12:53:57,083]: (Team #1) Andrew sent Small Key (Ice Palace) to Andrew (Ice Palace - Boss)
+[2026-04-14 12:56:21,404]: (Team #1) Andrew sent Small Key (Eastern Palace) to Andrew (Eastern Palace - Cannonball Chest)
+[2026-04-14 12:56:57,141]: (Team #1) Andrew sent Blizzard Element to Brian (Eastern Palace - Map Chest)
+[2026-04-14 12:57:48,366]: (Team #1) Andrew sent Bow to Naizak (Eastern Palace - Compass Chest)
+[2026-04-14 12:58:26,345]: (Team #1) Andrew sent Big Key (Eastern Palace) to Andrew (Eastern Palace - Dark Square Pot Key)
+[2026-04-14 13:01:11,042]: (Team #1) Andrew sent Small Key (Eastern Palace) to Andrew (Eastern Palace - Big Chest)
+[2026-04-14 13:04:26,332]: (Team #1) Andrew sent Rupees (50) to Naizak (Master Sword Pedestal)
+[2026-04-14 15:04:26,333]: Shutting down due to inactivity.
+[2026-04-14 15:04:26,610]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 15:04:26,611]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 15:05:15,303]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-14 15:05:15,303]: Loading embedded data package for game Ship of Harkinian
+[2026-04-14 15:05:15,303]: Loading embedded data package for game Dark Souls III
+[2026-04-14 15:05:15,327]: Loaded save file with 3752 received items for 7 players
+[2026-04-14 15:05:17,836]: Hosting game at archipelago.gg:58657
+[2026-04-14 15:05:19,537]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 15:05:57,416]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 15:05:57,416]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 15:42:22,863]: A client connection was refused due to: {'InvalidSlot'}, the sent connect information was {'cmd': 'Connect', 'password': None, 'name': 'Nova Hearts', 'version': Version(major=0, minor=6, build=7), 'tags': ['AP'], 'items_handling': 7, 'uuid': '319c583a-c33a-4f0a-852e-524617ddf715', 'game': 'Kingdom Hearts Chain of Memories', 'slot_data': True}.
+[2026-04-14 15:44:14,004]: Notice (all): Brian (Team #1) tracking Kingdom Hearts 2 has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 15:44:30,966]: Notice (all): Brian (Team #1) playing Kingdom Hearts 2 has joined. Client(0.6.5), ['AP'].
+[2026-04-14 15:44:30,967]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 16:55:48,663]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 16:55:55,812]: Notice (all): Brian (Team #1) tracking Kingdom Hearts 2 has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 17:05:17,843]: Shutting down due to inactivity.
+[2026-04-14 17:05:18,119]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 17:05:18,124]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
+[2026-04-14 17:05:18,125]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 17:05:18,128]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 17:06:15,294]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-14 17:06:15,294]: Loading embedded data package for game Ship of Harkinian
+[2026-04-14 17:06:15,295]: Loading embedded data package for game Dark Souls III
+[2026-04-14 17:06:15,314]: Loaded save file with 3752 received items for 7 players
+[2026-04-14 17:06:15,368]: Hosting game at archipelago.gg:58657
+[2026-04-14 17:06:28,031]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 17:06:28,069]: Notice (all): Brian (Team #1) tracking Kingdom Hearts 2 has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 17:06:48,628]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 17:06:48,629]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 17:06:48,751]: Notice (all): Brian (Team #1) playing Kingdom Hearts 2 has joined. Client(0.6.5), ['AP'].
+[2026-04-14 17:06:48,751]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 19:06:15,832]: Shutting down due to inactivity.
+[2026-04-14 19:06:16,131]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 19:06:16,132]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 19:06:16,151]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 19:06:16,180]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
+[2026-04-14 19:07:15,572]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-14 19:07:15,572]: Loading embedded data package for game Ship of Harkinian
+[2026-04-14 19:07:15,572]: Loading embedded data package for game Dark Souls III
+[2026-04-14 19:07:15,596]: Loaded save file with 3752 received items for 7 players
+[2026-04-14 19:07:15,622]: Hosting game at archipelago.gg:58657
+[2026-04-14 19:07:26,034]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 19:07:26,269]: Notice (all): Brian (Team #1) tracking Kingdom Hearts 2 has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 19:07:48,429]: Notice (all): Brian (Team #1) playing Kingdom Hearts 2 has joined. Client(0.6.5), ['AP'].
+[2026-04-14 19:07:48,429]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 19:07:48,441]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 19:07:48,441]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 19:10:23,208]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 19:10:23,209]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 19:26:44,926]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 19:26:44,926]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 19:26:50,654]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
+[2026-04-14 19:28:20,585]: Notice (all): Brian (Team #1) playing Kingdom Hearts 2 has joined. Client(0.6.5), ['AP'].
+[2026-04-14 19:28:20,586]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 19:30:13,861]: Notice (all): Andrew: !getitem Pendant
+[2026-04-14 19:30:13,862]: Notice (Player Andrew in team 1): Didn't find something that closely matches 'Pendant', did you mean 'Piece of Heart'? (28% sure)
+[2026-04-14 19:30:37,181]: Notice (all): Andrew: !getitem Pendant of Power
+[2026-04-14 19:30:37,183]: Notice (Player Andrew in team 1): Didn't find something that closely matches 'Pendant of Power', did you mean 'Map (Ganons Tower)'? (38% sure)
+[2026-04-14 20:10:45,226]: (Team #1) Andrew sent Small Key (Ganons Tower) to Andrew (Ganons Tower - Mini Helmasaur Room - Right)
+[2026-04-14 20:10:48,455]: (Team #1) Andrew sent Small Key (Ganons Tower) to Andrew (Ganons Tower - Mini Helmasaur Room - Left)
+[2026-04-14 20:10:55,056]: (Team #1) Andrew sent Small Key (Ganons Tower) to Andrew (Ganons Tower - Mini Helmasaur Key Drop)
+[2026-04-14 20:15:39,568]: Notice (all): Andrew (Team #1) has completed their goal.
+[2026-04-14 20:15:39,569]: Notice (all): Andrew (Team #1) has collected their items from other worlds.
+[2026-04-14 20:15:39,569]: (Team #1) Andrew sent Magic Powder to Andrew (Waterfall Fairy - Left)
+[2026-04-14 20:15:39,569]: (Team #1) Andrew sent Piece of Heart to Andrew (Ganons Tower - Conveyor Cross Pot Key)
+[2026-04-14 20:15:39,569]: (Team #1) Andrew sent Small Key (Agahnims Tower) to Andrew (Castle Tower - Dark Maze)
+[2026-04-14 20:15:39,569]: (Team #1) Andrew sent Small Key (Agahnims Tower) to Andrew (Castle Tower - Room 03)
+[2026-04-14 20:15:39,569]: (Team #1) Andrew sent Small Key (Agahnims Tower) to Andrew (Castle Tower - Circle of Pots Key Drop)
+[2026-04-14 20:15:39,569]: (Team #1) Andrew sent Small Key (Agahnims Tower) to Andrew (Castle Tower - Dark Archer Key Drop)
+[2026-04-14 20:15:39,569]: (Team #1) Andrew sent Small Key (Palace of Darkness) to Andrew (Palace of Darkness - Dark Basement - Right)
+[2026-04-14 20:15:39,569]: (Team #1) Andrew sent Small Key (Misery Mire) to Andrew (Misery Mire - Bridge Chest)
+[2026-04-14 20:15:39,569]: (Team #1) Andrew sent Small Key (Misery Mire) to Andrew (Misery Mire - Conveyor Crystal Key Drop)
+[2026-04-14 20:15:39,569]: (Team #1) Andrew sent Small Key (Ganons Tower) to Andrew (Ganons Tower - Tile Room)
+[2026-04-14 20:15:39,569]: (Team #1) Andrew sent Small Key (Ganons Tower) to Andrew (Ganons Tower - Big Key Room - Right)
+[2026-04-14 20:15:39,569]: (Team #1) Andrew sent Small Key (Ganons Tower) to Andrew (Ganons Tower - Double Switch Pot Key)
+[2026-04-14 20:15:39,569]: (Team #1) Andrew sent Small Key (Ganons Tower) to Andrew (Ganons Tower - Bob's Torch)
+[2026-04-14 20:15:39,570]: (Team #1) Naizak sent Bombos to Andrew (Water Temple MQ Freestanding Key Area Behind Gate Crate 4)
+[2026-04-14 20:15:39,570]: (Team #1) Naizak sent Piece of Heart to Andrew (Ice Cavern MQ Compass Chest)
+[2026-04-14 20:15:39,570]: (Team #1) Naizak sent Cape to Andrew (Gerudo Training Ground MQ Before Heavy Block Chest)
+[2026-04-14 20:15:39,570]: (Team #1) Naizak sent Bombs (3) to Andrew (Water Temple MQ Dragon Statue By Torches Crate 2)
+[2026-04-14 20:15:39,571]: (Team #1) Naizak sent Bombs (3) to Andrew (Water Temple MQ Freestanding Key Area Front Crate 1)
+[2026-04-14 20:15:39,571]: (Team #1) Naizak sent Rupees (5) to Andrew (Sheik in Ice Cavern)
+[2026-04-14 20:15:39,571]: (Team #1) Naizak sent Rupees (20) to Andrew (Deku Theater Mask of Truth)
+[2026-04-14 20:15:39,571]: (Team #1) Naizak sent Rupees (20) to Andrew (HF Cow Grotto Cow)
+[2026-04-14 20:15:39,571]: (Team #1) Naizak sent Rupees (20) to Andrew (Kak 20 Gold Skulltula Reward)
+[2026-04-14 20:15:39,571]: (Team #1) Naizak sent Rupees (20) to Andrew (Water Temple MQ Freestanding Key Room Crate 1)
+[2026-04-14 20:15:39,571]: (Team #1) Naizak sent Boss Heart Container to Andrew (Forest Temple Frozen Eye Switch Room Pot 1)
+[2026-04-14 20:15:39,571]: (Team #1) Naizak sent Rupees (50) to Andrew (GV Deku Scrub Grotto Front)
+[2026-04-14 20:15:39,571]: (Team #1) Naizak sent Rupees (50) to Andrew (Water Temple MQ Dragon Statue Near Door Crate 2)
+[2026-04-14 20:15:39,571]: (Team #1) Naizak sent Arrows (10) to Andrew (Ganons Castle Light Trial Invisible Enemies Chest)
+[2026-04-14 20:15:39,571]: (Team #1) Naizak sent Bomb Upgrade (+5) to Andrew (HF Near Market Grotto Chest)
+[2026-04-14 20:15:39,571]: (Team #1) Naizak sent Bomb Upgrade (+5) to Andrew (Water Temple MQ Dodongo Room Pot 2)
+[2026-04-14 20:15:39,572]: (Team #1) Ryot sent Piece of Heart to Andrew (Riverside Race - DK Coin)
+[2026-04-14 20:15:39,572]: (Team #1) Ryot sent Piece of Heart to Andrew (Buzzer Barrage - DK Coin)
+[2026-04-14 20:15:39,572]: (Team #1) Ryot sent Book of Mudora to Andrew (Tyrant Twin Tussle - DK Coin)
+[2026-04-14 20:15:39,572]: (Team #1) Ryot sent Arrows (10) to Andrew (Tyrant Twin Tussle - Flag)
+[2026-04-14 20:15:39,572]: (Team #1) Ryot sent Arrow Upgrade (+5) to Andrew (Tracker Barrel Trek - Bonus 1)
+[2026-04-14 20:15:39,572]: (Team #1) Ryot sent Arrow Upgrade (+5) to Andrew (Pothole Panic - Bonus 1)
+[2026-04-14 20:15:39,573]: Notice (all): Andrew (Team #1) has released all remaining items from their world.
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Grand Ribbon to Brian (Ganons Tower - Randomizer Room - Top Right)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Monochrome to Brian (Palace of Darkness - Big Chest)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Master's Ring to Brian (Potion Shop)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Air Combo Plus to Brian (Swamp Palace - Big Key Chest)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Lucky Lucky to Brian (Ganons Tower - Compass Room - Top Right)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Aerial Finish to Brian (Misery Mire - Big Key Chest)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Lucky Emblem to Brian (Ganons Tower - Randomizer Room - Top Left)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Lucky Emblem to Brian (Ganons Tower - Map Chest)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Piece of Heart to Naizak (Waterfall Fairy - Right)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Recovery Heart to Naizak (Ganons Tower - Bob's Chest)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Rupee (1) to Naizak (Palace of Darkness - Dark Maze - Top)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Rupee (1) to Naizak (Ganons Tower - Randomizer Room - Bottom Left)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Rupee (1) to Naizak (Ganons Tower - Big Chest)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Rupees (5) to Naizak (Ganons Tower - DMs Room - Bottom Right)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Rupees (5) to Naizak (Sahasrahla)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Gold Skulltula Token to Naizak (Bombos Tablet)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Bear Coin to Ryot (Ganons Tower - Big Key Room - Left)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent Bonus Coin to Ryot (Dark World Potion Shop Right)
+[2026-04-14 20:15:39,574]: (Team #1) Andrew sent DK Coin to Ryot (Misery Mire - Compass Chest)
+[2026-04-14 20:19:34,190]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 20:19:39,436]: Notice (all): Brian (Team #1) tracking Kingdom Hearts 2 has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 20:19:59,892]: (Team #1) Brian sent MP Hastera to Brian (Monochrome Slot)
+[2026-04-14 20:31:49,060]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-04-14 20:37:58,527]: Notice (all): Brian (Team #1) has completed their goal.
+[2026-04-14 20:37:58,527]: Notice (all): Brian (Team #1) has collected their items from other worlds.
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Shock Charm+ to Brian ((Post TR:Hall of the Cornerstone) Lingering Will Bonus: Sora Slot 1)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Max HP Up to Brian ((Post HT2: Yuletide Hill) AS Vexen)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Draw to Brian (Two Become One Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Jackpot to Brian (Photon Debugger Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Leaf Bracer to Brian (Circle of Life Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Power Boost to Brian ((HT2) Lock, Shock and Barrel Bonus: Sora Slot 1)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Power Boost to Brian ((Post SP2: Central Computer Core) Data Larxene)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Power Boost to Brian ((Post TR:Hall of the Cornerstone) Lingering Will Manifest Illusion)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Power Boost to Brian ((AT) Musical Blizzard Element)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Lucky Emblem to Brian ((Post TR:Hall of the Cornerstone) AS Marluxia)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Lucky Emblem to Brian ((HT2) Lock, Shock and Barrel Bonus: Goofy Slot 1)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Bounty to Brian ((Post PL2: Peak) Data Saix)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Bounty to Brian ((Post PR2: Treasure Heap) Data Luxord)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Bounty to Brian ((Post TR:Hall of the Cornerstone) Data Marluxia)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Donald Blizzard to Brian (Hammer Staff Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Donald MP Rage to Brian (Victory Bell Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Donald Lucky Lucky to Brian (Nobody Lance Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Donald Lucky Lucky to Brian (Wisdom Wand Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Donald MP Haste to Brian (Rising Dragon Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Donald Auto Limit to Brian (Comet Staff Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Donald Hyper Healing to Brian (Lord's Broom Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Goofy Tornado to Brian (Dream Cloud Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Goofy Item Boost to Brian (Knight Defender Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Goofy Item Boost to Brian (Save The King+ Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Goofy MP Rage to Brian (Majestic Mushroom+ Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Goofy Defender to Brian (Chain Gear Slot)
+[2026-04-14 20:37:58,528]: (Team #1) Brian sent Goofy Second Chance to Brian (Adamant Shield Slot)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Goofy Once More to Brian (Akashic Record Slot)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Potion to Brian ((Post SP2: Central Computer Core) AS Larxene)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Potion to Brian (Serenity Crystal Cerberus Cup)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Potion to Brian ((Post AG2: Peddler's Shop) Lexaeus Bonus: Sora Slot 1)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Potion to Brian ((Post AG2: Peddler's Shop) AS Lexaeus)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Hi-Potion to Brian (Serenity Gem Pain and Panic Cup)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Hi-Potion to Brian (Genji Shield Titan Cup)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Hi-Potion to Brian (Hades Cup Trophy Paradox Cups)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Ether to Brian ((AT) Mysterious Abyss)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Elixir to Brian (Rising Dragon Cerberus Cup)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Elixir to Brian (Fatal Crest Goddess of Fate Cup)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Elixir to Brian (Orichalcum+ Goddess of Fate Cup)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Megalixir to Brian ((AT) Musical Orichalcum+)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Tent to Brian (Sephiroth Fenrir)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Tent to Brian ((HT2) Experiment Bonus: Sora Slot 1)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent Drive Recovery to Brian (Protect Belt Pain and Panic Cup)
+[2026-04-14 20:37:58,529]: (Team #1) Brian sent High Drive Recovery to Brian (Skillful Ring Titan Cup)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Secret Ansem's Report 4 to Brian (Water Temple MQ Dodongo Room Pot 1)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Secret Ansem's Report 5 to Brian (Market Bazaar Item 8)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Final Form to Brian (Water Temple MQ Triple Wall Torch Submerged Crate 2)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Fire Element to Brian (Wasteland Near GS Pot 2)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Thunder Element to Brian (Water Temple MQ Central Pillar Lower Crate 1)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Power Band to Brian (Spirit Temple MQ Beamos Room Chest)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Fire Bangle to Brian (GV Crate Freestanding PoH)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Precious Mushroom to Brian (Water Temple MQ Freestanding Key Area Submerged Crate 6)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Akashic Record to Brian (Deku Theater Skull Mask)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Majestic Mushroom+ to Brian (DMT Biggoron)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Save The King+ to Brian (Graveyard Dampe Race Freestanding PoH)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Circle of Life to Brian (Water Temple MQ Freestanding Key Room Crate 2)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Two Become One to Brian (Forest Temple GS Basement)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Diamond Ring to Brian (Water Temple MQ Dragon Statue Submerged Crate 2)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Silver Ring to Brian (GV Freestanding PoH Crate)
+[2026-04-14 20:37:58,532]: (Team #1) Naizak sent Full Bloom+ to Brian (KF Storms Grotto Chest)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Lucky Ring to Brian (Spirit Temple MQ Big Mirror Crate 1)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Mickey Munny Pouch to Brian (Water Temple MQ Freestanding Key Area Behind Gate Crate 2)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Max HP Up to Brian (ZD King Zora Thawed)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Max HP Up to Brian (GV Deku Scrub Grotto Rear)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Max MP Up to Brian (Wasteland Chest)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Drive Gauge Up to Brian (Song from Impa)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Drive Gauge Up to Brian (Water Temple MQ Central Pillar Lower Crate 11)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Negative Combo to Brian (Ganons Castle Light Trial Third Left Chest)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Berserk Charge to Brian (HF Cow Grotto Pot 2)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Berserk Charge to Brian (Water Temple MQ Dragon Statue Submerged Crate 1)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Form Boost to Brian (Water Temple MQ Boss Key Chest)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Experience Boost to Brian (LW Skull Kid)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Experience Boost to Brian (GC Darunias Joy)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Horizontal Slash to Brian (Water Temple MQ Triple Wall Torch Behind Gate Crate 3)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Trinity Limit to Brian (Water Temple MQ Before Dark Link Top Pot 2)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Lucky Emblem to Brian (Water Temple MQ Triple Wall Torch Submerged Crate 4)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Lucky Emblem to Brian (Spirit Temple MQ Big Mirror Pot 1)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Donald Blizzard Boost to Brian (Ganons Castle Light Trial Second Right Chest)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Goofy Hyper Healing to Brian (Spirit Temple MQ Mirror Puzzle Invisible Chest)
+[2026-04-14 20:37:58,533]: (Team #1) Naizak sent Goofy Protect to Brian (LH Child Fishing)
+[2026-04-14 20:37:58,535]: (Team #1) Ryot sent Bone Fist to Brian (Criss Kross Cliffs - DK Coin)
+[2026-04-14 20:37:58,535]: (Team #1) Ryot sent Blizzard Armlet to Brian (Krevice Kreepers - Bonus 1)
+[2026-04-14 20:37:58,535]: (Team #1) Ryot sent Nobody Lance to Brian (Krack-Shot Kroc - Bonus 2)
+[2026-04-14 20:37:58,535]: (Team #1) Ryot sent Rising Dragon to Brian (Criss Kross Cliffs - Flag)
+[2026-04-14 20:37:58,535]: (Team #1) Ryot sent Photon Debugger to Brian (Swoopy Salvo - Bonus 1)
+[2026-04-14 20:37:58,535]: (Team #1) Ryot sent Slayer Earring to Brian (Bazza's Blockade - DK Coin)
+[2026-04-14 20:37:58,535]: (Team #1) Ryot sent Finishing Plus to Brian (Swoopy Salvo - Bonus 2)
+[2026-04-14 20:37:58,535]: (Team #1) Ryot sent Lucky Lucky to Brian (Springin' Spiders - DK Coin)
+[2026-04-14 20:37:58,535]: (Team #1) Ryot sent Aerial Spiral to Brian (Koindozer Klamber - DK Coin)
+[2026-04-14 20:37:58,535]: (Team #1) Ryot sent Lucky Emblem to Brian (Criss Kross Cliffs - Bonus 1)
+[2026-04-14 20:37:58,535]: (Team #1) Ryot sent Goofy MP Rage to Brian (Stampede Sprint - Bonus 3)
+[2026-04-14 20:37:58,536]: Notice (all): Brian (Team #1) has released all remaining items from their world.
+[2026-04-14 20:37:58,536]: (Team #1) Brian sent Rupee (1) to Naizak ((Post HT2: Yuletide Hill) Vexen Bonus: Sora Slot 1)
+[2026-04-14 20:37:58,536]: (Team #1) Brian sent Rupee (1) to Naizak ((Post TR:Hall of the Cornerstone) Marluxia Bonus: Sora Slot 1)
+[2026-04-14 20:37:58,536]: (Team #1) Brian sent Rupee (1) to Naizak ((HT2) Experiment Bonus: Donald Slot 1)
+[2026-04-14 20:37:58,536]: (Team #1) Brian sent Deku Seeds (30) to Naizak ((Post HT2: Yuletide Hill) Data Vexen)
+[2026-04-14 20:40:00,568]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 20:40:15,577]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].

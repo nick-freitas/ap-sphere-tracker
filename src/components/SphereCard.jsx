@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import MissingChecksTable from './MissingChecksTable'
+import { parseTrackerTimestamp } from '../parsers/trackerParser'
 import './SphereCard.css'
 
 function formatIncompleteList(numbers) {
@@ -23,6 +24,7 @@ export default function SphereCard({
   playerLastSphere,
   showSpoilers,
   displayThreshold,
+  completionTimestamp,
 }) {
   const { sphereNumber, totalChecks, completedChecks, completionPercent, missingChecks } = result
   const isComplete = completionPercent === 100
@@ -77,7 +79,13 @@ export default function SphereCard({
       <div className="sphere-header">
         <div className="sphere-label">
           <span className="sphere-num">{sphereNumber}</span>
-          {isComplete && <span className="check-icon">&#10003;</span>}
+          {isComplete && (() => {
+            const completionDate = parseTrackerTimestamp(completionTimestamp)
+            const tip = completionDate
+              ? `Completed ${completionDate.toLocaleString()}`
+              : 'Completed'
+            return <span className="check-icon" data-tip={tip}>&#10003;</span>
+          })()}
           {isFallingBehind && (
             <span
               className="warning-icon"

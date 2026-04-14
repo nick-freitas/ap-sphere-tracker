@@ -80,14 +80,19 @@
   font-size: 1rem;
 }
 
+.check-icon,
 .warning-icon,
 .caution-icon {
-  font-size: 1.1rem;
   line-height: 1;
   cursor: help;
   position: relative;
   display: inline-flex;
   align-items: center;
+}
+
+.warning-icon,
+.caution-icon {
+  font-size: 1.1rem;
 }
 
 .warning-icon {
@@ -98,6 +103,7 @@
   color: var(--color-caution);
 }
 
+.check-icon::after,
 .warning-icon::after,
 .caution-icon::after {
   content: attr(data-tip);
@@ -128,12 +134,14 @@
 
 /* Hovered sphere card floats above siblings so its tooltip isn't covered
    by the next card in the vertical list. */
+.sphere-card:has(.check-icon:hover),
 .sphere-card:has(.warning-icon:hover),
 .sphere-card:has(.caution-icon:hover) {
   position: relative;
   z-index: 50;
 }
 
+.check-icon:hover::after,
 .warning-icon:hover::after,
 .caution-icon:hover::after {
   opacity: 1;

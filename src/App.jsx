@@ -259,6 +259,42 @@ function App() {
     return latest
   }, [logEvents])
 
+  // Map each sphere number to the raw timestamp when its last remaining check
+  // was collected — i.e. the moment the sphere went from incomplete to
+  // complete. Only populated for spheres where every entry has a matching
+  // 'sent' event in the tracker log. Consumed by SphereCard to render a
+  // tooltip on the green checkmark.
+  const sphereCompletionTime = useMemo(() => {
+    const result = new Map()
+    if (!spoilerData || logEvents.length === 0) return result
+
+    // Build a (sender, location) → earliest-timestamp index from the log.
+    // Use the first occurrence because a location can only be checked once;
+    // any later "resend" would be a rehydration artifact, not a new check.
+    const checkTs = new Map()
+    for (const event of logEvents) {
+      if (event.type !== 'sent' || !event.timestamp) continue
+      const key = `${event.sender}\u0000${event.location}`
+      if (!checkTs.has(key)) checkTs.set(key, event.timestamp)
+    }
+
+    for (const sphere of spoilerData.spheres) {
+      if (sphere.number === 0 || sphere.entries.length === 0) continue
+      let maxTs = null
+      let allPresent = true
+      for (const entry of sphere.entries) {
+        const ts = checkTs.get(`${entry.locationOwner}\u0000${entry.location}`)
+        if (!ts) {
+          allPresent = false
+          break
+        }
+        if (!maxTs || ts > maxTs) maxTs = ts
+      }
+      if (allPresent && maxTs) result.set(sphere.number, maxTs)
+    }
+    return result
+  }, [spoilerData, logEvents])
+
   const playerColors = useMemo(() => {
     if (!spoilerData) return {}
     const colors = {}
@@ -411,6 +447,7 @@ function App() {
                   playerLastSphere={playerLastSphere}
                   showSpoilers={showSpoilers}
                   displayThreshold={threshold}
+                  completionTimestamp={sphereCompletionTime.get(result.sphereNumber)}
                 />
               )
             })}

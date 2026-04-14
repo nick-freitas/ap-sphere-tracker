@@ -72,7 +72,12 @@
 }
 
 .player-log-table-wrap {
-  overflow-x: auto;
+  /* No overflow clipping here: the hover tooltips in this table use an
+     absolutely-positioned ::after, and any `overflow: auto` on an ancestor
+     creates a paint clip that hides the tooltip (even on the axis not
+     explicitly set — CSS promotes `visible` to `auto` when the other axis is
+     auto). If the table ever needs horizontal scroll on narrow screens,
+     handle it at the page level, not here. */
 }
 
 .player-log-table {
@@ -145,5 +150,11 @@
 
 .player-log-progression-star {
   color: gold;
+  font-style: normal;
+}
+
+.player-log-hint-found {
+  color: var(--color-leaf);
+  font-weight: 700;
   font-style: normal;
 }

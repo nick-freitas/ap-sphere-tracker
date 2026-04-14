@@ -79,7 +79,17 @@ function EventRow({ row, playerColors, progressionSet }) {
         {wrap(row.sender)}
       </td>
       <td className="player-log-cell-location">
-        {isHint && 'Hint ['}
+        {isHint && 'Hint '}
+        {isHint && row.status === 'found' && (
+          <span
+            className="player-log-hint-found tooltip-host"
+            aria-label="Hint found"
+            data-tip="Hint has been found"
+            style={{ '--tooltip-width': '160px' }}
+          >✓</span>
+        )}
+        {isHint && row.status === 'found' && ' '}
+        {isHint && '['}
         {isProgression && (
           <>
             <span

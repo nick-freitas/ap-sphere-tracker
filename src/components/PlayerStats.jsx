@@ -63,32 +63,37 @@ export default function PlayerStats({
     return result
   }, [spoilerData, checkedLocations, playerCompletionTime, playerLastSphere])
 
-  // For each player, find their earliest sphere with unchecked items
-  // Also determine if they're "locked" (no missing checks in qualifying spheres)
+  // For each player, find their earliest sphere with unchecked items and
+  // count how many of that sphere's missing checks belong to them. Also
+  // determine if they're "locked" (no missing checks in qualifying spheres).
   const playerInfo = useMemo(() => {
     if (!sphereResults || sphereResults.length === 0) return {}
     const result = {}
     if (spoilerData) {
       for (const player of spoilerData.players) {
         let earliestUnchecked = null
+        let earliestUncheckedCount = 0
         let hasCheckInQualifying = false
 
         for (let i = 0; i < sphereResults.length; i++) {
+          let countInSphere = 0
           for (const check of sphereResults[i].missingChecks) {
-            if (check.player === player.name) {
-              if (earliestUnchecked === null) {
-                earliestUnchecked = sphereResults[i].sphereNumber
-              }
-              if (lastQualifyingIdx >= 0 && i <= lastQualifyingIdx) {
-                hasCheckInQualifying = true
-              }
-              break
+            if (check.player === player.name) countInSphere++
+          }
+          if (countInSphere > 0) {
+            if (earliestUnchecked === null) {
+              earliestUnchecked = sphereResults[i].sphereNumber
+              earliestUncheckedCount = countInSphere
+            }
+            if (lastQualifyingIdx >= 0 && i <= lastQualifyingIdx) {
+              hasCheckInQualifying = true
             }
           }
         }
 
         result[player.name] = {
           earliestUnchecked,
+          earliestUncheckedCount,
           locked: lastQualifyingIdx >= 0 && !hasCheckInQualifying,
         }
       }
@@ -139,11 +144,16 @@ export default function PlayerStats({
                 </span>
               )
             })()}
-            {!playerInfo[s.name]?.locked && playerInfo[s.name]?.earliestUnchecked != null && (
-              <span className="ps-earliest" data-tip="Earliest sphere with unchecked items">
-                S{playerInfo[s.name].earliestUnchecked}
-              </span>
-            )}
+            {!playerInfo[s.name]?.locked && playerInfo[s.name]?.earliestUnchecked != null && (() => {
+              const count = playerInfo[s.name].earliestUncheckedCount
+              const sphereNum = playerInfo[s.name].earliestUnchecked
+              const tip = `${s.name} has ${count} check${count === 1 ? '' : 's'} in Sphere ${sphereNum}`
+              return (
+                <span className="ps-earliest" data-tip={tip}>
+                  S{sphereNum}
+                </span>
+              )
+            })()}
             <span className="ps-count">{s.done}/{s.total}</span>
           </div>
           <div className="ps-bar">

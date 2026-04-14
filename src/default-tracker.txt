@@ -4630,3 +4630,8 @@
 [2026-04-14 00:29:46,726]: (Team #1) Nick sent DK Coin to Ryot (Song from Ocarina of Time)
 [2026-04-14 00:30:11,777]: (Team #1) Brian sent Scan to Brian (Guardian Soul Slot)
 [2026-04-14 00:30:11,777]: (Team #1) Brian sent Combo Boost to Brian (Rumbling Rose Slot)
+[2026-04-14 00:35:35,117]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 00:42:52,942]: (Team #1) Brian sent Rupees (20) to Andrew ((AG2) Ruined Chamber Torn Pages)
+[2026-04-14 00:42:55,833]: (Team #1) Brian sent Megalixir to Brian ((AG2) Ruined Chamber Ruins Map)
+[2026-04-14 00:43:07,444]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink'].
+[2026-04-14 00:44:15,755]: (Team #1) Ryot sent Rupee (1) to Naizak (Creepy Caverns - Flag)

@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo, useRef } from 'react'
 import { parseSpoilerLogRaw } from './parsers/spoilerParser'
 import { parseTrackerLog } from './parsers/trackerParser'
 import { analyzeSpheres } from './engine/sphereAnalyzer'
-import { resolveDatapackages } from './services/datapackageService'
+import { parseMultidata } from './services/multidataParser'
 import { applyEventFilter } from './engine/eventFilter'
 import Header from './components/Header'
 import InputSection from './components/InputSection'
@@ -19,8 +19,7 @@ const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i
 
 function App() {
   const [spoilerData, setSpoilerData] = useState(null)
-  const [missingGames, setMissingGames] = useState([])
-  const [loadingDatapackages, setLoadingDatapackages] = useState(true)
+  const [loadingMultidata, setLoadingMultidata] = useState(true)
   const [checkedLocations, setCheckedLocations] = useState(new Map())
   const [hints, setHints] = useState([])
   const [lastCheckTime, setLastCheckTime] = useState(null)
@@ -41,6 +40,8 @@ function App() {
   const [playerLogSearchQuery, setPlayerLogSearchQuery] = useState('')
   const [trackerSearchQuery, setTrackerSearchQuery] = useState('')
   const [trackerHideFound, setTrackerHideFound] = useState(false)
+  const [rawParsed, setRawParsed] = useState(null)
+  const [multidata, setMultidata] = useState(null)
 
   // Keep raw spoiler text for re-parsing
   const rawSpoilerTextRef = useRef('')
@@ -58,15 +59,10 @@ function App() {
     fetch('/ap-sphere-tracker/default-spoiler.txt')
       .then((res) => (res.ok ? res.text() : null))
       .then((text) => {
-        if (text == null) {
-          setLoadingDatapackages(false)
-          return
-        }
+        if (text == null) return
         handleSpoilerText(text)
       })
-      .catch(() => {
-        setLoadingDatapackages(false)
-      })
+      .catch(() => {})
 
     fetch('/ap-sphere-tracker/default-tracker.txt')
       .then((res) => (res.ok ? res.text() : null))
@@ -75,26 +71,39 @@ function App() {
         handleTrackerText(text)
       })
       .catch(() => {})
+
+    fetch('/ap-sphere-tracker/default-seed.archipelago')
+      .then(async (res) => {
+        if (!res.ok) {
+          setLoadingMultidata(false)
+          return
+        }
+        const buffer = await res.arrayBuffer()
+        await handleMultidataFile(new Uint8Array(buffer))
+      })
+      .catch(() => {
+        setLoadingMultidata(false)
+      })
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  async function handleSpoilerText(text) {
-    rawSpoilerTextRef.current = text
-    setLoadingDatapackages(true)
-    setMissingGames([])
+  async function handleMultidataFile(bytes) {
+    setLoadingMultidata(true)
     try {
-      const rawParsed = parseSpoilerLogRaw(text)
-      const { datapackages, missingGames: missing } = await resolveDatapackages(rawParsed.players)
-      if (missing.length > 0) {
-        setMissingGames(missing)
-        setSpoilerData(null)
-        return
-      }
-      const filtered = applyEventFilter(rawParsed, datapackages)
-      setSpoilerData(filtered)
-      setHiddenPlayers(new Set())
+      const md = await parseMultidata(bytes)
+      setMultidata(md)
+    } catch (err) {
+      console.error('Failed to parse seed file:', err)
+      setMultidata(null)
     } finally {
-      setLoadingDatapackages(false)
+      setLoadingMultidata(false)
     }
+  }
+
+  function handleSpoilerText(text) {
+    rawSpoilerTextRef.current = text
+    const parsed = parseSpoilerLogRaw(text)
+    setRawParsed(parsed)
+    setHiddenPlayers(new Set())
   }
 
   function handleTrackerText(text) {
@@ -105,6 +114,15 @@ function App() {
     setHints(parsedHints)
     setLogEvents(events)
   }
+
+  useEffect(() => {
+    if (!rawParsed || !multidata) {
+      setSpoilerData(null)
+      return
+    }
+    const filtered = applyEventFilter(rawParsed, multidata)
+    setSpoilerData(filtered)
+  }, [rawParsed, multidata])
 
   function togglePlayer(name) {
     setHiddenPlayers((prev) => {
@@ -273,8 +291,10 @@ function App() {
       <InputSection
         onSpoilerParsed={handleSpoilerText}
         onTrackerParsed={handleTrackerText}
+        onMultidataFile={handleMultidataFile}
         hasSpoiler={!!spoilerData}
         hasTracker={checkedLocations.size > 0}
+        hasMultidata={multidata !== null}
       />
       <div className="tabs">
         <button className={`tab ${activeTab === 'spheres' ? 'active' : ''}`} onClick={() => setActiveTab('spheres')}>Spheres</button>
@@ -284,33 +304,27 @@ function App() {
         <button className={`tab ${activeTab === 'configs' ? 'active' : ''}`} onClick={() => setActiveTab('configs')}>Player Configs</button>
       </div>
 
-      {loadingDatapackages && (
+      {loadingMultidata && (
         <div style={{ textAlign: 'center', padding: '4rem' }} aria-live="polite">
           <p>Loading game data…</p>
         </div>
       )}
 
-      {!loadingDatapackages && missingGames.length > 0 && (
+      {!loadingMultidata && !multidata && (
         <ErrorCard
-          title="Cannot analyze seed: missing datapackages"
-          body="This seed uses the following games, but their datapackages are not bundled with the tracker:"
-          items={missingGames}
-          fixSteps={[
-            <>Run <code>python scripts/extract_datapackages.py --output &lt;repo&gt;/public/datapackages --merge-index</code> in your Archipelago install folder.</>,
-            <>Commit the new files in <code>public/datapackages/</code> and redeploy.</>,
-            'Reload this page.',
-          ]}
+          title="No seed file loaded"
+          body="Upload the .archipelago file (or the generator output .zip) for this seed to begin analysis."
         />
       )}
 
-      {!loadingDatapackages && missingGames.length === 0 && spoilerData === null && (
+      {!loadingMultidata && multidata && spoilerData === null && (
         <ErrorCard
           title="No spoiler log loaded"
-          body="Upload a spoiler log (AP_*_Spoiler.txt from your seed) to begin analysis."
+          body="Upload a spoiler log (AP_*_Spoiler.txt) to begin analysis."
         />
       )}
 
-      {!loadingDatapackages && missingGames.length === 0 && spoilerData !== null && activeTab === 'spheres' && (
+      {!loadingMultidata && multidata && spoilerData !== null && activeTab === 'spheres' && (
         <>
           {spoilerData && (
             <PlayerLegend
@@ -380,7 +394,7 @@ function App() {
         </>
       )}
 
-      {!loadingDatapackages && missingGames.length === 0 && spoilerData !== null && activeTab === 'tracker' && (
+      {!loadingMultidata && multidata && spoilerData !== null && activeTab === 'tracker' && (
         <TrackerTab
           spoilerData={spoilerData}
           checkedLocations={checkedLocations}
@@ -395,7 +409,7 @@ function App() {
         />
       )}
 
-      {!loadingDatapackages && missingGames.length === 0 && spoilerData !== null && activeTab === 'player-log' && (
+      {!loadingMultidata && multidata && spoilerData !== null && activeTab === 'player-log' && (
         <PlayerLogTab
           spoilerData={spoilerData}
           logEvents={logEvents}
@@ -411,14 +425,14 @@ function App() {
         />
       )}
 
-      {!loadingDatapackages && missingGames.length === 0 && spoilerData !== null && activeTab === 'configs' && (
+      {!loadingMultidata && multidata && spoilerData !== null && activeTab === 'configs' && (
         <PlayerConfigs
           players={spoilerData.players}
           playerColors={playerColors}
         />
       )}
 
-      {!loadingDatapackages && missingGames.length === 0 && spoilerData !== null && activeTab === 'log' && (
+      {!loadingMultidata && multidata && spoilerData !== null && activeTab === 'log' && (
         <div className="raw-log">
           {rawTrackerText
             ? <pre className="log-content">{reversedRawTrackerText}</pre>

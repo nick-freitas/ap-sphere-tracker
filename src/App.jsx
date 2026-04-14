@@ -367,6 +367,12 @@ function App() {
           )}
           <div className="sphere-list">
             {sphereResults.map((result, i) => {
+              // Sphere 0 is the precollected/starting items pseudo-sphere.
+              // We don't render it — it didn't fit visually on the sphere
+              // board. The data is still in the parse tree via
+              // spoilerData.spheres[0].precollected if anything ever wants
+              // to display it again.
+              if (result.sphereNumber === 0) return null
               const withinThreshold = lastQualifyingIdx >= 0 && i <= lastQualifyingIdx
               const isExtended = extended
                 && lastQualifyingIdx >= 0
@@ -404,7 +410,6 @@ function App() {
                   checkedLocations={checkedLocations}
                   playerLastSphere={playerLastSphere}
                   showSpoilers={showSpoilers}
-                  precollected={spoilerData.spheres[i]?.precollected}
                   displayThreshold={threshold}
                 />
               )

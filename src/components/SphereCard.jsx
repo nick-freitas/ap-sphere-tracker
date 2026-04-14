@@ -22,16 +22,13 @@ export default function SphereCard({
   checkedLocations,
   playerLastSphere,
   showSpoilers,
-  precollected,
   displayThreshold,
 }) {
   const { sphereNumber, totalChecks, completedChecks, completionPercent, missingChecks } = result
   const isComplete = completionPercent === 100
   const meetsThreshold = completionPercent >= threshold
-  const isSphereZero = sphereNumber === 0
   const isFallingBehind = spheresBehind >= 4 && !isComplete
   const [showCompleted, setShowCompleted] = useState(false)
-  const [showPrecollected, setShowPrecollected] = useState(false)
 
   const playerBreakdown = useMemo(() => {
     if (!sphereEntries || sphereEntries.length === 0) return []
@@ -63,49 +60,7 @@ export default function SphereCard({
     })
   }, [sphereEntries, checkedLocations])
 
-  if (totalChecks === 0 && !isSphereZero) return null
-
-  if (isSphereZero && precollected && precollected.length > 0) {
-    const filtered = hiddenPlayers
-      ? precollected.filter((p) => !hiddenPlayers.has(p.player))
-      : precollected
-    return (
-      <div className={`sphere-card expanded ${isCurrent ? 'current' : ''}`}>
-        <div className="sphere-header">
-          <div className="sphere-label">
-            <span className="sphere-num">0</span>
-            <span>Starting Items</span>
-            {isCurrent && <span className="current-badge">Current</span>}
-          </div>
-          <span className="sphere-progress-text">{precollected.length} items</span>
-        </div>
-        <div className="completed-section">
-          <button
-            className="completed-toggle"
-            onClick={() => setShowPrecollected(!showPrecollected)}
-          >
-            <span className="completed-arrow">{showPrecollected ? '\u25BC' : '\u25B6'}</span>
-            Precollected Items ({filtered.length})
-          </button>
-          {showPrecollected && (
-            <div className="completed-body">
-              <table className="missing-checks-table">
-                <thead><tr><th>Item</th><th>Player</th></tr></thead>
-                <tbody>
-                  {filtered.map((entry) => (
-                    <tr key={`${entry.player}-${entry.item}`}>
-                      <td style={{ color: 'var(--color-moss)', fontWeight: 500 }}>{entry.item}</td>
-                      <td style={{ color: playerColors[entry.player], fontWeight: 600 }}>{entry.player}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </div>
-      </div>
-    )
-  }
+  if (totalChecks === 0) return null
 
   const cardClasses = [
     'sphere-card',

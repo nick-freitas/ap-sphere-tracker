@@ -139,11 +139,3 @@
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-
-.player-stats-warning {
-  display: inline-block;
-  margin-left: 0.4em;
-  color: var(--color-warning, #d97706);
-  font-size: 0.9em;
-  cursor: help;
-}

@@ -69,10 +69,6 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
     return result
   }, [spoilerData, sphereResults, lastQualifyingIdx])
 
-  const warningsByPlayer = new Map(
-    (spoilerData?.warnings || []).map((w) => [w.player, w]),
-  )
-
   const visible = stats.filter((s) => !hiddenPlayers || !hiddenPlayers.has(s.name))
 
   const totalDone = visible.reduce((sum, s) => sum + s.done, 0)
@@ -88,14 +84,6 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
           <div className="ps-info">
             <span className="ps-dot" style={{ background: playerColors[s.name] }} />
             <span className="ps-name">{s.name}</span>
-            {warningsByPlayer.has(s.name) && (
-              <span
-                className="player-stats-warning"
-                title={`Expected ${warningsByPlayer.get(s.name).expected} checks from the seed file, got ${warningsByPlayer.get(s.name).actual} after filtering the spoiler. Spoiler parser mismatch — likely a bug.`}
-              >
-                ⚠
-              </span>
-            )}
             {playerInfo[s.name]?.locked && (() => {
               const earliest = playerInfo[s.name].earliestUnchecked
               if (earliest == null) {

@@ -429,6 +429,7 @@ function App() {
         <PlayerConfigs
           players={spoilerData.players}
           playerColors={playerColors}
+          warnings={spoilerData.warnings}
         />
       )}
 

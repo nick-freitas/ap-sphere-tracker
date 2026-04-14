@@ -87,3 +87,9 @@
   color: var(--color-text);
   word-break: break-word;
 }
+
+.pc-warning {
+  color: var(--color-warning, #d97706);
+  font-size: 0.95em;
+  cursor: help;
+}

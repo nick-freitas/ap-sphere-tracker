@@ -51,25 +51,23 @@ export function applyEventFilter(raw, multidata) {
     playerLocations.set(owner, kept)
   }
 
-  // Consistency check: after filtering, each player's count should exactly match
-  // their multidata.locations[slotId].size. Multidata is our source of truth — it
-  // is what archipelago.gg's tracker reads and what AP's own generator output
-  // says. We deliberately do NOT compare against raw.headerCounts: the spoiler
-  // header's Location Count field is unreliable for some games (ALTTP reports
-  // +10 because it counts the dungeon Prize slots that aren't real checks), so
-  // comparing against it produces false-positive warnings on every seed that
-  // uses those games. Any mismatch against the multidata count, by contrast,
-  // would indicate a real bug in the spoiler parser or the filter itself.
+  // Surface header-vs-multidata discrepancies. The spoiler's "Location Count: N"
+  // field is what Archipelago's generator wrote into the header. Multidata is the
+  // authoritative per-slot check list. These two sources disagree for some games:
+  // ALTTP's header counts 10 dungeon Prize slots (Desert Palace - Prize, etc.)
+  // that aren't real checks, so it reports +10 above the actual count. This
+  // isn't a bug in our filter — it's a quirk of the spoiler generator. The UI
+  // renders this discrepancy inline with the Location Count row in PlayerConfigs
+  // so users see "271 ⚠ spoiler indicates 271 but game contains 261".
   const warnings = []
-  for (const [player, filteredEntries] of playerLocations) {
+  for (const [player, spoilerCount] of raw.headerCounts) {
     const slotId = slotByName.get(player)
     if (slotId == null) continue
     const slotLocations = multidata.locations.get(slotId)
     if (!slotLocations) continue
-    const expected = slotLocations.size
-    const actual = filteredEntries.length
-    if (actual !== expected) {
-      warnings.push({ player, expected, actual })
+    const gameCount = slotLocations.size
+    if (spoilerCount !== gameCount) {
+      warnings.push({ player, spoilerCount, gameCount })
     }
   }
 

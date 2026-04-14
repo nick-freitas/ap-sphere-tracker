@@ -416,6 +416,35 @@ function App() {
     return bySphere
   }, [rawParsed, spoilerData])
 
+  // Map of player name → { done, total, pct } across all filtered
+  // playthrough entries. Mirrors the calculation in PlayerStats.jsx so
+  // SphereCard can decide whether an empty goal sphere should render as
+  // "complete" (i.e. all of its goal owners have finished their games,
+  // detectable trivially because done === total).
+  const playerPct = useMemo(() => {
+    const result = {}
+    if (!spoilerData) return result
+    const totals = {}
+    const checked = {}
+    for (const sphere of spoilerData.spheres) {
+      for (const entry of sphere.entries) {
+        const owner = entry.locationOwner
+        totals[owner] = (totals[owner] || 0) + 1
+        const playerChecks = checkedLocations.get(owner)
+        if (playerChecks && playerChecks.has(entry.location)) {
+          checked[owner] = (checked[owner] || 0) + 1
+        }
+      }
+    }
+    for (const p of spoilerData.players) {
+      const total = totals[p.name] || 0
+      const done = checked[p.name] || 0
+      const pct = total === 0 ? 100 : Math.round((done / total) * 100)
+      result[p.name] = { done, total, pct }
+    }
+    return result
+  }, [spoilerData, checkedLocations])
+
   // Map each player to the timestamp of their most recent "sent" event. For
   // a player at 100%, this is their completion moment. Used by PlayerStats to
   // rank completed players in the order they finished (earliest first).
@@ -617,6 +646,8 @@ function App() {
                   isCurrent={isCurrentCard}
                   isGoalSphere={goalSphereNumbers.has(result.sphereNumber)}
                   goalEntries={goalEntriesBySphere.get(result.sphereNumber) || []}
+                  playerPct={playerPct}
+                  playerCompletionTime={playerCompletionTime}
                   spheresBehind={spheresBehind}
                   capInfo={capInfo}
                   sphereEntries={spoilerData.spheres[i]?.entries || []}

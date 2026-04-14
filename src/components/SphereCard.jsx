@@ -19,6 +19,8 @@ export default function SphereCard({
   isCurrent,
   isGoalSphere,
   goalEntries = [],
+  playerPct,
+  playerCompletionTime,
   spheresBehind,
   capInfo,
   sphereEntries,
@@ -29,15 +31,45 @@ export default function SphereCard({
   completionTimestamp,
 }) {
   const { sphereNumber, totalChecks, completedChecks, completionPercent, missingChecks } = result
-  // Treat empty goal spheres (0 surviving entries after the event filter,
-  // e.g. Andrew's sphere 37 where `Ganon → Triforce` was the only entry) as
-  // "not complete" so they don't render a misleading ✓ completion badge or
-  // `complete` styling. completionPercent comes through as 100 for empty
-  // spheres per the analyzer, which is fine for regular empty spheres but
-  // wrong for goal spheres where completion depends on game state we can't
-  // observe from the tracker log.
   const isEffectivelyEmpty = totalChecks === 0
-  const isComplete = !isEffectivelyEmpty && completionPercent === 100
+
+  // A pure goal sphere (no real checks, only goal entries) is considered
+  // complete when every one of its goal owners has finished their game —
+  // which we detect trivially from playerPct: if done === total for every
+  // goal owner, their game is beaten and this sphere should render the ✓.
+  // Without this, empty goal spheres like Andrew's sphere 37 would never
+  // show completion because completionPercent comes through as 100 for
+  // empty spheres but we explicitly blocked that below to avoid a
+  // misleading badge when the goal state was unknown.
+  const allGoalOwnersComplete =
+    isEffectivelyEmpty &&
+    goalEntries.length > 0 &&
+    playerPct != null &&
+    goalEntries.every((e) => playerPct[e.locationOwner]?.pct === 100)
+
+  // Non-empty spheres: standard "all real checks done" rule.
+  // Empty goal spheres: all goal owners have finished their games.
+  // Empty non-goal spheres: never reached (early return below).
+  const isComplete = isEffectivelyEmpty
+    ? allGoalOwnersComplete
+    : completionPercent === 100
+
+  // For pure goal spheres the normal completionTimestamp (derived from
+  // per-check 'sent' events) isn't populated because the sphere has no
+  // trackable checks. Fall back to the latest playerCompletionTime among
+  // the goal owners — for Andrew's sphere 37 that's the moment Andrew
+  // completed his game. For multi-owner goal spheres we use the latest
+  // timestamp, since the sphere isn't "done" until the last owner finishes.
+  const effectiveCompletionTimestamp = useMemo(() => {
+    if (!allGoalOwnersComplete) return completionTimestamp
+    if (!playerCompletionTime) return null
+    const times = goalEntries
+      .map((e) => playerCompletionTime[e.locationOwner])
+      .filter(Boolean)
+    if (times.length === 0) return null
+    return times.reduce((a, b) => (a > b ? a : b))
+  }, [allGoalOwnersComplete, completionTimestamp, playerCompletionTime, goalEntries])
+
   const meetsThreshold = completionPercent >= threshold
   const isFallingBehind = spheresBehind >= 4 && !isComplete
   const [showCompleted, setShowCompleted] = useState(false)
@@ -97,7 +129,7 @@ export default function SphereCard({
         <div className="sphere-label">
           <span className="sphere-num">{sphereNumber}</span>
           {isComplete && (() => {
-            const completionDate = parseTrackerTimestamp(completionTimestamp)
+            const completionDate = parseTrackerTimestamp(effectiveCompletionTimestamp)
             const tip = completionDate
               ? `Completed ${completionDate.toLocaleString()}`
               : 'Completed'

@@ -5013,3 +5013,5 @@
 [2026-04-14 21:49:36,109]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
 [2026-04-14 22:09:17,742]: Notice (all): Nick: !missing
 [2026-04-14 22:09:17,743]: Notice (Player Nick in team 1): No missing location checks found.
+[2026-04-14 22:37:58,538]: Shutting down due to inactivity.
+[2026-04-14 22:37:58,857]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink'].

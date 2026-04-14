@@ -82,3 +82,13 @@ const display = lastCheckDate ? lastCheckDate.toLocaleString() : null
 - Assume the server logs in your local timezone
 
 There is a regression test for this in `src/parsers/trackerParser.test.js` (`describe('parseTrackerTimestamp')`) that verifies the UTC-parsing behavior holds regardless of the machine's local timezone. Don't break it.
+
+## Check `.github/workflows/` whenever you move or delete a file
+
+The repo has scheduled GitHub Actions workflows in `.github/workflows/` that reference file paths directly:
+
+- **`fetch-tracker.yml`** writes to `public/default-tracker.txt`, diffs it, and commits it on change. If you move that file, rename it, or change how the app locates it, update the workflow in the same PR.
+
+When moving a file (e.g. the Task-6 move of `default-tracker.txt` from `src/` to `public/` during the multidata pivot), the app's JS code was updated to read from the new path but the workflow was not. The workflow kept `curl`ing to the old path, wrote to an untracked location, saw "no diff" because git doesn't diff untracked files, and silently short-circuited every scheduled run for weeks. Nothing in the normal test suite would have caught this — workflow YAML isn't covered by Vitest. You have to manually check.
+
+**Before you commit a file move or delete:** `grep -rn "<old-path>" .github/` to see if any workflow references it. If the pattern match is non-empty, the workflow needs the same rename in the same PR. Don't ship a move without also shipping the workflow update.

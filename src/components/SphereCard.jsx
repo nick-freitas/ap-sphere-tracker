@@ -17,6 +17,7 @@ export default function SphereCard({
   hiddenPlayers,
   isExtended,
   isCurrent,
+  isGoalSphere,
   spheresBehind,
   capInfo,
   sphereEntries,
@@ -27,7 +28,15 @@ export default function SphereCard({
   completionTimestamp,
 }) {
   const { sphereNumber, totalChecks, completedChecks, completionPercent, missingChecks } = result
-  const isComplete = completionPercent === 100
+  // Treat empty goal spheres (0 surviving entries after the event filter,
+  // e.g. Andrew's sphere 37 where `Ganon → Triforce` was the only entry) as
+  // "not complete" so they don't render a misleading ✓ completion badge or
+  // `complete` styling. completionPercent comes through as 100 for empty
+  // spheres per the analyzer, which is fine for regular empty spheres but
+  // wrong for goal spheres where completion depends on game state we can't
+  // observe from the tracker log.
+  const isEffectivelyEmpty = totalChecks === 0
+  const isComplete = !isEffectivelyEmpty && completionPercent === 100
   const meetsThreshold = completionPercent >= threshold
   const isFallingBehind = spheresBehind >= 4 && !isComplete
   const [showCompleted, setShowCompleted] = useState(false)
@@ -62,7 +71,21 @@ export default function SphereCard({
     })
   }, [sphereEntries, checkedLocations])
 
-  if (totalChecks === 0) return null
+  // Players whose very-last playthrough entry is in THIS sphere. For each
+  // of them we want a row with a star — even if they have no surviving real
+  // entries (in which case playerBreakdown won't include them and we render
+  // a synthetic goal-only row below).
+  const goalOwnersHere = useMemo(() => {
+    if (!playerLastSphere || !isGoalSphere) return []
+    return Object.keys(playerLastSphere).filter(
+      (p) => playerLastSphere[p] === sphereNumber,
+    )
+  }, [playerLastSphere, isGoalSphere, sphereNumber])
+
+  // Hide spheres with no real checks UNLESS they're a goal sphere — in
+  // which case we still want to render the card (minus the progress bar)
+  // so the goal is visible on the sphere board.
+  if (totalChecks === 0 && !isGoalSphere) return null
 
   const cardClasses = [
     'sphere-card',
@@ -102,26 +125,28 @@ export default function SphereCard({
               }
             >&#9888;</span>
           )}
-          <span>Sphere {sphereNumber}</span>
+          <span>{isGoalSphere ? 'Goal Sphere' : 'Sphere'} {sphereNumber}</span>
           {isCurrent && (
             <span className={`current-badge ${capInfo ? 'current-badge-capped' : ''}`}>Current</span>
           )}
           {isExtended && <span className="extended-badge">Upcoming</span>}
         </div>
-        <div className="sphere-progress-container">
-          <div className="sphere-progress-bar">
-            <div
-              className="sphere-progress-fill"
-              style={{ width: `${completionPercent}%` }}
-            />
+        {!isEffectivelyEmpty && (
+          <div className="sphere-progress-container">
+            <div className="sphere-progress-bar">
+              <div
+                className="sphere-progress-fill"
+                style={{ width: `${completionPercent}%` }}
+              />
+            </div>
+            <span className="sphere-progress-text">
+              {completedChecks}/{totalChecks} ({completionPercent}%)
+            </span>
           </div>
-          <span className="sphere-progress-text">
-            {completedChecks}/{totalChecks} ({completionPercent}%)
-          </span>
-        </div>
+        )}
       </div>
 
-      {playerBreakdown.length > 0 && (
+      {(playerBreakdown.length > 0 || goalOwnersHere.length > 0) && (
         <div className="sphere-players">
           {playerBreakdown.filter((p) => !hiddenPlayers || !hiddenPlayers.has(p.name)).map((p) => (
             <div className="sp-row" key={p.name}>
@@ -143,7 +168,27 @@ export default function SphereCard({
               <span className="sp-pct">{p.pct}%</span>
             </div>
           ))}
-          {displayThreshold != null && (() => {
+          {/* Goal-only rows: players whose very-last playthrough entry is
+              this sphere but who have no surviving real entries here (so
+              playerBreakdown doesn't already include them). Used for empty
+              goal spheres like Andrew's sphere 37. */}
+          {goalOwnersHere
+            .filter((name) => !playerBreakdown.some((p) => p.name === name))
+            .filter((name) => !hiddenPlayers || !hiddenPlayers.has(name))
+            .map((name) => (
+              <div className="sp-row" key={`goal-${name}`}>
+                <span className="sp-dot" style={{ background: playerColors[name] }} />
+                <span className="sp-name" style={{ color: playerColors[name] }}>
+                  {name}
+                  <span
+                    className="sp-star tooltip-host"
+                    data-tip="Last sphere for this player"
+                    style={{ '--tooltip-width': '180px' }}
+                  >&#9733;</span>
+                </span>
+              </div>
+            ))}
+          {displayThreshold != null && playerBreakdown.length > 0 && (() => {
             const playersAbove = playerBreakdown.filter((p) => p.pct >= displayThreshold).length
             const totalPlayers = playerBreakdown.length
             return (

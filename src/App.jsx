@@ -313,17 +313,34 @@ function App() {
 
   const lastQualifyingIdx = sphereProgressState.cappedIdx
 
-  // Map each player to their highest sphere number
+  // Map each player to the sphere number of their very last playthrough
+  // entry. Walks the RAW (pre-filter) playthrough so every entry the spoiler
+  // generator wrote counts — including goal / win-condition pseudo-entries
+  // like `Ganon → Triforce` that the event filter strips out. Without this,
+  // a player's "last sphere" would be their highest sphere containing a
+  // surviving real check, which misses the goal sphere entirely for games
+  // whose goal is a pseudo-location.
   const playerLastSphere = useMemo(() => {
-    if (!spoilerData) return {}
+    if (!rawParsed) return {}
     const last = {}
-    for (const sphere of spoilerData.spheres) {
+    for (const sphere of rawParsed.spheres) {
+      if (sphere.number === 0) continue
       for (const entry of sphere.entries) {
         last[entry.locationOwner] = sphere.number
       }
     }
     return last
-  }, [spoilerData])
+  }, [rawParsed])
+
+  // Set of sphere numbers that contain at least one player's very-last
+  // playthrough entry. Spheres in this set render with a "Goal Sphere N"
+  // label and stay visible even when the event filter emptied them (e.g.
+  // Andrew's sphere 37, whose only entry is his goal `Ganon → Triforce`
+  // which the filter drops as a pseudo-location).
+  const goalSphereNumbers = useMemo(
+    () => new Set(Object.values(playerLastSphere)),
+    [playerLastSphere],
+  )
 
   // Map each player to the timestamp of their most recent "sent" event. For
   // a player at 100%, this is their completion moment. Used by PlayerStats to
@@ -524,6 +541,7 @@ function App() {
                   hiddenPlayers={hiddenPlayers}
                   isExtended={isExtended}
                   isCurrent={isCurrentCard}
+                  isGoalSphere={goalSphereNumbers.has(result.sphereNumber)}
                   spheresBehind={spheresBehind}
                   capInfo={capInfo}
                   sphereEntries={spoilerData.spheres[i]?.entries || []}

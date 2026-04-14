@@ -89,3 +89,80 @@ describe('parsePickle — primitives', () => {
     expect(() => parsePickle(b(0xff, 0x2e))).toThrow(/unknown.*opcode/i)
   })
 })
+
+describe('parsePickle — composition', () => {
+  it('parses a populated dict via MARK + SETITEMS', () => {
+    // EMPTY_DICT, MARK, "a", 1, "b", 2, SETITEMS, STOP
+    const bytes = new Uint8Array([
+      0x7d,                            // EMPTY_DICT
+      0x28,                            // MARK
+      0x8c, 0x01, 0x61,                // SHORT_BINUNICODE "a"
+      0x4b, 0x01,                      // BININT1 1
+      0x8c, 0x01, 0x62,                // SHORT_BINUNICODE "b"
+      0x4b, 0x02,                      // BININT1 2
+      0x75,                            // SETITEMS
+      0x2e,                            // STOP
+    ])
+    expect(parsePickle(bytes)).toEqual({ a: 1, b: 2 })
+  })
+
+  it('parses a populated list via MARK + APPENDS', () => {
+    // EMPTY_LIST, MARK, 10, 20, 30, APPENDS, STOP
+    const bytes = new Uint8Array([
+      0x5d,                            // EMPTY_LIST
+      0x28,                            // MARK
+      0x4b, 0x0a,                      // BININT1 10
+      0x4b, 0x14,                      // BININT1 20
+      0x4b, 0x1e,                      // BININT1 30
+      0x65,                            // APPENDS
+      0x2e,                            // STOP
+    ])
+    expect(parsePickle(bytes)).toEqual([10, 20, 30])
+  })
+
+  it('parses a tuple via MARK + TUPLE', () => {
+    // MARK, 1, 2, 3, TUPLE, STOP
+    const bytes = new Uint8Array([
+      0x28,                            // MARK
+      0x4b, 0x01,                      // BININT1 1
+      0x4b, 0x02,                      // BININT1 2
+      0x4b, 0x03,                      // BININT1 3
+      0x74,                            // TUPLE
+      0x2e,                            // STOP
+    ])
+    expect(parsePickle(bytes)).toEqual([1, 2, 3])
+  })
+
+  it('parses a TUPLE1 (single-element tuple)', () => {
+    // BININT1 42, TUPLE1, STOP
+    const bytes = new Uint8Array([0x4b, 0x2a, 0x85, 0x2e])
+    expect(parsePickle(bytes)).toEqual([42])
+  })
+
+  it('parses a TUPLE2 (two-element tuple)', () => {
+    // BININT1 1, BININT1 2, TUPLE2, STOP
+    const bytes = new Uint8Array([0x4b, 0x01, 0x4b, 0x02, 0x86, 0x2e])
+    expect(parsePickle(bytes)).toEqual([1, 2])
+  })
+
+  it('parses a TUPLE3 (three-element tuple)', () => {
+    // BININT1 1, BININT1 2, BININT1 3, TUPLE3, STOP
+    const bytes = new Uint8Array([0x4b, 0x01, 0x4b, 0x02, 0x4b, 0x03, 0x87, 0x2e])
+    expect(parsePickle(bytes)).toEqual([1, 2, 3])
+  })
+
+  it('parses a nested dict with a tuple value', () => {
+    // {x: (1, 2)}
+    const bytes = new Uint8Array([
+      0x7d,                            // EMPTY_DICT
+      0x28,                            // MARK
+      0x8c, 0x01, 0x78,                // SHORT_BINUNICODE "x"
+      0x4b, 0x01,                      // BININT1 1
+      0x4b, 0x02,                      // BININT1 2
+      0x86,                            // TUPLE2
+      0x75,                            // SETITEMS
+      0x2e,                            // STOP
+    ])
+    expect(parsePickle(bytes)).toEqual({ x: [1, 2] })
+  })
+})

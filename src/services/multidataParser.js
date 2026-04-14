@@ -16,7 +16,16 @@ const OP = {
   LONG4: 0x8b,
   SHORT_BINUNICODE: 0x8c,
   BINUNICODE: 0x8d,
+  MARK: 0x28,
+  SETITEMS: 0x75,
+  APPENDS: 0x65,
+  TUPLE: 0x74,
+  TUPLE1: 0x85,
+  TUPLE2: 0x86,
+  TUPLE3: 0x87,
 }
+
+const MARK_SENTINEL = Symbol('pickle.MARK')
 
 class ByteReader {
   constructor(bytes) {
@@ -133,6 +142,61 @@ export function parsePickle(bytes) {
       case OP.BINUNICODE: {
         const len = reader.readUint32LE()
         stack.push(textDecoder.decode(reader.readBytes(len)))
+        break
+      }
+      case OP.MARK:
+        stack.push(MARK_SENTINEL)
+        break
+      case OP.SETITEMS: {
+        // Pop pairs down to MARK, assign into the dict just below MARK.
+        const items = []
+        while (stack[stack.length - 1] !== MARK_SENTINEL) {
+          items.unshift(stack.pop())
+        }
+        stack.pop() // discard MARK
+        const target = stack[stack.length - 1]
+        for (let i = 0; i < items.length; i += 2) {
+          target[items[i]] = items[i + 1]
+        }
+        break
+      }
+      case OP.APPENDS: {
+        // Pop items down to MARK, append to the list just below MARK.
+        const items = []
+        while (stack[stack.length - 1] !== MARK_SENTINEL) {
+          items.unshift(stack.pop())
+        }
+        stack.pop() // discard MARK
+        const target = stack[stack.length - 1]
+        for (const item of items) target.push(item)
+        break
+      }
+      case OP.TUPLE: {
+        // Pop items down to MARK and push them as an array (tuples → arrays in JS).
+        const items = []
+        while (stack[stack.length - 1] !== MARK_SENTINEL) {
+          items.unshift(stack.pop())
+        }
+        stack.pop() // discard MARK
+        stack.push(items)
+        break
+      }
+      case OP.TUPLE1: {
+        const a = stack.pop()
+        stack.push([a])
+        break
+      }
+      case OP.TUPLE2: {
+        const b = stack.pop()
+        const a = stack.pop()
+        stack.push([a, b])
+        break
+      }
+      case OP.TUPLE3: {
+        const c = stack.pop()
+        const b = stack.pop()
+        const a = stack.pop()
+        stack.push([a, b, c])
         break
       }
       default:

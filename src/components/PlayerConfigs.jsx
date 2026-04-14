@@ -48,7 +48,7 @@ export default function PlayerConfigs({ players, playerColors, warnings }) {
                             {isLocationCount && warning && (
                               <span
                                 className="pc-warning"
-                                title={`Spoiler indicates ${warning.spoilerCount} location checks but game contains ${warning.gameCount}`}
+                                data-tip={`Spoiler indicates ${warning.spoilerCount} location checks but game contains ${warning.gameCount}`}
                               >
                                 {'\u00A0\u26A0'}
                               </span>

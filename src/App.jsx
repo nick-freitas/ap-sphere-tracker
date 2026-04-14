@@ -17,6 +17,45 @@ import './App.css'
 
 const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i})`)
 
+// GitHub API endpoint for the most recent successful run of the
+// Fetch Tracker Log workflow. Used to power the "Log updated" header
+// display: it tells us when the hourly auto-update action last ran,
+// even when the run found no tracker changes to commit. This is the
+// key signal that distinguishes "action is alive, just no new data"
+// from "action has silently broken and stopped running" — a failure
+// mode we've hit before and want to make visible going forward.
+//
+// Hardcoded for this specific deployment. If you fork the repo, update
+// the owner/repo/workflow segments to match your own.
+const ACTION_RUNS_URL =
+  'https://api.github.com/repos/nick-freitas/ap-sphere-tracker' +
+  '/actions/workflows/fetch-tracker.yml/runs?status=success&per_page=1'
+
+async function fetchLatestActionRunTime() {
+  try {
+    const res = await fetch(ACTION_RUNS_URL)
+    if (!res.ok) return null
+    const data = await res.json()
+    const run = data?.workflow_runs?.[0]
+    if (!run?.updated_at) return null
+    const date = new Date(run.updated_at)
+    return Number.isNaN(date.getTime()) ? null : date
+  } catch {
+    return null
+  }
+}
+
+// Given any number of nullable Dates, return the latest one, or null if all
+// are null. Used when we have multiple independent sources of "when was this
+// updated" and want whichever one has the most recent moment.
+function latestDate(...dates) {
+  let best = null
+  for (const d of dates) {
+    if (d && (!best || d > best)) best = d
+  }
+  return best
+}
+
 function App() {
   const [spoilerData, setSpoilerData] = useState(null)
   const [loadingMultidata, setLoadingMultidata] = useState(true)
@@ -70,17 +109,39 @@ function App() {
       })
       .catch(() => {})
 
-    fetch('/ap-sphere-tracker/default-tracker.txt')
-      .then(async (res) => {
-        if (!res.ok) return null
-        // Last-Modified is set by whatever serves the static file (GitHub
-        // Pages in prod, Vite dev locally). It's an RFC 1123 GMT string
-        // like "Tue, 14 Apr 2026 03:12:24 GMT" — new Date() parses these
-        // correctly as UTC. If the header is missing for any reason, fall
-        // back to "now" so the display is sane.
-        const lastMod = res.headers.get('last-modified')
-        const updatedAt = lastMod ? new Date(lastMod) : new Date()
-        const text = await res.text()
+    // Default tracker load: combine two independent sources for "when was
+    // this last updated" and use whichever is most recent.
+    //
+    //   1. HTTP Last-Modified header on public/default-tracker.txt — the
+    //      file's mtime on whatever serves it (GitHub Pages in prod, Vite
+    //      dev locally). Advances only when the file is rewritten and
+    //      redeployed, which for GitHub Pages happens on every push.
+    //
+    //   2. GitHub Actions API: updated_at of the most recent successful
+    //      run of the Fetch Tracker Log workflow. Advances on every
+    //      scheduled run (every 30 min), including runs that found no
+    //      tracker changes and skipped the commit step. This is the
+    //      action-health heartbeat — it tells us "the action is alive,"
+    //      separate from whether the content actually changed.
+    //
+    // Taking max(source 1, source 2) means:
+    //   - If the action ran recently but found no changes, source 2
+    //     advances while source 1 is frozen → we show source 2.
+    //   - If someone manually pushes a newer tracker.txt outside the
+    //     action flow, source 1 advances while source 2 is frozen at
+    //     whenever the action last ran → we show source 1.
+    //   - If both are current (normal case), source 1 ≈ source 2 and
+    //     either answer is correct.
+    Promise.all([
+      fetch('/ap-sphere-tracker/default-tracker.txt'),
+      fetchLatestActionRunTime(),
+    ])
+      .then(async ([fileRes, actionTime]) => {
+        if (!fileRes.ok) return null
+        const lastMod = fileRes.headers.get('last-modified')
+        const fileTime = lastMod ? new Date(lastMod) : null
+        const text = await fileRes.text()
+        const updatedAt = latestDate(fileTime, actionTime) || new Date()
         return { text, updatedAt }
       })
       .then((data) => {

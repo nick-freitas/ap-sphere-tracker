@@ -91,7 +91,7 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
             {warningsByPlayer.has(s.name) && (
               <span
                 className="player-stats-warning"
-                title={`Expected ${warningsByPlayer.get(s.name).expected} checks from spoiler header, got ${warningsByPlayer.get(s.name).actual} after filtering. Possible datapackage drift.`}
+                title={`Expected ${warningsByPlayer.get(s.name).expected} checks from the seed file, got ${warningsByPlayer.get(s.name).actual} after filtering the spoiler. Spoiler parser mismatch — likely a bug.`}
               >
                 ⚠
               </span>

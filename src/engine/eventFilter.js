@@ -51,9 +51,23 @@ export function applyEventFilter(raw, multidata) {
     playerLocations.set(owner, kept)
   }
 
+  // Consistency check: after filtering, each player's count should exactly match
+  // their multidata.locations[slotId].size. Multidata is our source of truth — it
+  // is what archipelago.gg's tracker reads and what AP's own generator output
+  // says. We deliberately do NOT compare against raw.headerCounts: the spoiler
+  // header's Location Count field is unreliable for some games (ALTTP reports
+  // +10 because it counts the dungeon Prize slots that aren't real checks), so
+  // comparing against it produces false-positive warnings on every seed that
+  // uses those games. Any mismatch against the multidata count, by contrast,
+  // would indicate a real bug in the spoiler parser or the filter itself.
   const warnings = []
-  for (const [player, expected] of raw.headerCounts) {
-    const actual = (playerLocations.get(player) || []).length
+  for (const [player, filteredEntries] of playerLocations) {
+    const slotId = slotByName.get(player)
+    if (slotId == null) continue
+    const slotLocations = multidata.locations.get(slotId)
+    if (!slotLocations) continue
+    const expected = slotLocations.size
+    const actual = filteredEntries.length
     if (actual !== expected) {
       warnings.push({ player, expected, actual })
     }

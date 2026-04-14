@@ -197,7 +197,11 @@ describe('applyEventFilter (multidata-driven)', () => {
     expect(result.playerLocations.get('Alice')[0].location).toBe('KF Kokiri Sword Chest')
   })
 
-  it('emits a warning when filtered playerLocations count differs from headerCounts', () => {
+  it('emits a warning when filtered playerLocations count differs from multidata', () => {
+    // Alice's raw playerLocations has ONE entry that passes the filter
+    // (KF Kokiri Sword Chest is in the datapackage AND in the multidata checks
+    // list). But multidata says Alice's slot has TWO checks total, so the
+    // filter sees 1 and multidata expects 2 — the warning fires.
     const raw = rawSeed({
       playerLocations: new Map([
         [
@@ -207,7 +211,6 @@ describe('applyEventFilter (multidata-driven)', () => {
           ],
         ],
       ]),
-      headerCounts: new Map([['Alice', 3]]),
     })
     const multidata = buildMultidata({
       players: [
@@ -216,13 +219,18 @@ describe('applyEventFilter (multidata-driven)', () => {
       ],
       gameItems: { 'Ocarina of Time': OOT_ITEMS, 'A Link to the Past': ALTTP_ITEMS },
       gameLocations: { 'Ocarina of Time': OOT_LOCATIONS, 'A Link to the Past': ALTTP_LOCATIONS },
-      checks: { Alice: ['KF Kokiri Sword Chest'], Bob: [] },
+      // Alice's multidata has TWO locations, but the raw parse only gave us ONE.
+      checks: { Alice: ['KF Kokiri Sword Chest', 'HF Southeast Grotto Chest'], Bob: [] },
     })
     const result = applyEventFilter(raw, multidata)
-    expect(result.warnings).toContainEqual({ player: 'Alice', expected: 3, actual: 1 })
+    expect(result.warnings).toContainEqual({ player: 'Alice', expected: 2, actual: 1 })
   })
 
-  it('emits no warnings when filtered counts match headerCounts', () => {
+  it('emits no warnings when filtered counts match multidata', () => {
+    // Alice's raw playerLocations has one entry, and multidata.locations[1]
+    // has exactly one entry — they match, so no warning fires. Note that we
+    // deliberately set headerCounts to a conflicting value (10) to confirm
+    // the warning no longer compares against the spoiler header at all.
     const raw = rawSeed({
       playerLocations: new Map([
         [
@@ -232,7 +240,7 @@ describe('applyEventFilter (multidata-driven)', () => {
           ],
         ],
       ]),
-      headerCounts: new Map([['Alice', 1]]),
+      headerCounts: new Map([['Alice', 10]]),
     })
     const multidata = buildMultidata({
       players: [

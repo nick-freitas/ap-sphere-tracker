@@ -140,7 +140,7 @@ export default function PlayerStats({
               )
             })()}
             {!playerInfo[s.name]?.locked && playerInfo[s.name]?.earliestUnchecked != null && (
-              <span className="ps-earliest" title="Earliest sphere with unchecked items">
+              <span className="ps-earliest" data-tip="Earliest sphere with unchecked items">
                 S{playerInfo[s.name].earliestUnchecked}
               </span>
             )}

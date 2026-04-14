@@ -4695,3 +4695,15 @@
 [2026-04-14 01:25:12,013]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
 [2026-04-14 01:25:46,367]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
 [2026-04-14 01:25:46,446]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 01:43:54,738]: Notice (all): Ryot (Team #1) playing Donkey Kong Country 3 has joined. Client(0.6.6), ['AP'].
+[2026-04-14 01:43:54,739]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 01:44:24,328]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-04-14 01:44:41,353]: Notice (all): Ryot (Team #1) playing Donkey Kong Country 3 has joined. Client(0.6.6), ['AP'].
+[2026-04-14 01:44:41,354]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 01:45:03,304]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-04-14 01:45:15,803]: Notice (all): Ryot (Team #1) playing Donkey Kong Country 3 has joined. Client(0.6.6), ['AP'].
+[2026-04-14 01:45:15,803]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-14 01:46:15,709]: Notice (all): Ryot (Team #1) tracking Donkey Kong Country 3 has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 01:52:46,634]: Notice (all): Ryot (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-14 01:52:49,417]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-04-14 02:57:26,075]: Notice (all): Nick (Team #1) has stopped viewing the game. Client(0.6.7), ['TextOnly', 'AP'].

@@ -113,8 +113,16 @@ export default function PlayerStats({
             {playerInfo[s.name]?.locked && (() => {
               const earliest = playerInfo[s.name].earliestUnchecked
               if (earliest == null) {
+                const rawTimestamp = playerCompletionTime?.[s.name]
+                let completedTooltip = `${s.name} completed ${s.game}`
+                if (rawTimestamp) {
+                  const date = new Date(rawTimestamp.replace(',', '.'))
+                  if (!Number.isNaN(date.getTime())) {
+                    completedTooltip = `${s.name} completed ${s.game} on ${date.toLocaleString()}`
+                  }
+                }
                 return (
-                  <span className="ps-lock-circle green" data-tip="Run complete! Every location found.">
+                  <span className="ps-lock-circle green" data-tip={completedTooltip}>
                     {'\u2B50'}
                   </span>
                 )

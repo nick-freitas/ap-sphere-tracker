@@ -17,6 +17,8 @@ export default function SphereCard({
   hiddenPlayers,
   isExtended,
   isCurrent,
+  isGoalSphere,
+  goalEntries = [],
   spheresBehind,
   capInfo,
   sphereEntries,
@@ -27,7 +29,15 @@ export default function SphereCard({
   completionTimestamp,
 }) {
   const { sphereNumber, totalChecks, completedChecks, completionPercent, missingChecks } = result
-  const isComplete = completionPercent === 100
+  // Treat empty goal spheres (0 surviving entries after the event filter,
+  // e.g. Andrew's sphere 37 where `Ganon → Triforce` was the only entry) as
+  // "not complete" so they don't render a misleading ✓ completion badge or
+  // `complete` styling. completionPercent comes through as 100 for empty
+  // spheres per the analyzer, which is fine for regular empty spheres but
+  // wrong for goal spheres where completion depends on game state we can't
+  // observe from the tracker log.
+  const isEffectivelyEmpty = totalChecks === 0
+  const isComplete = !isEffectivelyEmpty && completionPercent === 100
   const meetsThreshold = completionPercent >= threshold
   const isFallingBehind = spheresBehind >= 4 && !isComplete
   const [showCompleted, setShowCompleted] = useState(false)
@@ -62,7 +72,14 @@ export default function SphereCard({
     })
   }, [sphereEntries, checkedLocations])
 
-  if (totalChecks === 0) return null
+  // Hide spheres with no real checks UNLESS they carry at least one goal
+  // entry — in which case we still want to render the card (minus the
+  // progress bar) so the goal is visible on the sphere board.
+  if (totalChecks === 0 && goalEntries.length === 0) return null
+
+  const visibleGoalEntries = hiddenPlayers
+    ? goalEntries.filter((e) => !hiddenPlayers.has(e.locationOwner))
+    : goalEntries
 
   const cardClasses = [
     'sphere-card',
@@ -102,23 +119,25 @@ export default function SphereCard({
               }
             >&#9888;</span>
           )}
-          <span>Sphere {sphereNumber}</span>
+          <span>{isGoalSphere ? 'Goal Sphere' : 'Sphere'} {sphereNumber}</span>
           {isCurrent && (
             <span className={`current-badge ${capInfo ? 'current-badge-capped' : ''}`}>Current</span>
           )}
           {isExtended && <span className="extended-badge">Upcoming</span>}
         </div>
-        <div className="sphere-progress-container">
-          <div className="sphere-progress-bar">
-            <div
-              className="sphere-progress-fill"
-              style={{ width: `${completionPercent}%` }}
-            />
+        {!isEffectivelyEmpty && (
+          <div className="sphere-progress-container">
+            <div className="sphere-progress-bar">
+              <div
+                className="sphere-progress-fill"
+                style={{ width: `${completionPercent}%` }}
+              />
+            </div>
+            <span className="sphere-progress-text">
+              {completedChecks}/{totalChecks} ({completionPercent}%)
+            </span>
           </div>
-          <span className="sphere-progress-text">
-            {completedChecks}/{totalChecks} ({completionPercent}%)
-          </span>
-        </div>
+        )}
       </div>
 
       {playerBreakdown.length > 0 && (
@@ -152,6 +171,53 @@ export default function SphereCard({
               </div>
             )
           })()}
+        </div>
+      )}
+
+      {/* Goal entries: per-player win-condition rows surfaced from the
+          raw playthrough. Rendered as check-like rows so each goal is
+          visible on the sphere board even though the event filter drops
+          them (they aren't trackable multidata locations). */}
+      {visibleGoalEntries.length > 0 && (
+        <div className="sphere-goal-entries">
+          <table className="missing-checks-table">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Location</th>
+                <th>Item Owner</th>
+              </tr>
+            </thead>
+            <tbody>
+              {visibleGoalEntries.map((entry) => (
+                <tr key={`goal-${entry.locationOwner}-${entry.location}`}>
+                  <td style={{ color: playerColors[entry.locationOwner] || 'var(--color-text)', fontWeight: 600 }}>
+                    <span
+                      className="sp-star tooltip-host"
+                      data-tip="Goal / win condition for this player"
+                      style={{ '--tooltip-width': '180px' }}
+                    >&#9733;</span>
+                    {' '}
+                    {entry.locationOwner}
+                  </td>
+                  <td style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem' }}>
+                    {entry.location}
+                  </td>
+                  <td
+                    className={showSpoilers ? '' : 'spoiler-blur'}
+                    style={{
+                      color: showSpoilers
+                        ? (playerColors[entry.itemOwner] || 'var(--color-text)')
+                        : 'var(--color-text-muted)',
+                      fontWeight: 600,
+                    }}
+                  >
+                    {entry.itemOwner}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
 

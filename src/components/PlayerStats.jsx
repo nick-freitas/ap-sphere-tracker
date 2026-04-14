@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { parseTrackerTimestamp } from '../parsers/trackerParser'
 import './PlayerStats.css'
 
 export default function PlayerStats({
@@ -114,13 +115,10 @@ export default function PlayerStats({
               const earliest = playerInfo[s.name].earliestUnchecked
               if (earliest == null) {
                 const rawTimestamp = playerCompletionTime?.[s.name]
-                let completedTooltip = `${s.name} completed ${s.game}`
-                if (rawTimestamp) {
-                  const date = new Date(rawTimestamp.replace(',', '.'))
-                  if (!Number.isNaN(date.getTime())) {
-                    completedTooltip = `${s.name} completed ${s.game} on ${date.toLocaleString()}`
-                  }
-                }
+                const completionDate = parseTrackerTimestamp(rawTimestamp)
+                const completedTooltip = completionDate
+                  ? `${s.name} completed ${s.game} on ${completionDate.toLocaleString()}`
+                  : `${s.name} completed ${s.game}`
                 return (
                   <span className="ps-lock-circle green" data-tip={completedTooltip}>
                     {'\u2B50'}

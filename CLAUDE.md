@@ -94,3 +94,23 @@ The `Header.jsx`, `SphereCard.jsx`, `PlayerStats.jsx`, and `PlayerConfigs.jsx` c
 - The project's existing tooltips all use the `::after` pattern, so a `title=""` tooltip sticks out.
 
 **Rule of thumb:** if you're about to write `title="..."` on a React element in this repo, stop and use `data-tip="..."` instead, plus the CSS above.
+
+## Tracker-log timestamps are UTC. Never `new Date()` them directly.
+
+Raw Archipelago tracker log lines look like `[2026-04-14 01:11:33,970]: ...` with no timezone marker at the end. The timestamps are **UTC** — archipelago.gg's servers log in UTC — but a naive `new Date("2026-04-14 01:11:33.970")` parses the string as the browser's LOCAL time, which is wrong. The result is that every timestamp gets shifted forward by the user's full timezone offset, and "Last Check" readings display as "in the future" (e.g. 2 hours from now, when the check actually happened 2 hours ago).
+
+**Use the helper:** `parseTrackerTimestamp(rawString)` from `src/parsers/trackerParser.js`. It reshapes the string into a proper ISO-8601 UTC literal (`2026-04-14T01:11:33.970Z`) before parsing, so the returned `Date` represents the real moment the event occurred. Then use `.toLocaleString()` on the result to render it in the user's local timezone.
+
+```js
+import { parseTrackerTimestamp } from '../parsers/trackerParser'
+
+const lastCheckDate = parseTrackerTimestamp(lastCheckTime)
+const display = lastCheckDate ? lastCheckDate.toLocaleString() : null
+```
+
+**Do NOT:**
+- Call `new Date(rawString)` on a tracker-log timestamp
+- Call `new Date(rawString.replace(',', '.'))` — the comma→period substitution is necessary but NOT sufficient; the missing piece is the UTC timezone marker
+- Assume the server logs in your local timezone
+
+There is a regression test for this in `src/parsers/trackerParser.test.js` (`describe('parseTrackerTimestamp')`) that verifies the UTC-parsing behavior holds regardless of the machine's local timezone. Don't break it.

@@ -1,4 +1,5 @@
 import trackerMeta from '../tracker-meta.json'
+import { parseTrackerTimestamp } from '../parsers/trackerParser'
 import './Header.css'
 
 function timeAgo(dateStr) {
@@ -32,7 +33,7 @@ export default function Header({
     : null
   const lastUpdatedAgo = trackerMeta?.fetchedAt ? timeAgo(trackerMeta.fetchedAt) : null
 
-  const lastCheckDate = lastCheckTime ? new Date(lastCheckTime.replace(',', '.')) : null
+  const lastCheckDate = parseTrackerTimestamp(lastCheckTime)
   const lastCheckFormatted = lastCheckDate ? lastCheckDate.toLocaleString() : null
   const lastCheckAgo = lastCheckDate ? timeAgo(lastCheckDate) : null
 

@@ -5009,3 +5009,5 @@
 [2026-04-14 20:37:58,536]: (Team #1) Brian sent Deku Seeds (30) to Naizak ((Post HT2: Yuletide Hill) Data Vexen)
 [2026-04-14 20:40:00,568]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-14 20:40:15,577]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
+[2026-04-14 21:49:36,108]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink'].
+[2026-04-14 21:49:36,109]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.

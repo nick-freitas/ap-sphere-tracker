@@ -1,24 +1,25 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
-import { parseSpoilerLog, parseIgnoreList, validateIgnoreLists, DEFAULT_IGNORE_ITEMS, DEFAULT_IGNORE_LOCATIONS } from './parsers/spoilerParser'
+import { parseSpoilerLogRaw } from './parsers/spoilerParser'
 import { parseTrackerLog } from './parsers/trackerParser'
 import { analyzeSpheres } from './engine/sphereAnalyzer'
+import { parseMultidata } from './services/multidataParser'
+import { applyEventFilter } from './engine/eventFilter'
 import Header from './components/Header'
 import InputSection from './components/InputSection'
 import SphereCard from './components/SphereCard'
 import PlayerLegend from './components/PlayerLegend'
 import PlayerStats from './components/PlayerStats'
 import PlayerConfigs from './components/PlayerConfigs'
-import OptionsPage from './components/OptionsPage'
 import TrackerTab from './components/TrackerTab'
 import PlayerLogTab from './components/PlayerLogTab'
-import defaultSpoilerUrl from './default-spoiler.txt?url'
-import defaultTrackerUrl from './default-tracker.txt?url'
+import ErrorCard from './components/ErrorCard'
 import './App.css'
 
 const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i})`)
 
 function App() {
   const [spoilerData, setSpoilerData] = useState(null)
+  const [loadingMultidata, setLoadingMultidata] = useState(true)
   const [checkedLocations, setCheckedLocations] = useState(new Map())
   const [hints, setHints] = useState([])
   const [lastCheckTime, setLastCheckTime] = useState(null)
@@ -39,21 +40,11 @@ function App() {
   const [playerLogSearchQuery, setPlayerLogSearchQuery] = useState('')
   const [trackerSearchQuery, setTrackerSearchQuery] = useState('')
   const [trackerHideFound, setTrackerHideFound] = useState(false)
+  const [rawParsed, setRawParsed] = useState(null)
+  const [multidata, setMultidata] = useState(null)
 
-  // Ignore lists — load from localStorage or use defaults
-  const [ignoreItemsText, setIgnoreItemsText] = useState(() => {
-    return localStorage.getItem('ap-ignore-items') || DEFAULT_IGNORE_ITEMS
-  })
-  const [ignoreLocationsText, setIgnoreLocationsText] = useState(() => {
-    return localStorage.getItem('ap-ignore-locations') || DEFAULT_IGNORE_LOCATIONS
-  })
-  const [validationErrors, setValidationErrors] = useState(null)
-
-  // Keep raw spoiler text for re-parsing and validation
+  // Keep raw spoiler text for re-parsing
   const rawSpoilerTextRef = useRef('')
-
-  const ignoreItems = useMemo(() => parseIgnoreList(ignoreItemsText), [ignoreItemsText])
-  const ignoreLocations = useMemo(() => parseIgnoreList(ignoreLocationsText), [ignoreLocationsText])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
@@ -63,46 +54,56 @@ function App() {
     setDarkMode((prev) => !prev)
   }
 
-  function parseSpoilerWithIgnores(text) {
-    return parseSpoilerLog(text, ignoreItems, ignoreLocations)
-  }
-
-  // Load the bundled default spoiler and tracker logs on startup
+  // Load the default spoiler and tracker logs on startup from public/
   useEffect(() => {
-    fetch(defaultSpoilerUrl)
-      .then((res) => res.text())
+    fetch('/ap-sphere-tracker/default-spoiler.txt')
+      .then((res) => (res.ok ? res.text() : null))
       .then((text) => {
-        rawSpoilerTextRef.current = text
-        const parsed = parseSpoilerWithIgnores(text)
-        setSpoilerData(parsed)
-        const errors = validateIgnoreLists(text, ignoreItems, ignoreLocations)
-        if (errors.invalidItems.length > 0 || errors.invalidLocations.length > 0) {
-          setValidationErrors(errors)
-        }
+        if (text == null) return
+        handleSpoilerText(text)
       })
-    fetch(defaultTrackerUrl)
-      .then((res) => res.text())
+      .catch(() => {})
+
+    fetch('/ap-sphere-tracker/default-tracker.txt')
+      .then((res) => (res.ok ? res.text() : null))
       .then((text) => {
-        setRawTrackerText(text)
-        const { checkedLocations: parsed, lastCheckTime: lct, hints: parsedHints, events } = parseTrackerLog(text)
-        setCheckedLocations(parsed)
-        setLastCheckTime(lct)
-        setHints(parsedHints)
-        setLogEvents(events)
+        if (text == null) return
+        handleTrackerText(text)
+      })
+      .catch(() => {})
+
+    fetch('/ap-sphere-tracker/default-seed.archipelago')
+      .then(async (res) => {
+        if (!res.ok) {
+          setLoadingMultidata(false)
+          return
+        }
+        const buffer = await res.arrayBuffer()
+        await handleMultidataFile(new Uint8Array(buffer))
+      })
+      .catch(() => {
+        setLoadingMultidata(false)
       })
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
+  async function handleMultidataFile(bytes) {
+    setLoadingMultidata(true)
+    try {
+      const md = await parseMultidata(bytes)
+      setMultidata(md)
+    } catch (err) {
+      console.error('Failed to parse seed file:', err)
+      setMultidata(null)
+    } finally {
+      setLoadingMultidata(false)
+    }
+  }
+
   function handleSpoilerText(text) {
     rawSpoilerTextRef.current = text
-    const parsed = parseSpoilerWithIgnores(text)
-    setSpoilerData(parsed)
+    const parsed = parseSpoilerLogRaw(text)
+    setRawParsed(parsed)
     setHiddenPlayers(new Set())
-    const errors = validateIgnoreLists(text, ignoreItems, ignoreLocations)
-    if (errors.invalidItems.length > 0 || errors.invalidLocations.length > 0) {
-      setValidationErrors(errors)
-    } else {
-      setValidationErrors(null)
-    }
   }
 
   function handleTrackerText(text) {
@@ -114,33 +115,14 @@ function App() {
     setLogEvents(events)
   }
 
-  function handleOptionsSave(itemsText, locationsText) {
-    // Validate against the raw spoiler
-    const items = parseIgnoreList(itemsText)
-    const locations = parseIgnoreList(locationsText)
-
-    if (rawSpoilerTextRef.current) {
-      const errors = validateIgnoreLists(rawSpoilerTextRef.current, items, locations)
-      if (errors.invalidItems.length > 0 || errors.invalidLocations.length > 0) {
-        setValidationErrors(errors)
-        // Still save — just show warnings
-      } else {
-        setValidationErrors(null)
-      }
+  useEffect(() => {
+    if (!rawParsed || !multidata) {
+      setSpoilerData(null)
+      return
     }
-
-    // Save to localStorage
-    localStorage.setItem('ap-ignore-items', itemsText)
-    localStorage.setItem('ap-ignore-locations', locationsText)
-    setIgnoreItemsText(itemsText)
-    setIgnoreLocationsText(locationsText)
-
-    // Re-parse spoiler with new ignore lists
-    if (rawSpoilerTextRef.current) {
-      const parsed = parseSpoilerLog(rawSpoilerTextRef.current, items, locations)
-      setSpoilerData(parsed)
-    }
-  }
+    const filtered = applyEventFilter(rawParsed, multidata)
+    setSpoilerData(filtered)
+  }, [rawParsed, multidata])
 
   function togglePlayer(name) {
     setHiddenPlayers((prev) => {
@@ -260,6 +242,59 @@ function App() {
     return last
   }, [spoilerData])
 
+  // Map each player to the timestamp of their most recent "sent" event. For
+  // a player at 100%, this is their completion moment. Used by PlayerStats to
+  // rank completed players in the order they finished (earliest first).
+  // Timestamps are strings like "2026-04-10 22:59:01,934" which sort correctly
+  // with standard string comparison since the format is fixed-width left-to-right.
+  const playerCompletionTime = useMemo(() => {
+    const latest = {}
+    for (const event of logEvents) {
+      if (event.type !== 'sent' || !event.timestamp || !event.sender) continue
+      const current = latest[event.sender]
+      if (!current || event.timestamp > current) {
+        latest[event.sender] = event.timestamp
+      }
+    }
+    return latest
+  }, [logEvents])
+
+  // Map each sphere number to the raw timestamp when its last remaining check
+  // was collected — i.e. the moment the sphere went from incomplete to
+  // complete. Only populated for spheres where every entry has a matching
+  // 'sent' event in the tracker log. Consumed by SphereCard to render a
+  // tooltip on the green checkmark.
+  const sphereCompletionTime = useMemo(() => {
+    const result = new Map()
+    if (!spoilerData || logEvents.length === 0) return result
+
+    // Build a (sender, location) → earliest-timestamp index from the log.
+    // Use the first occurrence because a location can only be checked once;
+    // any later "resend" would be a rehydration artifact, not a new check.
+    const checkTs = new Map()
+    for (const event of logEvents) {
+      if (event.type !== 'sent' || !event.timestamp) continue
+      const key = `${event.sender}\u0000${event.location}`
+      if (!checkTs.has(key)) checkTs.set(key, event.timestamp)
+    }
+
+    for (const sphere of spoilerData.spheres) {
+      if (sphere.number === 0 || sphere.entries.length === 0) continue
+      let maxTs = null
+      let allPresent = true
+      for (const entry of sphere.entries) {
+        const ts = checkTs.get(`${entry.locationOwner}\u0000${entry.location}`)
+        if (!ts) {
+          allPresent = false
+          break
+        }
+        if (!maxTs || ts > maxTs) maxTs = ts
+      }
+      if (allPresent && maxTs) result.set(sphere.number, maxTs)
+    }
+    return result
+  }, [spoilerData, logEvents])
+
   const playerColors = useMemo(() => {
     if (!spoilerData) return {}
     const colors = {}
@@ -309,8 +344,10 @@ function App() {
       <InputSection
         onSpoilerParsed={handleSpoilerText}
         onTrackerParsed={handleTrackerText}
+        onMultidataFile={handleMultidataFile}
         hasSpoiler={!!spoilerData}
         hasTracker={checkedLocations.size > 0}
+        hasMultidata={multidata !== null}
       />
       <div className="tabs">
         <button className={`tab ${activeTab === 'spheres' ? 'active' : ''}`} onClick={() => setActiveTab('spheres')}>Spheres</button>
@@ -318,11 +355,29 @@ function App() {
         <button className={`tab ${activeTab === 'player-log' ? 'active' : ''}`} onClick={() => setActiveTab('player-log')}>Player Log</button>
         <button className={`tab ${activeTab === 'log' ? 'active' : ''}`} onClick={() => setActiveTab('log')}>Raw Log</button>
         <button className={`tab ${activeTab === 'configs' ? 'active' : ''}`} onClick={() => setActiveTab('configs')}>Player Configs</button>
-        <div className="tab-spacer" />
-        <button className={`tab ${activeTab === 'options' ? 'active' : ''}`} onClick={() => setActiveTab('options')}>Options</button>
       </div>
 
-      {activeTab === 'spheres' && (
+      {loadingMultidata && (
+        <div style={{ textAlign: 'center', padding: '4rem' }} aria-live="polite">
+          <p>Loading game data…</p>
+        </div>
+      )}
+
+      {!loadingMultidata && !multidata && (
+        <ErrorCard
+          title="No seed file loaded"
+          body="Upload the .archipelago file (or the generator output .zip) for this seed to begin analysis."
+        />
+      )}
+
+      {!loadingMultidata && multidata && spoilerData === null && (
+        <ErrorCard
+          title="No spoiler log loaded"
+          body="Upload a spoiler log (AP_*_Spoiler.txt) to begin analysis."
+        />
+      )}
+
+      {!loadingMultidata && multidata && spoilerData !== null && activeTab === 'spheres' && (
         <>
           {spoilerData && (
             <PlayerLegend
@@ -342,10 +397,18 @@ function App() {
               hiddenPlayers={hiddenPlayers}
               sphereResults={sphereResults}
               lastQualifyingIdx={lastQualifyingIdx}
+              playerCompletionTime={playerCompletionTime}
+              playerLastSphere={playerLastSphere}
             />
           )}
           <div className="sphere-list">
             {sphereResults.map((result, i) => {
+              // Sphere 0 is the precollected/starting items pseudo-sphere.
+              // We don't render it — it didn't fit visually on the sphere
+              // board. The data is still in the parse tree via
+              // spoilerData.spheres[0].precollected if anything ever wants
+              // to display it again.
+              if (result.sphereNumber === 0) return null
               const withinThreshold = lastQualifyingIdx >= 0 && i <= lastQualifyingIdx
               const isExtended = extended
                 && lastQualifyingIdx >= 0
@@ -383,8 +446,8 @@ function App() {
                   checkedLocations={checkedLocations}
                   playerLastSphere={playerLastSphere}
                   showSpoilers={showSpoilers}
-                  precollected={spoilerData.spheres[i]?.precollected}
                   displayThreshold={threshold}
+                  completionTimestamp={sphereCompletionTime.get(result.sphereNumber)}
                 />
               )
             })}
@@ -392,7 +455,7 @@ function App() {
         </>
       )}
 
-      {activeTab === 'tracker' && spoilerData && (
+      {!loadingMultidata && multidata && spoilerData !== null && activeTab === 'tracker' && (
         <TrackerTab
           spoilerData={spoilerData}
           checkedLocations={checkedLocations}
@@ -407,7 +470,7 @@ function App() {
         />
       )}
 
-      {activeTab === 'player-log' && spoilerData && (
+      {!loadingMultidata && multidata && spoilerData !== null && activeTab === 'player-log' && (
         <PlayerLogTab
           spoilerData={spoilerData}
           logEvents={logEvents}
@@ -423,23 +486,15 @@ function App() {
         />
       )}
 
-      {activeTab === 'configs' && spoilerData && (
+      {!loadingMultidata && multidata && spoilerData !== null && activeTab === 'configs' && (
         <PlayerConfigs
           players={spoilerData.players}
           playerColors={playerColors}
+          warnings={spoilerData.warnings}
         />
       )}
 
-      {activeTab === 'options' && (
-        <OptionsPage
-          ignoreItemsText={ignoreItemsText}
-          ignoreLocationsText={ignoreLocationsText}
-          onSave={handleOptionsSave}
-          validationErrors={validationErrors}
-        />
-      )}
-
-      {activeTab === 'log' && (
+      {!loadingMultidata && multidata && spoilerData !== null && activeTab === 'log' && (
         <div className="raw-log">
           {rawTrackerText
             ? <pre className="log-content">{reversedRawTrackerText}</pre>

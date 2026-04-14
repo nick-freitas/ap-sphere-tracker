@@ -129,3 +129,114 @@
 .modal-btn.confirm:hover {
   background: #b3632e;
 }
+
+/* ---- Shared toggle switch ------------------------------------------------
+   Used by Header.jsx (Upcoming Sphere, Item Owner Spoiler) and
+   TrackerTab.jsx (Hide Found). Keep these in App.css, not in any single
+   component's stylesheet — any component that wants a toggle button should
+   be able to use .toggle-control + .toggle-btn without an implicit import
+   dependency on another component.
+--------------------------------------------------------------------------- */
+.toggle-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggle-control label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.toggle-btn {
+  width: 40px;
+  height: 22px;
+  border-radius: 11px;
+  cursor: pointer;
+  position: relative;
+  background: var(--color-sand);
+  border: 1px solid var(--color-border);
+  transition: background 0.3s, border-color 0.3s;
+  padding: 0;
+}
+
+.toggle-btn.on {
+  background: var(--color-moss);
+  border-color: var(--color-moss);
+}
+
+.toggle-btn::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-card);
+  transition: transform 0.3s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-btn.on::after {
+  transform: translateX(18px);
+}
+
+.toggle-btn.danger {
+  background: #c0392b;
+  border-color: #c0392b;
+}
+
+/* ---- Shared tooltip primitive --------------------------------------------
+   Add `className="tooltip-host"` to any element you want to give a styled
+   hover tooltip, plus a `data-tip="..."` attribute with the tooltip text.
+   This handles the four load-bearing bits (parent position, ::after content,
+   :hover reveal, z-index) so new tooltips are a one-liner instead of ~25
+   lines of inline CSS duplicated across component stylesheets.
+
+   Width is configurable per use-case via the --tooltip-width custom property:
+     <span className="tooltip-host" data-tip="..." style={{ '--tooltip-width': '180px' }}>
+
+   Default width is 240px. Existing inline tooltip implementations in Header,
+   PlayerStats, SphereCard, PlayerConfigs, etc. are grandfathered and NOT
+   migrated — they work fine as-is and touching them risks visual regressions.
+--------------------------------------------------------------------------- */
+.tooltip-host {
+  position: relative;
+  cursor: help;
+}
+
+.tooltip-host::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-card);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: 'Karla', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  white-space: normal;
+  width: var(--tooltip-width, 240px);
+  line-height: 1.4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 100;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.tooltip-host:hover::after {
+  opacity: 1;
+}

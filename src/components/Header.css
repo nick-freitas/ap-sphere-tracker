@@ -162,59 +162,9 @@
   border: 2px solid var(--color-bg);
 }
 
-.toggle-control {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.toggle-control label {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-text-muted);
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.toggle-btn {
-  width: 40px;
-  height: 22px;
-  border-radius: 11px;
-  cursor: pointer;
-  position: relative;
-  background: var(--color-sand);
-  border: 1px solid var(--color-border);
-  transition: background 0.3s, border-color 0.3s;
-  padding: 0;
-}
-
-.toggle-btn.on {
-  background: var(--color-moss);
-  border-color: var(--color-moss);
-}
-
-.toggle-btn::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--color-card);
-  transition: transform 0.3s;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-}
-
-.toggle-btn.on::after {
-  transform: translateX(18px);
-}
-
-.toggle-btn.danger {
-  background: #c0392b;
-  border-color: #c0392b;
-}
+/* .toggle-control + .toggle-btn styles live in src/App.css (shared across
+   Header, TrackerTab, and any other component that needs the project's
+   toggle switch). */
 
 @media (max-width: 720px) {
   .header-controls {

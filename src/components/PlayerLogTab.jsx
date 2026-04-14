@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from 'react'
 import PlayerSidebar from './PlayerSidebar'
 import { buildPlayerLog, computeProgressionSet } from '../engine/playerLog'
+import { parseTrackerTimestamp } from '../parsers/trackerParser'
 import './PlayerLogTab.css'
 
 function formatTime(timestamp) {
@@ -53,26 +54,40 @@ function EventRow({ row, playerColors, progressionSet }) {
   // appears in any playthrough sphere — indicating it was a progression item.
   const isProgression = progressionSet.has(`${row.sender}\u0000${row.location}`)
 
+  // Full local-time tooltip on the time cell. The cell itself only shows
+  // HH:MM:SS; hovering gets the properly-parsed local date + time via the
+  // UTC-safe helper (matches Last Check and sphere completion tooltips).
+  const parsedDate = parseTrackerTimestamp(row.timestamp)
+  const fullTimestampTip = parsedDate ? parsedDate.toLocaleString() : row.timestamp
+
   return (
     <tr
       className={`player-log-row ${row.type}`}
       style={{ '--row-color': rowColor }}
     >
-      <td className="player-log-cell-time" title={row.timestamp}>{wrap(time)}</td>
+      <td
+        className="player-log-cell-time tooltip-host"
+        data-tip={fullTimestampTip}
+        style={{ '--tooltip-width': '180px' }}
+      >
+        {wrap(time)}
+      </td>
       <td
         className="player-log-cell-owner"
         style={{ color: playerColors[row.sender] || 'var(--color-text)' }}
       >
         {wrap(row.sender)}
       </td>
-      <td
-        className="player-log-cell-location"
-        title={isProgression ? 'Progression item' : undefined}
-      >
+      <td className="player-log-cell-location">
         {isHint && 'Hint ['}
         {isProgression && (
           <>
-            <span className="player-log-progression-star" aria-label="Progression item">★</span>
+            <span
+              className="player-log-progression-star tooltip-host"
+              aria-label="Progression item"
+              data-tip="Progression item"
+              style={{ '--tooltip-width': '140px' }}
+            >★</span>
             {' '}
           </>
         )}

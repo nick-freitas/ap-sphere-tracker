@@ -1,7 +1,17 @@
 import { useMemo } from 'react'
+import { parseTrackerTimestamp } from '../parsers/trackerParser'
 import './PlayerStats.css'
 
-export default function PlayerStats({ spoilerData, checkedLocations, playerColors, hiddenPlayers, sphereResults, lastQualifyingIdx }) {
+export default function PlayerStats({
+  spoilerData,
+  checkedLocations,
+  playerColors,
+  hiddenPlayers,
+  sphereResults,
+  lastQualifyingIdx,
+  playerCompletionTime,
+  playerLastSphere,
+}) {
   const stats = useMemo(() => {
     if (!spoilerData) return []
 
@@ -28,40 +38,62 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
       return { name: p.name, game: p.game, total, done, pct }
     })
 
-    // Sort by highest percentage when tracker data is available
+    // Sort by highest percentage when tracker data is available. Among
+    // 100%-complete players, rank them by the moment they finished — the
+    // earliest to collect their final check appears first. This is derived
+    // from the last "sent" event per player in the tracker log (via
+    // playerCompletionTime). If a player has no tracker timestamp (e.g. all
+    // their checks were precollected), fall back to their lowest max sphere
+    // as a secondary tiebreaker so they still land in a deterministic spot.
     if (checkedLocations.size > 0) {
-      result.sort((a, b) => b.pct - a.pct)
+      result.sort((a, b) => {
+        if (b.pct !== a.pct) return b.pct - a.pct
+        if (a.pct !== 100) return 0
+        const aTime = playerCompletionTime?.[a.name]
+        const bTime = playerCompletionTime?.[b.name]
+        if (aTime && bTime) return aTime < bTime ? -1 : aTime > bTime ? 1 : 0
+        if (aTime && !bTime) return -1
+        if (!aTime && bTime) return 1
+        const aMax = playerLastSphere?.[a.name] ?? Number.POSITIVE_INFINITY
+        const bMax = playerLastSphere?.[b.name] ?? Number.POSITIVE_INFINITY
+        return aMax - bMax
+      })
     }
 
     return result
-  }, [spoilerData, checkedLocations])
+  }, [spoilerData, checkedLocations, playerCompletionTime, playerLastSphere])
 
-  // For each player, find their earliest sphere with unchecked items
-  // Also determine if they're "locked" (no missing checks in qualifying spheres)
+  // For each player, find their earliest sphere with unchecked items and
+  // count how many of that sphere's missing checks belong to them. Also
+  // determine if they're "locked" (no missing checks in qualifying spheres).
   const playerInfo = useMemo(() => {
     if (!sphereResults || sphereResults.length === 0) return {}
     const result = {}
     if (spoilerData) {
       for (const player of spoilerData.players) {
         let earliestUnchecked = null
+        let earliestUncheckedCount = 0
         let hasCheckInQualifying = false
 
         for (let i = 0; i < sphereResults.length; i++) {
+          let countInSphere = 0
           for (const check of sphereResults[i].missingChecks) {
-            if (check.player === player.name) {
-              if (earliestUnchecked === null) {
-                earliestUnchecked = sphereResults[i].sphereNumber
-              }
-              if (lastQualifyingIdx >= 0 && i <= lastQualifyingIdx) {
-                hasCheckInQualifying = true
-              }
-              break
+            if (check.player === player.name) countInSphere++
+          }
+          if (countInSphere > 0) {
+            if (earliestUnchecked === null) {
+              earliestUnchecked = sphereResults[i].sphereNumber
+              earliestUncheckedCount = countInSphere
+            }
+            if (lastQualifyingIdx >= 0 && i <= lastQualifyingIdx) {
+              hasCheckInQualifying = true
             }
           }
         }
 
         result[player.name] = {
           earliestUnchecked,
+          earliestUncheckedCount,
           locked: lastQualifyingIdx >= 0 && !hasCheckInQualifying,
         }
       }
@@ -87,8 +119,13 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
             {playerInfo[s.name]?.locked && (() => {
               const earliest = playerInfo[s.name].earliestUnchecked
               if (earliest == null) {
+                const rawTimestamp = playerCompletionTime?.[s.name]
+                const completionDate = parseTrackerTimestamp(rawTimestamp)
+                const completedTooltip = completionDate
+                  ? `${s.name} completed ${s.game} on ${completionDate.toLocaleString()}`
+                  : `${s.name} completed ${s.game}`
                 return (
-                  <span className="ps-lock-circle green" data-tip="Run complete! Every location found.">
+                  <span className="ps-lock-circle green" data-tip={completedTooltip}>
                     {'\u2B50'}
                   </span>
                 )
@@ -107,11 +144,16 @@ export default function PlayerStats({ spoilerData, checkedLocations, playerColor
                 </span>
               )
             })()}
-            {!playerInfo[s.name]?.locked && playerInfo[s.name]?.earliestUnchecked != null && (
-              <span className="ps-earliest" title="Earliest sphere with unchecked items">
-                S{playerInfo[s.name].earliestUnchecked}
-              </span>
-            )}
+            {!playerInfo[s.name]?.locked && playerInfo[s.name]?.earliestUnchecked != null && (() => {
+              const count = playerInfo[s.name].earliestUncheckedCount
+              const sphereNum = playerInfo[s.name].earliestUnchecked
+              const tip = `${s.name} has ${count} check${count === 1 ? '' : 's'} in Sphere ${sphereNum}`
+              return (
+                <span className="ps-earliest" data-tip={tip}>
+                  S{sphereNum}
+                </span>
+              )
+            })()}
             <span className="ps-count">{s.done}/{s.total}</span>
           </div>
           <div className="ps-bar">

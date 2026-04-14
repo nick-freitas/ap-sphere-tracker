@@ -300,14 +300,15 @@ export default function TrackerTab({
             value={searchQuery}
             onChange={(e) => onSearchQueryChange(e.target.value)}
           />
-          <label className="tracker-hide-found">
-            <input
-              type="checkbox"
-              checked={hideFound}
-              onChange={(e) => onHideFoundChange(e.target.checked)}
+          <div className="toggle-control">
+            <label>Hide Found</label>
+            <button
+              type="button"
+              className={`toggle-btn ${hideFound ? 'on' : ''}`}
+              onClick={() => onHideFoundChange(!hideFound)}
+              aria-pressed={hideFound}
             />
-            Hide found
-          </label>
+          </div>
         </div>
         {filteredRows.length === 0 && filteredHintRows.length === 0 ? (
           <p className="tracker-placeholder">No locations match the current filter.</p>

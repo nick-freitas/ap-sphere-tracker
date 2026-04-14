@@ -19,10 +19,13 @@ Cross-references an Archipelago spoiler log with a server tracker log to show:
 
 1. Upload your **Spoiler Log** (`AP_*_Spoiler.txt` from your seed)
 2. Upload your **Tracker Log** (the server `.txt` log file)
-3. Adjust the **Threshold** slider to control which spheres reveal missing checks
-4. Toggle **Upcoming Sphere** to see the next sphere beyond the threshold
-5. Toggle **Item Spoilers** to reveal what items are at missing locations
-6. Click player names to filter them in/out of the display
+3. Upload your **Seed File** (`.archipelago` or the generator output `.zip` containing it)
+4. Adjust the **Threshold** slider to control which spheres reveal missing checks
+5. Toggle **Upcoming Sphere** to see the next sphere beyond the threshold
+6. Toggle **Item Spoilers** to reveal what items are at missing locations
+7. Click player names to filter them in/out of the display
+
+The seed file (`.archipelago`) contains the authoritative per-slot check list for your specific seed, including settings-aware exclusions like un-shuffled slots. The tracker reads it client-side — no server required.
 
 ## Features
 
@@ -30,7 +33,7 @@ Cross-references an Archipelago spoiler log with a server tracker log to show:
 - Dark/light mode (defaults to system preference)
 - Installable as a PWA for offline use
 - Auto-updates tracker data hourly via GitHub Actions
-- Filters out non-item entries (subrules, logic events)
+- Filters out logic events using the authoritative per-slot check list embedded in your seed file
 - Player color coding throughout all views
 
 ## Tech stack

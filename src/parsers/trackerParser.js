@@ -1,3 +1,22 @@
+// Archipelago server tracker logs use Python's default logging format, which
+// emits local time on whatever machine the server runs on. In practice every
+// seed hosted by archipelago.gg is logged in UTC (their infrastructure is
+// UTC-based). The raw strings look like "2026-04-14 01:11:33,970" with no
+// timezone marker, so passing them directly to `new Date()` makes the JS
+// engine parse them as LOCAL time — shifting every timestamp forward by the
+// user's full timezone offset and producing tooltips that read "in the
+// future." This helper converts the raw string into a proper Date by
+// reshaping it into an ISO-8601 UTC literal before parsing. Use it anywhere
+// in the UI that displays a tracker-log timestamp; never call `new Date()`
+// on these strings directly.
+export function parseTrackerTimestamp(raw) {
+  if (!raw) return null
+  // "YYYY-MM-DD HH:MM:SS,mmm" → "YYYY-MM-DDTHH:MM:SS.mmmZ"
+  const isoUtc = raw.replace(' ', 'T').replace(',', '.') + 'Z'
+  const date = new Date(isoUtc)
+  return Number.isNaN(date.getTime()) ? null : date
+}
+
 export function parseTrackerLog(text) {
   const checkedLocations = new Map()
   let lastCheckTime = null

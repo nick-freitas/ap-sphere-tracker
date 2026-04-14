@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { parseTrackerLog } from './trackerParser'
+import { parseTrackerLog, parseTrackerTimestamp } from './trackerParser'
 
 const SAMPLE_TRACKER = `[2026-04-10 23:00:00,000]: Loading embedded data package for game Ocarina of Time
 [2026-04-10 23:01:00,000]: Notice (all): Alice (Team #1) playing Ocarina of Time has joined. Client(0.6.5), ['AP'].
@@ -52,6 +52,35 @@ describe('parseTrackerLog', () => {
   it('returns the last check timestamp', () => {
     const { lastCheckTime } = parseTrackerLog(SAMPLE_TRACKER)
     expect(lastCheckTime).toBe('2026-04-10 23:07:00,000')
+  })
+})
+
+describe('parseTrackerTimestamp', () => {
+  it('parses a tracker log timestamp as UTC (not local time)', () => {
+    // The raw string has no timezone marker. The helper must interpret it
+    // as UTC, NOT the browser's local timezone, so tooltips render with the
+    // correct wall-clock time for the user via toLocaleString().
+    const date = parseTrackerTimestamp('2026-04-14 01:11:33,970')
+    expect(date).toBeInstanceOf(Date)
+    // If the helper parses as UTC, these getters all return the numbers
+    // from the raw string regardless of the machine's timezone.
+    expect(date.getUTCFullYear()).toBe(2026)
+    expect(date.getUTCMonth()).toBe(3) // April (zero-indexed)
+    expect(date.getUTCDate()).toBe(14)
+    expect(date.getUTCHours()).toBe(1)
+    expect(date.getUTCMinutes()).toBe(11)
+    expect(date.getUTCSeconds()).toBe(33)
+    expect(date.getUTCMilliseconds()).toBe(970)
+  })
+
+  it('returns null for null or undefined input', () => {
+    expect(parseTrackerTimestamp(null)).toBeNull()
+    expect(parseTrackerTimestamp(undefined)).toBeNull()
+    expect(parseTrackerTimestamp('')).toBeNull()
+  })
+
+  it('returns null for a malformed timestamp', () => {
+    expect(parseTrackerTimestamp('not a timestamp')).toBeNull()
   })
 })
 

@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import MissingChecksTable from './MissingChecksTable'
+import { parseTrackerTimestamp } from '../parsers/trackerParser'
 import './SphereCard.css'
 
 function formatIncompleteList(numbers) {
@@ -22,16 +23,14 @@ export default function SphereCard({
   checkedLocations,
   playerLastSphere,
   showSpoilers,
-  precollected,
   displayThreshold,
+  completionTimestamp,
 }) {
   const { sphereNumber, totalChecks, completedChecks, completionPercent, missingChecks } = result
   const isComplete = completionPercent === 100
   const meetsThreshold = completionPercent >= threshold
-  const isSphereZero = sphereNumber === 0
   const isFallingBehind = spheresBehind >= 4 && !isComplete
   const [showCompleted, setShowCompleted] = useState(false)
-  const [showPrecollected, setShowPrecollected] = useState(false)
 
   const playerBreakdown = useMemo(() => {
     if (!sphereEntries || sphereEntries.length === 0) return []
@@ -63,49 +62,7 @@ export default function SphereCard({
     })
   }, [sphereEntries, checkedLocations])
 
-  if (totalChecks === 0 && !isSphereZero) return null
-
-  if (isSphereZero && precollected && precollected.length > 0) {
-    const filtered = hiddenPlayers
-      ? precollected.filter((p) => !hiddenPlayers.has(p.player))
-      : precollected
-    return (
-      <div className={`sphere-card expanded ${isCurrent ? 'current' : ''}`}>
-        <div className="sphere-header">
-          <div className="sphere-label">
-            <span className="sphere-num">0</span>
-            <span>Starting Items</span>
-            {isCurrent && <span className="current-badge">Current</span>}
-          </div>
-          <span className="sphere-progress-text">{precollected.length} items</span>
-        </div>
-        <div className="completed-section">
-          <button
-            className="completed-toggle"
-            onClick={() => setShowPrecollected(!showPrecollected)}
-          >
-            <span className="completed-arrow">{showPrecollected ? '\u25BC' : '\u25B6'}</span>
-            Precollected Items ({filtered.length})
-          </button>
-          {showPrecollected && (
-            <div className="completed-body">
-              <table className="missing-checks-table">
-                <thead><tr><th>Item</th><th>Player</th></tr></thead>
-                <tbody>
-                  {filtered.map((entry) => (
-                    <tr key={`${entry.player}-${entry.item}`}>
-                      <td style={{ color: 'var(--color-moss)', fontWeight: 500 }}>{entry.item}</td>
-                      <td style={{ color: playerColors[entry.player], fontWeight: 600 }}>{entry.player}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </div>
-      </div>
-    )
-  }
+  if (totalChecks === 0) return null
 
   const cardClasses = [
     'sphere-card',
@@ -122,7 +79,13 @@ export default function SphereCard({
       <div className="sphere-header">
         <div className="sphere-label">
           <span className="sphere-num">{sphereNumber}</span>
-          {isComplete && <span className="check-icon">&#10003;</span>}
+          {isComplete && (() => {
+            const completionDate = parseTrackerTimestamp(completionTimestamp)
+            const tip = completionDate
+              ? `Completed ${completionDate.toLocaleString()}`
+              : 'Completed'
+            return <span className="check-icon" data-tip={tip}>&#10003;</span>
+          })()}
           {isFallingBehind && (
             <span
               className="warning-icon"
@@ -165,7 +128,13 @@ export default function SphereCard({
               <span className="sp-dot" style={{ background: playerColors[p.name] }} />
               <span className="sp-name" style={{ color: playerColors[p.name] }}>
                 {p.name}
-                {playerLastSphere?.[p.name] === sphereNumber && <span className="sp-star" title="Last sphere for this player">&#9733;</span>}
+                {playerLastSphere?.[p.name] === sphereNumber && (
+                  <span
+                    className="sp-star tooltip-host"
+                    data-tip="Last sphere for this player"
+                    style={{ '--tooltip-width': '180px' }}
+                  >&#9733;</span>
+                )}
               </span>
               <span className="sp-count">{p.done}/{p.total}</span>
               <div className="sp-bar">

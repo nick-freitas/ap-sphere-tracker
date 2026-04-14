@@ -109,6 +109,36 @@
   color: var(--color-clay);
   font-weight: 600;
   cursor: help;
+  position: relative;
+}
+
+.ps-earliest::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-card);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: 'Karla', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  white-space: normal;
+  width: 220px;
+  line-height: 1.4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 10;
+  text-align: left;
+}
+
+.ps-earliest:hover::after {
+  opacity: 1;
 }
 
 .ps-count {

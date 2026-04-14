@@ -1,88 +1,13 @@
-export const DEFAULT_IGNORE_ITEMS = `# Game logic events (not real items)
-Time Travel
-Child Can Pass Time
-Adult Can Pass Time
-Can Access Fish
-Jabu Jabus Belly Ruto In 1F Rescued
-Open Floodgate
-Dodongos Cavern Eyes Lit
-Kakariko Village Gate Open
-GC Woods Warp Open
-Dodongos Cavern Stairs Room Door
-GC Stop Rolling Goron As Adult`
-
-export const DEFAULT_IGNORE_LOCATIONS = `# Non-item locations
-Links Pocket
-Master Sword Pedestal
-Market ToT Master Sword
-Flute Activation Spot
-Water Temple East Lower Water Low From High
-
-# Glitched
-(100Acre) Rabbit's House Mythril Crystal
-Kak Potion Shop Item 1
-Kak Potion Shop Item 2
-Kak Potion Shop Item 3
-Kak Potion Shop Item 4
-Kak Potion Shop Item 5
-Kak Potion Shop Item 6
-Kak Potion Shop Item 7
-Kak Potion Shop Item 8
-Kak Bazaar Item 1
-ZD Shop Item 1`
-
-export function parseIgnoreList(text) {
-  if (!text) return new Set()
-  return new Set(
-    text.split('\n')
-      .map((line) => line.trim())
-      .filter((line) => line && !line.startsWith('//') && !line.startsWith('#'))
-  )
-}
-
-export function validateIgnoreLists(spoilerText, ignoreItems, ignoreLocations) {
-  // Collect all item names and location names from the Locations section
-  const allItems = new Set()
-  const allLocations = new Set()
-
-  const locationsIdx = spoilerText.indexOf('\nLocations:\n')
-  if (locationsIdx !== -1) {
-    const locText = spoilerText.substring(locationsIdx)
-    const nextSection = locText.substring(1).match(/\n[A-Z][a-z]+:\n/)
-    const end = nextSection ? nextSection.index + 1 : locText.length
-    const block = locText.substring(0, end)
-
-    for (const line of block.split('\n')) {
-      const trimmed = line.trim()
-      if (!trimmed || !trimmed.includes(': ')) continue
-      const sepIdx = trimmed.indexOf('): ')
-      if (sepIdx === -1) continue
-      const locSide = trimmed.substring(0, sepIdx + 1)
-      const itemSide = trimmed.substring(sepIdx + 3)
-      const loc = parseNameAndPlayer(locSide)
-      const item = parseNameAndPlayer(itemSide)
-      if (loc) allLocations.add(loc.name)
-      if (item) allItems.add(item.name)
-    }
-  }
-
-  const invalidItems = [...ignoreItems].filter((name) => !allItems.has(name))
-  const invalidLocations = [...ignoreLocations].filter((name) => !allLocations.has(name))
-
-  return { invalidItems, invalidLocations }
-}
-
-export function parseSpoilerLog(text, ignoreItems, ignoreLocations) {
-  const nonItems = ignoreItems || new Set()
-  const nonLocations = ignoreLocations || new Set()
-  const players = parsePlayers(text)
-  const spheres = parseSpheres(text, nonItems, nonLocations)
-  const playerLocations = parseLocations(text, nonItems, nonLocations)
-  return { players, spheres, playerLocations }
+export function parseSpoilerLogRaw(text) {
+  const { players, headerCounts } = parsePlayers(text)
+  const spheres = parseSpheres(text)
+  const playerLocations = parseLocations(text)
+  return { players, spheres, playerLocations, headerCounts }
 }
 
 function parsePlayers(text) {
   const players = []
+  const headerCounts = new Map()
   const lines = text.split('\n')
 
   for (let i = 0; i < lines.length; i++) {
@@ -105,6 +30,10 @@ function parsePlayers(text) {
           if (key === 'Game') {
             game = value
           }
+          if (key === 'Location Count') {
+            const n = parseInt(value, 10)
+            if (!Number.isNaN(n)) headerCounts.set(name, n)
+          }
           if (value) {
             config.push({ key, value })
           }
@@ -115,10 +44,10 @@ function parsePlayers(text) {
     }
   }
 
-  return players
+  return { players, headerCounts }
 }
 
-function parseSpheres(text, nonItems, nonLocations) {
+function parseSpheres(text) {
   const playthroughIdx = text.indexOf('\nPlaythrough:\n')
   if (playthroughIdx === -1) return []
 
@@ -140,7 +69,7 @@ function parseSpheres(text, nonItems, nonLocations) {
     if (number === 0) {
       spheres.push({ number, entries: [], precollected: parsePrecollected(block) })
     } else {
-      const entries = parseSphereEntries(block, nonItems, nonLocations)
+      const entries = parseSphereEntries(block)
       spheres.push({ number, entries })
     }
   }
@@ -148,14 +77,13 @@ function parseSpheres(text, nonItems, nonLocations) {
   return spheres
 }
 
-function parseLocations(text, nonItems, nonLocations) {
+function parseLocations(text) {
   const result = new Map()
 
   const locationsIdx = text.indexOf('\nLocations:\n')
   if (locationsIdx === -1) return result
 
   const locText = text.substring(locationsIdx)
-  // Find the next top-level section header (e.g. "Playthrough:")
   const nextSectionMatch = locText.substring(1).match(/\n[A-Z][a-z]+:\n/)
   const end = nextSectionMatch ? nextSectionMatch.index + 1 : locText.length
   const block = locText.substring(0, end)
@@ -173,11 +101,6 @@ function parseLocations(text, nonItems, nonLocations) {
     const locationParsed = parseNameAndPlayer(locationSide)
     const itemParsed = parseNameAndPlayer(itemSide)
     if (!locationParsed || !itemParsed) continue
-
-    // Match the exact filter discipline used by parseSphereEntries
-    if (locationParsed.name === itemParsed.name) continue
-    if (nonItems.has(itemParsed.name)) continue
-    if (nonLocations.has(locationParsed.name)) continue
 
     if (!result.has(locationParsed.player)) {
       result.set(locationParsed.player, [])
@@ -206,7 +129,7 @@ function parsePrecollected(block) {
   return items
 }
 
-function parseSphereEntries(block, nonItems, nonLocations) {
+function parseSphereEntries(block) {
   const entries = []
   const lines = block.split('\n')
 
@@ -224,11 +147,6 @@ function parseSphereEntries(block, nonItems, nonLocations) {
     const itemParsed = parseNameAndPlayer(itemSide)
 
     if (locationParsed && itemParsed) {
-      // Skip non-item entries (subrules, logic events)
-      if (locationParsed.name === itemParsed.name) continue
-      if (nonItems.has(itemParsed.name)) continue
-      if (nonLocations.has(locationParsed.name)) continue
-
       entries.push({
         location: locationParsed.name,
         locationOwner: locationParsed.player,

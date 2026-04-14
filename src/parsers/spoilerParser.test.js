@@ -1,6 +1,37 @@
 import { readFileSync } from 'node:fs'
 import { describe, it, expect } from 'vitest'
-import { parseSpoilerLog } from './spoilerParser'
+import { parseSpoilerLogRaw } from './spoilerParser'
+
+const SAMPLE_SPOILER_WITH_COUNTS = `Archipelago Version 0.6.5  -  Seed: 12345
+
+Players:                         3
+
+Player 1: Alice
+Game:                            Ocarina of Time
+Location Count:                  271
+Logic Rules:                     Glitchless
+
+Player 2: Bob
+Game:                            Super Metroid
+Location Count:                  643
+Logic Rules:                     Glitchless
+
+Player 3: Charlie
+Game:                            A Link to the Past
+Location Count:                  100
+Logic Rules:                     Glitchless
+
+
+Locations:
+
+
+Playthrough:
+
+0: {
+}
+
+Paths:
+`
 
 const SAMPLE_SPOILER = `Archipelago Version 0.6.5  -  Seed: 12345
 
@@ -49,10 +80,10 @@ Playthrough:
 Paths:
 `
 
-describe('parseSpoilerLog', () => {
+describe('parseSpoilerLogRaw', () => {
   describe('player parsing', () => {
     it('extracts all players with slot, name, and game', () => {
-      const result = parseSpoilerLog(SAMPLE_SPOILER)
+      const result = parseSpoilerLogRaw(SAMPLE_SPOILER)
       expect(result.players).toHaveLength(3)
       expect(result.players[0]).toMatchObject({ slot: 1, name: 'Alice', game: 'Ocarina of Time' })
       expect(result.players[1]).toMatchObject({ slot: 2, name: 'Bob', game: 'Super Metroid' })
@@ -62,14 +93,14 @@ describe('parseSpoilerLog', () => {
 
   describe('sphere parsing', () => {
     it('parses sphere 0 with precollected items', () => {
-      const result = parseSpoilerLog(SAMPLE_SPOILER)
+      const result = parseSpoilerLogRaw(SAMPLE_SPOILER)
       expect(result.spheres[0].number).toBe(0)
       expect(result.spheres[0].entries).toEqual([])
       expect(result.spheres[0].precollected).toBeDefined()
     })
 
     it('parses sphere 1 entries with correct fields', () => {
-      const result = parseSpoilerLog(SAMPLE_SPOILER)
+      const result = parseSpoilerLogRaw(SAMPLE_SPOILER)
       expect(result.spheres[1].number).toBe(1)
       expect(result.spheres[1].entries).toContainEqual({
         location: 'KF Links House Pot',
@@ -80,7 +111,7 @@ describe('parseSpoilerLog', () => {
     })
 
     it('handles items with parentheses in their name', () => {
-      const result = parseSpoilerLog(SAMPLE_SPOILER)
+      const result = parseSpoilerLogRaw(SAMPLE_SPOILER)
       expect(result.spheres[1].entries).toContainEqual({
         location: 'Location B',
         locationOwner: 'Alice',
@@ -90,7 +121,7 @@ describe('parseSpoilerLog', () => {
     })
 
     it('handles locations with parentheses in their name', () => {
-      const result = parseSpoilerLog(SAMPLE_SPOILER)
+      const result = parseSpoilerLogRaw(SAMPLE_SPOILER)
       expect(result.spheres[1].entries).toContainEqual({
         location: 'Missile (blue Brinstar middle)',
         locationOwner: 'Bob',
@@ -100,7 +131,7 @@ describe('parseSpoilerLog', () => {
     })
 
     it('handles items like Small Key (DungeonName)', () => {
-      const result = parseSpoilerLog(SAMPLE_SPOILER)
+      const result = parseSpoilerLogRaw(SAMPLE_SPOILER)
       expect(result.spheres[2].entries).toContainEqual({
         location: 'Small Key Chest',
         locationOwner: 'Charlie',
@@ -109,8 +140,8 @@ describe('parseSpoilerLog', () => {
       })
     })
 
-    it('filters out non-item entries where location equals item', () => {
-      const spoilerWithSubrule = `Archipelago Version 0.6.5  -  Seed: 99
+    it('raw parser retains entries where location name equals item name', () => {
+      const text = `Archipelago Version 0.6.5  -  Seed: 99
 
 Players:                         1
 
@@ -118,34 +149,56 @@ Player 1: Alice
 Game:                            Ocarina of Time
 
 
+Locations:
+
+Some Subrule 1 (Alice): Some Subrule 1 (Alice)
+Real Location (Alice): Real Item (Alice)
+
+
 Playthrough:
 
 1: {
-  Real Location (Alice): Real Item (Alice)
   Some Subrule 1 (Alice): Some Subrule 1 (Alice)
+  Real Location (Alice): Real Item (Alice)
 }
 
 Paths:
 `
-      const result = parseSpoilerLog(spoilerWithSubrule)
-      expect(result.spheres[0].entries).toHaveLength(1)
-      expect(result.spheres[0].entries[0].location).toBe('Real Location')
+      const result = parseSpoilerLogRaw(text)
+      expect(result.spheres[0].entries).toHaveLength(2)
+      expect(result.playerLocations.get('Alice')).toHaveLength(2)
     })
 
     it('returns correct number of spheres', () => {
-      const result = parseSpoilerLog(SAMPLE_SPOILER)
+      const result = parseSpoilerLogRaw(SAMPLE_SPOILER)
       expect(result.spheres).toHaveLength(3)
     })
 
     it('returns correct entry count per sphere', () => {
-      const result = parseSpoilerLog(SAMPLE_SPOILER)
+      const result = parseSpoilerLogRaw(SAMPLE_SPOILER)
       expect(result.spheres[1].entries).toHaveLength(4)
       expect(result.spheres[2].entries).toHaveLength(2)
     })
   })
+
+  describe('header counts', () => {
+    it('extracts Location Count per player from the header', () => {
+      const result = parseSpoilerLogRaw(SAMPLE_SPOILER_WITH_COUNTS)
+      expect(result.headerCounts).toBeInstanceOf(Map)
+      expect(result.headerCounts.get('Alice')).toBe(271)
+      expect(result.headerCounts.get('Bob')).toBe(643)
+      expect(result.headerCounts.get('Charlie')).toBe(100)
+    })
+
+    it('returns an empty Map when no Location Count lines are present', () => {
+      const result = parseSpoilerLogRaw(SAMPLE_SPOILER)
+      expect(result.headerCounts).toBeInstanceOf(Map)
+      expect(result.headerCounts.size).toBe(0)
+    })
+  })
 })
 
-describe('parseLocations (via parseSpoilerLog)', () => {
+describe('parseLocations (via parseSpoilerLogRaw)', () => {
   const LOCATIONS_SPOILER = `Archipelago Version 0.6.5  -  Seed: 42
 
 Players:                         2
@@ -184,7 +237,7 @@ Paths:
 `
 
   it('returns a Map keyed by locationOwner', () => {
-    const result = parseSpoilerLog(LOCATIONS_SPOILER)
+    const result = parseSpoilerLogRaw(LOCATIONS_SPOILER)
     expect(result.playerLocations).toBeInstanceOf(Map)
     expect(result.playerLocations.size).toBe(2)
     expect(result.playerLocations.has('Alice')).toBe(true)
@@ -192,7 +245,7 @@ Paths:
   })
 
   it('extracts each entry with location, item, and itemOwner', () => {
-    const result = parseSpoilerLog(LOCATIONS_SPOILER)
+    const result = parseSpoilerLogRaw(LOCATIONS_SPOILER)
     const bob = result.playerLocations.get('Bob')
     expect(bob).toContainEqual({
       location: 'Mushroom',
@@ -206,24 +259,8 @@ Paths:
     })
   })
 
-  it('skips self-reference entries where location equals item', () => {
-    const result = parseSpoilerLog(LOCATIONS_SPOILER)
-    const alice = result.playerLocations.get('Alice')
-    expect(alice.find((l) => l.location === 'Some Subrule')).toBeUndefined()
-  })
-
-  it('respects explicit ignore lists passed in', () => {
-    const ignoreItems = new Set(['Kokiri Sword'])
-    const ignoreLocations = new Set(['Mushroom'])
-    const result = parseSpoilerLog(LOCATIONS_SPOILER, ignoreItems, ignoreLocations)
-    const alice = result.playerLocations.get('Alice')
-    const bob = result.playerLocations.get('Bob')
-    expect(alice.find((l) => l.location === 'KF Kokiri Sword Chest')).toBeUndefined()
-    expect(bob.find((l) => l.location === 'Mushroom')).toBeUndefined()
-  })
-
   it('stops at Playthrough: section boundary', () => {
-    const result = parseSpoilerLog(LOCATIONS_SPOILER)
+    const result = parseSpoilerLogRaw(LOCATIONS_SPOILER)
     // If parsing bled into Playthrough, we'd get duplicate Kokiri Sword Chest entries
     const alice = result.playerLocations.get('Alice')
     const matches = alice.filter((l) => l.location === 'KF Kokiri Sword Chest')
@@ -247,7 +284,7 @@ Playthrough:
 
 Paths:
 `
-    const result = parseSpoilerLog(noLocations)
+    const result = parseSpoilerLogRaw(noLocations)
     expect(result.playerLocations).toBeInstanceOf(Map)
     expect(result.playerLocations.size).toBe(0)
   })
@@ -255,7 +292,7 @@ Paths:
   it('handles the real-world test-data fixture (7 players, non-empty rows)', () => {
     const fixturePath = new URL('../../test-data/AP_30073646564439677477_Spoiler.txt', import.meta.url)
     const text = readFileSync(fixturePath, 'utf8')
-    const result = parseSpoilerLog(text)
+    const result = parseSpoilerLogRaw(text)
     expect(result.playerLocations.size).toBe(7)
     const totalRows = [...result.playerLocations.values()].reduce((sum, arr) => sum + arr.length, 0)
     expect(totalRows).toBeGreaterThan(0)

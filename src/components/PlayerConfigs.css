@@ -87,3 +87,37 @@
   color: var(--color-text);
   word-break: break-word;
 }
+
+.pc-warning {
+  color: var(--color-warning, #d97706);
+  font-size: 0.95em;
+  cursor: help;
+  position: relative;
+}
+
+.pc-warning::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-card);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 0.68rem;
+  font-weight: 400;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  white-space: normal;
+  width: 240px;
+  line-height: 1.4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 10;
+}
+
+.pc-warning:hover::after {
+  opacity: 1;
+}

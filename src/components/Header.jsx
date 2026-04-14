@@ -56,7 +56,12 @@ export default function Header({
         )}
       </div>
 
-      <button className="theme-toggle" onClick={onDarkModeToggle} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
+      <button
+        className="theme-toggle tooltip-host"
+        onClick={onDarkModeToggle}
+        data-tip={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+        style={{ '--tooltip-width': '160px' }}
+      >
         {darkMode ? '\u2600' : '\u263D'}
       </button>
 

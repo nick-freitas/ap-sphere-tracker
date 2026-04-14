@@ -190,3 +190,53 @@
   background: #c0392b;
   border-color: #c0392b;
 }
+
+/* ---- Shared tooltip primitive --------------------------------------------
+   Add `className="tooltip-host"` to any element you want to give a styled
+   hover tooltip, plus a `data-tip="..."` attribute with the tooltip text.
+   This handles the four load-bearing bits (parent position, ::after content,
+   :hover reveal, z-index) so new tooltips are a one-liner instead of ~25
+   lines of inline CSS duplicated across component stylesheets.
+
+   Width is configurable per use-case via the --tooltip-width custom property:
+     <span className="tooltip-host" data-tip="..." style={{ '--tooltip-width': '180px' }}>
+
+   Default width is 240px. Existing inline tooltip implementations in Header,
+   PlayerStats, SphereCard, PlayerConfigs, etc. are grandfathered and NOT
+   migrated — they work fine as-is and touching them risks visual regressions.
+--------------------------------------------------------------------------- */
+.tooltip-host {
+  position: relative;
+  cursor: help;
+}
+
+.tooltip-host::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-card);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: 'Karla', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  white-space: normal;
+  width: var(--tooltip-width, 240px);
+  line-height: 1.4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 100;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.tooltip-host:hover::after {
+  opacity: 1;
+}

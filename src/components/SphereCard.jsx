@@ -128,7 +128,13 @@ export default function SphereCard({
               <span className="sp-dot" style={{ background: playerColors[p.name] }} />
               <span className="sp-name" style={{ color: playerColors[p.name] }}>
                 {p.name}
-                {playerLastSphere?.[p.name] === sphereNumber && <span className="sp-star" title="Last sphere for this player">&#9733;</span>}
+                {playerLastSphere?.[p.name] === sphereNumber && (
+                  <span
+                    className="sp-star tooltip-host"
+                    data-tip="Last sphere for this player"
+                    style={{ '--tooltip-width': '180px' }}
+                  >&#9733;</span>
+                )}
               </span>
               <span className="sp-count">{p.done}/{p.total}</span>
               <div className="sp-bar">

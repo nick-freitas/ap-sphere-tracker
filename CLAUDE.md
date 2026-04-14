@@ -1,62 +1,30 @@
 # AP Sphere Tracker — project notes for Claude
 
-## Tooltips: use `data-tip` + CSS `::after`, NOT the native `title=""` attribute
+## Tooltips: use `className="tooltip-host"` + `data-tip`, NOT the native `title=""` attribute
 
-This project has its own custom tooltip pattern that looks nothing like the OS-native `title` tooltip. If you write `title="..."` on an element, you will get a plain browser tooltip that doesn't match any other tooltip in the app, and the user will tell you it's broken. This has happened before.
+This project has its own custom tooltip pattern that looks nothing like the OS-native `title` tooltip. If you write `title="..."` on an element, you will get a plain browser tooltip that doesn't match any other tooltip in the app, and the user will tell you it's broken. This has happened before. Repeatedly.
 
-**The pattern has four requirements, and all four must be in place or the tooltip silently fails.** They're spread across the JSX and the CSS file for the component, so it's easy to forget one.
+### Preferred pattern: the shared `.tooltip-host` class
 
-### JSX side
-
-Use `data-tip={...}` (a custom data attribute), not `title={...}`:
+For any new tooltip, use the shared utility class defined in `src/App.css`:
 
 ```jsx
-<span className="my-tooltip-trigger" data-tip="This is the tooltip text">
+<span
+  className="tooltip-host"
+  data-tip="The tooltip text"
+  style={{ '--tooltip-width': '200px' }}  // optional; defaults to 240px
+>
   ⚠
 </span>
 ```
 
-### CSS side
+That's it. No per-component CSS required. The `.tooltip-host` class already sets `position: relative`, the `::after` pseudo-element with `content: attr(data-tip)`, the absolute positioning below the element, the `:hover::after` reveal, and a sane default width. The width can be overridden per use-case via the `--tooltip-width` CSS custom property.
 
-The element needs `position: relative` so the absolutely-positioned `::after` anchors to it. Then add a `::after` pseudo-element rule whose `content` reads the `data-tip` attribute, and a `:hover::after` rule that reveals it by setting opacity to 1.
+### Legacy (grandfathered) inline pattern
 
-Minimum viable pattern:
+Several existing components — `Header.jsx` (`.info-icon`), `PlayerStats.jsx` (`.ps-lock-circle`, `.ps-earliest`), `SphereCard.jsx` (`.check-icon`, `.warning-icon`, `.caution-icon`), `PlayerConfigs.jsx` (`.pc-warning`) — have their own inline `::after` CSS predating the shared class. Those work fine and haven't been migrated. **Do not touch them to "match"** unless you're doing a deliberate migration pass; a purely cosmetic refactor risks breaking visual details like widths and z-index stacking that the user has already approved.
 
-```css
-.my-tooltip-trigger {
-  position: relative;
-  cursor: help; /* optional but conventional */
-}
-
-.my-tooltip-trigger::after {
-  content: attr(data-tip);
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-card);
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  font-size: 0.68rem;
-  font-weight: 400;
-  padding: 0.5rem 0.6rem;
-  border-radius: 6px;
-  white-space: normal;
-  width: 240px; /* adjust per-use-case; most tooltips use 200–260px */
-  line-height: 1.4;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s;
-  z-index: 10;
-}
-
-.my-tooltip-trigger:hover::after {
-  opacity: 1;
-}
-```
-
-**Do NOT copy-paste blindly:** check the width, font size, and z-index against the component you're working in. Sphere cards use `z-index: 100` because they overlap siblings; simple badges use `10`.
+For new tooltips: use `.tooltip-host`. Old ones are grandfathered.
 
 ### How to verify a tooltip works
 

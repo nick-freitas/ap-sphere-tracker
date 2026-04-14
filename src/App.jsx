@@ -242,6 +242,23 @@ function App() {
     return last
   }, [spoilerData])
 
+  // Map each player to the timestamp of their most recent "sent" event. For
+  // a player at 100%, this is their completion moment. Used by PlayerStats to
+  // rank completed players in the order they finished (earliest first).
+  // Timestamps are strings like "2026-04-10 22:59:01,934" which sort correctly
+  // with standard string comparison since the format is fixed-width left-to-right.
+  const playerCompletionTime = useMemo(() => {
+    const latest = {}
+    for (const event of logEvents) {
+      if (event.type !== 'sent' || !event.timestamp || !event.sender) continue
+      const current = latest[event.sender]
+      if (!current || event.timestamp > current) {
+        latest[event.sender] = event.timestamp
+      }
+    }
+    return latest
+  }, [logEvents])
+
   const playerColors = useMemo(() => {
     if (!spoilerData) return {}
     const colors = {}
@@ -344,6 +361,8 @@ function App() {
               hiddenPlayers={hiddenPlayers}
               sphereResults={sphereResults}
               lastQualifyingIdx={lastQualifyingIdx}
+              playerCompletionTime={playerCompletionTime}
+              playerLastSphere={playerLastSphere}
             />
           )}
           <div className="sphere-list">

@@ -147,3 +147,9 @@
   color: gold;
   font-style: normal;
 }
+
+.player-log-hint-found {
+  color: var(--color-leaf);
+  font-weight: 700;
+  font-style: normal;
+}

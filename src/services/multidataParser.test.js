@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import { parsePickle, readZipArchipelagoEntry } from './multidataParser'
+import { parsePickle, readZipArchipelagoEntry, parseMultidata } from './multidataParser'
+import { readFileSync } from 'node:fs'
 
 // Helper: build a Uint8Array from byte literals.
 function b(...bytes) {
@@ -436,5 +437,47 @@ describe('readZipArchipelagoEntry', () => {
   it('throws when no .archipelago entry exists', async () => {
     const zip = buildStoredZip('AP_test.txt', new Uint8Array([1, 2, 3]))
     await expect(readZipArchipelagoEntry(zip)).rejects.toThrow(/no .*archipelago/i)
+  })
+})
+
+describe('parseMultidata — end-to-end fixture', () => {
+  const fixtureBytes = new Uint8Array(readFileSync('public/default-seed.archipelago'))
+
+  it('parses the test seed and extracts expected structural properties', async () => {
+    const md = await parseMultidata(fixtureBytes)
+
+    // Top-level shape
+    expect(md.datapackage).toBeInstanceOf(Map)
+    expect(md.locations).toBeInstanceOf(Map)
+    expect(md.slot_info).toBeInstanceOf(Map)
+
+    // Seven slots, matching the test seed's players
+    expect(md.locations.size).toBe(7)
+    expect(md.slot_info.size).toBe(7)
+
+    // Per-slot check counts match the spoiler header
+    expect(md.locations.get(5).size).toBe(750)   // Nick
+    expect(md.locations.get(4).size).toBe(890)   // Naizak
+    expect(md.locations.get(2).size).toBe(643)   // Brian
+    expect(md.locations.get(6).size).toBe(180)   // Ryot
+    expect(md.locations.get(7).size).toBe(1190)  // TNNPE
+
+    // Datapackage has both OoT variants
+    expect(md.datapackage.has('Ocarina of Time')).toBe(true)
+    expect(md.datapackage.has('Ship of Harkinian')).toBe(true)
+
+    // Market ToT Master Sword (Ship of Harkinian location id 60) is NOT in Nick's checks.
+    // This is the regression test for the un-shuffled-slot issue.
+    expect(md.locations.get(5).has(60)).toBe(false)
+
+    // Link's Pocket (Ship of Harkinian location id 1) IS in Nick's checks.
+    expect(md.locations.get(5).has(1)).toBe(true)
+  })
+
+  it('sniffs a raw .archipelago file (version byte prefix)', async () => {
+    const md = await parseMultidata(fixtureBytes)
+    // First byte of the fixture is the version marker (0x03)
+    expect(fixtureBytes[0]).toBe(0x03)
+    expect(md.locations.size).toBe(7)
   })
 })

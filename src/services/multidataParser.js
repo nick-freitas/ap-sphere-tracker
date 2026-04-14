@@ -31,6 +31,12 @@ const OP = {
   STACK_GLOBAL: 0x93,
   REDUCE: 0x52,
   BUILD: 0x62,
+  BINFLOAT: 0x47,
+  SETITEM: 0x73,
+  APPEND: 0x61,
+  NEWOBJ: 0x81,
+  EMPTY_SET: 0x8f,
+  ADDITEMS: 0x90,
 }
 
 const MARK_SENTINEL = Symbol('pickle.MARK')
@@ -71,6 +77,11 @@ class ByteReader {
     const b3 = this.bytes[this.pos + 3]
     this.pos += 4
     return (b0 | (b1 << 8) | (b2 << 16) | (b3 << 24)) >>> 0
+  }
+  readFloat64BE() {
+    const slice = this.bytes.subarray(this.pos, this.pos + 8)
+    this.pos += 8
+    return new DataView(slice.buffer, slice.byteOffset, 8).getFloat64(0, false)
   }
 }
 
@@ -255,6 +266,51 @@ export function parsePickle(bytes) {
         instance.state = state
         break
       }
+      case OP.BINFLOAT:
+        stack.push(reader.readFloat64BE())
+        break
+      case OP.SETITEM: {
+        // Pop value and key, set into the dict just below.
+        const val = stack.pop()
+        const key = stack.pop()
+        const target = stack[stack.length - 1]
+        target[key] = val
+        break
+      }
+      case OP.APPEND: {
+        // Pop one item and append to the list just below.
+        const item = stack.pop()
+        stack[stack.length - 1].push(item)
+        break
+      }
+      case OP.NEWOBJ: {
+        // Pop args tuple and class ref, instantiate like REDUCE.
+        const args = stack.pop()
+        const classRef = stack.pop()
+        stack.push({
+          __class: 'instance',
+          module: classRef.module,
+          name: classRef.name,
+          args: Array.isArray(args) ? args : [args],
+          state: null,
+        })
+        break
+      }
+      case OP.EMPTY_SET:
+        // Python sets → JS arrays (preserving order is not required for our use cases)
+        stack.push([])
+        break
+      case OP.ADDITEMS: {
+        // Pop items down to MARK, add to the set/array just below.
+        const items = []
+        while (stack[stack.length - 1] !== MARK_SENTINEL) {
+          items.unshift(stack.pop())
+        }
+        stack.pop() // discard MARK
+        const target = stack[stack.length - 1]
+        for (const item of items) target.push(item)
+        break
+      }
       default:
         throw new Error(`Unknown pickle opcode: 0x${op.toString(16).padStart(2, '0')}`)
     }
@@ -335,4 +391,117 @@ export async function readZipArchipelagoEntry(bytes) {
   }
 
   throw new Error('ZIP: no .archipelago entry found')
+}
+
+// --- parseMultidata public API ------------------------------------------
+
+async function inflateZlib(bytes) {
+  // The .archipelago file wraps its pickle in a zlib stream (with zlib header,
+  // unlike the ZIP entry's deflate-raw). Use DecompressionStream('deflate').
+  return new Uint8Array(
+    await new Response(
+      new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate'))
+    ).arrayBuffer()
+  )
+}
+
+function sniffContainer(bytes) {
+  if (bytes.length < 4) throw new Error('parseMultidata: file is too small to identify')
+  // ZIP magic: PK\x03\x04 (50 4B 03 04)
+  if (bytes[0] === 0x50 && bytes[1] === 0x4b && bytes[2] === 0x03 && bytes[3] === 0x04) {
+    return 'zip'
+  }
+  // Otherwise assume a raw .archipelago file: first byte is the version marker,
+  // followed by zlib-compressed pickle (second byte should be 0x78, zlib magic).
+  return 'archipelago'
+}
+
+// Normalize a NetworkSlot class instance into a plain JS object with named fields.
+// NamedTuple pickling in Python 3 uses STACK_GLOBAL + REDUCE with the field values as args.
+function normalizeNetworkSlot(instance) {
+  const [name, game, type, groupMembers] = instance.args
+  return { name, game, type, group_members: groupMembers }
+}
+
+// Walk the raw pickle output and convert Python idioms to JS idioms:
+//   - `locations` top-level key: dict[int, dict[int, tuple]] → Map<number, Map<number, [int,int,int]>>
+//   - `slot_info` top-level key: dict[int, NetworkSlot instance] → Map<number, plain obj>
+//   - `datapackage` top-level key: dict[str, dict] → Map<string, obj> (keys already strings)
+function normalize(raw) {
+  const result = {
+    datapackage: new Map(),
+    locations: new Map(),
+    slot_info: new Map(),
+    slot_data: new Map(),
+    seed_name: raw.seed_name || '',
+    version: raw.version || '',
+  }
+
+  // datapackage: dict[str, dict]
+  if (raw.datapackage && typeof raw.datapackage === 'object') {
+    for (const [game, pkg] of Object.entries(raw.datapackage)) {
+      result.datapackage.set(game, pkg)
+    }
+  }
+
+  // locations: dict[int slot_id, dict[int loc_id, tuple]]
+  if (raw.locations && typeof raw.locations === 'object') {
+    for (const [slotKey, innerObj] of Object.entries(raw.locations)) {
+      const slotId = Number(slotKey)
+      const inner = new Map()
+      if (innerObj && typeof innerObj === 'object') {
+        for (const [locKey, tuple] of Object.entries(innerObj)) {
+          inner.set(Number(locKey), tuple)
+        }
+      }
+      result.locations.set(slotId, inner)
+    }
+  }
+
+  // slot_info: dict[int slot_id, NetworkSlot]
+  if (raw.slot_info && typeof raw.slot_info === 'object') {
+    for (const [slotKey, value] of Object.entries(raw.slot_info)) {
+      const slotId = Number(slotKey)
+      if (value && value.__class === 'instance' && value.name === 'NetworkSlot') {
+        result.slot_info.set(slotId, normalizeNetworkSlot(value))
+      } else {
+        // Fall through: preserve whatever came out
+        result.slot_info.set(slotId, value)
+      }
+    }
+  }
+
+  // slot_data: dict[int slot_id, dict]
+  if (raw.slot_data && typeof raw.slot_data === 'object') {
+    for (const [slotKey, data] of Object.entries(raw.slot_data)) {
+      result.slot_data.set(Number(slotKey), data)
+    }
+  }
+
+  return result
+}
+
+export async function parseMultidata(bytes) {
+  if (!(bytes instanceof Uint8Array)) {
+    throw new Error('parseMultidata: expected Uint8Array input')
+  }
+  const kind = sniffContainer(bytes)
+
+  let archipelagoBytes
+  if (kind === 'zip') {
+    archipelagoBytes = await readZipArchipelagoEntry(bytes)
+  } else {
+    archipelagoBytes = bytes
+  }
+
+  if (archipelagoBytes.length < 2) {
+    throw new Error('parseMultidata: .archipelago payload is too small')
+  }
+
+  // Strip the leading version byte, then inflate the zlib stream.
+  const zlibStream = archipelagoBytes.subarray(1)
+  const pickleBytes = await inflateZlib(zlibStream)
+
+  const raw = parsePickle(pickleBytes)
+  return normalize(raw)
 }

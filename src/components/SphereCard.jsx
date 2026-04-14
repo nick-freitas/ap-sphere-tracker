@@ -18,6 +18,7 @@ export default function SphereCard({
   isExtended,
   isCurrent,
   isGoalSphere,
+  goalEntries = [],
   spheresBehind,
   capInfo,
   sphereEntries,
@@ -71,21 +72,14 @@ export default function SphereCard({
     })
   }, [sphereEntries, checkedLocations])
 
-  // Players whose very-last playthrough entry is in THIS sphere. For each
-  // of them we want a row with a star — even if they have no surviving real
-  // entries (in which case playerBreakdown won't include them and we render
-  // a synthetic goal-only row below).
-  const goalOwnersHere = useMemo(() => {
-    if (!playerLastSphere || !isGoalSphere) return []
-    return Object.keys(playerLastSphere).filter(
-      (p) => playerLastSphere[p] === sphereNumber,
-    )
-  }, [playerLastSphere, isGoalSphere, sphereNumber])
+  // Hide spheres with no real checks UNLESS they carry at least one goal
+  // entry — in which case we still want to render the card (minus the
+  // progress bar) so the goal is visible on the sphere board.
+  if (totalChecks === 0 && goalEntries.length === 0) return null
 
-  // Hide spheres with no real checks UNLESS they're a goal sphere — in
-  // which case we still want to render the card (minus the progress bar)
-  // so the goal is visible on the sphere board.
-  if (totalChecks === 0 && !isGoalSphere) return null
+  const visibleGoalEntries = hiddenPlayers
+    ? goalEntries.filter((e) => !hiddenPlayers.has(e.locationOwner))
+    : goalEntries
 
   const cardClasses = [
     'sphere-card',
@@ -146,7 +140,7 @@ export default function SphereCard({
         )}
       </div>
 
-      {(playerBreakdown.length > 0 || goalOwnersHere.length > 0) && (
+      {playerBreakdown.length > 0 && (
         <div className="sphere-players">
           {playerBreakdown.filter((p) => !hiddenPlayers || !hiddenPlayers.has(p.name)).map((p) => (
             <div className="sp-row" key={p.name}>
@@ -168,27 +162,7 @@ export default function SphereCard({
               <span className="sp-pct">{p.pct}%</span>
             </div>
           ))}
-          {/* Goal-only rows: players whose very-last playthrough entry is
-              this sphere but who have no surviving real entries here (so
-              playerBreakdown doesn't already include them). Used for empty
-              goal spheres like Andrew's sphere 37. */}
-          {goalOwnersHere
-            .filter((name) => !playerBreakdown.some((p) => p.name === name))
-            .filter((name) => !hiddenPlayers || !hiddenPlayers.has(name))
-            .map((name) => (
-              <div className="sp-row" key={`goal-${name}`}>
-                <span className="sp-dot" style={{ background: playerColors[name] }} />
-                <span className="sp-name" style={{ color: playerColors[name] }}>
-                  {name}
-                  <span
-                    className="sp-star tooltip-host"
-                    data-tip="Last sphere for this player"
-                    style={{ '--tooltip-width': '180px' }}
-                  >&#9733;</span>
-                </span>
-              </div>
-            ))}
-          {displayThreshold != null && playerBreakdown.length > 0 && (() => {
+          {displayThreshold != null && (() => {
             const playersAbove = playerBreakdown.filter((p) => p.pct >= displayThreshold).length
             const totalPlayers = playerBreakdown.length
             return (
@@ -197,6 +171,53 @@ export default function SphereCard({
               </div>
             )
           })()}
+        </div>
+      )}
+
+      {/* Goal entries: per-player win-condition rows surfaced from the
+          raw playthrough. Rendered as check-like rows so each goal is
+          visible on the sphere board even though the event filter drops
+          them (they aren't trackable multidata locations). */}
+      {visibleGoalEntries.length > 0 && (
+        <div className="sphere-goal-entries">
+          <table className="missing-checks-table">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Location</th>
+                <th>Item Owner</th>
+              </tr>
+            </thead>
+            <tbody>
+              {visibleGoalEntries.map((entry) => (
+                <tr key={`goal-${entry.locationOwner}-${entry.location}`}>
+                  <td style={{ color: playerColors[entry.locationOwner] || 'var(--color-text)', fontWeight: 600 }}>
+                    <span
+                      className="sp-star tooltip-host"
+                      data-tip="Goal / win condition for this player"
+                      style={{ '--tooltip-width': '180px' }}
+                    >&#9733;</span>
+                    {' '}
+                    {entry.locationOwner}
+                  </td>
+                  <td style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem' }}>
+                    {entry.location}
+                  </td>
+                  <td
+                    className={showSpoilers ? '' : 'spoiler-blur'}
+                    style={{
+                      color: showSpoilers
+                        ? (playerColors[entry.itemOwner] || 'var(--color-text)')
+                        : 'var(--color-text-muted)',
+                      fontWeight: 600,
+                    }}
+                  >
+                    {entry.itemOwner}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
 

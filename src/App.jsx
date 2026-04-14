@@ -342,6 +342,80 @@ function App() {
     [playerLastSphere],
   )
 
+  // Map of sphere number → array of goal entries to display on that sphere's
+  // card. These are the per-player goal/win-condition entries that the event
+  // filter *dropped* (pseudo-locations like `Ganon → Triforce`,
+  // `Final Xemnas Event Location → Victory`, etc.). We re-surface them as
+  // display-only rows so each player's goal is visible on the sphere board
+  // even though they aren't trackable checks.
+  //
+  // Passed as a side-channel prop rather than injected into
+  // `spoilerData.spheres` so that analyzeSpheres, the progression walker,
+  // sphereCompletionTime, and player breakdowns all keep using their
+  // original (tracking-accurate) entry sets.
+  //
+  // The rule for each player:
+  //   1. Walk their raw playthrough entries top-to-bottom; the last one
+  //      identifies their "goal sphere" (the sphere containing their
+  //      very-last playthrough entry).
+  //   2. Within that goal sphere, pick the *last filtered-out* entry they
+  //      own as their goal entry. This correctly handles the case where a
+  //      player has both a filtered goal entry and a real check in the
+  //      same sphere (e.g. Nick's sphere 31, where
+  //      `Ganon Defeated → Game Completed` is filtered out but
+  //      `Ganon's Castle Fire Trial Pot 2` is a real check listed after
+  //      it — we want the former).
+  //   3. If no filtered entry for the player exists in their goal sphere
+  //      (e.g. Ryot's `Kastle KAOS` in DKC3, which is a real check, or
+  //      TNNPE's `Chaos Blade` real check in Dark Souls III), no injection
+  //      is needed — the real entry is already visible in the sphere's
+  //      normal missing/completed tables.
+  const goalEntriesBySphere = useMemo(() => {
+    const bySphere = new Map()
+    if (!rawParsed || !spoilerData) return bySphere
+
+    // Step 1: find each player's goal sphere (= sphere of their very last
+    // raw playthrough entry, regardless of filter status).
+    const playerGoalSphere = {}
+    for (const sphere of rawParsed.spheres) {
+      if (sphere.number === 0) continue
+      for (const entry of sphere.entries) {
+        playerGoalSphere[entry.locationOwner] = sphere.number
+      }
+    }
+
+    // Step 2: for each player, within their goal sphere, pick the last
+    // entry that was filtered OUT (present in raw, absent from filtered).
+    for (const [player, sphereNumber] of Object.entries(playerGoalSphere)) {
+      const rawSphere = rawParsed.spheres.find((s) => s.number === sphereNumber)
+      const filteredSphere = spoilerData.spheres.find((s) => s.number === sphereNumber)
+      if (!rawSphere) continue
+
+      const presentKeys = new Set()
+      if (filteredSphere) {
+        for (const e of filteredSphere.entries) {
+          presentKeys.add(`${e.locationOwner}\u0000${e.location}`)
+        }
+      }
+
+      let goalEntry = null
+      for (const e of rawSphere.entries) {
+        if (e.locationOwner !== player) continue
+        const key = `${e.locationOwner}\u0000${e.location}`
+        if (!presentKeys.has(key)) {
+          goalEntry = e
+        }
+      }
+
+      if (goalEntry) {
+        if (!bySphere.has(sphereNumber)) bySphere.set(sphereNumber, [])
+        bySphere.get(sphereNumber).push(goalEntry)
+      }
+    }
+
+    return bySphere
+  }, [rawParsed, spoilerData])
+
   // Map each player to the timestamp of their most recent "sent" event. For
   // a player at 100%, this is their completion moment. Used by PlayerStats to
   // rank completed players in the order they finished (earliest first).
@@ -542,6 +616,7 @@ function App() {
                   isExtended={isExtended}
                   isCurrent={isCurrentCard}
                   isGoalSphere={goalSphereNumbers.has(result.sphereNumber)}
+                  goalEntries={goalEntriesBySphere.get(result.sphereNumber) || []}
                   spheresBehind={spheresBehind}
                   capInfo={capInfo}
                   sphereEntries={spoilerData.spheres[i]?.entries || []}

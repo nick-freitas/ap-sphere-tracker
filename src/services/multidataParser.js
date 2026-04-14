@@ -23,6 +23,11 @@ const OP = {
   TUPLE1: 0x85,
   TUPLE2: 0x86,
   TUPLE3: 0x87,
+  MEMOIZE: 0x94,
+  BINGET: 0x68,
+  LONG_BINGET: 0x6a,
+  BINPUT: 0x71,
+  LONG_BINPUT: 0x72,
 }
 
 const MARK_SENTINEL = Symbol('pickle.MARK')
@@ -84,6 +89,7 @@ function parseLongBytes(bytes) {
 export function parsePickle(bytes) {
   const reader = new ByteReader(bytes)
   const stack = []
+  const memo = []
   const textDecoder = new TextDecoder('utf-8')
 
   while (true) {
@@ -197,6 +203,29 @@ export function parsePickle(bytes) {
         const b = stack.pop()
         const a = stack.pop()
         stack.push([a, b, c])
+        break
+      }
+      case OP.MEMOIZE:
+        memo.push(stack[stack.length - 1])
+        break
+      case OP.BINGET: {
+        const idx = reader.readByte()
+        stack.push(memo[idx])
+        break
+      }
+      case OP.LONG_BINGET: {
+        const idx = reader.readUint32LE()
+        stack.push(memo[idx])
+        break
+      }
+      case OP.BINPUT: {
+        const idx = reader.readByte()
+        memo[idx] = stack[stack.length - 1]
+        break
+      }
+      case OP.LONG_BINPUT: {
+        const idx = reader.readUint32LE()
+        memo[idx] = stack[stack.length - 1]
         break
       }
       default:

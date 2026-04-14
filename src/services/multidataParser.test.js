@@ -166,3 +166,73 @@ describe('parsePickle — composition', () => {
     expect(parsePickle(bytes)).toEqual({ x: [1, 2] })
   })
 })
+
+describe('parsePickle — memoization', () => {
+  it('memoizes a value and recalls it via BINGET', () => {
+    // ["abc", "abc"] where the second "abc" is via BINGET
+    const bytes = new Uint8Array([
+      0x5d,                                  // EMPTY_LIST
+      0x28,                                  // MARK
+      0x8c, 0x03, 0x61, 0x62, 0x63,          // SHORT_BINUNICODE "abc"
+      0x94,                                  // MEMOIZE → memo[0] = "abc"
+      0x68, 0x00,                            // BINGET 0
+      0x65,                                  // APPENDS
+      0x2e,                                  // STOP
+    ])
+    expect(parsePickle(bytes)).toEqual(['abc', 'abc'])
+  })
+
+  it('memoizes twice and recalls each via BINGET', () => {
+    // ["x", "y", "x", "y"] where the 3rd and 4th are BINGETs
+    const bytes = new Uint8Array([
+      0x5d,                                  // EMPTY_LIST
+      0x28,                                  // MARK
+      0x8c, 0x01, 0x78,                      // SHORT_BINUNICODE "x"
+      0x94,                                  // MEMOIZE → memo[0] = "x"
+      0x8c, 0x01, 0x79,                      // SHORT_BINUNICODE "y"
+      0x94,                                  // MEMOIZE → memo[1] = "y"
+      0x68, 0x00,                            // BINGET 0 → "x"
+      0x68, 0x01,                            // BINGET 1 → "y"
+      0x65,                                  // APPENDS
+      0x2e,                                  // STOP
+    ])
+    expect(parsePickle(bytes)).toEqual(['x', 'y', 'x', 'y'])
+  })
+
+  it('uses LONG_BINGET for memo indices > 255', () => {
+    // Build a list with one memoized entry then recall via LONG_BINGET with index 0
+    // (semantically identical to BINGET 0 but with 4-byte index encoding).
+    const bytes = new Uint8Array([
+      0x5d,                                  // EMPTY_LIST
+      0x28,                                  // MARK
+      0x8c, 0x01, 0x7a,                      // SHORT_BINUNICODE "z"
+      0x94,                                  // MEMOIZE → memo[0]
+      0x6a, 0x00, 0x00, 0x00, 0x00,          // LONG_BINGET 0 (4-byte LE)
+      0x65,                                  // APPENDS
+      0x2e,                                  // STOP
+    ])
+    expect(parsePickle(bytes)).toEqual(['z', 'z'])
+  })
+
+  it('memoized objects are stored by reference (mutation propagates)', () => {
+    // Memoize a dict, then recall it and SETITEMS into the recall — both references
+    // should see the mutation because memo stores the same object.
+    const bytes = new Uint8Array([
+      0x5d,                                  // EMPTY_LIST
+      0x28,                                  // MARK
+      0x7d,                                  // EMPTY_DICT (this one we keep)
+      0x94,                                  // MEMOIZE → memo[0] = {}
+      0x28,                                  // MARK
+      0x8c, 0x01, 0x61,                      // SHORT_BINUNICODE "a"
+      0x4b, 0x01,                            // BININT1 1
+      0x75,                                  // SETITEMS (fills dict on stack)
+      0x68, 0x00,                            // BINGET 0 (same dict)
+      0x65,                                  // APPENDS
+      0x2e,                                  // STOP
+    ])
+    const result = parsePickle(bytes)
+    expect(result).toHaveLength(2)
+    expect(result[0]).toEqual({ a: 1 })
+    expect(result[1]).toBe(result[0]) // same object reference
+  })
+})

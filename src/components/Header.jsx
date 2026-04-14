@@ -1,9 +1,10 @@
-import trackerMeta from '../tracker-meta.json'
 import { parseTrackerTimestamp } from '../parsers/trackerParser'
 import './Header.css'
 
-function timeAgo(dateStr) {
-  const date = new Date(dateStr)
+// Accepts a Date object (or null / anything falsy). Callers must not pass
+// a bare timestamp string — use parseTrackerTimestamp() or new Date() first.
+function timeAgo(date) {
+  if (!date) return ''
   const now = new Date()
   const diffMs = now - date
   const diffMin = Math.floor(diffMs / 60000)
@@ -25,13 +26,16 @@ export default function Header({
   darkMode,
   onDarkModeToggle,
   lastCheckTime,
+  lastUpdatedTime,
   currentSphere,
   totalSpheres,
 }) {
-  const lastUpdated = trackerMeta?.fetchedAt
-    ? new Date(trackerMeta.fetchedAt).toLocaleString()
-    : null
-  const lastUpdatedAgo = trackerMeta?.fetchedAt ? timeAgo(trackerMeta.fetchedAt) : null
+  // lastUpdatedTime is a Date (or null). For the default-file load path it's
+  // parsed from the fetch's HTTP Last-Modified header; for user-uploaded
+  // files it's set to new Date() at upload time. Either way it's already a
+  // real Date here — no raw-string parsing needed.
+  const lastUpdated = lastUpdatedTime ? lastUpdatedTime.toLocaleString() : null
+  const lastUpdatedAgo = lastUpdatedTime ? timeAgo(lastUpdatedTime) : null
 
   const lastCheckDate = parseTrackerTimestamp(lastCheckTime)
   const lastCheckFormatted = lastCheckDate ? lastCheckDate.toLocaleString() : null

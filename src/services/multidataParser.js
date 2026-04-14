@@ -260,3 +260,79 @@ export function parsePickle(bytes) {
     }
   }
 }
+
+// --- ZIP reader ----------------------------------------------------------
+
+const EOCD_SIGNATURE = 0x06054b50
+const CFH_SIGNATURE = 0x02014b50
+const LFH_SIGNATURE = 0x04034b50
+
+async function inflateRaw(bytes) {
+  return new Uint8Array(
+    await new Response(
+      new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw'))
+    ).arrayBuffer()
+  )
+}
+
+// Find the End of Central Directory record by scanning backwards.
+function findEOCD(bytes) {
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength)
+  // EOCD is at least 22 bytes, max 22 + 65535 bytes from the end (for comments).
+  const minStart = Math.max(0, bytes.length - 22 - 65535)
+  for (let i = bytes.length - 22; i >= minStart; i--) {
+    if (view.getUint32(i, true) === EOCD_SIGNATURE) {
+      return i
+    }
+  }
+  throw new Error('ZIP: end-of-central-directory record not found')
+}
+
+export async function readZipArchipelagoEntry(bytes) {
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength)
+  const eocdOffset = findEOCD(bytes)
+
+  const totalEntries = view.getUint16(eocdOffset + 10, true)
+  const centralDirOffset = view.getUint32(eocdOffset + 16, true)
+
+  let cursor = centralDirOffset
+  for (let i = 0; i < totalEntries; i++) {
+    if (view.getUint32(cursor, true) !== CFH_SIGNATURE) {
+      throw new Error(`ZIP: invalid central directory header at offset ${cursor}`)
+    }
+    const method = view.getUint16(cursor + 10, true)
+    const compressedSize = view.getUint32(cursor + 20, true)
+    const uncompressedSize = view.getUint32(cursor + 24, true)
+    const filenameLen = view.getUint16(cursor + 28, true)
+    const extraLen = view.getUint16(cursor + 30, true)
+    const commentLen = view.getUint16(cursor + 32, true)
+    const lfhOffset = view.getUint32(cursor + 42, true)
+    const filenameBytes = bytes.subarray(cursor + 46, cursor + 46 + filenameLen)
+    const filename = new TextDecoder('utf-8').decode(filenameBytes)
+
+    if (filename.endsWith('.archipelago')) {
+      // Walk to the local file header to find the actual data offset.
+      if (view.getUint32(lfhOffset, true) !== LFH_SIGNATURE) {
+        throw new Error(`ZIP: invalid local file header at offset ${lfhOffset}`)
+      }
+      const lfhFilenameLen = view.getUint16(lfhOffset + 26, true)
+      const lfhExtraLen = view.getUint16(lfhOffset + 28, true)
+      const dataOffset = lfhOffset + 30 + lfhFilenameLen + lfhExtraLen
+      const compressedData = bytes.subarray(dataOffset, dataOffset + compressedSize)
+
+      if (method === 0) {
+        // STORED — no compression
+        return compressedData.slice() // return a copy so caller owns the buffer
+      }
+      if (method === 8) {
+        // DEFLATE
+        return await inflateRaw(compressedData)
+      }
+      throw new Error(`ZIP: unsupported compression method ${method} for .archipelago entry`)
+    }
+
+    cursor += 46 + filenameLen + extraLen + commentLen
+  }
+
+  throw new Error('ZIP: no .archipelago entry found')
+}

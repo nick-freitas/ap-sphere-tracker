@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { parsePickle } from './multidataParser'
+import { parsePickle, readZipArchipelagoEntry } from './multidataParser'
 
 // Helper: build a Uint8Array from byte literals.
 function b(...bytes) {
@@ -292,5 +292,149 @@ describe('parsePickle — class references', () => {
       args: [],
       state: { x: 7 },
     })
+  })
+})
+
+describe('readZipArchipelagoEntry', () => {
+  // Build a minimal synthetic ZIP with a single STORED entry.
+  // ZIP format:
+  //   Local File Header (LFH) → file data → Central File Header (CFH) → End of Central Directory (EOCD)
+  function buildStoredZip(filename, data) {
+    const filenameBytes = new TextEncoder().encode(filename)
+    const lfhSize = 30 + filenameBytes.length
+    const dataSize = data.length
+    const cfhSize = 46 + filenameBytes.length
+    const totalSize = lfhSize + dataSize + cfhSize + 22
+
+    const buf = new Uint8Array(totalSize)
+    const view = new DataView(buf.buffer)
+    let offset = 0
+
+    // Local file header
+    view.setUint32(offset, 0x04034b50, true); offset += 4  // signature
+    view.setUint16(offset, 20, true); offset += 2           // version needed
+    view.setUint16(offset, 0, true); offset += 2            // flags
+    view.setUint16(offset, 0, true); offset += 2            // method = STORED
+    view.setUint16(offset, 0, true); offset += 2            // mod time
+    view.setUint16(offset, 0, true); offset += 2            // mod date
+    view.setUint32(offset, 0, true); offset += 4            // crc32 (fake, not validated)
+    view.setUint32(offset, dataSize, true); offset += 4     // compressed size
+    view.setUint32(offset, dataSize, true); offset += 4     // uncompressed size
+    view.setUint16(offset, filenameBytes.length, true); offset += 2  // filename length
+    view.setUint16(offset, 0, true); offset += 2            // extra length
+    buf.set(filenameBytes, offset); offset += filenameBytes.length
+    buf.set(data, offset); offset += dataSize
+
+    // Central file header
+    const cfhOffset = offset
+    view.setUint32(offset, 0x02014b50, true); offset += 4   // signature
+    view.setUint16(offset, 20, true); offset += 2           // version made
+    view.setUint16(offset, 20, true); offset += 2           // version needed
+    view.setUint16(offset, 0, true); offset += 2            // flags
+    view.setUint16(offset, 0, true); offset += 2            // method
+    view.setUint16(offset, 0, true); offset += 2            // mod time
+    view.setUint16(offset, 0, true); offset += 2            // mod date
+    view.setUint32(offset, 0, true); offset += 4            // crc32
+    view.setUint32(offset, dataSize, true); offset += 4     // compressed size
+    view.setUint32(offset, dataSize, true); offset += 4     // uncompressed size
+    view.setUint16(offset, filenameBytes.length, true); offset += 2  // filename length
+    view.setUint16(offset, 0, true); offset += 2            // extra length
+    view.setUint16(offset, 0, true); offset += 2            // comment length
+    view.setUint16(offset, 0, true); offset += 2            // disk number
+    view.setUint16(offset, 0, true); offset += 2            // internal attrs
+    view.setUint32(offset, 0, true); offset += 4            // external attrs
+    view.setUint32(offset, 0, true); offset += 4            // local header offset
+    buf.set(filenameBytes, offset); offset += filenameBytes.length
+
+    // End of central directory
+    view.setUint32(offset, 0x06054b50, true); offset += 4   // signature
+    view.setUint16(offset, 0, true); offset += 2            // disk
+    view.setUint16(offset, 0, true); offset += 2            // central dir disk
+    view.setUint16(offset, 1, true); offset += 2            // entries on disk
+    view.setUint16(offset, 1, true); offset += 2            // total entries
+    view.setUint32(offset, cfhSize, true); offset += 4      // central dir size
+    view.setUint32(offset, cfhOffset, true); offset += 4    // central dir offset
+    view.setUint16(offset, 0, true); offset += 2            // comment length
+
+    return buf
+  }
+
+  // Build a synthetic ZIP with a single DEFLATE entry using CompressionStream.
+  async function buildDeflateZip(filename, data) {
+    const compressed = await new Response(
+      new Blob([data]).stream().pipeThrough(new CompressionStream('deflate-raw'))
+    ).arrayBuffer()
+    const compressedBytes = new Uint8Array(compressed)
+    const filenameBytes = new TextEncoder().encode(filename)
+    const lfhSize = 30 + filenameBytes.length
+    const cfhSize = 46 + filenameBytes.length
+    const totalSize = lfhSize + compressedBytes.length + cfhSize + 22
+    const buf = new Uint8Array(totalSize)
+    const view = new DataView(buf.buffer)
+    let offset = 0
+
+    view.setUint32(offset, 0x04034b50, true); offset += 4
+    view.setUint16(offset, 20, true); offset += 2
+    view.setUint16(offset, 0, true); offset += 2
+    view.setUint16(offset, 8, true); offset += 2            // method = DEFLATE
+    view.setUint16(offset, 0, true); offset += 2
+    view.setUint16(offset, 0, true); offset += 2
+    view.setUint32(offset, 0, true); offset += 4
+    view.setUint32(offset, compressedBytes.length, true); offset += 4
+    view.setUint32(offset, data.length, true); offset += 4
+    view.setUint16(offset, filenameBytes.length, true); offset += 2
+    view.setUint16(offset, 0, true); offset += 2
+    buf.set(filenameBytes, offset); offset += filenameBytes.length
+    buf.set(compressedBytes, offset); offset += compressedBytes.length
+
+    const cfhOffset = offset
+    view.setUint32(offset, 0x02014b50, true); offset += 4
+    view.setUint16(offset, 20, true); offset += 2
+    view.setUint16(offset, 20, true); offset += 2
+    view.setUint16(offset, 0, true); offset += 2
+    view.setUint16(offset, 8, true); offset += 2
+    view.setUint16(offset, 0, true); offset += 2
+    view.setUint16(offset, 0, true); offset += 2
+    view.setUint32(offset, 0, true); offset += 4
+    view.setUint32(offset, compressedBytes.length, true); offset += 4
+    view.setUint32(offset, data.length, true); offset += 4
+    view.setUint16(offset, filenameBytes.length, true); offset += 2
+    view.setUint16(offset, 0, true); offset += 2
+    view.setUint16(offset, 0, true); offset += 2
+    view.setUint16(offset, 0, true); offset += 2
+    view.setUint16(offset, 0, true); offset += 2
+    view.setUint32(offset, 0, true); offset += 4
+    view.setUint32(offset, 0, true); offset += 4
+    buf.set(filenameBytes, offset); offset += filenameBytes.length
+
+    view.setUint32(offset, 0x06054b50, true); offset += 4
+    view.setUint16(offset, 0, true); offset += 2
+    view.setUint16(offset, 0, true); offset += 2
+    view.setUint16(offset, 1, true); offset += 2
+    view.setUint16(offset, 1, true); offset += 2
+    view.setUint32(offset, cfhSize, true); offset += 4
+    view.setUint32(offset, cfhOffset, true); offset += 4
+    view.setUint16(offset, 0, true); offset += 2
+
+    return buf
+  }
+
+  it('extracts a stored .archipelago entry', async () => {
+    const payload = new Uint8Array([0x03, 0x78, 0x9c, 0x01, 0x02, 0x03])
+    const zip = buildStoredZip('AP_test.archipelago', payload)
+    const extracted = await readZipArchipelagoEntry(zip)
+    expect(extracted).toEqual(payload)
+  })
+
+  it('extracts a deflate-compressed .archipelago entry', async () => {
+    const payload = new Uint8Array([0x03, 0x78, 0x9c, 0x01, 0x02, 0x03, 0x04, 0x05])
+    const zip = await buildDeflateZip('AP_test.archipelago', payload)
+    const extracted = await readZipArchipelagoEntry(zip)
+    expect(extracted).toEqual(payload)
+  })
+
+  it('throws when no .archipelago entry exists', async () => {
+    const zip = buildStoredZip('AP_test.txt', new Uint8Array([1, 2, 3]))
+    await expect(readZipArchipelagoEntry(zip)).rejects.toThrow(/no .*archipelago/i)
   })
 })

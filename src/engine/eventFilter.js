@@ -1,16 +1,34 @@
-export function applyEventFilter(raw, datapackages) {
-  const playerGame = new Map(raw.players.map((p) => [p.name, p.game]))
+export function applyEventFilter(raw, multidata) {
+  // Build a name → slot_id map from the raw spoiler players.
+  // We correlate by player name (which appears both in the spoiler parse and in multidata.slot_info).
+  const slotByName = new Map()
+  for (const [slotId, info] of multidata.slot_info) {
+    slotByName.set(info.name, slotId)
+  }
+
+  // Build a name → game map from the same source.
+  const gameByName = new Map()
+  for (const [slotId, info] of multidata.slot_info) {
+    gameByName.set(info.name, info.game)
+  }
 
   function isRealLocation(name, locationOwner) {
-    const game = playerGame.get(locationOwner)
-    const dp = datapackages.get(game)
+    const slotId = slotByName.get(locationOwner)
+    if (slotId == null) return false
+    const game = gameByName.get(locationOwner)
+    const dp = multidata.datapackage.get(game)
     if (!dp) return false
-    return Object.prototype.hasOwnProperty.call(dp.location_name_to_id, name)
+    const locId = dp.location_name_to_id[name]
+    if (locId == null) return false
+    const slotLocations = multidata.locations.get(slotId)
+    if (!slotLocations) return false
+    return slotLocations.has(locId)
   }
 
   function isRealItem(name, itemOwner) {
-    const game = playerGame.get(itemOwner)
-    const dp = datapackages.get(game)
+    const game = gameByName.get(itemOwner)
+    if (!game) return false
+    const dp = multidata.datapackage.get(game)
     if (!dp) return false
     return Object.prototype.hasOwnProperty.call(dp.item_name_to_id, name)
   }
@@ -33,7 +51,6 @@ export function applyEventFilter(raw, datapackages) {
     playerLocations.set(owner, kept)
   }
 
-  // Header-count validation: compare filtered playerLocations count per player to headerCounts.
   const warnings = []
   for (const [player, expected] of raw.headerCounts) {
     const actual = (playerLocations.get(player) || []).length

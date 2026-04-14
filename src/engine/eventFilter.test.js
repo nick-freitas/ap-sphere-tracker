@@ -1,30 +1,38 @@
 import { describe, it, expect } from 'vitest'
 import { applyEventFilter } from './eventFilter'
 
-// Small helper to build a datapackage fixture with the shape the filter expects.
-function dp(itemNames, locationNames) {
-  return {
-    item_name_to_id: Object.fromEntries(itemNames.map((n, i) => [n, i + 1])),
-    location_name_to_id: Object.fromEntries(locationNames.map((n, i) => [n, i + 1])),
+// Build a small multidata fixture with specified game datapackages and per-slot checks.
+function buildMultidata({ players, gameItems, gameLocations, checks }) {
+  const datapackage = new Map()
+  for (const game of Object.keys(gameItems)) {
+    datapackage.set(game, {
+      item_name_to_id: Object.fromEntries(gameItems[game].map((n, i) => [n, i + 1])),
+      location_name_to_id: Object.fromEntries(gameLocations[game].map((n, i) => [n, i + 1])),
+    })
   }
+
+  const slot_info = new Map(players.map((p) => [p.slot, { name: p.name, game: p.game, type: 0, group_members: [] }]))
+
+  const locations = new Map()
+  for (const p of players) {
+    const inner = new Map()
+    const playerChecks = checks[p.name] || []
+    for (const locName of playerChecks) {
+      const id = datapackage.get(p.game).location_name_to_id[locName]
+      if (id != null) inner.set(id, [0, 0, 0])
+    }
+    locations.set(p.slot, inner)
+  }
+
+  return { datapackage, locations, slot_info, slot_data: new Map(), seed_name: 'test', version: '0.6.7' }
 }
 
-const OOT = dp(
-  ['Kokiri Sword', 'Progressive Bow', 'Bombs', 'Hookshot'],
-  ['KF Kokiri Sword Chest', 'HF Southeast Grotto Chest', 'LW Gift From Saria'],
-)
+const OOT_ITEMS = ['Kokiri Sword', 'Progressive Bow', 'Bombs', 'Hookshot', 'Master Sword']
+const OOT_LOCATIONS = ['KF Kokiri Sword Chest', 'HF Southeast Grotto Chest', 'LW Gift From Saria', 'Market ToT Master Sword']
+const ALTTP_ITEMS = ['Hookshot', 'Big Key (Hyrule Castle)', 'Moon Pearl']
+const ALTTP_LOCATIONS = ['Sanctuary', "Link's Uncle", 'Desert Ledge']
 
-const ALTTP = dp(
-  ['Hookshot', 'Big Key (Hyrule Castle)', 'Moon Pearl'],
-  ['Sanctuary', "Link's Uncle", 'Desert Ledge'],
-)
-
-const DATAPACKAGES = new Map([
-  ['Ocarina of Time', OOT],
-  ['A Link to the Past', ALTTP],
-])
-
-function raw(overrides = {}) {
+function rawSeed(overrides = {}) {
   return {
     players: [
       { slot: 1, name: 'Alice', game: 'Ocarina of Time' },
@@ -37,9 +45,9 @@ function raw(overrides = {}) {
   }
 }
 
-describe('applyEventFilter', () => {
-  it('keeps entries where both location and item exist in their datapackages', () => {
-    const input = raw({
+describe('applyEventFilter (multidata-driven)', () => {
+  it('keeps entries where location id is in the per-slot multidata locations AND item is in its game', () => {
+    const raw = rawSeed({
       spheres: [
         {
           number: 1,
@@ -49,12 +57,21 @@ describe('applyEventFilter', () => {
         },
       ],
     })
-    const result = applyEventFilter(input, DATAPACKAGES)
+    const multidata = buildMultidata({
+      players: [
+        { slot: 1, name: 'Alice', game: 'Ocarina of Time' },
+        { slot: 2, name: 'Bob', game: 'A Link to the Past' },
+      ],
+      gameItems: { 'Ocarina of Time': OOT_ITEMS, 'A Link to the Past': ALTTP_ITEMS },
+      gameLocations: { 'Ocarina of Time': OOT_LOCATIONS, 'A Link to the Past': ALTTP_LOCATIONS },
+      checks: { Alice: ['KF Kokiri Sword Chest'], Bob: [] },
+    })
+    const result = applyEventFilter(raw, multidata)
     expect(result.spheres[0].entries).toHaveLength(1)
   })
 
-  it('filters entries where the item name is absent from the item owner\'s datapackage', () => {
-    const input = raw({
+  it('filters entries whose item name is not in the item owner\'s datapackage', () => {
+    const raw = rawSeed({
       spheres: [
         {
           number: 1,
@@ -64,12 +81,21 @@ describe('applyEventFilter', () => {
         },
       ],
     })
-    const result = applyEventFilter(input, DATAPACKAGES)
+    const multidata = buildMultidata({
+      players: [
+        { slot: 1, name: 'Alice', game: 'Ocarina of Time' },
+        { slot: 2, name: 'Bob', game: 'A Link to the Past' },
+      ],
+      gameItems: { 'Ocarina of Time': OOT_ITEMS, 'A Link to the Past': ALTTP_ITEMS },
+      gameLocations: { 'Ocarina of Time': OOT_LOCATIONS, 'A Link to the Past': ALTTP_LOCATIONS },
+      checks: { Alice: ['KF Kokiri Sword Chest'], Bob: [] },
+    })
+    const result = applyEventFilter(raw, multidata)
     expect(result.spheres[0].entries).toHaveLength(0)
   })
 
-  it('filters entries where the location name is absent from the location owner\'s datapackage', () => {
-    const input = raw({
+  it('filters entries whose location name is not in the location owner\'s datapackage', () => {
+    const raw = rawSeed({
       spheres: [
         {
           number: 1,
@@ -79,29 +105,50 @@ describe('applyEventFilter', () => {
         },
       ],
     })
-    const result = applyEventFilter(input, DATAPACKAGES)
+    const multidata = buildMultidata({
+      players: [
+        { slot: 1, name: 'Alice', game: 'Ocarina of Time' },
+        { slot: 2, name: 'Bob', game: 'A Link to the Past' },
+      ],
+      gameItems: { 'Ocarina of Time': OOT_ITEMS, 'A Link to the Past': ALTTP_ITEMS },
+      gameLocations: { 'Ocarina of Time': OOT_LOCATIONS, 'A Link to the Past': ALTTP_LOCATIONS },
+      checks: { Alice: ['KF Kokiri Sword Chest'], Bob: [] },
+    })
+    const result = applyEventFilter(raw, multidata)
     expect(result.spheres[0].entries).toHaveLength(0)
   })
 
-  it('filters entries where both sides are absent (e.g., same-name subrules)', () => {
-    const input = raw({
+  it('filters a location that resolves to an id but is NOT in the per-slot checks (un-shuffled slot)', () => {
+    // Market ToT Master Sword resolves in the OoT datapackage (id 4), but if Alice's
+    // un-shuffled settings excluded it, multidata.locations.get(1) does not contain id 4.
+    const raw = rawSeed({
       spheres: [
         {
           number: 1,
           entries: [
-            { location: 'Some Subrule 1', locationOwner: 'Alice', item: 'Some Subrule 1', itemOwner: 'Alice' },
+            { location: 'Market ToT Master Sword', locationOwner: 'Alice', item: 'Master Sword', itemOwner: 'Alice' },
           ],
         },
       ],
     })
-    const result = applyEventFilter(input, DATAPACKAGES)
+    const multidata = buildMultidata({
+      players: [
+        { slot: 1, name: 'Alice', game: 'Ocarina of Time' },
+        { slot: 2, name: 'Bob', game: 'A Link to the Past' },
+      ],
+      gameItems: { 'Ocarina of Time': OOT_ITEMS, 'A Link to the Past': ALTTP_ITEMS },
+      gameLocations: { 'Ocarina of Time': OOT_LOCATIONS, 'A Link to the Past': ALTTP_LOCATIONS },
+      // Alice's checks deliberately EXCLUDE 'Market ToT Master Sword'
+      checks: { Alice: ['KF Kokiri Sword Chest', 'HF Southeast Grotto Chest'], Bob: [] },
+    })
+    const result = applyEventFilter(raw, multidata)
     expect(result.spheres[0].entries).toHaveLength(0)
   })
 
-  it('verifies cross-game items against the item owner\'s datapackage, not the location owner\'s', () => {
-    // Alice (OoT) has a location; the item belongs to Bob (ALTTP). The item name 'Moon Pearl' exists in ALTTP
-    // but not in OoT. It should be kept because the check is "is the item in Bob's (ALTTP) datapackage?"
-    const input = raw({
+  it('verifies cross-game items against the item owner\'s datapackage', () => {
+    // Alice (OoT) has a location; the item belongs to Bob (ALTTP). Moon Pearl is in ALTTP, not OoT.
+    // The filter should keep the entry because it verifies the item side against Bob's game.
+    const raw = rawSeed({
       spheres: [
         {
           number: 1,
@@ -111,12 +158,21 @@ describe('applyEventFilter', () => {
         },
       ],
     })
-    const result = applyEventFilter(input, DATAPACKAGES)
+    const multidata = buildMultidata({
+      players: [
+        { slot: 1, name: 'Alice', game: 'Ocarina of Time' },
+        { slot: 2, name: 'Bob', game: 'A Link to the Past' },
+      ],
+      gameItems: { 'Ocarina of Time': OOT_ITEMS, 'A Link to the Past': ALTTP_ITEMS },
+      gameLocations: { 'Ocarina of Time': OOT_LOCATIONS, 'A Link to the Past': ALTTP_LOCATIONS },
+      checks: { Alice: ['KF Kokiri Sword Chest'], Bob: [] },
+    })
+    const result = applyEventFilter(raw, multidata)
     expect(result.spheres[0].entries).toHaveLength(1)
   })
 
-  it('filters entries in playerLocations identically to sphere entries', () => {
-    const input = raw({
+  it('filters playerLocations identically to sphere entries', () => {
+    const raw = rawSeed({
       playerLocations: new Map([
         [
           'Alice',
@@ -127,49 +183,83 @@ describe('applyEventFilter', () => {
         ],
       ]),
     })
-    const result = applyEventFilter(input, DATAPACKAGES)
+    const multidata = buildMultidata({
+      players: [
+        { slot: 1, name: 'Alice', game: 'Ocarina of Time' },
+        { slot: 2, name: 'Bob', game: 'A Link to the Past' },
+      ],
+      gameItems: { 'Ocarina of Time': OOT_ITEMS, 'A Link to the Past': ALTTP_ITEMS },
+      gameLocations: { 'Ocarina of Time': OOT_LOCATIONS, 'A Link to the Past': ALTTP_LOCATIONS },
+      checks: { Alice: ['KF Kokiri Sword Chest'], Bob: [] },
+    })
+    const result = applyEventFilter(raw, multidata)
     expect(result.playerLocations.get('Alice')).toHaveLength(1)
     expect(result.playerLocations.get('Alice')[0].location).toBe('KF Kokiri Sword Chest')
   })
 
   it('emits a warning when filtered playerLocations count differs from headerCounts', () => {
-    const input = raw({
+    const raw = rawSeed({
       playerLocations: new Map([
         [
           'Alice',
           [
             { location: 'KF Kokiri Sword Chest', item: 'Kokiri Sword', itemOwner: 'Alice' },
-            { location: 'HF Southeast Grotto Chest', item: 'Progressive Bow', itemOwner: 'Alice' },
           ],
         ],
       ]),
       headerCounts: new Map([['Alice', 3]]),
     })
-    const result = applyEventFilter(input, DATAPACKAGES)
-    expect(result.warnings).toContainEqual({ player: 'Alice', expected: 3, actual: 2 })
+    const multidata = buildMultidata({
+      players: [
+        { slot: 1, name: 'Alice', game: 'Ocarina of Time' },
+        { slot: 2, name: 'Bob', game: 'A Link to the Past' },
+      ],
+      gameItems: { 'Ocarina of Time': OOT_ITEMS, 'A Link to the Past': ALTTP_ITEMS },
+      gameLocations: { 'Ocarina of Time': OOT_LOCATIONS, 'A Link to the Past': ALTTP_LOCATIONS },
+      checks: { Alice: ['KF Kokiri Sword Chest'], Bob: [] },
+    })
+    const result = applyEventFilter(raw, multidata)
+    expect(result.warnings).toContainEqual({ player: 'Alice', expected: 3, actual: 1 })
   })
 
   it('emits no warnings when filtered counts match headerCounts', () => {
-    const input = raw({
+    const raw = rawSeed({
       playerLocations: new Map([
         [
           'Alice',
           [
             { location: 'KF Kokiri Sword Chest', item: 'Kokiri Sword', itemOwner: 'Alice' },
-            { location: 'HF Southeast Grotto Chest', item: 'Progressive Bow', itemOwner: 'Alice' },
           ],
         ],
       ]),
-      headerCounts: new Map([['Alice', 2]]),
+      headerCounts: new Map([['Alice', 1]]),
     })
-    const result = applyEventFilter(input, DATAPACKAGES)
+    const multidata = buildMultidata({
+      players: [
+        { slot: 1, name: 'Alice', game: 'Ocarina of Time' },
+        { slot: 2, name: 'Bob', game: 'A Link to the Past' },
+      ],
+      gameItems: { 'Ocarina of Time': OOT_ITEMS, 'A Link to the Past': ALTTP_ITEMS },
+      gameLocations: { 'Ocarina of Time': OOT_LOCATIONS, 'A Link to the Past': ALTTP_LOCATIONS },
+      checks: { Alice: ['KF Kokiri Sword Chest'], Bob: [] },
+    })
+    const result = applyEventFilter(raw, multidata)
     expect(result.warnings).toEqual([])
   })
 
-  it('preserves player list and other fields unchanged', () => {
-    const input = raw()
-    const result = applyEventFilter(input, DATAPACKAGES)
-    expect(result.players).toBe(input.players)
-    expect(result.headerCounts).toBe(input.headerCounts)
+  it('preserves player list and header counts by reference', () => {
+    const raw = rawSeed()
+    const multidata = buildMultidata({
+      players: [
+        { slot: 1, name: 'Alice', game: 'Ocarina of Time' },
+        { slot: 2, name: 'Bob', game: 'A Link to the Past' },
+      ],
+      gameItems: { 'Ocarina of Time': OOT_ITEMS, 'A Link to the Past': ALTTP_ITEMS },
+      gameLocations: { 'Ocarina of Time': OOT_LOCATIONS, 'A Link to the Past': ALTTP_LOCATIONS },
+      checks: { Alice: [], Bob: [] },
+    })
+    const result = applyEventFilter(raw, multidata)
+    expect(result.players).toBe(raw.players)
+    expect(result.headerCounts).toBe(raw.headerCounts)
   })
 })

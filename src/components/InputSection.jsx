@@ -4,11 +4,14 @@ import './InputSection.css'
 export default function InputSection({
   onSpoilerParsed,
   onTrackerParsed,
+  onMultidataFile,
   hasSpoiler,
   hasTracker,
+  hasMultidata,
 }) {
   const spoilerInputRef = useRef(null)
   const trackerInputRef = useRef(null)
+  const multidataInputRef = useRef(null)
 
   function handleFileUpload(callback) {
     return (e) => {
@@ -21,6 +24,13 @@ export default function InputSection({
       }
       reader.readAsText(file)
     }
+  }
+
+  async function handleMultidataChange(event) {
+    const file = event.target.files[0]
+    if (!file) return
+    const buffer = await file.arrayBuffer()
+    onMultidataFile(new Uint8Array(buffer))
   }
 
   return (
@@ -64,6 +74,28 @@ export default function InputSection({
             type="file"
             accept=".txt,.log,text/plain"
             onChange={handleFileUpload(onTrackerParsed)}
+            hidden
+          />
+        </div>
+
+        <div className="input-divider" />
+
+        <div className="input-group" onClick={() => multidataInputRef.current?.click()}>
+          <div className="input-step">
+            <span className="step-number">3</span>
+            <div>
+              <label>Seed File</label>
+              <p className="input-hint">{hasMultidata ? 'Upload a new one to override' : '(.archipelago or .zip from your generator output)'}</p>
+            </div>
+          </div>
+          <div className={`upload-btn ${hasMultidata ? 'loaded' : ''}`}>
+            {hasMultidata ? 'Seed Loaded' : 'Upload Seed File'}
+          </div>
+          <input
+            ref={multidataInputRef}
+            type="file"
+            accept=".archipelago,.zip"
+            onChange={handleMultidataChange}
             hidden
           />
         </div>

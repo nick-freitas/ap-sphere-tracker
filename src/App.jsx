@@ -23,6 +23,12 @@ function App() {
   const [checkedLocations, setCheckedLocations] = useState(new Map())
   const [hints, setHints] = useState([])
   const [lastCheckTime, setLastCheckTime] = useState(null)
+  // Date the current tracker log was last "updated." For the default load
+  // path, this comes from the HTTP Last-Modified response header on
+  // public/default-tracker.txt (set by whatever served the file — GitHub
+  // Pages, vite dev, etc.). For user uploads it's new Date() at upload
+  // time. Always a Date or null.
+  const [lastUpdatedTime, setLastUpdatedTime] = useState(null)
   const [threshold, setThreshold] = useState(70)
   const [extended, setExtended] = useState(false)
   const [hiddenPlayers, setHiddenPlayers] = useState(new Set())
@@ -65,10 +71,21 @@ function App() {
       .catch(() => {})
 
     fetch('/ap-sphere-tracker/default-tracker.txt')
-      .then((res) => (res.ok ? res.text() : null))
-      .then((text) => {
-        if (text == null) return
-        handleTrackerText(text)
+      .then(async (res) => {
+        if (!res.ok) return null
+        // Last-Modified is set by whatever serves the static file (GitHub
+        // Pages in prod, Vite dev locally). It's an RFC 1123 GMT string
+        // like "Tue, 14 Apr 2026 03:12:24 GMT" — new Date() parses these
+        // correctly as UTC. If the header is missing for any reason, fall
+        // back to "now" so the display is sane.
+        const lastMod = res.headers.get('last-modified')
+        const updatedAt = lastMod ? new Date(lastMod) : new Date()
+        const text = await res.text()
+        return { text, updatedAt }
+      })
+      .then((data) => {
+        if (data == null) return
+        handleTrackerText(data.text, data.updatedAt)
       })
       .catch(() => {})
 
@@ -106,11 +123,16 @@ function App() {
     setHiddenPlayers(new Set())
   }
 
-  function handleTrackerText(text) {
+  // updatedAt is an optional Date. Startup passes it from the fetch's
+  // HTTP Last-Modified header; user uploads omit it and default to new
+  // Date() ("now"). This keeps the "Log updated" header display paired
+  // with whatever file is actually loaded — no drift possible.
+  function handleTrackerText(text, updatedAt = new Date()) {
     setRawTrackerText(text)
     const { checkedLocations: parsed, lastCheckTime: lct, hints: parsedHints, events } = parseTrackerLog(text)
     setCheckedLocations(parsed)
     setLastCheckTime(lct)
+    setLastUpdatedTime(updatedAt)
     setHints(parsedHints)
     setLogEvents(events)
   }
@@ -327,6 +349,7 @@ function App() {
         darkMode={darkMode}
         onDarkModeToggle={toggleDarkMode}
         lastCheckTime={lastCheckTime}
+        lastUpdatedTime={lastUpdatedTime}
         currentSphere={lastQualifyingIdx >= 0 && sphereResults[lastQualifyingIdx] ? sphereResults[lastQualifyingIdx].sphereNumber : 0}
         totalSpheres={sphereResults.length > 0 ? sphereResults[sphereResults.length - 1].sphereNumber : 0}
       />

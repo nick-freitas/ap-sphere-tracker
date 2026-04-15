@@ -5150,3 +5150,8 @@
 [2026-04-15 05:19:51,818]: (Team #1) Naizak sent DK Coin to Ryot (Water Temple MQ Boss Key Chest Room Upper Crate)
 [2026-04-15 05:32:47,449]: Notice (all): Naizak (Team #1) has left the game. Client(0.6.5), ['DeathLink', 'AP'].
 [2026-04-15 07:19:51,818]: Shutting down due to inactivity.
+[2026-04-15 17:12:43,453]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-15 17:12:43,453]: Loading embedded data package for game Ship of Harkinian
+[2026-04-15 17:12:43,453]: Loading embedded data package for game Dark Souls III
+[2026-04-15 17:12:43,476]: Loaded save file with 4010 received items for 7 players
+[2026-04-15 17:12:43,497]: Hosting game at archipelago.gg:58657

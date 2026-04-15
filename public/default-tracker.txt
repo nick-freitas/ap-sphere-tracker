@@ -5155,3 +5155,4 @@
 [2026-04-15 17:12:43,453]: Loading embedded data package for game Dark Souls III
 [2026-04-15 17:12:43,476]: Loaded save file with 4010 received items for 7 players
 [2026-04-15 17:12:43,497]: Hosting game at archipelago.gg:58657
+[2026-04-15 19:12:43,504]: Shutting down due to inactivity.

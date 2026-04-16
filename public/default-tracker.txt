@@ -5156,3 +5156,19 @@
 [2026-04-15 17:12:43,476]: Loaded save file with 4010 received items for 7 players
 [2026-04-15 17:12:43,497]: Hosting game at archipelago.gg:58657
 [2026-04-15 19:12:43,504]: Shutting down due to inactivity.
+[2026-04-16 02:11:29,098]: Loading embedded data package for game Kingdom Hearts 2
+[2026-04-16 02:11:29,098]: Loading embedded data package for game Ship of Harkinian
+[2026-04-16 02:11:29,098]: Loading embedded data package for game Dark Souls III
+[2026-04-16 02:11:29,125]: Loaded save file with 4010 received items for 7 players
+[2026-04-16 02:11:29,164]: Hosting game at archipelago.gg:58657
+[2026-04-16 02:12:02,445]: Notice (all): Ryot (Team #1) playing Donkey Kong Country 3 has joined. Client(0.6.6), ['AP'].
+[2026-04-16 02:12:02,446]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-16 02:12:20,627]: Notice (all): Ryot (Team #1) tracking Donkey Kong Country 3 has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-16 02:54:42,459]: Notice (all): Ryot: !hint krema
+[2026-04-16 02:54:42,460]: Notice (Player Ryot in team 1): Didn't find something that closely matches 'krema', did you mean 'Krematoa Cog'? (41% sure)
+[2026-04-16 02:54:45,296]: Notice (all): Ryot: !hint Krematoa Cog
+[2026-04-16 02:54:45,296]: Notice (Team #1): [Hint]: Ryot's Krematoa Cog is at (OC) The Lock Caverns Map in Brian's World. (found)
+[2026-04-16 02:54:45,297]: Notice (Team #1): [Hint]: Ryot's Krematoa Cog is at Sheik in Forest in Nick's World. (found)
+[2026-04-16 02:54:45,297]: Notice (Team #1): [Hint]: Ryot's Krematoa Cog is at (CoR) Engine Chamber Remembrance Crystal in Brian's World. (found)
+[2026-04-16 02:54:45,297]: Notice (Team #1): [Hint]: Ryot's Krematoa Cog is at Fire Temple MQ Flame Maze Left Pot 1 in Naizak's World at Desert Colossus -> Spirit Temple Lobby. (found)
+[2026-04-16 02:54:45,298]: Notice (Team #1): [Hint]: Ryot's Krematoa Cog is at Rocket Rush - Flag in Ryot's World. (priority)

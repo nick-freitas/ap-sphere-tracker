@@ -5172,3 +5172,6 @@
 [2026-04-16 02:54:45,297]: Notice (Team #1): [Hint]: Ryot's Krematoa Cog is at (CoR) Engine Chamber Remembrance Crystal in Brian's World. (found)
 [2026-04-16 02:54:45,297]: Notice (Team #1): [Hint]: Ryot's Krematoa Cog is at Fire Temple MQ Flame Maze Left Pot 1 in Naizak's World at Desert Colossus -> Spirit Temple Lobby. (found)
 [2026-04-16 02:54:45,298]: Notice (Team #1): [Hint]: Ryot's Krematoa Cog is at Rocket Rush - Flag in Ryot's World. (priority)
+[2026-04-16 03:08:04,082]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-04-16 03:08:07,176]: Notice (all): Ryot (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-16 04:11:29,171]: Shutting down due to inactivity.

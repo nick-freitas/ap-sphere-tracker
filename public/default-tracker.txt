@@ -546,3 +546,21 @@
 [2026-04-19 05:42:05,535]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (Gift kyanna Megaphone)
 [2026-04-19 05:43:20,085]: (Team #1) Ryot sent DLC Quest: Coin Bundle to AndrewDLC (Gift lola Miniature UFO)
 [2026-04-19 05:43:24,869]: (Team #1) Ryot sent Arrows (10) to Nick (Gift lola Snorkel)
+[2026-04-19 05:45:22,122]: (Team #1) Brian sent Name Change Pack to AndrewDLC (Papyrus Plot)
+[2026-04-19 05:51:50,602]: (Team #1) Ryot sent aiko's panties to Ryot (Gift kyu Sombrero)
+[2026-04-19 05:52:38,306]: (Team #1) Ryot sent Arrows (5) to Nick (Gift kyu Cheerleading Uniform)
+[2026-04-19 05:53:18,657]: (Team #1) Ryot sent Arrows (5) to Nick (Gift kyu Diamond)
+[2026-04-19 05:53:45,200]: (Team #1) Ryot sent Bombs (10) to Nick (Gift kyu Laser Pointer)
+[2026-04-19 05:58:47,259]: (Team #1) Ryot sent Progressive Bow to Nick (Gift kyu Squeaky Mouse)
+[2026-04-19 05:59:12,399]: (Team #1) Ryot sent Blue Rupee to Nick (Gift lola Scratch Post)
+[2026-04-19 05:59:13,802]: (Team #1) Ryot sent Deku Nuts (5) to Nick (Gift lola Sketch Pad)
+[2026-04-19 06:00:00,853]: (Team #1) Ryot sent DLC Quest: Coin Bundle to AndrewDLC (Gift kyu Chopsticks)
+[2026-04-19 06:00:48,085]: (Team #1) Ryot sent DLC Quest: Coin Bundle to AndrewDLC (given kyu jessie's panties)
+[2026-04-19 06:00:59,782]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (given kyu aiko's panties)
+[2026-04-19 06:04:36,202]: (Team #1) Ryot sent DLC Quest: Coin Bundle to AndrewDLC (Gift kyu Cigarette Pack)
+[2026-04-19 06:05:14,854]: (Team #1) Ryot sent Deku Seeds (30) to Nick (Gift kyu Tennis Balls)
+[2026-04-19 06:06:19,457]: (Team #1) Ryot sent DLC Quest: Coin Bundle to AndrewDLC (Gift kyanna Fish Tank)
+[2026-04-19 06:09:43,659]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['DeathLink', 'AP', 'Online'].
+[2026-04-19 06:16:08,788]: Notice (all): Ryot (Team #1) has left the game. Client(0.5.1), ['AP', 'DeathLink'].
+[2026-04-19 06:16:22,589]: Notice (all): Ryot (Team #1) has stopped viewing the game. Client(0.6.6), ['TextOnly', 'AP'].
+[2026-04-19 06:16:26,385]: Notice (all): Ryot (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

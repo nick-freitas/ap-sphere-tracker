@@ -2,22 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  plugins: [
-    react(),
-    {
-      name: 'serve-prototypes',
-      configureServer(server) {
-        server.middlewares.use((req, res, next) => {
-          // Serve /1/ through /5/ as static prototype pages
-          const match = req.url.match(/^\/archipelago-sphere\/(\d+)\/?$/)
-          if (match) {
-            req.url = `/ap-sphere-tracker/${match[1]}/index.html`
-          }
-          next()
-        })
-      },
-    },
-  ],
+  plugins: [react()],
   base: '/ap-sphere-tracker/',
   test: {
     environment: 'node',

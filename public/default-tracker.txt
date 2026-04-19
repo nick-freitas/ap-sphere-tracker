@@ -786,3 +786,14 @@
 [2026-04-19 11:44:30,978]: (Team #1) AndrewFE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Complete Chapter 4)
 [2026-04-19 11:57:20,114]: (Team #1) AndrewFE sent DLC Quest: Coin Bundle to AndrewDLC (Complete Chapter 5)
 [2026-04-19 12:17:13,487]: (Team #1) AndrewFE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Complete Chapter 5x)
+[2026-04-19 12:56:11,335]: (Team #1) AndrewFE sent Water Medallion to Nick (Complete Chapter 6)
+[2026-04-19 13:07:14,923]: Notice (all): DanDLC (Team #1) playing DLCQuest has joined. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-19 13:07:14,923]: Notice (Player DanDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 13:07:14,923]: Notice (Player DanDLC in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-19 13:08:43,386]: (Team #1) AndrewFE sent Megaphone to Ryot (Complete Chapter 7)
+[2026-04-19 13:17:20,701]: Notice (all): DanDLC (Team #1) has left the game. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-19 13:17:25,729]: Notice (all): DanDLC (Team #1) playing DLCQuest has joined. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-19 13:17:25,729]: Notice (Player DanDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 13:17:25,729]: Notice (Player DanDLC in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-19 13:18:45,451]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to AndrewDLC (I Get That Reference!)
+[2026-04-19 13:28:27,245]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (Nice Try)

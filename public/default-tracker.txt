@@ -797,3 +797,17 @@
 [2026-04-19 13:17:25,729]: Notice (Player DanDLC in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
 [2026-04-19 13:18:45,451]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to AndrewDLC (I Get That Reference!)
 [2026-04-19 13:28:27,245]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (Nice Try)
+[2026-04-19 13:35:35,632]: (Team #1) AndrewFE sent Piece of Heart to Nick (Complete Chapter 8)
+[2026-04-19 13:40:18,012]: (Team #1) DanDLC sent Vessel_Fragment to TNNPE (Double Jump Pack)
+[2026-04-19 13:40:30,566]: Notice (all): DanDLC (Team #1) has left the game. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-19 13:40:34,624]: Notice (all): DanDLC (Team #1) playing DLCQuest has joined. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-19 13:40:34,626]: Notice (Player DanDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 13:40:34,626]: Notice (Player DanDLC in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-19 13:42:35,000]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (Map Pack)
+[2026-04-19 13:43:31,819]: Notice (all): DanDLC (Team #1) has left the game. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-19 13:44:52,529]: Notice (all): AndrewDLC (Team #1) playing DLCQuest has joined. Client(0.6.1), ['AP'].
+[2026-04-19 13:44:52,530]: Notice (Player AndrewDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 13:44:52,530]: Notice (Player AndrewDLC in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-19 13:52:15,645]: (Team #1) AndrewDLC sent Progressive Wallet to Nick (Nice Try)
+[2026-04-19 13:57:37,286]: Notice (all): AndrewDLC (Team #1) has left the game. Client(0.6.1), ['AP'].
+[2026-04-19 14:02:22,896]: (Team #1) AndrewFE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Complete Tower of Valni 1)

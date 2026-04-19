@@ -469,3 +469,5 @@
 [2026-04-19 04:15:40,612]: (Team #1) Nick sent Blue Rupee to Nick (Deku Tree Compass Grass 2)
 [2026-04-19 04:15:41,848]: (Team #1) Nick sent DLC Quest: Coin Bundle to DanDLC (Deku Tree Compass Grass 1)
 [2026-04-19 04:16:23,055]: (Team #1) Nick sent DLC Quest: Coin Bundle to DanDLC (Deku Tree Compass Room Side Chest)
+[2026-04-19 04:22:15,051]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-19 04:22:27,914]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink'].

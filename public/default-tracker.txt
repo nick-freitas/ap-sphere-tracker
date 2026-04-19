@@ -824,3 +824,5 @@
 [2026-04-19 16:35:58,253]: Notice (all): AndrewDLC (Team #1) tracking DLCQuest has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-19 16:36:35,481]: Notice (all): AndrewDLC (Team #1) tracking DLCQuest has joined. Client(0.6.6), ['AP', 'Tracker'].
 [2026-04-19 16:36:35,481]: Notice (Player AndrewDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 17:45:53,298]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink'].
+[2026-04-19 17:45:53,298]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.

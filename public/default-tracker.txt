@@ -965,3 +965,7 @@
 [2026-04-19 19:44:50,802]: (Team #1) Nick sent Deku Seeds (30) to Nick (ZD King Zora Thawed)
 [2026-04-19 19:47:28,843]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink'].
 [2026-04-19 19:47:30,048]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-19 20:19:58,633]: Notice (all): DanVVVV (Team #1) playing VVVVVV has joined. Client(0.5.1), [].
+[2026-04-19 20:19:58,633]: Notice (Player DanVVVV in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 20:19:58,769]: Notice (all): DanVVVV (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-04-19 20:20:47,517]: Notice (all): DanVVVV (Team #1) has left the game. Client(0.5.1), ['DeathLink'].

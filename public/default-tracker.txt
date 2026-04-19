@@ -177,3 +177,36 @@
 [2026-04-19 02:36:20,481]: Notice (Team #1): [Hint]: AndrewDLC's Live Freemium or Die: Coin Bundle is at Sly_5 in TNNPE's World. (unspecified)
 [2026-04-19 02:36:20,481]: Notice (Team #1): [Hint]: Ryot's Yoga Ball is at Sly_6 in TNNPE's World. (unspecified)
 [2026-04-19 02:36:20,481]: Notice (Team #1): [Hint]: AndrewDLC's Live Freemium or Die: Coin Bundle is at Sly_7 in TNNPE's World. (unspecified)
+[2026-04-19 02:52:42,784]: Notice (all): TNNPE (Team #1) has left the game. Client(0.5.0), ['DeathLink'].
+[2026-04-19 02:53:12,163]: Notice (all): Ryot (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-19 02:54:02,704]: Notice (all): Ryot (Team #1) has left the game. Client(0.5.1), ['AP', 'DeathLink'].
+[2026-04-19 02:57:49,212]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink'].
+[2026-04-19 02:57:49,213]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 02:58:18,900]: (Team #1) Nick sent Paint Brushes to Ryot (Link's Pocket)
+[2026-04-19 02:59:03,006]: (Team #1) Nick sent Deku Stick (1) to Nick (KF Links House Pot)
+[2026-04-19 02:59:26,012]: (Team #1) Nick sent Blue Rupee to Nick (KF Child Grass 4)
+[2026-04-19 02:59:31,723]: (Team #1) Nick sent DLC Quest: Coin Bundle to AndrewDLC (KF Child Grass 3)
+[2026-04-19 02:59:35,057]: (Team #1) Nick sent Blue Rupee to Nick (KF Child Grass 2)
+[2026-04-19 03:00:18,874]: (Team #1) Nick sent Kokiri Sword to Nick (KF Kokiri Sword Chest)
+[2026-04-19 03:00:29,790]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (KF Child Grass Maze 3)
+[2026-04-19 03:01:09,248]: (Team #1) Nick sent Arrows (10) to Nick (KF Child Grass Maze 1)
+[2026-04-19 03:01:53,605]: (Team #1) Nick sent DLC NPC Pack to DanDLC (KF Shop Item 4)
+[2026-04-19 03:01:56,021]: (Team #1) Nick sent DLC Quest: Coin Bundle to AndrewDLC (KF Shop Item 7)
+[2026-04-19 03:02:04,860]: (Team #1) Nick sent Popcorn to Ryot (KF Child Grass 1)
+[2026-04-19 03:03:36,842]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-19 03:03:56,361]: (Team #1) Nick sent Joni's_Blessing to TNNPE (KF Child Grass 5)
+[2026-04-19 03:04:01,394]: (Team #1) Nick sent Blue Rupee to Nick (KF Child Grass 8)
+[2026-04-19 03:04:02,229]: (Team #1) Nick sent Lifeblood_Cocoon_Small to TNNPE (KF Child Grass 9)
+[2026-04-19 03:04:03,269]: (Team #1) Nick sent DLC Quest: Coin Bundle to AndrewDLC (KF Child Grass 12)
+[2026-04-19 03:04:04,746]: (Team #1) Nick sent Deku Seeds (30) to Nick (KF Child Grass 11)
+[2026-04-19 03:04:06,905]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to DanDLC (KF Child Grass 10)
+[2026-04-19 03:04:09,060]: (Team #1) Nick sent DLC Quest: Coin Bundle to AndrewDLC (KF Child Grass 7)
+[2026-04-19 03:04:09,060]: (Team #1) Nick sent Trinket 07 to DanVVVV (KF Child Grass 6)
+[2026-04-19 03:04:32,952]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (KF Brothers House Pot 1)
+[2026-04-19 03:05:08,271]: (Team #1) Nick sent Movement Pack to AndrewDLC (KF Brothers House Pot 2)
+[2026-04-19 03:05:26,055]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (KF Mido Top Left Chest)
+[2026-04-19 03:05:28,908]: (Team #1) Nick sent Mantis_Claw to TNNPE (KF Mido Bottom Left Chest)
+[2026-04-19 03:05:34,396]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (KF Mido Top Right Chest)
+[2026-04-19 03:05:46,532]: (Team #1) Nick sent Purple Rupee to Nick (KF Mido Bottom Right Chest)
+[2026-04-19 03:06:10,634]: (Team #1) Nick sent DLC Quest: Coin Bundle to AndrewDLC (KF Twins House Pot 2)
+[2026-04-19 03:06:16,383]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (KF Twins House Pot 1)

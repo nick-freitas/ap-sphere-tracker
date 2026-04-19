@@ -565,3 +565,8 @@
 [2026-04-19 06:16:22,589]: Notice (all): Ryot (Team #1) has stopped viewing the game. Client(0.6.6), ['TextOnly', 'AP'].
 [2026-04-19 06:16:26,385]: Notice (all): Ryot (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-19 08:06:21,392]: Shutting down due to inactivity.
+[2026-04-19 09:11:36,348]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-19 09:11:36,349]: Loading embedded data package for game Ship of Harkinian
+[2026-04-19 09:11:36,349]: Loading embedded data package for game Hunie Pop
+[2026-04-19 09:11:36,359]: Loaded save file with 420 received items for 8 players
+[2026-04-19 09:11:36,393]: Hosting game at archipelago.gg:55328

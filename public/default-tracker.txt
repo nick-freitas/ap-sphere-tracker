@@ -778,3 +778,8 @@
 [2026-04-19 10:10:28,397]: (Team #1) AndrewDLC sent Canadian Dialog Pack to DanDLC (DLC Quest: 49 Coin)
 [2026-04-19 10:11:41,495]: (Team #1) AndrewDLC sent DLC Quest: Coin Bundle to AndrewDLC (Time is Money Pack)
 [2026-04-19 10:11:44,956]: (Team #1) AndrewDLC sent DLC Quest: Coin Bundle to AndrewDLC (Psychological Warfare Pack)
+[2026-04-19 10:30:53,987]: (Team #1) AndrewDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (Sword)
+[2026-04-19 10:32:05,730]: Notice (all): AndrewDLC (Team #1) has left the game. Client(0.6.1), ['AP'].
+[2026-04-19 10:43:11,601]: (Team #1) AndrewFE sent DLC Quest: Coin Bundle to AndrewDLC (Complete Chapter 1)
+[2026-04-19 10:55:09,375]: (Team #1) AndrewFE sent DLC Quest: Coin Bundle to AndrewDLC (Complete Chapter 2)
+[2026-04-19 11:11:14,423]: (Team #1) AndrewFE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Complete Chapter 3)

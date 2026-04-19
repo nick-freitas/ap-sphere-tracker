@@ -981,3 +981,15 @@
 [2026-04-19 21:46:21,551]: Notice (all): AndrewDLC (Team #1) tracking DLCQuest has joined. Client(0.6.6), ['AP', 'Tracker'].
 [2026-04-19 21:46:21,552]: Notice (Player AndrewDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
 [2026-04-19 21:46:32,643]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-19 22:35:32,951]: Notice (all): Ryot (Team #1) tracking Hunie Pop has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-19 22:36:55,269]: Notice (all): Ryot (Team #1) playing Hunie Pop has joined. Client(0.5.1), ['AP'].
+[2026-04-19 22:36:55,270]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 22:36:55,485]: Notice (all): Ryot (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-04-19 22:39:33,607]: (Team #1) Ryot sent Arrows (5) to Nick (Gift momo Bag of Goldfish)
+[2026-04-19 22:39:48,292]: (Team #1) Ryot sent DLC Quest: Coin Bundle to AndrewDLC (Gift momo Cardio Weights)
+[2026-04-19 22:40:38,288]: (Team #1) Ryot sent Blue Rupee to Nick (momo's Favourite Hangout)
+[2026-04-19 22:40:43,478]: (Team #1) Ryot sent DLC Quest: Coin Bundle to AndrewDLC (momo's Birthday)
+[2026-04-19 22:40:58,487]: (Team #1) Ryot sent Huge Rupee to Nick (momo's Height)
+[2026-04-19 22:44:47,308]: (Team #1) Ryot sent Unlock Girl(nikki) to Ryot (lola date 2)
+[2026-04-19 22:45:38,135]: (Team #1) Ryot sent Cigarette Pack to Ryot (Gift momo Canvas & Easel)
+[2026-04-19 22:46:40,438]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (momo's Age)

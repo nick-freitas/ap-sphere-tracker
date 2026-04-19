@@ -471,3 +471,78 @@
 [2026-04-19 04:16:23,055]: (Team #1) Nick sent DLC Quest: Coin Bundle to DanDLC (Deku Tree Compass Room Side Chest)
 [2026-04-19 04:22:15,051]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-19 04:22:27,914]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink'].
+[2026-04-19 04:46:16,827]: Notice (all): DanDLC (Team #1) playing DLCQuest has joined. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-19 04:46:16,827]: Notice (Player DanDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 04:46:16,827]: Notice (Player DanDLC in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-19 04:47:00,484]: (Team #1) DanDLC sent Vidofnir to AndrewFE (Wall Jump Pack)
+[2026-04-19 04:47:13,568]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to DanDLC (DLC NPC Pack)
+[2026-04-19 04:47:13,569]: (Team #1) DanDLC sent Purple Rupee to Nick (Canadian Dialog Pack)
+[2026-04-19 04:48:04,979]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (Animation Pack)
+[2026-04-19 04:48:05,274]: (Team #1) DanDLC sent Strength Upgrade to Nick (Audio Pack)
+[2026-04-19 04:48:05,537]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (Movement Pack)
+[2026-04-19 04:48:05,981]: (Team #1) DanDLC sent Chopsticks to Ryot (Pause Menu Pack)
+[2026-04-19 04:48:42,602]: (Team #1) DanDLC sent Progressive Weapon Level (Sword) to AndrewFE (DLC Quest: 20 Coin)
+[2026-04-19 04:49:13,629]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to AndrewDLC (DLC Quest: 40 Coin)
+[2026-04-19 04:49:58,048]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (DLC Quest: 60 Coin)
+[2026-04-19 04:50:09,044]: (Team #1) DanDLC sent Deku Nuts (10) to Nick (West Cave Sheep)
+[2026-04-19 04:50:10,437]: (Team #1) DanDLC sent Blue Rupee to Nick (DLC Quest: 80 Coin)
+[2026-04-19 04:50:21,971]: (Team #1) DanDLC sent Blue Rupee to Nick (DLC Quest: 100 Coin)
+[2026-04-19 04:50:54,969]: (Team #1) DanDLC sent Scratch Post to Ryot (DLC Quest: 120 Coin)
+[2026-04-19 04:50:58,939]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (DLC Quest: 140 Coin)
+[2026-04-19 04:51:47,755]: (Team #1) DanDLC sent Snowdin Key to Brian (Shepherd Sheep)
+[2026-04-19 04:52:47,369]: (Team #1) DanDLC sent Deku Stick (1) to Nick (Time is Money Pack)
+[2026-04-19 04:52:51,816]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to AndrewDLC (Psychological Warfare Pack)
+[2026-04-19 04:53:23,632]: (Team #1) DanDLC sent Name Change Pack to AndrewDLC (Between Trees Sheep)
+[2026-04-19 04:53:33,411]: (Team #1) DanDLC sent Tomatos to Ryot (DLC Quest: 160 Coin)
+[2026-04-19 04:54:05,768]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to AndrewDLC (DLC Quest: 180 Coin)
+[2026-04-19 04:54:07,869]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (Hole in the Wall Sheep)
+[2026-04-19 04:54:23,981]: (Team #1) DanDLC sent Red Rupee to Nick (DLC Quest: 200 Coin)
+[2026-04-19 04:56:07,841]: Notice (all): DanVVVV (Team #1) viewing VVVVVV has joined. Client(0.6.7), ['TextOnly', 'AP'].
+[2026-04-19 04:56:07,841]: Notice (Player DanVVVV in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 04:56:13,592]: Notice (all): DanVVVV (Team #1) has stopped viewing the game. Client(0.6.7), ['TextOnly', 'AP'].
+[2026-04-19 04:56:18,699]: Notice (all): DanDLC (Team #1) viewing DLCQuest has joined. Client(0.6.7), ['TextOnly', 'AP'].
+[2026-04-19 04:56:18,699]: Notice (Player DanDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 04:56:24,638]: Notice (all): DanDLC: !hint menu
+[2026-04-19 04:56:24,638]: Notice (Player DanDLC in team 1): Didn't find something that closely matches 'menu', did you mean 'Pause Menu Pack'? (26% sure)
+[2026-04-19 04:56:32,165]: Notice (all): DanDLC: !hint pause menu pack
+[2026-04-19 04:56:32,166]: Notice (Team #1): [Hint]: DanDLC's Pause Menu Pack is at Gift lola Laptop Pro in Ryot's World. (priority)
+[2026-04-19 04:57:06,601]: Notice (all): DanDLC (Team #1) has left the game. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-19 04:57:13,483]: Notice (all): DanDLC (Team #1) playing DLCQuest has joined. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-19 04:57:13,483]: Notice (Player DanDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 04:57:13,483]: Notice (Player DanDLC in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-19 04:58:03,418]: Notice (all): DanDLC (Team #1) has left the game. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-19 04:58:10,564]: Notice (all): DanDLC (Team #1) has stopped viewing the game. Client(0.6.7), ['TextOnly', 'AP'].
+[2026-04-19 04:58:19,046]: Notice (all): DanVVVV (Team #1) playing VVVVVV has joined. Client(0.5.1), [].
+[2026-04-19 04:58:19,046]: Notice (Player DanVVVV in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 04:58:19,185]: Notice (all): DanVVVV (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-04-19 04:58:51,040]: Notice (all): DanVVVV (Team #1) has left the game. Client(0.5.1), ['DeathLink'].
+[2026-04-19 05:02:18,565]: Notice (all): Ryot (Team #1) playing Hunie Pop has joined. Client(0.5.1), ['AP'].
+[2026-04-19 05:02:18,565]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 05:02:18,779]: Notice (all): Ryot (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-04-19 05:03:51,596]: Notice (all): Ryot (Team #1) viewing Hunie Pop has joined. Client(0.6.6), ['TextOnly', 'AP'].
+[2026-04-19 05:03:51,596]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 05:04:05,402]: Notice (all): Ryot (Team #1) tracking Hunie Pop has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-19 05:07:24,176]: (Team #1) Brian sent DLC Quest: Coin Bundle to AndrewDLC (Snowman)
+[2026-04-19 05:07:47,027]: (Team #1) Ryot sent Complete Skeleton to Brian (Gift lola Water Bottle)
+[2026-04-19 05:08:11,104]: (Team #1) Ryot sent Recovery Heart to Nick (Gift lola Stripper Pole)
+[2026-04-19 05:11:41,081]: (Team #1) Brian sent Live Freemium or Die: Coin Bundle to DanDLC (Nicecream Snowdin)
+[2026-04-19 05:17:26,717]: (Team #1) Ryot sent Deku Seeds (30) to Nick (Gift kyu Lighter)
+[2026-04-19 05:17:39,224]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (Gift kyu Bonsai Tree)
+[2026-04-19 05:17:41,446]: (Team #1) Ryot sent Recovery Heart to Nick (Gift kyu Four Leaf Clover)
+[2026-04-19 05:17:43,585]: (Team #1) Ryot sent Deku Nuts (10) to Nick (Gift kyu Pinecone)
+[2026-04-19 05:26:04,883]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (Gift lola Cigarette Pack)
+[2026-04-19 05:26:09,628]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (Gift lola Armillary Sphere)
+[2026-04-19 05:27:09,693]: (Team #1) Ryot sent Deku Nuts (5) to Nick (Gift lola Gingerbread Man)
+[2026-04-19 05:33:16,527]: Notice (Team #1): [Hint]: AndrewDLC's Live Freemium or Die: Coin Bundle is at Bunny 1 in Brian's World. (unspecified)
+[2026-04-19 05:33:16,527]: Notice (Team #1): [Hint]: Ryot's Sketch Pad is at Bunny 2 in Brian's World. (unspecified)
+[2026-04-19 05:33:16,527]: Notice (Team #1): [Hint]: Nick's Arrows (10) is at Bunny 3 in Brian's World. (unspecified)
+[2026-04-19 05:33:16,527]: Notice (Team #1): [Hint]: Ryot's Maracas is at Bunny 4 in Brian's World. (unspecified)
+[2026-04-19 05:33:24,991]: (Team #1) Brian sent Live Freemium or Die: Coin Bundle to AndrewDLC (Bunny 1)
+[2026-04-19 05:33:27,750]: (Team #1) Brian sent Sketch Pad to Ryot (Bunny 2)
+[2026-04-19 05:33:32,255]: (Team #1) Brian sent Arrows (10) to Nick (Bunny 3)
+[2026-04-19 05:33:34,232]: (Team #1) Brian sent Maracas to Ryot (Bunny 4)
+[2026-04-19 05:34:48,153]: (Team #1) Ryot sent Champagne to Ryot (Gift lola Glass Pipe)
+[2026-04-19 05:40:56,122]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (kyanna date 1)
+[2026-04-19 05:42:05,535]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (Gift kyanna Megaphone)
+[2026-04-19 05:43:20,085]: (Team #1) Ryot sent DLC Quest: Coin Bundle to AndrewDLC (Gift lola Miniature UFO)
+[2026-04-19 05:43:24,869]: (Team #1) Ryot sent Arrows (10) to Nick (Gift lola Snorkel)

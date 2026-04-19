@@ -993,3 +993,26 @@
 [2026-04-19 22:44:47,308]: (Team #1) Ryot sent Unlock Girl(nikki) to Ryot (lola date 2)
 [2026-04-19 22:45:38,135]: (Team #1) Ryot sent Cigarette Pack to Ryot (Gift momo Canvas & Easel)
 [2026-04-19 22:46:40,438]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (momo's Age)
+[2026-04-19 22:47:33,253]: (Team #1) Ryot sent Eyelash Curler to Ryot (momo's Last Name)
+[2026-04-19 22:48:52,854]: (Team #1) Ryot sent DLC Quest: Coin Bundle to AndrewDLC (kyanna's Favourite Color)
+[2026-04-19 22:53:33,953]: Notice (all): Ryot (Team #1) has left the game. Client(0.5.1), ['AP', 'DeathLink'].
+[2026-04-19 22:53:33,954]: Notice (all): Ryot (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-19 22:56:43,873]: Notice (all): TNNPE (Team #1) playing Hollow Knight has joined. Client(0.5.0), [].
+[2026-04-19 22:56:43,873]: Notice (Player TNNPE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 22:56:43,873]: Notice (Player TNNPE in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-19 22:56:44,390]: Notice (all): TNNPE (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-04-19 23:02:36,251]: (Team #1) TNNPE sent DLC Quest: Coin Bundle to AndrewDLC (Mask_Shard-Brooding_Mawlek)
+[2026-04-19 23:03:23,658]: Notice (all): Ryot (Team #1) tracking Hunie Pop has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-19 23:03:33,726]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink'].
+[2026-04-19 23:03:33,728]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 23:05:26,445]: Notice (all): Ryot (Team #1) playing Hunie Pop has joined. Client(0.5.1), ['AP'].
+[2026-04-19 23:05:26,446]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-19 23:05:26,662]: Notice (all): Ryot (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-04-19 23:06:12,528]: Notice (Team #1): [Hint]: AndrewDLC's DLC Quest: Coin Bundle is at Leg_Eater_2 in TNNPE's World. (unspecified)
+[2026-04-19 23:06:12,528]: Notice (Team #1): [Hint]: AndrewDLC's Live Freemium or Die: Coin Bundle is at Leg_Eater_3 in TNNPE's World. (unspecified)
+[2026-04-19 23:06:42,116]: (Team #1) Nick sent Boomerang to Nick (Market Bazaar Item 6)
+[2026-04-19 23:14:17,090]: (Team #1) Ryot sent Deku Seeds (30) to Nick (Gift momo Seashell)
+[2026-04-19 23:14:46,308]: (Team #1) Ryot sent Blue Rupee to Nick (momo's Occupation)
+[2026-04-19 23:15:52,823]: (Team #1) Ryot sent Deku Nuts (5) to Nick (Gift nikki Bliss Beads)
+[2026-04-19 23:15:54,509]: (Team #1) Ryot sent DLC Quest: Coin Bundle to AndrewDLC (Gift nikki Glow Sticks)
+[2026-04-19 23:16:58,802]: (Team #1) Ryot sent DLC Quest: Coin Bundle to AndrewDLC (Gift nikki Maracas)

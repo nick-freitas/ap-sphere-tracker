@@ -2943,3 +2943,28 @@
 [2026-04-20 21:42:15,039]: (Team #1) DanVVVV sent Deku Nuts (5) to Nick (The Tantalizing Trinket)
 [2026-04-20 21:45:42,584]: (Team #1) Nick sent Purple Rupee to Nick (Ganon's Castle Spirit Trial Crystal Switch Chest)
 [2026-04-20 21:48:13,810]: (Team #1) DanVVVV sent Feather Pole to Ryot (One Way Room)
+[2026-04-20 21:50:03,233]: (Team #1) Nick sent Deku Stick (1) to Nick (Ganon's Castle Spirit Trial Invisible Chest)
+[2026-04-20 21:51:38,974]: (Team #1) DanVVVV sent Live Freemium or Die: Coin Bundle to AndrewDLC (You Just Keep Coming Back)
+[2026-04-20 21:53:38,622]: (Team #1) DanVVVV sent DLC Quest: Coin Bundle to AndrewDLC (Clarion Call)
+[2026-04-20 22:12:04,496]: Notice (all): DanVVVV (Team #1) has left the game. Client(0.5.1), ['DeathLink'].
+[2026-04-20 22:12:13,364]: Notice (all): DanDLC (Team #1) playing DLCQuest has joined. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-20 22:12:13,364]: Notice (Player DanDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-20 22:12:13,365]: Notice (Player DanDLC in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-20 22:13:47,148]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (Armor for your Horse Pack)
+[2026-04-20 22:14:50,441]: (Team #1) DanDLC sent Rancid_Egg to TNNPE (Top Hat Sheep)
+[2026-04-20 22:15:13,841]: (Team #1) DanDLC sent progressive flirtation lv-up to Ryot (North West Alcove Sheep)
+[2026-04-20 22:15:34,282]: (Team #1) DanDLC sent Bag of Goldfish to Ryot (North West Ceiling Sheep)
+[2026-04-20 22:17:16,572]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (DLC Quest: 220 Coin)
+[2026-04-20 22:17:42,318]: (Team #1) DanDLC sent Steady_Body to TNNPE (Cutscene Sheep)
+[2026-04-20 22:17:59,290]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (Pet Pack)
+[2026-04-20 22:18:02,162]: (Team #1) DanDLC sent Cabbage to Ryot (Top Hat Pack)
+[2026-04-20 22:18:17,258]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to AndrewDLC (DLC Quest: 240 Coin)
+[2026-04-20 22:18:36,933]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to AndrewDLC (Double Jump Floating Sheep)
+[2026-04-20 22:18:52,983]: (Team #1) DanDLC sent Recovery Heart to Nick (DLC Quest: 260 Coin)
+[2026-04-20 22:19:23,748]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to AndrewDLC (DLC Quest: 280 Coin)
+[2026-04-20 22:19:35,694]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to DanDLC (DLC Quest: 300 Coin)
+[2026-04-20 22:20:26,347]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (DLC Quest: 320 Coin)
+[2026-04-20 22:20:31,173]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (Sexy Outfits Sheep)
+[2026-04-20 22:20:57,444]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (Double Jump Alcove Sheep)
+[2026-04-20 22:21:03,155]: (Team #1) DanDLC sent Audio Pack to AndrewDLC (DLC Quest: 340 Coin)
+[2026-04-20 22:21:19,400]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to AndrewDLC (DLC Quest: 360 Coin)

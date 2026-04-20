@@ -66,6 +66,9 @@ export default function PlayerStats({
   // For each player, find their earliest sphere with unchecked items and
   // count how many of that sphere's missing checks belong to them. Also
   // determine if they're "locked" (no missing checks in qualifying spheres).
+  // `fullyComplete` is tracker-based: true when every one of the player's
+  // locations from the spoiler's Locations: section has been collected,
+  // not just the progression subset that lands in Playthrough spheres.
   const playerInfo = useMemo(() => {
     if (!sphereResults || sphereResults.length === 0) return {}
     const result = {}
@@ -91,15 +94,23 @@ export default function PlayerStats({
           }
         }
 
+        const allLocations = spoilerData.playerLocations?.get(player.name) || []
+        const playerChecks = checkedLocations?.get(player.name)
+        const fullyComplete =
+          allLocations.length > 0 &&
+          !!playerChecks &&
+          allLocations.every((loc) => playerChecks.has(loc.location))
+
         result[player.name] = {
           earliestUnchecked,
           earliestUncheckedCount,
           locked: lastQualifyingIdx >= 0 && !hasCheckInQualifying,
+          fullyComplete,
         }
       }
     }
     return result
-  }, [spoilerData, sphereResults, lastQualifyingIdx])
+  }, [spoilerData, sphereResults, lastQualifyingIdx, checkedLocations])
 
   const visible = stats.filter((s) => !hiddenPlayers || !hiddenPlayers.has(s.name))
 
@@ -116,20 +127,20 @@ export default function PlayerStats({
           <div className="ps-info">
             <span className="ps-dot" style={{ background: playerColors[s.name] }} />
             <span className="ps-name">{s.name}</span>
-            {playerInfo[s.name]?.locked && (() => {
+            {playerInfo[s.name]?.fullyComplete && (() => {
+              const rawTimestamp = playerCompletionTime?.[s.name]
+              const completionDate = parseTrackerTimestamp(rawTimestamp)
+              const completedTooltip = completionDate
+                ? `${s.name} completed ${s.game} on ${completionDate.toLocaleString()}`
+                : `${s.name} completed ${s.game}`
+              return (
+                <span className="ps-lock-circle green" data-tip={completedTooltip}>
+                  {'\u2B50'}
+                </span>
+              )
+            })()}
+            {playerInfo[s.name]?.locked && !playerInfo[s.name]?.fullyComplete && playerInfo[s.name]?.earliestUnchecked != null && (() => {
               const earliest = playerInfo[s.name].earliestUnchecked
-              if (earliest == null) {
-                const rawTimestamp = playerCompletionTime?.[s.name]
-                const completionDate = parseTrackerTimestamp(rawTimestamp)
-                const completedTooltip = completionDate
-                  ? `${s.name} completed ${s.game} on ${completionDate.toLocaleString()}`
-                  : `${s.name} completed ${s.game}`
-                return (
-                  <span className="ps-lock-circle green" data-tip={completedTooltip}>
-                    {'\u2B50'}
-                  </span>
-                )
-              }
               const currentSphereNum = lastQualifyingIdx >= 0 && sphereResults[lastQualifyingIdx]
                 ? sphereResults[lastQualifyingIdx].sphereNumber : 0
               const isNextSphere = earliest === currentSphereNum + 1

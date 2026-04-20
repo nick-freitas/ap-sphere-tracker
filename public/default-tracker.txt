@@ -2876,3 +2876,46 @@
 [2026-04-20 20:45:41,401]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (GC Maze Crate)
 [2026-04-20 20:46:03,896]: (Team #1) Brian sent Live Freemium or Die: Coin Bundle to AndrewDLC (Mettaton Plot)
 [2026-04-20 20:48:13,291]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (GC Rolling Goron as Child)
+[2026-04-20 20:49:56,152]: (Team #1) Nick sent DLC Quest: Coin Bundle to AndrewDLC (GC Pot Freestanding PoH)
+[2026-04-20 20:51:20,102]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (LW Deku Scrub Grotto Front)
+[2026-04-20 20:52:21,194]: (Team #1) Nick sent Stuffed Penguin to Ryot (SFM Wolfos Grotto Chest)
+[2026-04-20 20:53:15,796]: (Team #1) Nick sent Red Rupee to Nick (LW Skull Kid)
+[2026-04-20 20:53:38,180]: Notice (all): AndrewFE (Team #1) playing Fire Emblem Sacred Stones has joined. Client(0.6.6), ['AP'].
+[2026-04-20 20:53:38,181]: Notice (Player AndrewFE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-20 20:54:09,426]: (Team #1) Nick sent Wing Pin to Ryot (ZR Near Domain Freestanding PoH)
+[2026-04-20 20:55:27,836]: (Team #1) Nick sent Red Rupee to Nick (ZD Chest)
+[2026-04-20 20:56:06,491]: (Team #1) Nick sent Volley Ball to Ryot (ZD Shop Item 5)
+[2026-04-20 20:56:08,780]: (Team #1) Nick sent DLC Quest: Coin Bundle to AndrewDLC (ZD Shop Item 3)
+[2026-04-20 20:56:13,903]: (Team #1) Nick sent Dreamshield to TNNPE (ZD Shop Item 4)
+[2026-04-20 20:57:55,516]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (ZD Diving Minigame)
+[2026-04-20 20:57:59,039]: (Team #1) Brian sent Parallax Pack to DanDLC (Present Locket)
+[2026-04-20 20:58:03,103]: (Team #1) Brian sent DLC Quest: Coin Bundle to AndrewDLC (Present Knife)
+[2026-04-20 20:58:25,618]: (Team #1) Brian sent Arrows (5) to Nick (Right New Home Key)
+[2026-04-20 20:59:17,126]: (Team #1) Nick sent Magic Wand to Ryot (LH Underwater Item)
+[2026-04-20 20:59:39,266]: (Team #1) Brian sent DLC Quest: Coin Bundle to AndrewDLC (Left New Home Key)
+[2026-04-20 21:00:30,278]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (ZF Near Jabu Pot 3)
+[2026-04-20 21:00:31,276]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (ZF Near Jabu Pot 4)
+[2026-04-20 21:00:33,312]: Notice (all): Brian: !hint left key
+[2026-04-20 21:00:33,317]: Notice (Player Brian in team 1): Didn't find something that closely matches 'left key', did you mean 'Left Home Key'? (61% sure)
+[2026-04-20 21:00:34,212]: (Team #1) Nick sent DLC Quest: Coin Bundle to AndrewDLC (ZF Near Jabu Pot 2)
+[2026-04-20 21:00:35,359]: (Team #1) Nick sent Arrows (5) to Nick (ZF Near Jabu Pot 1)
+[2026-04-20 21:00:41,998]: Notice (all): Brian: !hint left home key
+[2026-04-20 21:00:41,998]: Notice (Team #1): [Hint]: Brian's Left Home Key is at DMC Volcano Freestanding PoH in Nick's World. (priority)
+[2026-04-20 21:00:54,983]: Notice (all): Brian: !hint right home key
+[2026-04-20 21:00:54,984]: Notice (Team #1): [Hint]: Brian's Right Home Key is at Gift jessie Flippers in Ryot's World. (priority)
+[2026-04-20 21:01:30,437]: (Team #1) Nick sent Huge Rupee to Nick (ZF Great Fairy Reward)
+[2026-04-20 21:03:21,867]: Notice (all): Brian: !hint hotland key
+[2026-04-20 21:03:21,868]: Notice (Team #1): [Hint]: Brian's Hotland Key is at Live Freemium or Die: 320 Coin in DanDLC's World. (priority)
+[2026-04-20 21:05:28,424]: (Team #1) Nick sent DLC Quest: Coin Bundle to AndrewDLC (DMC Great Fairy Reward)
+[2026-04-20 21:08:52,696]: (Team #1) Nick sent Left Home Key to Brian (DMC Volcano Freestanding PoH)
+[2026-04-20 21:10:54,626]: Notice (all): Ryot (Team #1) playing Hunie Pop has joined. Client(0.5.1), ['AP'].
+[2026-04-20 21:10:54,626]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-20 21:10:54,840]: Notice (all): Ryot (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-04-20 21:12:05,213]: Notice (all): Nick: !hint water temple keyring
+[2026-04-20 21:12:05,216]: Notice (Team #1): [Hint]: Nick's Water Temple Key Ring is at Live Freemium or Die: 809 Coin in AndrewDLC's World. (priority)
+[2026-04-20 21:12:42,547]: (Team #1) Ryot sent DLC Quest: Coin Bundle to AndrewDLC (Gift jessie Yoga Bag)
+[2026-04-20 21:13:20,184]: Notice (all): Ryot: !hint flippers
+[2026-04-20 21:13:20,186]: Notice (Team #1): [Hint]: Ryot's Flippers is at Ganon's Castle Water Trial Left Chest in Nick's World. (priority)
+[2026-04-20 21:13:20,186]: Notice (Team #1): [Hint]: Ryot's Flippers is at Water Temple Longshot Chest in Nick's World. (priority)
+[2026-04-20 21:13:20,186]: Notice (Team #1): [Hint]: Ryot's Flippers is at Shadow Temple Whispering Walls Pot 3 in Nick's World. (priority)
+[2026-04-20 21:21:59,732]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (Gift momo Punching Bag)

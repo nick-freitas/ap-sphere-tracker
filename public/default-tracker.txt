@@ -2540,3 +2540,26 @@
 [2026-04-20 13:43:26,988]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) tracking DLCQuest has joined. Client(0.6.6), ['Tracker', 'AP'].
 [2026-04-20 13:43:26,989]: Notice (Player AndrewDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
 [2026-04-20 14:26:26,686]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 14:42:04,599]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 14:43:19,940]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 14:48:11,880]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 14:51:16,337]: Notice (all): Nick (Team #1) viewing Ship of Harkinian has joined. Client(0.6.7), ['AP', 'TextOnly'].
+[2026-04-20 14:51:16,337]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-20 14:51:22,076]: Notice (all): Nick: !hint Light Arrows
+[2026-04-20 14:51:22,079]: Notice (Team #1): [Hint]: Nick's Light Arrow is at Live Freemium or Die: 629 Coin in AndrewDLC's World. (priority)
+[2026-04-20 14:56:47,410]: Notice (all): Nick (Team #1) has stopped viewing the game. Client(0.6.7), ['AP', 'TextOnly'].
+[2026-04-20 14:56:52,135]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 15:13:39,604]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 15:14:29,479]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 15:18:29,387]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 15:19:39,391]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 15:19:45,587]: Notice (all): TNNPE (Team #1) playing Hollow Knight has joined. Client(0.5.0), [].
+[2026-04-20 15:19:45,588]: Notice (Player TNNPE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-20 15:19:45,588]: Notice (Player TNNPE in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-20 15:19:46,238]: Notice (all): TNNPE (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-04-20 15:28:54,563]: (Team #1) TNNPE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Rancid_Egg-City_of_Tears_Pleasure_House)
+[2026-04-20 15:29:30,572]: Notice (all): Nick (Team #1) viewing Ship of Harkinian has joined. Client(0.6.7), ['AP', 'TextOnly'].
+[2026-04-20 15:29:30,572]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-20 15:29:31,032]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 15:29:41,941]: (Team #1) TNNPE sent DLC Quest: Coin Bundle to AndrewDLC (Wanderer's_Journal-Pleasure_House)
+[2026-04-20 15:33:17,500]: (Team #1) TNNPE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Wanderer's_Journal-Kingdom's_Edge_Entrance)

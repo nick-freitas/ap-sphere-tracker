@@ -2989,3 +2989,11 @@
 [2026-04-20 22:32:54,804]: (Team #1) DanDLC sent Vessel_Fragment to TNNPE (Death of Comedy Pack)
 [2026-04-20 22:34:34,070]: (Team #1) DanDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (Harmless Plants Pack)
 [2026-04-20 22:47:05,554]: Notice (all): DanDLC (Team #1) has left the game. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-20 23:36:18,456]: Notice (all): Ryot (Team #1) playing Hunie Pop has joined. Client(0.5.1), ['AP'].
+[2026-04-20 23:36:18,456]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-20 23:36:18,672]: Notice (all): Ryot (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-04-20 23:38:22,419]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to DanDLC (Gift celeste Wing Pin)
+[2026-04-20 23:38:48,119]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (celeste's Favourite Hangout)
+[2026-04-20 23:40:50,902]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (Gift celeste Bag of Goldfish)
+[2026-04-20 23:46:24,814]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (momo date 2)
+[2026-04-20 23:48:00,176]: (Team #1) Ryot sent DLC Quest: Coin Bundle to AndrewDLC (Gift aiko Boxing Gloves)

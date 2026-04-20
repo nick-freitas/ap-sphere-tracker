@@ -2919,3 +2919,27 @@
 [2026-04-20 21:13:20,186]: Notice (Team #1): [Hint]: Ryot's Flippers is at Water Temple Longshot Chest in Nick's World. (priority)
 [2026-04-20 21:13:20,186]: Notice (Team #1): [Hint]: Ryot's Flippers is at Shadow Temple Whispering Walls Pot 3 in Nick's World. (priority)
 [2026-04-20 21:21:59,732]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (Gift momo Punching Bag)
+[2026-04-20 21:25:14,450]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (momo date 1)
+[2026-04-20 21:26:22,984]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to AndrewDLC (Gift momo Sapphire)
+[2026-04-20 21:27:59,762]: (Team #1) Ryot sent Handheld Game to Ryot (Gift aiko Tank Gravel)
+[2026-04-20 21:29:03,027]: Notice (all): Ryot (Team #1) has left the game. Client(0.5.1), ['AP', 'DeathLink'].
+[2026-04-20 21:34:18,513]: (Team #1) Nick sent Flippers to Ryot (Ganon's Castle Water Trial Left Chest)
+[2026-04-20 21:34:25,643]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (Ganon's Castle Water Trial Right Chest)
+[2026-04-20 21:34:58,582]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (Ganon's Castle Water Trial Pot 3)
+[2026-04-20 21:35:28,388]: (Team #1) AndrewFE sent Huge Rupee to Nick (Complete Chapter 14)
+[2026-04-20 21:35:35,210]: (Team #1) AndrewFE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Audhulma Received)
+[2026-04-20 21:35:36,837]: (Team #1) AndrewFE sent DLC Quest: Coin Bundle to DanDLC (Excalibur Received)
+[2026-04-20 21:37:45,107]: Notice (all): DanVVVV (Team #1) playing VVVVVV has joined. Client(0.5.1), [].
+[2026-04-20 21:37:45,108]: Notice (Player DanVVVV in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-20 21:37:45,245]: Notice (all): DanVVVV (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-04-20 21:38:39,248]: (Team #1) Nick sent Blue Rupee to Nick (Ganon's Castle Water Trial Pot 2)
+[2026-04-20 21:38:45,335]: (Team #1) Nick sent Arrows (5) to Nick (Ganon's Castle Water Trial Pot 1)
+[2026-04-20 21:39:12,565]: (Team #1) DanVVVV sent Live Freemium or Die: Coin Bundle to AndrewDLC (Young Man, It's Worth the Challenge)
+[2026-04-20 21:40:04,597]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to DanDLC (Ganon's Castle Shadow Trial Front Chest)
+[2026-04-20 21:40:27,042]: (Team #1) Nick sent DLC Quest: Coin Bundle to AndrewDLC (Ganon's Castle Shadow Trial Pot 2)
+[2026-04-20 21:40:36,693]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (Ganon's Castle Shadow Trial Pot 1)
+[2026-04-20 21:41:40,664]: (Team #1) DanVVVV sent DLC Quest: Coin Bundle to AndrewDLC (Overworld (Outside Entanglement Generator))
+[2026-04-20 21:41:46,257]: (Team #1) Nick sent DLC Quest: Coin Bundle to DanDLC (Ganon's Castle Forest Trial Chest)
+[2026-04-20 21:42:15,039]: (Team #1) DanVVVV sent Deku Nuts (5) to Nick (The Tantalizing Trinket)
+[2026-04-20 21:45:42,584]: (Team #1) Nick sent Purple Rupee to Nick (Ganon's Castle Spirit Trial Crystal Switch Chest)
+[2026-04-20 21:48:13,810]: (Team #1) DanVVVV sent Feather Pole to Ryot (One Way Room)

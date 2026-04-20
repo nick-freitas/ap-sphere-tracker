@@ -2448,3 +2448,6 @@
 [2026-04-20 05:35:43,580]: (Team #1) AndrewDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (I Get That Reference!)
 [2026-04-20 05:36:11,517]: (Team #1) AndrewDLC sent DLC Quest: Coin Bundle to AndrewDLC (Season Pass)
 [2026-04-20 05:43:24,438]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) has left the game. Client(0.6.1), ['AP'].
+[2026-04-20 06:05:25,740]: (Team #1) AndrewFE sent DLC Quest: Coin Bundle to AndrewDLC (Complete Chapter 12)
+[2026-04-20 06:22:23,177]: (Team #1) AndrewFE sent Mask_Shard to TNNPE (Complete Chapter 13)
+[2026-04-20 06:43:34,476]: (Team #1) AndrewFE sent Deku Nuts (10) to Nick (Complete Tower of Valni 2)

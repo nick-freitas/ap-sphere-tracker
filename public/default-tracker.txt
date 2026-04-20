@@ -2563,3 +2563,29 @@
 [2026-04-20 15:29:31,032]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-20 15:29:41,941]: (Team #1) TNNPE sent DLC Quest: Coin Bundle to AndrewDLC (Wanderer's_Journal-Pleasure_House)
 [2026-04-20 15:33:17,500]: (Team #1) TNNPE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Wanderer's_Journal-Kingdom's_Edge_Entrance)
+[2026-04-20 15:39:48,802]: (Team #1) TNNPE sent DLC Quest: Coin Bundle to AndrewDLC (Collector's_Map)
+[2026-04-20 15:44:34,932]: (Team #1) TNNPE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Wanderer's_Journal-Above_Mantis_Village)
+[2026-04-20 15:45:46,212]: (Team #1) TNNPE sent progressive charisma lv-up to Ryot (Mantis_Claw)
+[2026-04-20 15:47:11,124]: (Team #1) TNNPE sent Progressive Weapon Level (Staff) to AndrewFE (Dashmaster)
+[2026-04-20 15:54:34,884]: (Team #1) TNNPE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Hallownest_Seal-Mantis_Lords)
+[2026-04-20 15:54:46,035]: (Team #1) TNNPE sent Mask_Shard to TNNPE (Mark_of_Pride)
+[2026-04-20 15:58:01,895]: (Team #1) TNNPE sent DLC Quest: Coin Bundle to AndrewDLC (Lifeblood_Cocoon-Mantis_Village)
+[2026-04-20 15:59:48,867]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 15:59:48,868]: Notice (all): Nick (Team #1) has stopped viewing the game. Client(0.6.7), ['AP', 'TextOnly'].
+[2026-04-20 16:02:50,554]: Notice (Team #1): [Hint]: AndrewDLC's Live Freemium or Die: Coin Bundle is at Vessel_Fragment-Basin in TNNPE's World. (unspecified)
+[2026-04-20 16:03:27,295]: (Team #1) TNNPE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Hidden_Station_Stag)
+[2026-04-20 16:07:10,922]: (Team #1) TNNPE sent Progressive Nut Capacity to Nick (Hallownest_Seal-Beast's_Den)
+[2026-04-20 16:08:12,985]: (Team #1) TNNPE sent Deku Nuts (10) to Nick (Rancid_Egg-Beast's_Den)
+[2026-04-20 16:09:28,127]: Notice (Team #1): [Hint]: AndrewDLC's DLC Quest: Coin Bundle is at Herrah in TNNPE's World. (unspecified)
+[2026-04-20 16:09:37,189]: (Team #1) TNNPE sent DLC Quest: Coin Bundle to AndrewDLC (Herrah)
+[2026-04-20 16:14:52,714]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 16:15:42,584]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 16:24:44,581]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 16:24:44,787]: (Team #1) TNNPE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Rancid_Egg-Waterways_West_Bluggsac)
+[2026-04-20 16:25:20,327]: Notice (all): Nick (Team #1) viewing Ship of Harkinian has joined. Client(0.6.7), ['AP', 'TextOnly'].
+[2026-04-20 16:25:20,331]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-20 16:25:49,926]: (Team #1) TNNPE sent audrey's panties to Ryot (Rancid_Egg-Waterways_West_Pickup)
+[2026-04-20 16:29:51,968]: (Team #1) TNNPE sent Sapphire to Ryot (Mask_Shard-Waterways)
+[2026-04-20 16:30:18,495]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink'].
+[2026-04-20 16:30:18,496]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-20 16:32:29,678]: (Team #1) TNNPE sent DLC Quest: Coin Bundle to AndrewDLC (Flukenest)

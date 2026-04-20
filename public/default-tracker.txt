@@ -2526,3 +2526,17 @@
 [2026-04-20 11:41:59,564]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-20 11:42:03,671]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) tracking DLCQuest has joined. Client(0.6.6), ['Tracker', 'AP'].
 [2026-04-20 11:42:03,672]: Notice (Player AndrewDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-20 13:41:56,022]: Shutting down due to inactivity.
+[2026-04-20 13:41:56,476]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) has stopped tracking the game. Client(0.6.6), ['Tracker', 'AP'].
+[2026-04-20 13:41:56,485]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 13:41:56,535]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 13:42:53,982]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-20 13:42:53,982]: Loading embedded data package for game Ship of Harkinian
+[2026-04-20 13:42:53,982]: Loading embedded data package for game Hunie Pop
+[2026-04-20 13:42:53,999]: Loaded save file with 2219 received items for 8 players
+[2026-04-20 13:42:54,022]: Hosting game at archipelago.gg:55328
+[2026-04-20 13:43:01,203]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 13:43:06,439]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) tracking DLCQuest has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-20 13:43:26,988]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) tracking DLCQuest has joined. Client(0.6.6), ['Tracker', 'AP'].
+[2026-04-20 13:43:26,989]: Notice (Player AndrewDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-20 14:26:26,686]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

@@ -2851,3 +2851,28 @@
 [2026-04-20 20:32:01,748]: (Team #1) AndrewDLC sent Live Freemium or Die: Coin Bundle to AndrewDLC (DLC Quest: 823 Coin)
 [2026-04-20 20:32:01,749]: (Team #1) AndrewDLC sent Piece of Heart to Nick (DLC Quest: 824 Coin)
 [2026-04-20 20:32:02,014]: (Team #1) AndrewDLC sent Progressive Weapon Level (Staff) to AndrewFE (DLC Quest: 825 Coin)
+[2026-04-20 20:35:01,205]: Notice (all): X4NDR3WD7CX (AndrewDLC): !hint Humble Indie Bindle
+[2026-04-20 20:35:01,207]: Notice (Team #1): [Hint]: AndrewDLC's Humble Indie Bindle is at Water Temple Like Like Pot 1 in Nick's World. (priority)
+[2026-04-20 20:35:21,024]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink'].
+[2026-04-20 20:35:21,025]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-20 20:35:25,718]: Notice (all): X4NDR3WD7CX (AndrewDLC): !hint Box of Various Supplies
+[2026-04-20 20:35:25,719]: Notice (Team #1): [Hint]: AndrewDLC's Box of Various Supplies is at DLC Quest: 690 Coin in AndrewDLC's World. (found)
+[2026-04-20 20:36:35,122]: Notice (all): X4NDR3WD7CX (AndrewDLC): !hint Pickaxe
+[2026-04-20 20:36:35,123]: Notice (Player AndrewDLC in team 1): Nothing found for recognized item name "Pickaxe". Item appears to not exist in this multiworld.
+[2026-04-20 20:36:51,393]: Notice (all): X4NDR3WD7CX (AndrewDLC): !hint Seasonpass
+[2026-04-20 20:36:51,394]: Notice (Team #1): [Hint]: AndrewDLC's Season Pass is at Gift beli Flippers in Ryot's World. (priority)
+[2026-04-20 20:37:07,118]: Notice (all): X4NDR3WD7CX (AndrewDLC): !Hint Remove Ads Pack
+[2026-04-20 20:37:07,119]: Notice (Team #1): [Hint]: AndrewDLC's Removed Ads Pack is at Live Freemium or Die: 335 Coin in AndrewDLC's World. (found)
+[2026-04-20 20:38:58,291]: (Team #1) Nick sent Huge Rupee to Nick (LW Ocarina Memory Game)
+[2026-04-20 20:39:46,564]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (GC Shop Item 2)
+[2026-04-20 20:39:46,566]: (Team #1) Nick sent Purple Rupee to Nick (GC Shop Item 7)
+[2026-04-20 20:40:39,192]: Notice (all): X4NDR3WD7CX (AndrewDLC): !hint Cut Content Pack
+[2026-04-20 20:40:39,193]: Notice (Team #1): [Hint]: AndrewDLC's Cut Content Pack is at HC Great Fairy Reward in Nick's World. (priority)
+[2026-04-20 20:42:39,876]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (GC Darunias Joy)
+[2026-04-20 20:45:21,408]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (GC Maze Center Chest)
+[2026-04-20 20:45:28,329]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (GC Maze Right Chest)
+[2026-04-20 20:45:29,889]: (Team #1) Brian sent Arrows (10) to Nick (Undyne Plot)
+[2026-04-20 20:45:40,725]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) has left the game. Client(0.6.1), ['AP'].
+[2026-04-20 20:45:41,401]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (GC Maze Crate)
+[2026-04-20 20:46:03,896]: (Team #1) Brian sent Live Freemium or Die: Coin Bundle to AndrewDLC (Mettaton Plot)
+[2026-04-20 20:48:13,291]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (GC Rolling Goron as Child)

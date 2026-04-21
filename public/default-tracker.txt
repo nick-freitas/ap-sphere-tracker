@@ -3231,3 +3231,13 @@
 [2026-04-21 02:56:46,354]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (Forest Temple Floormaster Chest)
 [2026-04-21 02:58:01,559]: (Team #1) Nick sent progressive charisma lv-up to Ryot (Forest Temple Map Chest)
 [2026-04-21 02:58:17,309]: (Team #1) Ryot sent Piece of Heart to Nick (Gift nikki Basket Ball)
+[2026-04-21 03:03:27,432]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['Online', 'AP', 'DeathLink'].
+[2026-04-21 03:03:34,146]: (Team #1) Nick sent Deku Seeds (30) to Nick (Forest Temple Basement Chest)
+[2026-04-21 03:05:38,072]: (Team #1) Ryot sent DLC Quest: Coin Bundle to AndrewDLC (Gift jessie Glow Sticks)
+[2026-04-21 03:06:30,838]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (Forest Temple Phantom Ganon Heart Container)
+[2026-04-21 03:06:47,461]: (Team #1) Nick sent Riceballs to Ryot (Phantom Ganon)
+[2026-04-21 03:07:32,439]: (Team #1) Ryot sent Pink Tutu to Ryot (Gift nikki Riceballs)
+[2026-04-21 03:08:39,747]: Notice (all): Ryot (Team #1) has left the game. Client(0.5.1), ['AP', 'DeathLink'].
+[2026-04-21 03:09:00,586]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink'].
+[2026-04-21 03:09:03,060]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-21 03:14:08,805]: Notice (all): Ryot (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

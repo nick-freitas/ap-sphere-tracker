@@ -4359,3 +4359,18 @@
 [2026-04-21 22:15:23,653]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-21 22:40:18,914]: Notice (all): X4NDR3WD7CX (4ND (AndrewDLC) (Team #1) has stopped tracking the game. Client(0.6.6), ['Tracker', 'AP'].
 [2026-04-21 22:40:21,232]: Notice (all): X4NDR3WD7CX (4ND (AndrewDLC) (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-21 23:18:03,311]: Notice (all): DanDLC (Team #1) playing DLCQuest has joined. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-21 23:18:03,311]: Notice (Player DanDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-21 23:18:03,311]: Notice (Player DanDLC in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-21 23:21:36,731]: Notice (all): DanDLC (Team #1) has left the game. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-21 23:22:20,022]: Notice (all): DanDLC (Team #1) playing DLCQuest has joined. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-21 23:22:20,023]: Notice (Player DanDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-21 23:22:20,023]: Notice (Player DanDLC in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-21 23:23:55,164]: Shutting down due to inactivity.
+[2026-04-21 23:23:55,406]: Notice (all): DanDLC (Team #1) has left the game. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-21 23:23:55,422]: Notice (all): AndrewFE (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-04-21 23:24:52,659]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-21 23:24:52,660]: Loading embedded data package for game Ship of Harkinian
+[2026-04-21 23:24:52,660]: Loading embedded data package for game Hunie Pop
+[2026-04-21 23:24:52,687]: Loaded save file with 3739 received items for 8 players
+[2026-04-21 23:24:52,741]: Hosting game at archipelago.gg:55328

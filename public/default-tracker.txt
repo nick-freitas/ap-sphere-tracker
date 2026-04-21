@@ -3370,3 +3370,6 @@
 [2026-04-21 16:30:40,835]: (Team #1) TNNPE sent Live Freemium or Die: Coin Bundle to DanDLC (Vessel_Fragment-Greenpath)
 [2026-04-21 16:35:12,029]: Notice (all): TNNPE (Team #1) has left the game. Client(0.5.0), ['DeathLink'].
 [2026-04-21 17:04:35,549]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-21 17:20:31,715]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-21 17:21:21,584]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-21 17:36:02,449]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

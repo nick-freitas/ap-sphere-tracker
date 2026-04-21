@@ -4353,3 +4353,6 @@
 [2026-04-21 20:51:33,611]: Notice (Team #1): [Hint]: Ryot's Unlock Girl(venus) is at Live Freemium or Die: 580 Coin in DanDLC's World. (priority)
 [2026-04-21 20:52:15,380]: Notice (all): Ryot (Team #1) has stopped viewing the game. Client(0.6.6), ['TextOnly', 'AP'].
 [2026-04-21 20:54:53,064]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink'].
+[2026-04-21 21:23:55,164]: (Team #1) Ryot sent Pinata to Ryot (audrey's Birthday)
+[2026-04-21 21:24:12,474]: Notice (all): Ryot (Team #1) has left the game. Client(0.5.1), ['AP', 'DeathLink'].
+[2026-04-21 21:25:23,073]: Notice (all): Ryot (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

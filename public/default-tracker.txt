@@ -4374,3 +4374,16 @@
 [2026-04-21 23:24:52,660]: Loading embedded data package for game Hunie Pop
 [2026-04-21 23:24:52,687]: Loaded save file with 3739 received items for 8 players
 [2026-04-21 23:24:52,741]: Hosting game at archipelago.gg:55328
+[2026-04-21 23:25:37,890]: Notice (all): DanDLC (Team #1) playing DLCQuest has joined. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-21 23:25:37,890]: Notice (Player DanDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-21 23:25:37,890]: Notice (Player DanDLC in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-21 23:29:49,632]: (Team #1) DanDLC sent progressive sensitivity lv-up to Ryot (Live Freemium or Die: 520 Coin)
+[2026-04-21 23:30:17,151]: (Team #1) DanDLC sent Glow Sticks to Ryot (Live Freemium or Die: 540 Coin)
+[2026-04-21 23:30:37,383]: (Team #1) DanDLC sent Unlock Girl(venus) to Ryot (Live Freemium or Die: 580 Coin)
+[2026-04-21 23:34:08,247]: (Team #1) DanDLC sent Canvas & Easel to Ryot (Live Freemium or Die: 620 Coin)
+[2026-04-21 23:36:12,508]: (Team #1) DanDLC sent Ribbon Wreath to Ryot (Live Freemium or Die: 760 Coin)
+[2026-04-21 23:42:41,680]: (Team #1) DanDLC sent Soccer Ball to Ryot (DLC Quest: 500 Coin)
+[2026-04-21 23:42:51,009]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to DanDLC (Forest High Sheep)
+[2026-04-21 23:42:54,183]: (Team #1) DanDLC sent Glass Pipe to Ryot (DLC Quest: 540 Coin)
+[2026-04-21 23:43:26,836]: (Team #1) DanDLC sent Blotter Tabs to Ryot (DLC Quest: 600 Coin)
+[2026-04-21 23:43:38,648]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to DanDLC (DLC Quest: 620 Coin)

@@ -3242,3 +3242,15 @@
 [2026-04-21 03:09:03,060]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-21 03:14:08,805]: Notice (all): Ryot (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-21 03:52:38,342]: Notice (all): Nick (Team #1) has stopped viewing the game. Client(0.6.7), ['AP', 'TextOnly'].
+[2026-04-21 05:07:33,364]: Shutting down due to inactivity.
+[2026-04-21 05:07:33,693]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) has stopped tracking the game. Client(0.6.6), ['Tracker', 'AP'].
+[2026-04-21 05:07:33,695]: Notice (all): AndrewFE (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-04-21 05:07:33,729]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-21 05:07:52,520]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-21 05:07:52,520]: Loading embedded data package for game Ship of Harkinian
+[2026-04-21 05:07:52,520]: Loading embedded data package for game Hunie Pop
+[2026-04-21 05:07:52,539]: Loaded save file with 2762 received items for 8 players
+[2026-04-21 05:07:52,546]: Hosting game at archipelago.gg:55328
+[2026-04-21 05:07:54,185]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) tracking DLCQuest has joined. Client(0.6.6), ['Tracker', 'AP'].
+[2026-04-21 05:07:54,186]: Notice (Player AndrewDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-21 05:08:03,572]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) tracking DLCQuest has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

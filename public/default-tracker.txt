@@ -3294,3 +3294,16 @@
 [2026-04-21 11:37:53,655]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) tracking DLCQuest has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-21 11:38:26,411]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) tracking DLCQuest has joined. Client(0.6.6), ['Tracker', 'AP'].
 [2026-04-21 11:38:26,411]: Notice (Player AndrewDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-21 13:16:56,584]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink'].
+[2026-04-21 13:16:56,585]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-21 13:19:35,749]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (Gerudo Training Ground Lobby Right Chest)
+[2026-04-21 13:19:39,852]: (Team #1) Nick sent DLC Quest: Coin Bundle to AndrewDLC (Gerudo Training Ground Lobby Left Chest)
+[2026-04-21 13:20:18,753]: (Team #1) Nick sent Red Rupee to Nick (Gerudo Training Ground Stalfos Chest)
+[2026-04-21 13:21:59,679]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (Gerudo Training Ground Beamos Chest)
+[2026-04-21 13:24:59,595]: (Team #1) Nick sent progressive sensitivity lv-up to Ryot (Gerudo Training Ground Hammer Room Clear Chest)
+[2026-04-21 13:25:40,540]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (Gerudo Training Ground Hammer Room Switch Chest)
+[2026-04-21 13:27:18,377]: (Team #1) Nick sent Deku Stick (1) to Nick (Gerudo Training Ground Freestanding Key)
+[2026-04-21 13:31:21,856]: (Team #1) Nick sent Deku Nuts (10) to Nick (Gerudo Training Ground Underwater Silver Rupee Chest)
+[2026-04-21 13:32:02,370]: (Team #1) Nick sent Live Freemium or Die: Coin Bundle to AndrewDLC (Gerudo Training Ground Maze Right Central Chest)
+[2026-04-21 13:32:12,337]: (Team #1) Nick sent Particles Pack to DanDLC (Gerudo Training Ground Maze Right Side Chest)
+[2026-04-21 13:32:29,545]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

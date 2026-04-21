@@ -4357,3 +4357,5 @@
 [2026-04-21 21:24:12,474]: Notice (all): Ryot (Team #1) has left the game. Client(0.5.1), ['AP', 'DeathLink'].
 [2026-04-21 21:25:23,073]: Notice (all): Ryot (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-21 22:15:23,653]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-21 22:40:18,914]: Notice (all): X4NDR3WD7CX (4ND (AndrewDLC) (Team #1) has stopped tracking the game. Client(0.6.6), ['Tracker', 'AP'].
+[2026-04-21 22:40:21,232]: Notice (all): X4NDR3WD7CX (4ND (AndrewDLC) (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

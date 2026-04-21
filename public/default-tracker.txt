@@ -3373,3 +3373,17 @@
 [2026-04-21 17:20:31,715]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-21 17:21:21,584]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-21 17:36:02,449]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-21 17:36:52,327]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-21 17:44:38,286]: Notice (all): TNNPE (Team #1) playing Hollow Knight has joined. Client(0.5.0), [].
+[2026-04-21 17:44:38,286]: Notice (Player TNNPE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-21 17:44:38,286]: Notice (Player TNNPE in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-21 17:44:38,780]: Notice (all): TNNPE (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-04-21 17:47:33,910]: (Team #1) TNNPE sent Farore's Wind to Nick (Charm_Notch-Fog_Canyon)
+[2026-04-21 17:48:09,358]: (Team #1) TNNPE sent Hidden_Station_Stag to TNNPE (Hallownest_Seal-Fog_Canyon_East)
+[2026-04-21 17:49:35,941]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-21 17:52:09,922]: Notice (Team #1): [Hint]: AndrewDLC's Live Freemium or Die: Coin Bundle is at Monomon in TNNPE's World. (unspecified)
+[2026-04-21 17:52:18,016]: (Team #1) TNNPE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Monomon)
+[2026-04-21 17:57:12,527]: (Team #1) TNNPE sent DLC Quest: Coin Bundle to AndrewDLC (Howling_Wraiths)
+[2026-04-21 17:58:08,415]: (Team #1) TNNPE sent Sake to Ryot (Lifeblood_Cocoon-Fog_Canyon_West)
+[2026-04-21 17:58:12,070]: (Team #1) TNNPE sent Recovery Heart to Nick (Hallownest_Seal-Fog_Canyon_West)
+[2026-04-21 17:58:45,912]: (Team #1) TNNPE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Rancid_Egg-Queen's_Gardens)

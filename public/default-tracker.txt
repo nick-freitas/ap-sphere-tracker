@@ -3362,3 +3362,10 @@
 [2026-04-21 16:04:35,477]: Notice (Player TNNPE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
 [2026-04-21 16:04:35,477]: Notice (Player TNNPE in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
 [2026-04-21 16:04:35,995]: Notice (all): TNNPE (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-04-21 16:18:51,912]: (Team #1) TNNPE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Simple_Key-Lurker)
+[2026-04-21 16:19:08,615]: (Team #1) TNNPE sent DLC Quest: Coin Bundle to AndrewDLC (King's_Idol-Pale_Lurker)
+[2026-04-21 16:25:17,830]: (Team #1) TNNPE sent Training Ground Key Ring to Nick (Mask_Shard-Hive)
+[2026-04-21 16:27:21,570]: (Team #1) TNNPE sent Deku Stick (1) to Nick (Hiveblood)
+[2026-04-21 16:29:11,591]: (Team #1) TNNPE sent DLC Quest: Coin Bundle to DanDLC (Wanderer's_Journal-Greenpath_Lower)
+[2026-04-21 16:30:40,835]: (Team #1) TNNPE sent Live Freemium or Die: Coin Bundle to DanDLC (Vessel_Fragment-Greenpath)
+[2026-04-21 16:35:12,029]: Notice (all): TNNPE (Team #1) has left the game. Client(0.5.0), ['DeathLink'].

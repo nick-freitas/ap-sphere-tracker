@@ -3265,3 +3265,10 @@
 [2026-04-21 07:09:02,745]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) tracking DLCQuest has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-04-21 07:09:23,327]: Notice (all): X4NDR3WD7CX (AndrewDLC) (Team #1) tracking DLCQuest has joined. Client(0.6.6), ['Tracker', 'AP'].
 [2026-04-21 07:09:23,328]: Notice (Player AndrewDLC in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-21 07:26:07,708]: Notice (all): TNNPE (Team #1) playing Hollow Knight has joined. Client(0.5.0), [].
+[2026-04-21 07:26:07,708]: Notice (Player TNNPE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-21 07:26:07,708]: Notice (Player TNNPE in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-04-21 07:26:08,210]: Notice (all): TNNPE (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-04-21 07:34:56,935]: (Team #1) TNNPE sent Live Freemium or Die: Coin Bundle to AndrewDLC (Rancid_Egg-Near_Quick_Slash)
+[2026-04-21 07:36:47,946]: (Team #1) TNNPE sent DLC Quest: Coin Bundle to AndrewDLC (Quick_Slash)
+[2026-04-21 07:40:12,294]: Notice (all): TNNPE (Team #1) has left the game. Client(0.5.0), ['DeathLink'].

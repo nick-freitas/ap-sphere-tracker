@@ -4154,3 +4154,10 @@
 [2026-04-21 20:04:37,521]: (Team #1) Ryot sent Deku Stick (1) to Nick (beli's Occupation)
 [2026-04-21 20:05:16,992]: (Team #1) Ryot sent Huge Rupee to Nick (Gift beli Puzzle Cube)
 [2026-04-21 20:05:25,898]: (Team #1) Ryot sent Suede Ankle Booties to Ryot (beli's Favourite Season)
+[2026-04-21 20:15:20,243]: (Team #1) Ryot sent Deku Nuts (10) to Nick (Gift audrey Board Game)
+[2026-04-21 20:15:22,495]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-21 20:16:09,947]: (Team #1) Ryot sent Piece of Heart to Nick (Gift audrey Pinata)
+[2026-04-21 20:16:12,364]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-21 20:25:20,272]: (Team #1) Ryot sent DLC Quest: Coin Bundle to DanDLC (audrey's Last Name)
+[2026-04-21 20:25:37,917]: (Team #1) Ryot sent Arrows (10) to Nick (audrey's Favourite Color)
+[2026-04-21 20:29:07,937]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

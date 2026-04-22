@@ -4387,3 +4387,22 @@
 [2026-04-21 23:42:54,183]: (Team #1) DanDLC sent Glass Pipe to Ryot (DLC Quest: 540 Coin)
 [2026-04-21 23:43:26,836]: (Team #1) DanDLC sent Blotter Tabs to Ryot (DLC Quest: 600 Coin)
 [2026-04-21 23:43:38,648]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to DanDLC (DLC Quest: 620 Coin)
+[2026-04-21 23:44:20,080]: (Team #1) DanDLC sent Endurance Ring to Ryot (DLC Quest: 760 Coin)
+[2026-04-21 23:44:26,906]: (Team #1) DanDLC sent Vinuela to Ryot (DLC Quest: 800 Coin)
+[2026-04-21 23:44:31,156]: (Team #1) DanDLC sent Seashell to Ryot (DLC Quest: 820 Coin)
+[2026-04-21 23:46:03,134]: Notice (all): DanDLC (Team #1) has completed their goal.
+[2026-04-21 23:46:03,134]: Notice (all): DanDLC (Team #1) has collected their items from other worlds.
+[2026-04-21 23:46:03,135]: (Team #1) AndrewFE sent DLC Quest: Coin Bundle to DanDLC (Ivaldi Received)
+[2026-04-21 23:46:03,135]: (Team #1) DanDLC sent DLC Quest: Coin Bundle to DanDLC (Live Freemium or Die: 800 Coin)
+[2026-04-21 23:46:03,136]: (Team #1) Ryot sent Live Freemium or Die: Coin Bundle to DanDLC (venus's Cup Size)
+[2026-04-21 23:46:03,136]: Notice (all): DanDLC (Team #1) has released all remaining items from their world.
+[2026-04-21 23:46:03,137]: (Team #1) DanDLC sent Kettle Bell to Ryot (Live Freemium or Die: 780 Coin)
+[2026-04-21 23:46:03,137]: (Team #1) DanDLC sent Laser Pointer to Ryot (Live Freemium or Die: 889 Coin)
+[2026-04-21 23:46:03,137]: (Team #1) DanDLC sent Pink Mary Janes to Ryot (Gun Pack)
+[2026-04-21 23:46:10,974]: Notice (all): DanDLC (Team #1) has left the game. Client(0.6.1), ['AP', 'DeathLink'].
+[2026-04-21 23:46:55,348]: Notice (all): DanVVVV (Team #1) viewing VVVVVV has joined. Client(0.6.7), ['TextOnly', 'AP'].
+[2026-04-21 23:46:55,349]: Notice (Player DanVVVV in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-21 23:49:14,365]: Notice (all): DanVVVV (Team #1) has stopped viewing the game. Client(0.6.7), ['TextOnly', 'AP'].
+[2026-04-21 23:51:39,504]: Notice (all): DanVVVV (Team #1) playing VVVVVV has joined. Client(0.5.1), [].
+[2026-04-21 23:51:39,504]: Notice (Player DanVVVV in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-21 23:51:39,640]: Notice (all): DanVVVV (Team #1) has changed tags from [] to ['DeathLink'].

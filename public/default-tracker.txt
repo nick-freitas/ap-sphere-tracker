@@ -4406,3 +4406,7 @@
 [2026-04-21 23:51:39,504]: Notice (all): DanVVVV (Team #1) playing VVVVVV has joined. Client(0.5.1), [].
 [2026-04-21 23:51:39,504]: Notice (Player DanVVVV in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
 [2026-04-21 23:51:39,640]: Notice (all): DanVVVV (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-04-22 00:11:53,820]: Notice (all): DanVVVV (Team #1) has completed their goal.
+[2026-04-22 00:11:53,821]: Notice (all): DanVVVV (Team #1) has collected their items from other worlds.
+[2026-04-22 00:11:53,823]: Notice (all): DanVVVV (Team #1) has released all remaining items from their world.
+[2026-04-22 00:13:24,458]: Notice (all): DanVVVV (Team #1) has left the game. Client(0.5.1), ['DeathLink'].

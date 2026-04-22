@@ -4440,3 +4440,4 @@
 [2026-04-22 04:50:59,593]: (Team #1) Ryot sent French Fries to Ryot (venus date 2)
 [2026-04-22 05:07:56,251]: Notice (all): Ryot (Team #1) has left the game. Client(0.5.1), ['AP', 'DeathLink'].
 [2026-04-22 05:09:11,817]: Notice (all): Ryot (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-22 06:50:59,593]: Shutting down due to inactivity.

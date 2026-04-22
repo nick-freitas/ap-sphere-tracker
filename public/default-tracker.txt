@@ -4411,3 +4411,24 @@
 [2026-04-22 00:11:53,823]: Notice (all): DanVVVV (Team #1) has released all remaining items from their world.
 [2026-04-22 00:13:24,458]: Notice (all): DanVVVV (Team #1) has left the game. Client(0.5.1), ['DeathLink'].
 [2026-04-22 01:46:03,137]: Shutting down due to inactivity.
+[2026-04-22 02:42:03,637]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-22 02:42:03,638]: Loading embedded data package for game Ship of Harkinian
+[2026-04-22 02:42:03,638]: Loading embedded data package for game Hunie Pop
+[2026-04-22 02:42:03,658]: Loaded save file with 3758 received items for 8 players
+[2026-04-22 02:42:03,753]: Hosting game at archipelago.gg:55328
+[2026-04-22 02:42:05,569]: Notice (all): Ryot (Team #1) playing Hunie Pop has joined. Client(0.5.1), ['AP'].
+[2026-04-22 02:42:05,569]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-22 02:42:05,794]: Notice (all): Ryot (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-04-22 02:42:07,528]: Notice (all): Ryot (Team #1) tracking Hunie Pop has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-04-22 02:52:28,321]: (Team #1) Ryot sent Sundae to Ryot (Gift tiffany Laptop Pro)
+[2026-04-22 02:53:42,049]: (Team #1) Ryot sent Garden Shovel to Ryot (Gift venus Fairy Wings)
+[2026-04-22 02:53:43,151]: (Team #1) Ryot sent Wine to Ryot (Gift venus Glass Pipe)
+[2026-04-22 03:00:01,682]: Notice (all): Ryot (Team #1) viewing Hunie Pop has joined. Client(0.6.6), ['AP', 'TextOnly'].
+[2026-04-22 03:00:01,683]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-22 03:00:23,860]: Notice (all): Ryot: !hint audrey's panties
+[2026-04-22 03:00:23,866]: Notice (Team #1): [Hint]: Ryot's audrey's panties is at Rancid_Egg-Waterways_West_Pickup in TNNPE's World. (found)
+[2026-04-22 03:00:40,370]: Notice (all): Ryot (Team #1) has stopped viewing the game. Client(0.6.6), ['AP', 'TextOnly'].
+[2026-04-22 03:02:56,097]: (Team #1) Ryot sent Miniature UFO to Ryot (jessie date 2)
+[2026-04-22 03:25:59,132]: (Team #1) Ryot sent Progressive Level Cap to AndrewFE (beli date 2)
+[2026-04-22 03:31:41,968]: (Team #1) Ryot sent Fairy's Tail to Ryot (celeste date 3)
+[2026-04-22 03:40:24,173]: (Team #1) Ryot sent progressive flirtation lv-up to Ryot (aiko date 4)

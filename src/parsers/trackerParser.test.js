@@ -55,6 +55,35 @@ describe('parseTrackerLog', () => {
   })
 })
 
+describe('parseTrackerLog goal events', () => {
+  const SAMPLE_WITH_GOAL = `[2026-04-13 02:42:50,493]: Notice (all): TNNPE (Team #1) has completed their goal.
+[2026-04-13 02:42:50,493]: Notice (all): TNNPE (Team #1) has collected their items from other worlds.
+[2026-04-13 02:42:50,528]: Notice (all): TNNPE (Team #1) has released all remaining items from their world.
+[2026-04-14 00:29:46,713]: Notice (all): Nick (Team #1) has completed their goal.
+`
+
+  it('emits a goal event for each "has completed their goal" line', () => {
+    const { events } = parseTrackerLog(SAMPLE_WITH_GOAL)
+    const goals = events.filter((e) => e.type === 'goal')
+    expect(goals).toHaveLength(2)
+    expect(goals[0]).toMatchObject({
+      type: 'goal',
+      sender: 'TNNPE',
+      timestamp: '2026-04-13 02:42:50,493',
+    })
+    expect(goals[1]).toMatchObject({
+      type: 'goal',
+      sender: 'Nick',
+      timestamp: '2026-04-14 00:29:46,713',
+    })
+  })
+
+  it('does not treat "collected" or "released" notices as goal events', () => {
+    const { events } = parseTrackerLog(SAMPLE_WITH_GOAL)
+    expect(events.filter((e) => e.type === 'goal')).toHaveLength(2)
+  })
+})
+
 describe('parseTrackerTimestamp', () => {
   it('parses a tracker log timestamp as UTC (not local time)', () => {
     // The raw string has no timezone marker. The helper must interpret it

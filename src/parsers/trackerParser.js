@@ -47,6 +47,16 @@ export function parseTrackerLog(text) {
       continue
     }
 
+    const goalParsed = parseGoalLine(line)
+    if (goalParsed) {
+      events.push({
+        type: 'goal',
+        timestamp: goalParsed.timestamp,
+        sender: goalParsed.sender,
+      })
+      continue
+    }
+
     const hintParsed = parseHintLine(line)
     if (hintParsed) {
       const key = `${hintParsed.receiver}\u0000${hintParsed.item}\u0000${hintParsed.location}\u0000${hintParsed.locationOwner}`
@@ -90,6 +100,15 @@ function parseSendLine(line) {
     receiver: match[4],
     location: match[5],
   }
+}
+
+function parseGoalLine(line) {
+  // Match: [timestamp]: Notice (all): <Player> (Team #N) has completed their goal.
+  const match = line.match(
+    /^\[([^\]]+)\]: Notice \(all\): (.+?) \(Team #\d+\) has completed their goal\.\s*$/
+  )
+  if (!match) return null
+  return { timestamp: match[1], sender: match[2] }
 }
 
 function parseHintLine(line) {

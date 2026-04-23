@@ -445,21 +445,24 @@ function App() {
     return result
   }, [spoilerData, checkedLocations])
 
-  // Map each player to the timestamp of their most recent "sent" event. For
-  // a player at 100%, this is their completion moment. Used by PlayerStats to
-  // rank completed players in the order they finished (earliest first).
+  // Map each player to the timestamp of their "has completed their goal."
+  // notice — i.e. the moment they actually beat the game. Used by PlayerStats
+  // to rank completed players in the order they finished (earliest first), and
+  // by the ⭐ tooltip / SphereCard's pure-goal-sphere completion timestamp.
+  // Take the EARLIEST goal event per player; the line should only appear once,
+  // but if a server replays its log we want the original completion moment.
   // Timestamps are strings like "2026-04-10 22:59:01,934" which sort correctly
   // with standard string comparison since the format is fixed-width left-to-right.
   const playerCompletionTime = useMemo(() => {
-    const latest = {}
+    const earliest = {}
     for (const event of logEvents) {
-      if (event.type !== 'sent' || !event.timestamp || !event.sender) continue
-      const current = latest[event.sender]
-      if (!current || event.timestamp > current) {
-        latest[event.sender] = event.timestamp
+      if (event.type !== 'goal' || !event.timestamp || !event.sender) continue
+      const current = earliest[event.sender]
+      if (!current || event.timestamp < current) {
+        earliest[event.sender] = event.timestamp
       }
     }
-    return latest
+    return earliest
   }, [logEvents])
 
   // Map each sphere number to the raw timestamp when its last remaining check

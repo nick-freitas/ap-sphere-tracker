@@ -4,12 +4,10 @@ on:
   schedule:
     # Every 24 hours (daily at 00:00 UTC)
     - cron: '0 0 * * *'
-  workflow_dispatch:       # Manual trigger
+  workflow_dispatch: # Manual trigger
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -18,17 +16,39 @@ concurrency:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    outputs:
-      changed: ${{ steps.diff.outputs.changed }}
+    env:
+      AP_ROOM_PORT: '56640'
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.TRACKER_UPDATE_TOKEN }}
 
       - name: Fetch tracker log
+        env:
+          AP_SESSION_COOKIE: ${{ secrets.AP_SESSION_COOKIE }}
         run: |
-          curl -s -f \
-            -H "Cookie: ${{ secrets.AP_SESSION_COOKIE }}" \
-            "${{ secrets.AP_TRACKER_URL }}" \
+          rooms_json="$(curl -sSf -H "Cookie: ${AP_SESSION_COOKIE}" https://archipelago.gg/api/get_rooms)"
+          room_id="$(
+            jq -r --argjson port "${AP_ROOM_PORT}" \
+              '.[] | select(.last_port == $port) | .room_id' \
+              <<< "${rooms_json}" \
+              | head -n 1
+          )"
+
+          if [ -z "${room_id}" ] || [ "${room_id}" = "null" ]; then
+            echo "No Archipelago room owned by the session cookie is currently on port ${AP_ROOM_PORT}." >&2
+            exit 1
+          fi
+
+          curl -sSf \
+            -H "Cookie: ${AP_SESSION_COOKIE}" \
+            "https://archipelago.gg/log/${room_id}" \
             -o public/default-tracker.txt
+
+          if ! grep -q '^\[[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\} ' public/default-tracker.txt; then
+            echo "Fetched content did not look like an Archipelago server log." >&2
+            exit 1
+          fi
 
       - name: Check for changes
         id: diff
@@ -39,39 +59,16 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
+      - name: Prepare timestamp
+        if: steps.diff.outputs.changed == 'true'
+        id: ts
+        run: echo "timestamp=$(date -u +'%Y-%m-%d %H:%M UTC')" >> "$GITHUB_OUTPUT"
+
       - name: Commit and push
         if: steps.diff.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add public/default-tracker.txt
-          git commit -m "chore: update tracker log $(date -u +'%Y-%m-%d %H:%M UTC')"
-          git push
-
-      - uses: actions/setup-node@v4
-        if: steps.diff.outputs.changed == 'true'
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Build
-        if: steps.diff.outputs.changed == 'true'
-        run: |
-          npm ci
-          npm run build
-
-      - uses: actions/upload-pages-artifact@v3
-        if: steps.diff.outputs.changed == 'true'
-        with:
-          path: dist
-
-  deploy:
-    needs: fetch
-    runs-on: ubuntu-latest
-    if: needs.fetch.outputs.changed == 'true'
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          git commit -m "chore: update tracker log ${{ steps.ts.outputs.timestamp }}"
+          git push origin HEAD:main

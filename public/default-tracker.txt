@@ -4447,3 +4447,108 @@
 [2026-04-22 22:43:18,656]: Loaded save file with 3767 received items for 8 players
 [2026-04-22 22:43:18,678]: Hosting game at archipelago.gg:55328
 [2026-04-23 00:43:18,685]: Shutting down due to inactivity.
+[2026-04-23 05:29:03,657]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-23 05:29:03,657]: Loading embedded data package for game Ship of Harkinian
+[2026-04-23 05:29:03,657]: Loading embedded data package for game Hunie Pop
+[2026-04-23 05:29:03,680]: Loaded save file with 3767 received items for 8 players
+[2026-04-23 05:29:03,691]: Hosting game at archipelago.gg:55328
+[2026-04-23 05:29:05,291]: Notice (all): Ryot (Team #1) playing Hunie Pop has joined. Client(0.5.1), ['AP'].
+[2026-04-23 05:29:05,291]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-23 05:29:05,512]: Notice (all): Ryot (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-04-23 05:38:19,898]: Notice (all): Ryot (Team #1) has left the game. Client(0.5.1), ['AP', 'DeathLink'].
+[2026-04-23 05:39:22,159]: Notice (all): Ryot (Team #1) playing Hunie Pop has joined. Client(0.5.1), ['AP'].
+[2026-04-23 05:39:22,159]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-23 05:39:22,385]: Notice (all): Ryot (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-04-23 05:52:58,379]: Notice (all): Ryot (Team #1) has left the game. Client(0.5.1), ['AP', 'DeathLink'].
+[2026-04-23 07:29:03,699]: Shutting down due to inactivity.
+[2026-04-23 12:17:34,176]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-23 12:17:34,177]: Loading embedded data package for game Ship of Harkinian
+[2026-04-23 12:17:34,177]: Loading embedded data package for game Hunie Pop
+[2026-04-23 12:17:34,195]: Loaded save file with 3767 received items for 8 players
+[2026-04-23 12:17:34,214]: Hosting game at archipelago.gg:55328
+[2026-04-23 12:18:42,522]: Notice (all): AndrewFE (Team #1) playing Fire Emblem Sacred Stones has joined. Client(0.6.6), ['AP'].
+[2026-04-23 12:18:42,522]: Notice (Player AndrewFE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-23 14:17:34,219]: Shutting down due to inactivity.
+[2026-04-23 14:17:34,491]: Notice (all): AndrewFE (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-04-23 14:17:51,891]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-23 14:17:51,892]: Loading embedded data package for game Ship of Harkinian
+[2026-04-23 14:17:51,892]: Loading embedded data package for game Hunie Pop
+[2026-04-23 14:17:51,915]: Loaded save file with 3767 received items for 8 players
+[2026-04-23 14:17:51,923]: Hosting game at archipelago.gg:55328
+[2026-04-23 16:17:51,930]: Shutting down due to inactivity.
+[2026-04-23 18:31:33,014]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-23 18:31:33,014]: Loading embedded data package for game Ship of Harkinian
+[2026-04-23 18:31:33,014]: Loading embedded data package for game Hunie Pop
+[2026-04-23 18:31:33,040]: Loaded save file with 3767 received items for 8 players
+[2026-04-23 18:31:33,054]: Hosting game at archipelago.gg:55328
+[2026-04-23 20:31:33,063]: Shutting down due to inactivity.
+[2026-04-23 21:07:30,761]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-23 21:07:30,777]: Loading embedded data package for game Ship of Harkinian
+[2026-04-23 21:07:30,794]: Loading embedded data package for game Hunie Pop
+[2026-04-23 21:07:30,857]: Loaded save file with 3767 received items for 8 players
+[2026-04-23 21:07:30,959]: Hosting game at archipelago.gg:55328
+[2026-04-23 23:07:30,967]: Shutting down due to inactivity.
+[2026-04-24 13:14:32,453]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-24 13:14:32,454]: Loading embedded data package for game Ship of Harkinian
+[2026-04-24 13:14:32,454]: Loading embedded data package for game Hunie Pop
+[2026-04-24 13:14:32,481]: Loaded save file with 3767 received items for 8 players
+[2026-04-24 13:14:32,491]: Hosting game at archipelago.gg:55328
+[2026-04-24 15:14:32,499]: Shutting down due to inactivity.
+[2026-04-24 21:26:32,094]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-24 21:26:32,095]: Loading embedded data package for game Ship of Harkinian
+[2026-04-24 21:26:32,095]: Loading embedded data package for game Hunie Pop
+[2026-04-24 21:26:32,116]: Loaded save file with 3767 received items for 8 players
+[2026-04-24 21:26:32,142]: Hosting game at archipelago.gg:55328
+[2026-04-24 21:26:36,064]: Notice (all): Ryot (Team #1) playing Hunie Pop has joined. Client(0.5.1), ['AP'].
+[2026-04-24 21:26:36,064]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-24 21:26:36,296]: Notice (all): Ryot (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-04-24 21:53:16,158]: Notice (all): Ryot (Team #1) has left the game. Client(0.5.1), ['AP', 'DeathLink'].
+[2026-04-24 23:26:32,150]: Shutting down due to inactivity.
+[2026-04-25 00:30:20,706]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-25 00:30:20,706]: Loading embedded data package for game Ship of Harkinian
+[2026-04-25 00:30:20,706]: Loading embedded data package for game Hunie Pop
+[2026-04-25 00:30:20,735]: Loaded save file with 3767 received items for 8 players
+[2026-04-25 00:30:20,837]: Hosting game at archipelago.gg:55328
+[2026-04-25 00:30:23,902]: Notice (all): Ryot (Team #1) playing Hunie Pop has joined. Client(0.5.1), ['AP'].
+[2026-04-25 00:30:23,902]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-25 00:30:24,139]: Notice (all): Ryot (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-04-25 00:49:40,783]: Notice (all): Ryot (Team #1) has left the game. Client(0.5.1), ['AP', 'DeathLink'].
+[2026-04-25 02:30:20,843]: Shutting down due to inactivity.
+[2026-04-25 03:41:52,346]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-25 03:41:52,347]: Loading embedded data package for game Ship of Harkinian
+[2026-04-25 03:41:52,347]: Loading embedded data package for game Hunie Pop
+[2026-04-25 03:41:52,372]: Loaded save file with 3767 received items for 8 players
+[2026-04-25 03:41:52,396]: Hosting game at archipelago.gg:55328
+[2026-04-25 03:42:01,059]: Notice (all): Ryot (Team #1) playing Hunie Pop has joined. Client(0.5.1), ['AP'].
+[2026-04-25 03:42:01,061]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-25 03:42:01,289]: Notice (all): Ryot (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-04-25 05:41:52,404]: Shutting down due to inactivity.
+[2026-04-25 05:41:52,579]: Notice (all): Ryot (Team #1) has left the game. Client(0.5.1), ['AP', 'DeathLink'].
+[2026-04-25 05:42:19,974]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-25 05:42:19,975]: Loading embedded data package for game Ship of Harkinian
+[2026-04-25 05:42:19,975]: Loading embedded data package for game Hunie Pop
+[2026-04-25 05:42:19,997]: Loaded save file with 3767 received items for 8 players
+[2026-04-25 05:42:20,024]: Hosting game at archipelago.gg:55328
+[2026-04-25 05:50:52,671]: Notice (all): Ryot (Team #1) playing Hunie Pop has joined. Client(0.5.1), ['AP'].
+[2026-04-25 05:50:52,671]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-25 05:50:52,880]: Notice (all): Ryot (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-04-25 05:51:44,564]: Notice (all): Ryot (Team #1) has completed their goal.
+[2026-04-25 05:51:44,564]: Notice (all): Ryot (Team #1) has collected their items from other worlds.
+[2026-04-25 05:51:44,566]: (Team #1) Ryot sent Goal Achieved to Ryot (Sleep with all girls)
+[2026-04-25 05:51:44,567]: Notice (all): Ryot (Team #1) has released all remaining items from their world.
+[2026-04-25 05:52:23,544]: Notice (all): Ryot (Team #1) has left the game. Client(0.5.1), ['AP', 'DeathLink'].
+[2026-04-25 07:42:20,031]: Shutting down due to inactivity.
+[2026-04-25 18:04:45,365]: Loading embedded data package for game Fire Emblem Sacred Stones
+[2026-04-25 18:04:45,366]: Loading embedded data package for game Ship of Harkinian
+[2026-04-25 18:04:45,366]: Loading embedded data package for game Hunie Pop
+[2026-04-25 18:04:45,389]: Loaded save file with 3768 received items for 8 players
+[2026-04-25 18:04:45,408]: Hosting game at archipelago.gg:55328
+[2026-04-25 18:06:01,949]: Notice (all): AndrewFE (Team #1) playing Fire Emblem Sacred Stones has joined. Client(0.6.6), ['AP'].
+[2026-04-25 18:06:01,949]: Notice (Player AndrewFE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-04-25 18:57:39,809]: (Team #1) AndrewFE sent Talisman to AndrewFE (Defeat Formortiis)
+[2026-04-25 18:57:39,926]: Notice (all): AndrewFE (Team #1) has completed their goal.
+[2026-04-25 18:57:39,927]: Notice (all): AndrewFE (Team #1) has collected their items from other worlds.
+[2026-04-25 18:57:39,929]: Notice (all): AndrewFE (Team #1) has released all remaining items from their world.
+[2026-04-25 18:57:39,930]: Notice (all): Team #1 has completed all of their games! Congratulations!
+[2026-04-25 18:58:58,993]: Notice (all): AndrewFE (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-04-25 20:57:39,810]: Shutting down due to inactivity.

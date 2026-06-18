@@ -25,7 +25,14 @@ jobs:
         env:
           AP_SESSION_COOKIE: ${{ secrets.AP_SESSION_COOKIE }}
         run: |
-          rooms_json="$(curl -sSf -H "Cookie: ${AP_SESSION_COOKIE}" https://archipelago.gg/api/get_rooms)"
+          cookie_jar="$(mktemp)"
+          curl_auth=(-H "Cookie: ${AP_SESSION_COOKIE}")
+          if [[ "${AP_SESSION_COOKIE}" =~ ^[0-9a-fA-F-]{36}$ ]]; then
+            curl -sSf -c "${cookie_jar}" "https://archipelago.gg/session/${AP_SESSION_COOKIE}" > /dev/null
+            curl_auth=(-b "${cookie_jar}")
+          fi
+
+          rooms_json="$(curl -sSf "${curl_auth[@]}" https://archipelago.gg/api/get_rooms)"
           room_id="$(
             jq -r --argjson port "${AP_ROOM_PORT}" \
               '.[] | select(.last_port == $port) | .room_id' \
@@ -39,7 +46,7 @@ jobs:
           fi
 
           curl -sSf \
-            -H "Cookie: ${AP_SESSION_COOKIE}" \
+            "${curl_auth[@]}" \
             "https://archipelago.gg/log/${room_id}" \
             -o public/default-tracker.txt
 

@@ -20,8 +20,6 @@ jobs:
       AP_ROOM_PORT: '56640'
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.TRACKER_UPDATE_TOKEN }}
 
       - name: Fetch tracker log
         env:

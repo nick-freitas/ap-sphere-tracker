@@ -2,8 +2,8 @@ name: Fetch Tracker Log
 
 on:
   schedule:
-    # Every 10 minutes
-    - cron: '*/10 * * * *'
+    # Every 10 minutes, offset away from high-contention round minutes.
+    - cron: '3,13,23,33,43,53 * * * *'
   workflow_dispatch: # Manual trigger
 
 permissions:

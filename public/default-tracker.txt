@@ -654,3 +654,18 @@
 [2026-06-19 05:48:58,519]: (Team #1) Brian sent Heal to TNNPE (Underground Caverns - Alcove Behind Waterfall)
 [2026-06-19 05:54:10,978]: Notice (all): Brian: !hint holy glasses
 [2026-06-19 05:54:10,980]: Notice (Team #1): [Hint]: Brian's Holy glasses is at Hype Cave - Middle Left in Andrew's World at Snitch Lady (East). (priority)
+[2026-06-19 05:59:09,320]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-06-19 06:51:28,992]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 06:51:29,124]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['DeathLink', 'AP'].
+[2026-06-19 07:48:58,520]: Shutting down due to inactivity.
+[2026-06-19 07:48:58,763]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 07:48:58,764]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-06-19 07:49:24,999]: Loading embedded data package for game Symphony of the Night
+[2026-06-19 07:49:24,999]: Loading embedded data package for game Ship of Harkinian
+[2026-06-19 07:49:25,000]: Loading embedded data package for game Final Fantasy 6 Worlds Collide
+[2026-06-19 07:49:25,000]: Loading embedded data package for game Dark Souls II
+[2026-06-19 07:49:25,009]: Loaded save file with 585 received items for 5 players
+[2026-06-19 07:49:25,021]: Hosting game at archipelago.gg:56640
+[2026-06-19 07:49:26,927]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-06-19 07:49:26,928]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 07:49:28,684]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

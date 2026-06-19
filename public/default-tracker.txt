@@ -1361,3 +1361,109 @@
 [2026-06-19 23:27:32,180]: (Team #1) Nick sent Bombs (5) to Nick (Kak Behind GS House Adult Crate)
 [2026-06-19 23:27:32,180]: (Team #1) Nick sent Deku Nuts (5) to Nick (Kak Near Open Grotto Adult Crate 2)
 [2026-06-19 23:27:33,430]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-19 23:31:34,788]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:31:34,808]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:31:34,810]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:31:48,413]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-06-19 23:31:48,425]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-06-19 23:31:48,453]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['DeathLink', 'AP'].
+[2026-06-19 23:31:58,627]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:31:59,206]: Notice (all): Brian (Team #1) playing Symphony of the Night has joined. Client(0.6.5), ['DeathLink', 'AP'].
+[2026-06-19 23:31:59,206]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 23:31:59,224]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-06-19 23:31:59,224]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 23:31:59,262]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:31:59,269]: Notice (all): Ryot (Team #1) playing Final Fantasy 6 Worlds Collide has joined. Client(0.6.6), ['AP'].
+[2026-06-19 23:31:59,269]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 23:31:59,283]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:34:38,499]: Exception during send_encoded_msgs
+Traceback (most recent call last):
+  File "/archipelago/MultiServer.py", line 397, in send_encoded_msgs
+    await endpoint.socket.send(msg)
+  File "/archipelago/venv312/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 640, in send
+    await self.write_frame(True, opcode, data)
+  File "/archipelago/venv312/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1199, in write_frame
+    await self.drain()
+  File "/archipelago/venv312/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 1188, in drain
+    await self.ensure_open()
+  File "/archipelago/venv312/lib/python3.12/site-packages/websockets/legacy/protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+[2026-06-19 23:34:38,500]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:34:40,324]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:34:40,371]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:34:40,585]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:34:41,264]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:34:41,268]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:34:41,294]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:36:45,442]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:36:45,443]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:36:46,090]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:36:46,934]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-06-19 23:36:46,935]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['DeathLink', 'AP'].
+[2026-06-19 23:36:47,184]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-06-19 23:36:53,592]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:36:53,601]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:36:53,605]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:37:06,408]: Notice (all): Brian (Team #1) playing Symphony of the Night has joined. Client(0.6.5), ['DeathLink', 'AP'].
+[2026-06-19 23:37:06,408]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 23:37:06,531]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-06-19 23:37:06,531]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 23:37:06,745]: Notice (all): Ryot (Team #1) playing Final Fantasy 6 Worlds Collide has joined. Client(0.6.6), ['AP'].
+[2026-06-19 23:37:06,745]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 23:39:26,616]: Notice (all): Ryot (Team #1) has completed their goal.
+[2026-06-19 23:39:26,618]: Notice (all): Ryot (Team #1) has collected their items from other worlds.
+[2026-06-19 23:39:26,619]: (Team #1) Andrew sent Shoat to Ryot (Thieves' Town - Hallway Pot Key)
+[2026-06-19 23:39:26,619]: (Team #1) Andrew sent Umaro to Ryot (Magic Bat)
+[2026-06-19 23:39:26,619]: (Team #1) Brian sent Sraphim to Ryot (Cave - Middle Ascend Right Item)
+[2026-06-19 23:39:26,619]: (Team #1) Brian sent ValiantKnife to Ryot (Floating Catacombs Bottom - After Save Point Item)
+[2026-06-19 23:39:26,620]: (Team #1) Nick sent Ifrit to Ryot (HC Storms Grotto Pot 2)
+[2026-06-19 23:39:26,620]: (Team #1) Nick sent Siren to Ryot (Ganon's Castle Ganons Tower Pot 12)
+[2026-06-19 23:39:26,620]: (Team #1) Nick sent Terrato to Ryot (HF GS Stone Bridge Tree Grotto)
+[2026-06-19 23:39:26,620]: (Team #1) Nick sent Bismark to Ryot (Gerudo Training Ground Hidden Ceiling Chest)
+[2026-06-19 23:39:26,620]: (Team #1) Nick sent Tritoch to Ryot (Market Bazaar Item 6)
+[2026-06-19 23:39:26,620]: (Team #1) Nick sent Kirin to Ryot (Bottom of the Well Lens of Truth Chest)
+[2026-06-19 23:39:26,620]: (Team #1) Nick sent Sabin to Ryot (Water Temple GS River)
+[2026-06-19 23:39:26,620]: (Team #1) Nick sent Celes to Ryot (Water Temple River Pot 1)
+[2026-06-19 23:39:26,620]: (Team #1) Nick sent Illumina to Ryot (Bottom of the Well Basement Pot 5)
+[2026-06-19 23:39:26,620]: (Team #1) Nick sent Fixed Dice to Ryot (Shadow Temple Invisible Blades Visible Chest)
+[2026-06-19 23:39:26,620]: (Team #1) Nick sent Flame Shld to Ryot (Water Temple Central Pillar Chest)
+[2026-06-19 23:39:26,620]: (Team #1) Nick sent Minerva to Ryot (Bottom of the Well Basement Pot 7)
+[2026-06-19 23:39:26,621]: (Team #1) Nick sent Genji Glove to Ryot (Ice Cavern Spinning Blade Pot 2)
+[2026-06-19 23:39:26,621]: (Team #1) Nick sent Offering to Ryot (ZF Near Jabu Pot 3)
+[2026-06-19 23:39:26,622]: (Team #1) TNNPE sent Ramuh to Ryot ([Heides] Metal chest before Old Dragonslayer)
+[2026-06-19 23:39:26,622]: (Team #1) TNNPE sent Stray to Ryot ([Pit] Second board in the pit)
+[2026-06-19 23:39:26,622]: (Team #1) TNNPE sent Odin to Ryot ([BelfryLuna] Corpse after dropping through hole from 2nd floor)
+[2026-06-19 23:39:26,623]: (Team #1) TNNPE sent Raiden to Ryot ([HarvestValley] A corpse inside the small cave where you meet Gavlan)
+[2026-06-19 23:39:26,623]: (Team #1) TNNPE sent Bahamut to Ryot ([Pit] Third board in the pit)
+[2026-06-19 23:39:26,623]: (Team #1) TNNPE sent Ragnarok Esper to Ryot ([Drangleic] Next to stairs right after the multi-door sentinel room)
+[2026-06-19 23:39:26,623]: (Team #1) TNNPE sent Starlet to Ryot ([HarvestValley] Behind a plank wall in the area with multiple sickle undeads)
+[2026-06-19 23:39:26,623]: (Team #1) TNNPE sent Phoenix to Ryot ([Drangleic] In the cave next to the entrance to the dark chasm)
+[2026-06-19 23:39:26,623]: (Team #1) TNNPE sent Gau to Ryot ([HarvestValley] A corpse in the poison area before earthen peak (5))
+[2026-06-19 23:39:26,623]: (Team #1) TNNPE sent Illumina to Ryot ([AldiasKeep] In the Foregarden courtyard)
+[2026-06-19 23:39:26,623]: (Team #1) TNNPE sent Illumina to Ryot ([MemoryOrro] Metal chest behind a Pharros contraption and an illusory wall on the second floor)
+[2026-06-19 23:39:26,623]: (Team #1) TNNPE sent Thunder Shld to Ryot ([Aerie] Corpse in the first dragon nest)
+[2026-06-19 23:39:26,623]: (Team #1) TNNPE sent Genji Glove to Ryot ([DLC2] Behind a door next to Ashen idol on the same level as the Upper Floor bonfire (2))
+[2026-06-19 23:39:26,623]: Notice (all): Ryot (Team #1) has released all remaining items from their world.
+[2026-06-19 23:39:26,623]: (Team #1) Ryot sent Quake to Andrew (Umaro's Cave)
+[2026-06-19 23:39:26,623]: (Team #1) Ryot sent Piece of Heart to Andrew (Blue Dragon)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Single Arrow to Andrew (Esper Mountain)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Rupees (300) to Andrew (Doma Castle Throne)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Turkey to Brian (Auction House 10kGP)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Aquamarine to Brian (Ancient Castle)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Gold Skulltula Token to Nick (Mt. Zozo)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Gold Skulltula Token to Nick (Mt. Kolts)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Gold Skulltula Token to Nick (Collapsing House)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Gold Skulltula Token to Nick (Baren Falls)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Gold Skulltula Token to Nick (Owzer Mansion)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Purple Rupee to Nick (Storm Dragon)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Ice Trap to Nick (Narshe Weapon Shop 1)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Ice Trap to Nick (Imperial Camp)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Ice Trap to Nick (Ifrit and Shiva)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Ice Trap to Nick (Veldt)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Deku Nuts (5) to Nick (Opera House)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Richard's House Key to Nick (Phantom Train)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Dragon Charm to TNNPE (Number 024)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Human Effigy to TNNPE (South Figaro)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Estus Flask Shard to TNNPE (Serpent Trench)
+[2026-06-19 23:39:26,624]: (Team #1) Ryot sent Black Firebomb to TNNPE (Cranes)

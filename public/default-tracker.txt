@@ -681,3 +681,5 @@
 [2026-06-19 09:50:35,243]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-06-19 09:50:55,782]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['DeathLink', 'AP'].
 [2026-06-19 09:50:55,783]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 10:21:04,097]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 10:21:09,517]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

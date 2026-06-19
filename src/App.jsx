@@ -101,7 +101,7 @@ function App() {
 
   // Load the default spoiler and tracker logs on startup from public/
   useEffect(() => {
-    fetch('/ap-sphere-tracker/default-spoiler.txt')
+    fetch('/ap-sphere-tracker/default-spoiler.txt', { cache: 'no-store' })
       .then((res) => (res.ok ? res.text() : null))
       .then((text) => {
         if (text == null) return
@@ -133,7 +133,7 @@ function App() {
     //   - If both are current (normal case), source 1 ≈ source 2 and
     //     either answer is correct.
     Promise.all([
-      fetch('/ap-sphere-tracker/default-tracker.txt'),
+      fetch('/ap-sphere-tracker/default-tracker.txt', { cache: 'no-store' }),
       fetchLatestActionRunTime(),
     ])
       .then(async ([fileRes, actionTime]) => {
@@ -150,7 +150,7 @@ function App() {
       })
       .catch(() => {})
 
-    fetch('/ap-sphere-tracker/default-seed.archipelago')
+    fetch('/ap-sphere-tracker/default-seed.archipelago', { cache: 'no-store' })
       .then(async (res) => {
         if (!res.ok) {
           setLoadingMultidata(false)

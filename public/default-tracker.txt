@@ -755,3 +755,30 @@
 [2026-06-19 17:09:15,092]: Notice (all): Ryot (Team #1) playing Final Fantasy 6 Worlds Collide has joined. Client(0.6.6), ['AP'].
 [2026-06-19 17:09:15,094]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
 [2026-06-19 17:10:37,062]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 17:20:10,404]: (Team #1) Ryot sent Deku Nuts (10) to Nick (Daryl's Tomb)
+[2026-06-19 17:24:30,660]: Notice (all): Brian (Team #1) playing Symphony of the Night has joined. Client(0.6.5), ['AP', 'DeathLink'].
+[2026-06-19 17:24:30,660]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 17:26:53,687]: (Team #1) Brian sent Dragon Charm to TNNPE (Underground Caverns Succubus Side - Red Vase 1)
+[2026-06-19 17:27:19,666]: (Team #1) Brian sent Onyx to Brian (Underground Caverns Succubus Side - Red Vase 3)
+[2026-06-19 17:27:22,870]: (Team #1) Brian sent Green Blossom to TNNPE (Underground Caverns Succubus Side - Red Vase 2)
+[2026-06-19 17:27:25,990]: (Team #1) Brian sent Arrows (10) to Nick (Underground Caverns Succubus Side - Red Vase 4)
+[2026-06-19 17:27:27,023]: (Team #1) Brian sent Recovery Heart to Nick (Underground Caverns Succubus Side - Red Vase 5)
+[2026-06-19 17:27:35,147]: (Team #1) Brian sent Fenrir to Ryot (Underground Caverns Succubus Side - Red Vase 6)
+[2026-06-19 17:29:11,529]: (Team #1) Brian sent Ice Trap to Nick (Underground Caverns Succubus Side - Succubus item)
+[2026-06-19 17:32:01,162]: (Team #1) Ryot sent Soul of a Proud Knight to TNNPE (Figaro Castle Basement)
+[2026-06-19 17:32:28,697]: (Team #1) Brian sent Gohma's Soul to Nick (Marble Gallery - Descend to Entrance Item 3)
+[2026-06-19 17:36:45,833]: (Team #1) Brian sent Rupee (1) to Andrew (Entrance - Pedestal in Cube of Zoe Room)
+[2026-06-19 17:38:44,260]: (Team #1) Brian sent Unpetrify Statue in Heide's Tower of Flame to TNNPE (Entrance - Breakable Ledge Before Death)
+[2026-06-19 17:41:00,533]: (Team #1) Brian sent Soul of Elana, Squalid Queen to TNNPE (Alchemy Lab. - Globe in Attic With Powerup Tanks)
+[2026-06-19 17:43:21,670]: (Team #1) Brian sent Fire boomerang to Brian (Entrance - Attic Near Start Gate Left item)
+[2026-06-19 17:49:42,219]: (Team #1) Brian sent Rouge Water to TNNPE (Alchemy Lab. - Globe in Upper-left Room of Slogra and Gaibon)
+[2026-06-19 17:50:44,343]: (Team #1) Ryot sent Ice Trap to Nick (Veldt Cave)
+[2026-06-19 17:52:06,192]: (Team #1) Brian sent Resist ice to Brian (Marble Gallery - Middle clock Right Item)
+[2026-06-19 17:53:46,826]: (Team #1) Brian sent Blood cloak to Brian (Colosseum Second Part - Behind Mist Crate)
+[2026-06-19 17:54:35,253]: (Team #1) Brian sent Ice Trap to Nick (Colosseum First Part - Before Minotaurus & Werewolf)
+[2026-06-19 17:56:42,410]: (Team #1) Brian sent Piece of Heart to Nick (Colosseum Junction Tunnel - Attic)
+[2026-06-19 17:57:30,093]: Notice (Team #1): [Hint]: TNNPE's Flame Butterfly is at Auction House 20kGP in Ryot's World. (unspecified)
+[2026-06-19 17:57:46,080]: (Team #1) Brian sent Ice Trap to Nick (Colosseum First Part - Bottom Right Room)
+[2026-06-19 17:57:55,784]: (Team #1) Ryot sent Flame Butterfly to TNNPE (Auction House 20kGP)
+[2026-06-19 18:01:01,355]: (Team #1) Brian sent Santier's Spear to TNNPE (Olrox's Quarters - Hole Before Olrox)
+[2026-06-19 18:02:03,036]: (Team #1) Brian sent Homeward Bone to TNNPE (Olrox's Quarters - After Olrox)

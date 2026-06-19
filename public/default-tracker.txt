@@ -718,3 +718,12 @@
 [2026-06-19 13:28:43,760]: Notice (all): Nick (Team #1) has stopped viewing the game. Client(0.6.7), ['AP', 'TextOnly'].
 [2026-06-19 13:42:53,333]: Notice (all): Nick: !hint 'Ocarina A Button'
 [2026-06-19 13:42:53,335]: Notice (Team #1): [Hint]: Nick's Ocarina A Button is at Red Shield Shop Right in Andrew's World at Bush Covered House. (priority)
+[2026-06-19 14:14:18,715]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-19 15:06:45,628]: (Team #1) Andrew sent Deku Nuts (10) to Nick (Dark Lake Hylia Shop Left)
+[2026-06-19 15:06:48,735]: (Team #1) Andrew sent Ice Trap to Nick (Dark Lake Hylia Shop Right)
+[2026-06-19 15:07:30,742]: (Team #1) Andrew sent Ocarina A Button to Nick (Red Shield Shop Right)
+[2026-06-19 15:08:04,869]: (Team #1) Andrew sent Helix Halberd to TNNPE (Hype Cave - Bottom)
+[2026-06-19 15:08:07,719]: (Team #1) Andrew sent Holy glasses to Brian (Hype Cave - Middle Left)
+[2026-06-19 15:08:09,404]: (Team #1) Andrew sent Bottle (Good Bee) to Andrew (Hype Cave - Middle Right)
+[2026-06-19 15:08:11,480]: (Team #1) Andrew sent Human Effigy to TNNPE (Hype Cave - Top)
+[2026-06-19 15:10:06,050]: (Team #1) Andrew sent Progressive Bomb Bag to Nick (Bottle Merchant)

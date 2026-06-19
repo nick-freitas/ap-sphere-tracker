@@ -8,6 +8,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: pages
@@ -16,6 +18,8 @@ concurrency:
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
     env:
       AP_ROOM_PORT: '56640'
     steps:
@@ -77,3 +81,31 @@ jobs:
           git add public/default-tracker.txt
           git commit -m "chore: update tracker log ${{ steps.ts.outputs.timestamp }}"
           git push origin HEAD:main
+
+      - uses: actions/setup-node@v4
+        if: steps.diff.outputs.changed == 'true'
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Build
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          npm ci
+          npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.diff.outputs.changed == 'true'
+        with:
+          path: dist
+
+  deploy:
+    needs: fetch
+    runs-on: ubuntu-latest
+    if: needs.fetch.outputs.changed == 'true'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

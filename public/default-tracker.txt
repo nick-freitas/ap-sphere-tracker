@@ -1144,3 +1144,64 @@
 [2026-06-19 21:58:43,428]: (Team #1) Brian sent Rupees (100) to Andrew (Reverse Entrance - Main Gate Bottom Left Item)
 [2026-06-19 21:58:45,196]: (Team #1) Brian sent Drangleic Shield to TNNPE (Reverse Entrance - Main Gate Bottom Right Item)
 [2026-06-19 22:00:42,836]: (Team #1) Andrew sent Small Key (Agahnims Tower) to Andrew (Castle Tower - Dark Maze)
+[2026-06-19 22:12:58,343]: (Team #1) Andrew sent Firedrake Stone to TNNPE (Pyramid)
+[2026-06-19 22:13:27,411]: (Team #1) Andrew sent Magic missile to Brian (Kakariko Well - Bottom)
+[2026-06-19 22:13:30,715]: (Team #1) Andrew sent Deku Nuts (10) to Nick (Kakariko Well - Left)
+[2026-06-19 22:13:32,144]: (Team #1) Andrew sent Deku Nuts (10) to Nick (Kakariko Well - Middle)
+[2026-06-19 22:13:35,476]: (Team #1) Andrew sent Ash Knuckle Ring to TNNPE (Kakariko Well - Right)
+[2026-06-19 22:13:47,955]: (Team #1) Andrew sent Simpleton's Spice to TNNPE (Kakariko Well - Top)
+[2026-06-19 22:15:24,060]: Notice (all): Ryot (Team #1) playing Final Fantasy 6 Worlds Collide has joined. Client(0.6.6), ['AP'].
+[2026-06-19 22:15:24,061]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 22:15:55,360]: (Team #1) Andrew sent Caestus to TNNPE (Capacity Upgrade Left)
+[2026-06-19 22:15:56,468]: Notice (all): Ryot (Team #1) playing Final Fantasy 6 Worlds Collide has joined. Client(0.6.6), ['AP'].
+[2026-06-19 22:15:56,468]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 22:15:58,042]: (Team #1) Andrew sent Deku Nuts (10) to Nick (Capacity Upgrade Right)
+[2026-06-19 22:16:07,317]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-06-19 22:16:17,474]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-06-19 22:16:29,369]: Notice (all): Ryot (Team #1) playing Final Fantasy 6 Worlds Collide has joined. Client(0.6.6), ['AP'].
+[2026-06-19 22:16:29,370]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 22:18:06,991]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-19 22:18:06,991]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 22:20:54,806]: (Team #1) Ryot sent Fading Soul to TNNPE (Doma Castle Siege)
+[2026-06-19 22:20:59,465]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:20:59,467]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:20:59,828]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:21:00,389]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-19 22:21:47,714]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:21:47,787]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:21:47,941]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:24:47,225]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:24:47,240]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:24:48,331]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:24:49,034]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-06-19 22:24:49,078]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['DeathLink', 'AP'].
+[2026-06-19 22:24:49,162]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-06-19 22:24:49,449]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-19 22:24:49,449]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 22:24:58,380]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-06-19 22:24:58,381]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 22:24:58,989]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:25:00,412]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:25:00,566]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:27:20,930]: Notice (all): Brian (Team #1) playing Symphony of the Night has joined. Client(0.6.5), ['DeathLink', 'AP'].
+[2026-06-19 22:27:20,931]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 22:27:46,938]: Notice (all): Ryot (Team #1) playing Final Fantasy 6 Worlds Collide has joined. Client(0.6.6), ['AP'].
+[2026-06-19 22:27:46,938]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 22:28:05,235]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-19 22:28:05,998]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:28:08,934]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:28:09,327]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:28:34,138]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['DeathLink', 'AP'].
+[2026-06-19 22:28:34,167]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.6), ['AP'].
+[2026-06-19 22:28:34,388]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-06-19 22:28:34,917]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:28:35,096]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:28:35,098]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 22:28:49,830]: Notice (all): Brian (Team #1) playing Symphony of the Night has joined. Client(0.6.5), ['DeathLink', 'AP'].
+[2026-06-19 22:28:49,830]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 22:28:50,532]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['DeathLink', 'AP'].
+[2026-06-19 22:28:50,533]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 22:28:50,680]: Notice (all): Ryot (Team #1) playing Final Fantasy 6 Worlds Collide has joined. Client(0.6.6), ['AP'].
+[2026-06-19 22:28:50,680]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 22:29:19,044]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-19 22:29:19,044]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.

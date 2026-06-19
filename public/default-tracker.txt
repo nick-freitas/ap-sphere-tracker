@@ -749,3 +749,9 @@
 [2026-06-19 16:07:36,461]: (Team #1) Andrew sent Small Key (Turtle Rock) to Andrew (Turtle Rock - Chain Chomps)
 [2026-06-19 16:11:26,524]: (Team #1) Andrew sent Kakariko Potion Shop Key to Nick (Hype Cave - Generous Guy)
 [2026-06-19 16:14:23,083]: (Team #1) Andrew sent Blue Rupee to Nick (Turtle Rock - Compass Chest)
+[2026-06-19 16:31:15,321]: (Team #1) Andrew sent Life Vessel to Brian (Chicken House)
+[2026-06-19 16:51:30,466]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 16:56:40,056]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 17:09:15,092]: Notice (all): Ryot (Team #1) playing Final Fantasy 6 Worlds Collide has joined. Client(0.6.6), ['AP'].
+[2026-06-19 17:09:15,094]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 17:10:37,062]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

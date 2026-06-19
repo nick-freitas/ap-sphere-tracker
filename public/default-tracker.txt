@@ -1467,3 +1467,28 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-19 23:39:26,624]: (Team #1) Ryot sent Human Effigy to TNNPE (South Figaro)
 [2026-06-19 23:39:26,624]: (Team #1) Ryot sent Estus Flask Shard to TNNPE (Serpent Trench)
 [2026-06-19 23:39:26,624]: (Team #1) Ryot sent Black Firebomb to TNNPE (Cranes)
+[2026-06-19 23:42:36,462]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-19 23:42:36,462]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 23:42:36,613]: (Team #1) Nick sent Ice mail to Brian (Kak Near Open Grotto Adult Crate 4)
+[2026-06-19 23:42:36,613]: (Team #1) Nick sent Poison Throwing Knife to TNNPE (Kak Bazaar Item 3)
+[2026-06-19 23:42:36,613]: (Team #1) Nick sent Titanite Shard to TNNPE (Kak Near Open Grotto Adult Crate 3)
+[2026-06-19 23:43:47,657]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-19 23:50:58,229]: (Team #1) Andrew sent Prism Stone to TNNPE (Eastern Palace - Cannonball Chest)
+[2026-06-19 23:51:56,045]: (Team #1) Andrew sent Lifegem to TNNPE (Eastern Palace - Map Chest)
+[2026-06-19 23:51:56,624]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-19 23:51:56,624]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 23:51:56,769]: (Team #1) Nick sent Gold Skulltula Token to Nick (ZF Bottom Freestanding PoH)
+[2026-06-19 23:51:56,770]: (Team #1) Nick sent Gold Skulltula Token to Nick (ZR GS Near Raised Grottos)
+[2026-06-19 23:51:56,770]: (Team #1) Nick sent Ice Trap to Nick (ZF GS Hidden Cave)
+[2026-06-19 23:51:56,770]: (Team #1) Nick sent Olenford's Staff to TNNPE (ZF Hidden Cave Pot 3)
+[2026-06-19 23:51:56,770]: (Team #1) Nick sent Faraam Gauntlets to TNNPE (ZD GS Frozen Waterfall)
+[2026-06-19 23:51:56,770]: (Team #1) Nick sent Fire Seed to TNNPE (ZF Hidden Cave Pot 1)
+[2026-06-19 23:51:56,770]: (Team #1) Nick sent Boltstone to TNNPE (ZF Hidden Cave Pot 2)
+[2026-06-19 23:51:58,868]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-19 23:52:46,725]: (Team #1) Andrew sent Small Key (Eastern Palace) to Andrew (Eastern Palace - Compass Chest)
+[2026-06-19 23:53:26,142]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:53:26,144]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:53:26,146]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:53:26,820]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:53:26,857]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-19 23:53:26,917]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

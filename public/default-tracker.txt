@@ -695,3 +695,26 @@
 [2026-06-19 11:51:34,849]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-06-19 11:51:55,497]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['DeathLink', 'AP'].
 [2026-06-19 11:51:55,498]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 13:04:47,533]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-19 13:04:47,533]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 13:10:10,499]: Notice (Team #1): [Hint]: Nick's Serenade of Water is at Market Potion Shop Item 5 in Nick's World. (unspecified)
+[2026-06-19 13:10:13,637]: Notice (Team #1): [Hint]: Nick's Strength Upgrade is at Market Potion Shop Item 6 in Nick's World. (unspecified)
+[2026-06-19 13:10:16,162]: Notice (Team #1): [Hint]: Nick's Master Sword is at Market Potion Shop Item 3 in Nick's World. (unspecified)
+[2026-06-19 13:10:25,592]: (Team #1) Nick sent Serenade of Water to Nick (Market Potion Shop Item 5)
+[2026-06-19 13:13:44,317]: (Team #1) Nick sent Master Sword to Nick (Market Potion Shop Item 3)
+[2026-06-19 13:18:43,863]: (Team #1) Nick sent Strength Upgrade to Nick (Market Potion Shop Item 6)
+[2026-06-19 13:23:19,872]: (Team #1) Nick sent Catarina Gauntlets to TNNPE (Market Potion Shop Item 7)
+[2026-06-19 13:23:52,580]: Notice (Team #1): [Hint]: Nick's Kokiri's Emerald is at King Dodongo in Nick's World. (unspecified)
+[2026-06-19 13:23:52,581]: Notice (Team #1): [Hint]: Nick's Zora's Sapphire is at Queen Gohma in Nick's World. (unspecified)
+[2026-06-19 13:27:04,973]: Notice (all): Nick: !hint 'Gohma's Soul'
+[2026-06-19 13:27:04,975]: Notice (Team #1): [Hint]: Nick's Gohma's Soul is at Marble Gallery - Descend to Entrance Item 3 in Brian's World. (priority)
+[2026-06-19 13:27:17,298]: Notice (all): Nick: !hint 'King Dodongo's Soul'
+[2026-06-19 13:27:17,301]: Notice (Team #1): [Hint]: Nick's King Dodongo's Soul is at [Wharf] On tipped boat in water in TNNPE's World. (priority)
+[2026-06-19 13:27:53,675]: Notice (all): Nick: !hint 'King Dodongo's Soul'
+[2026-06-19 13:27:53,678]: Notice (Team #1): [Hint]: Nick's King Dodongo's Soul is at [Wharf] On tipped boat in water in TNNPE's World. (priority)
+[2026-06-19 13:27:53,678]: Notice (Player Nick in team 1): Hint was previously used, no points deducted.
+[2026-06-19 13:28:32,220]: Notice (all): Nick (Team #1) viewing Ship of Harkinian has joined. Client(0.6.7), ['AP', 'TextOnly'].
+[2026-06-19 13:28:32,221]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-19 13:28:43,760]: Notice (all): Nick (Team #1) has stopped viewing the game. Client(0.6.7), ['AP', 'TextOnly'].
+[2026-06-19 13:42:53,333]: Notice (all): Nick: !hint 'Ocarina A Button'
+[2026-06-19 13:42:53,335]: Notice (Team #1): [Hint]: Nick's Ocarina A Button is at Red Shield Shop Right in Andrew's World at Bush Covered House. (priority)

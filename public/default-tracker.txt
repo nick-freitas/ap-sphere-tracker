@@ -1873,3 +1873,54 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 19:24:05,770]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
 [2026-06-20 19:24:56,188]: (Team #1) Nick sent Retainer Staff to TNNPE (Water Temple Main Level 2 Pot 2)
 [2026-06-20 19:24:59,138]: (Team #1) Nick sent Protective Chime to TNNPE (Water Temple Main Level 2 Pot 1)
+[2026-06-20 19:25:04,672]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-20 19:25:04,672]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 19:26:22,225]: (Team #1) Nick sent Ice Trap to Nick (Water Temple Torch Pot 1)
+[2026-06-20 19:26:29,759]: (Team #1) Nick sent Stables Key to Nick (Water Temple Torch Pot 2)
+[2026-06-20 19:27:07,134]: (Team #1) Nick sent Gyrm Axe to TNNPE (Water Temple Map Chest)
+[2026-06-20 19:32:07,402]: (Team #1) Nick sent Ice Trap to Nick (Water Temple Near Compass Pot 2)
+[2026-06-20 19:32:13,579]: (Team #1) Nick sent Soul Arrow to TNNPE (Water Temple Near Compass Pot 3)
+[2026-06-20 19:32:14,028]: (Team #1) Nick sent Progressive Wallet to Nick (Water Temple Near Compass Pot 1)
+[2026-06-20 19:32:27,500]: (Team #1) Nick sent Shiitake to Brian (Water Temple Compass Chest)
+[2026-06-20 19:32:55,422]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-20 19:33:06,243]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-20 19:33:06,243]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 19:34:24,041]: Notice (all): TNNPE (Team #1) playing Dark Souls II has joined. Client(0.5.1), [].
+[2026-06-20 19:34:24,041]: Notice (Player TNNPE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 19:34:24,186]: Notice (all): TNNPE (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-06-20 19:35:19,903]: (Team #1) Nick sent Progressive Magic Meter to Nick (KF Shop Item 4)
+[2026-06-20 19:38:40,748]: (Team #1) TNNPE sent Ice Trap to Nick ([Pit] First metal chest behind the forgotten door)
+[2026-06-20 19:38:48,232]: (Team #1) TNNPE sent Soul of a Hero to TNNPE ([Pit] Second metal chest behind the forgotten door)
+[2026-06-20 19:38:57,519]: (Team #1) TNNPE sent Estus Flask Shard to TNNPE ([Pit] Third metal chest behind the forgotten door)
+[2026-06-20 19:39:01,802]: (Team #1) TNNPE sent Piece of Heart to Nick ([Pit] Corpse behind the forgotten door)
+[2026-06-20 19:39:49,268]: (Team #1) Nick sent Winged Spear to TNNPE (LH Freestanding PoH)
+[2026-06-20 19:41:31,329]: (Team #1) Nick sent Ice Trap to Nick (Wasteland Near Colossus Crate)
+[2026-06-20 19:45:47,223]: (Team #1) TNNPE sent Thief Mask to TNNPE ([Bastille] Ruin sentinels drop)
+[2026-06-20 19:45:47,525]: (Team #1) Nick sent Ice Trap to Nick (LLR Stables Left Cow)
+[2026-06-20 19:46:06,467]: (Team #1) Nick sent Ice Trap to Nick (LLR Stables Right Cow)
+[2026-06-20 19:46:25,919]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-20 19:46:40,654]: (Team #1) TNNPE sent Ice Trap to Nick ([Bastille] Metal chest behind illusory wall in sentinel's room)
+[2026-06-20 19:46:54,996]: (Team #1) TNNPE sent Red Rupee to Nick ([Bastille] Wooden chest behind illusory wall from Sentinel's room)
+[2026-06-20 19:47:17,078]: (Team #1) Nick sent Titanite Chunk to TNNPE (LLR Tower Right Cow)
+[2026-06-20 19:47:33,210]: (Team #1) Nick sent Bombs (3) to Andrew (LLR Tower Left Cow)
+[2026-06-20 19:48:29,347]: (Team #1) TNNPE sent Drakeblood Leggings to TNNPE ([Bastille] On upper ledge in Sentinel's room)
+[2026-06-20 19:48:49,607]: (Team #1) TNNPE sent Ice Trap to Nick ([Bastille] In a cell in the narrow corridor after Sentinels)
+[2026-06-20 19:50:46,482]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-20 19:50:46,482]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 19:50:47,964]: (Team #1) TNNPE sent Ice Trap to Nick ([Bastille] In the room under the Servants' Quarters bonfire)
+[2026-06-20 19:51:28,236]: (Team #1) TNNPE sent Gold Skulltula Token to Nick ([Bastille] Metal chest in the room under Servants' Quarters bonfire)
+[2026-06-20 19:52:29,366]: (Team #1) TNNPE sent Bastard sword to Brian ([Bastille] On ledge behind boxes)
+[2026-06-20 19:52:46,880]: (Team #1) Nick sent Soul Vessel to TNNPE (Market Potion Shop Item 8)
+[2026-06-20 19:53:18,457]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-20 19:56:26,766]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-20 19:56:26,767]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 19:56:26,826]: (Team #1) TNNPE sent Priestess Robe to TNNPE ([Bastille] Corpse at top of elevator)
+[2026-06-20 19:57:03,321]: (Team #1) TNNPE sent Arrows (5) to Nick ([Bastille] In a cell next to Straid's cell)
+[2026-06-20 19:57:43,380]: (Team #1) TNNPE sent Old Radiant Lifegem to TNNPE ([Bastille] Metal chest next to elevator in Pharros/elevator room)
+[2026-06-20 19:58:02,056]: (Team #1) TNNPE sent Warmth to TNNPE ([Bastille] Third metal chest in Pharros/elevator room)
+[2026-06-20 19:58:19,562]: (Team #1) TNNPE sent Dried Root to TNNPE ([Bastille] First metal chest in Pharros/elevator room)
+[2026-06-20 19:58:34,284]: (Team #1) TNNPE sent Rupees (20) to Andrew ([Bastille] Second metal chest near in Pharros/elevator room)
+[2026-06-20 20:00:02,850]: (Team #1) TNNPE sent Red Rupee to Nick ([Bastille] In the well)
+[2026-06-20 20:00:40,835]: (Team #1) Nick sent Crimson Water to TNNPE (ZR Frogs Song of Time)
+[2026-06-20 20:00:42,984]: (Team #1) TNNPE sent Human Effigy to TNNPE ([Bastille] Corpse up the ladder)
+[2026-06-20 20:04:18,464]: (Team #1) Nick sent Bottom of the Well Small Key to Nick (ZR Magic Bean Salesman)

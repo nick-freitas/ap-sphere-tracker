@@ -1492,3 +1492,9 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-19 23:53:26,820]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-06-19 23:53:26,857]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-06-19 23:53:26,917]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 00:50:16,617]: Loading embedded data package for game Symphony of the Night
+[2026-06-20 00:50:16,618]: Loading embedded data package for game Ship of Harkinian
+[2026-06-20 00:50:16,618]: Loading embedded data package for game Final Fantasy 6 Worlds Collide
+[2026-06-20 00:50:16,618]: Loading embedded data package for game Dark Souls II
+[2026-06-20 00:50:16,655]: Loaded save file with 1090 received items for 5 players
+[2026-06-20 00:50:46,527]: Hosting game at archipelago.gg:45783

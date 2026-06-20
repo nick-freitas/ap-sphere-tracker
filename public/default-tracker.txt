@@ -1498,3 +1498,78 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 00:50:16,618]: Loading embedded data package for game Dark Souls II
 [2026-06-20 00:50:16,655]: Loaded save file with 1090 received items for 5 players
 [2026-06-20 00:50:46,527]: Hosting game at archipelago.gg:45783
+[2026-06-20 02:15:18,386]: Loading embedded data package for game Symphony of the Night
+[2026-06-20 02:15:18,388]: Loading embedded data package for game Ship of Harkinian
+[2026-06-20 02:15:18,388]: Loading embedded data package for game Final Fantasy 6 Worlds Collide
+[2026-06-20 02:15:18,388]: Loading embedded data package for game Dark Souls II
+[2026-06-20 02:15:18,922]: Loaded save file with 1090 received items for 5 players
+[2026-06-20 02:15:29,811]: Hosting game at archipelago.gg:45783
+[2026-06-20 02:15:40,275]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 02:17:26,950]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-20 02:17:26,950]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 02:17:27,107]: (Team #1) Nick sent Piece of Heart to Andrew (Fire Temple Map Chest)
+[2026-06-20 02:17:27,108]: (Team #1) Nick sent Piece of Heart to Andrew (DMC Near GC Pot 3)
+[2026-06-20 02:17:27,108]: (Team #1) Nick sent Piece of Heart to Andrew (Fire Temple Big Lava Pot 2)
+[2026-06-20 02:17:27,108]: (Team #1) Nick sent Rupees (20) to Andrew (Fire Temple Boulder Maze Lower Chest)
+[2026-06-20 02:17:27,108]: (Team #1) Nick sent Bomb Upgrade (+5) to Andrew (Colossus Freestanding PoH)
+[2026-06-20 02:17:27,108]: (Team #1) Nick sent Shiitake to Brian (Forest Temple GS Lobby)
+[2026-06-20 02:17:27,108]: (Team #1) Nick sent Antivenom to Brian (Forest Temple Floormaster Chest)
+[2026-06-20 02:17:27,108]: (Team #1) Nick sent Resist ice to Brian (Fire Temple GS Boulder Maze)
+[2026-06-20 02:17:27,109]: (Team #1) Nick sent Elixir to Brian (GC Rolling Goron as Adult)
+[2026-06-20 02:17:27,109]: (Team #1) Nick sent Library card to Brian (LW Gift From Saria)
+[2026-06-20 02:17:27,109]: (Team #1) Nick sent Turquoise to Brian (LW Ocarina Memory Game)
+[2026-06-20 02:17:27,109]: (Team #1) Nick sent Jewel of open to Brian (Colossus GS Hill)
+[2026-06-20 02:17:27,109]: (Team #1) Nick sent Gold Skulltula Token to Nick (Graveyard Freestanding PoH)
+[2026-06-20 02:17:27,109]: (Team #1) Nick sent Gold Skulltula Token to Nick (ZR GS Above Bridge)
+[2026-06-20 02:17:27,109]: (Team #1) Nick sent Forest Temple Small Key to Nick (ZF Iceberg Freestanding PoH)
+[2026-06-20 02:17:27,109]: (Team #1) Nick sent Water Temple Small Key to Nick (GC Darunia Pot 1)
+[2026-06-20 02:17:27,109]: (Team #1) Nick sent Training Ground Small Key to Nick (Graveyard Freestanding PoH Crate)
+[2026-06-20 02:17:27,109]: (Team #1) Nick sent Recovery Heart to Nick (Fire Temple Boulder Maze Side Room Chest)
+[2026-06-20 02:17:27,109]: (Team #1) Nick sent Blue Rupee to Nick (DMC Near GC Pot 4)
+[2026-06-20 02:17:27,109]: (Team #1) Nick sent Purple Rupee to Nick (Fire Temple Big Lava Pot 1)
+[2026-06-20 02:17:27,109]: (Team #1) Nick sent Huge Rupee to Nick (Fire Temple Near Boss Pot 3)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Piece of Heart to Nick (Forest Temple GS First Room)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Ice Trap to Nick (Sheik in Crater)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Ice Trap to Nick (Forest Temple Map Chest)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Ice Trap to Nick (Fire Temple Flare Dancer Chest)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Ice Trap to Nick (Fire Temple Boss Key Chest)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Ice Trap to Nick (Fire Temple Big Lava Room Blocked Door Chest)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Ice Trap to Nick (Fire Temple Boulder Maze Shortcut Chest)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Ice Trap to Nick (DMC Near GC Pot 2)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Ice Trap to Nick (Fire Temple Near Boss Pot 2)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Bombs (5) to Nick (Forest Temple First Room Chest)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Bombs (5) to Nick (Fire Temple GS Scarecrow Top)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Bombs (10) to Nick (Forest Temple GS Level Island Courtyard)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Bombs (10) to Nick (Fire Temple Near Boss Pot 1)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Arrows (5) to Nick (Fire Temple GS Scarecrow Climb)
+[2026-06-20 02:17:27,110]: (Team #1) Nick sent Deku Nuts (5) to Nick (GC Darunia Pot 3)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Deku Stick (1) to Nick (Fire Temple Big Lava Room Lower Open Door Chest)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Back Tower Key to Nick (Forest Temple Well Chest)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Unpetrify Fang Key Statue in Shaded Ruins to TNNPE (Water Temple Like Like Pot 1)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Morning Star to TNNPE (GC Darunia Pot 2)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Reinforced Club to TNNPE (Water Temple Like Like Pot 2)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Dragon Tooth to TNNPE (DMC Near GC Pot 1)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Heavy Crossbow to TNNPE (LW GS Above Theater)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Tower Shield to TNNPE (Water Temple River Pot 2)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Great Magic Weapon to TNNPE (Water Temple River Chest)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Tseldora Den Key to TNNPE (Fire Temple Boulder Maze Upper Chest)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Eternal Sanctum Key to TNNPE (Forest Temple Boss Key Chest)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Twilight Herb to TNNPE (Fire Temple Scarecrow Chest)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Old Growth Balm to TNNPE (Water Temple Longshot Chest)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Estus Flask Shard to TNNPE (DMC Hammer Grotto Beehive)
+[2026-06-20 02:17:27,111]: (Team #1) Nick sent Fading Soul to TNNPE (Fire Temple Near Boss Chest)
+[2026-06-20 02:17:27,112]: (Team #1) Nick sent Fading Soul to TNNPE (Fire Temple Near Boss Pot 4)
+[2026-06-20 02:17:27,112]: (Team #1) Nick sent Titanite Shard to TNNPE (Fire Temple GS Song of Time Room)
+[2026-06-20 02:17:27,112]: (Team #1) Nick sent Titanite Chunk to TNNPE (Fire Temple Big Lava Pot 3)
+[2026-06-20 02:17:27,112]: (Team #1) Nick sent Petrified Dragon Bone to TNNPE (Fire Temple GS Boss Key Loop)
+[2026-06-20 02:17:27,112]: (Team #1) Nick sent Bleed Stone to TNNPE (GC Shop Item 4)
+[2026-06-20 02:18:02,741]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 02:19:01,029]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 02:25:24,201]: (Team #1) Nick sent Gold plate to Brian (Forest Temple Frozen Eye Pot 1)
+[2026-06-20 02:25:24,752]: (Team #1) Nick sent Dragon helm to Brian (Forest Temple Frozen Eye Pot 2)
+[2026-06-20 02:27:25,836]: (Team #1) Nick sent Gold Skulltula Token to Nick (Forest Temple Falling Ceiling Room Chest)
+[2026-06-20 02:27:40,618]: (Team #1) Nick sent Ice Trap to Nick (Forest Temple Green Poe Pot 2)
+[2026-06-20 02:27:46,299]: (Team #1) Nick sent Flame Butterfly to TNNPE (Forest Temple Green Poe Pot 1)
+[2026-06-20 02:32:07,856]: (Team #1) Nick sent Homeward Bone to TNNPE (Forest Temple Basement Chest)
+[2026-06-20 02:41:57,257]: (Team #1) Nick sent Covetous Gold Serpent Ring to TNNPE (Forest Temple Phantom Ganon Heart Container)
+[2026-06-20 02:42:12,871]: (Team #1) Nick sent Light Medallion to Nick (Phantom Ganon)

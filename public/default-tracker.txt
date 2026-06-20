@@ -1973,3 +1973,7 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 22:09:45,642]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-06-20 22:10:08,102]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
 [2026-06-20 22:10:08,103]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 22:17:54,435]: (Team #1) Nick sent Bombs (5) to Nick (Gerudo Training Ground Freestanding Key)
+[2026-06-20 22:18:31,143]: (Team #1) Nick sent Gold Skulltula Token to Nick (Gerudo Training Ground Maze Right Central Chest)
+[2026-06-20 22:18:42,198]: (Team #1) Nick sent Progressive Hookshot to Nick (Gerudo Training Ground Maze Right Side Chest)
+[2026-06-20 22:23:32,588]: (Team #1) Nick sent Talon's House Key to Nick (Gerudo Training Ground Before Heavy Block Chest)

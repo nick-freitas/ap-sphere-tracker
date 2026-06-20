@@ -1578,3 +1578,26 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 03:04:10,252]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-06-20 03:20:46,247]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-06-20 04:42:12,872]: Shutting down due to inactivity.
+[2026-06-20 11:19:35,402]: Loading embedded data package for game Symphony of the Night
+[2026-06-20 11:19:35,402]: Loading embedded data package for game Ship of Harkinian
+[2026-06-20 11:19:35,402]: Loading embedded data package for game Final Fantasy 6 Worlds Collide
+[2026-06-20 11:19:35,402]: Loading embedded data package for game Dark Souls II
+[2026-06-20 11:19:35,411]: Loaded save file with 1154 received items for 5 players
+[2026-06-20 11:19:35,421]: Hosting game at archipelago.gg:45783
+[2026-06-20 11:19:42,567]: Notice (all): TNNPE (Team #1) playing Dark Souls II has joined. Client(0.5.1), [].
+[2026-06-20 11:19:42,567]: Notice (Player TNNPE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 11:19:42,712]: Notice (all): TNNPE (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-06-20 11:26:18,367]: (Team #1) TNNPE sent Rupees (20) to Andrew ([Copse] On ledge right above the Bridge Approach bonfire)
+[2026-06-20 11:28:01,225]: (Team #1) TNNPE sent Soul of the Ivory King to TNNPE ([Copse] Round hut next to a big cliff face)
+[2026-06-20 11:28:12,564]: (Team #1) TNNPE sent Unpetrify Statue in Lost Bastille to TNNPE ([Copse] Next to a big cliff face guarded by a sickle undead)
+[2026-06-20 11:28:19,547]: (Team #1) TNNPE sent Soul Vessel to TNNPE ([Copse] On the left side of the path after the first stone bridge)
+[2026-06-20 11:31:00,955]: (Team #1) TNNPE sent Talisman to Brian ([Copse] First corpse in a round hut where you drop from above)
+[2026-06-20 11:31:04,353]: (Team #1) TNNPE sent Third Dragon Ring to TNNPE ([Copse] Second corpse in a round hut where you drop from above)
+[2026-06-20 11:31:14,666]: (Team #1) TNNPE sent Knight shield to Brian ([Copse] Metal chest in a round hut where you drop from above)
+[2026-06-20 11:31:44,421]: (Team #1) TNNPE sent Deku Stick (1) to Nick ([Copse] On the left side of the path before the first stone bridge)
+[2026-06-20 11:33:25,615]: (Team #1) TNNPE sent Soul of a Giant to TNNPE ([Copse] Where Merciless Roenna invades)
+[2026-06-20 11:35:34,132]: (Team #1) TNNPE sent Arrows (10) to Andrew ([Copse] Next to portcullis in the necromancer cave)
+[2026-06-20 11:39:44,236]: (Team #1) TNNPE sent Arrows (5) to Nick ([Copse] Corpse in the necromancer cave closest to the Undead Lockaway bonfire)
+[2026-06-20 11:41:05,301]: (Team #1) TNNPE sent Life Vessel to Brian ([Copse] Round hut on the way to Skeleton Lords)
+[2026-06-20 11:42:29,172]: (Team #1) TNNPE sent Resist thunder to Brian ([Copse] On small ledge with a necromancer)
+[2026-06-20 11:42:43,013]: (Team #1) TNNPE sent Huge Rupee to Nick ([Copse] On a stone pillar inside the necromancer cave)

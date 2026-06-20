@@ -1606,3 +1606,32 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 11:51:58,460]: (Team #1) TNNPE sent Large Titanite Shard to TNNPE ([Maughlin the Armourer] Silver Eagle Kite Shield)
 [2026-06-20 11:56:11,910]: (Team #1) TNNPE sent Rusted Coin to TNNPE ([Copse] On a ledge on the way to Executioner's Chariot)
 [2026-06-20 12:02:06,427]: Notice (all): TNNPE (Team #1) has left the game. Client(0.5.1), ['DeathLink'].
+[2026-06-20 13:56:11,911]: Shutting down due to inactivity.
+[2026-06-20 14:06:58,450]: Loading embedded data package for game Symphony of the Night
+[2026-06-20 14:06:58,450]: Loading embedded data package for game Ship of Harkinian
+[2026-06-20 14:06:58,450]: Loading embedded data package for game Final Fantasy 6 Worlds Collide
+[2026-06-20 14:06:58,451]: Loading embedded data package for game Dark Souls II
+[2026-06-20 14:06:58,459]: Loaded save file with 1172 received items for 5 players
+[2026-06-20 14:06:58,467]: Hosting game at archipelago.gg:45783
+[2026-06-20 14:08:09,586]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-20 14:08:09,587]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 14:10:23,624]: (Team #1) Nick sent Green Blossom to TNNPE (Market Potion Shop Item 4)
+[2026-06-20 14:11:00,960]: (Team #1) Nick sent Soldier Key to TNNPE (Market Lost Dog House Crate)
+[2026-06-20 14:15:00,831]: (Team #1) Nick sent Fire Temple Small Key to Nick (Market Bombchu Shop Item 7)
+[2026-06-20 14:15:03,255]: (Team #1) Nick sent Holy symbol to Brian (Market Bombchu Shop Item 8)
+[2026-06-20 14:15:40,558]: (Team #1) Nick sent Northern Ritual Band+2 to TNNPE (Market Lost Dog)
+[2026-06-20 14:18:53,012]: (Team #1) Nick sent Hard Leather Gauntlets to TNNPE (ZF Near Jabu Pot 4)
+[2026-06-20 14:18:56,765]: (Team #1) Nick sent Ice Trap to Nick (ZF Near Jabu Pot 2)
+[2026-06-20 14:19:02,556]: (Team #1) Nick sent Ice Trap to Nick (ZF Near Jabu Pot 1)
+[2026-06-20 14:19:48,560]: (Team #1) Nick sent Alonne Greatbow to TNNPE (ZF GS Above The Log)
+[2026-06-20 14:20:11,256]: (Team #1) Nick sent Ice Trap to Nick (ZF Tree in Zora's Fountain)
+[2026-06-20 14:20:21,567]: (Team #1) Nick sent Ice Trap to Nick (ZF GS Tree)
+[2026-06-20 14:22:54,499]: (Team #1) Nick sent Meal ticket to Brian (Jabu Jabus Belly Platform Room Small Crate 2)
+[2026-06-20 14:23:01,588]: (Team #1) Nick sent Human Effigy to TNNPE (Jabu Jabus Belly Platform Room Small Crate 1)
+[2026-06-20 14:24:16,386]: (Team #1) Nick sent Large Titanite Shard to TNNPE (Jabu Jabus Belly GS Water Switch Room)
+[2026-06-20 14:24:19,055]: (Team #1) Nick sent Bomb Upgrade (+5) to Andrew (Jabu Jabus Belly Basement Pot 1)
+[2026-06-20 14:24:25,093]: (Team #1) Nick sent Titanite Slab to TNNPE (Jabu Jabus Belly Basement Pot 3)
+[2026-06-20 14:24:26,324]: (Team #1) Nick sent Ice Trap to Nick (Jabu Jabus Belly Basement Pot 2)
+[2026-06-20 14:26:50,975]: (Team #1) Nick sent Blue Rupee to Nick (Jabu Jabus Belly Map Chest)
+[2026-06-20 14:28:10,023]: (Team #1) Nick sent Buckler to TNNPE (Jabu Jabus Belly Boomerang Chest)
+[2026-06-20 14:29:35,852]: (Team #1) Nick sent Ice Trap to Nick (Jabu Jabus Belly Compass Chest)

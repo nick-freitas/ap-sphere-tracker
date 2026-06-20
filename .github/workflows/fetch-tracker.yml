@@ -21,7 +21,7 @@ jobs:
     outputs:
       changed: ${{ steps.diff.outputs.changed }}
     env:
-      AP_ROOM_PORT: '56640'
+      AP_ROOM_PORT: '45783'
     steps:
       - uses: actions/checkout@v4
 

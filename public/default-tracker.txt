@@ -1924,3 +1924,13 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 20:00:40,835]: (Team #1) Nick sent Crimson Water to TNNPE (ZR Frogs Song of Time)
 [2026-06-20 20:00:42,984]: (Team #1) TNNPE sent Human Effigy to TNNPE ([Bastille] Corpse up the ladder)
 [2026-06-20 20:04:18,464]: (Team #1) Nick sent Bottom of the Well Small Key to Nick (ZR Magic Bean Salesman)
+[2026-06-20 20:05:05,882]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-20 20:07:48,804]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-20 20:07:48,804]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 20:18:49,734]: (Team #1) Nick sent Cleric's Parma to TNNPE (ZD Behind King Zora Beehive)
+[2026-06-20 20:19:23,427]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-20 20:22:59,089]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-20 20:22:59,100]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 20:28:34,457]: (Team #1) Brian sent Northern Ritual Band to TNNPE (Royal Chapel - Item Behind Maria)
+[2026-06-20 20:31:48,187]: (Team #1) TNNPE sent Ice Trap to Nick ([Gutter] Urn next to upper gutter bonfire on a little bit higher ledge)
+[2026-06-20 20:37:31,428]: Notice (all): TNNPE (Team #1) has left the game. Client(0.5.1), ['DeathLink'].

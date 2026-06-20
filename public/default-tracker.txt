@@ -1705,3 +1705,44 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 15:36:03,342]: (Team #1) TNNPE sent Deku Stick (1) to Nick ([Bastille] In a cell before Sentinels)
 [2026-06-20 15:37:46,079]: (Team #1) TNNPE sent Boss Heart Container to Andrew ([Bastille] Metal chest in McDuff's workshop)
 [2026-06-20 15:39:26,635]: Notice (all): TNNPE (Team #1) has left the game. Client(0.5.1), ['DeathLink'].
+[2026-06-20 15:59:31,473]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-20 15:59:31,474]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 15:59:39,550]: (Team #1) Andrew sent Big Key (Turtle Rock) to Andrew (Turtle Rock - Eye Bridge - Top Right)
+[2026-06-20 15:59:39,551]: (Team #1) Andrew sent Big Key (Eastern Palace) to Andrew (Eastern Palace - Big Key Chest)
+[2026-06-20 15:59:39,551]: (Team #1) Andrew sent Small Key (Eastern Palace) to Andrew (Eastern Palace - Big Chest)
+[2026-06-20 15:59:39,551]: (Team #1) Andrew sent Small Key (Desert Palace) to Andrew (Desert Palace - Desert Tiles 1 Pot Key)
+[2026-06-20 15:59:39,551]: (Team #1) Andrew sent Small Key (Turtle Rock) to Andrew (Turtle Rock - Eye Bridge - Top Left)
+[2026-06-20 15:59:39,551]: (Team #1) Andrew sent Small Key (Turtle Rock) to Andrew (Turtle Rock - Eye Bridge - Bottom Right)
+[2026-06-20 15:59:39,551]: (Team #1) Andrew sent Red bean bun to Brian (Zora's Ledge)
+[2026-06-20 15:59:39,551]: (Team #1) Andrew sent Resist dark to Brian (Light World Death Mountain Shop Left)
+[2026-06-20 15:59:39,551]: (Team #1) Andrew sent Sunglasses to Brian (Cave Shop (Lake Hylia) Left)
+[2026-06-20 15:59:39,551]: (Team #1) Andrew sent Life Vessel to Brian (Lumberjack Tree)
+[2026-06-20 15:59:39,551]: (Team #1) Andrew sent Gold Skulltula Token to Nick (Waterfall Fairy - Left)
+[2026-06-20 15:59:39,551]: (Team #1) Andrew sent Red Rupee to Nick (Waterfall Fairy - Right)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Heart Container to Nick (Catfish)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Ice Trap to Nick (Eastern Palace - Dark Square Pot Key)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Ice Trap to Nick (Lake Hylia Island)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Bombs (5) to Nick (Blind's Hideout - Right)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Deku Nuts (10) to Nick (Blind's Hideout - Far Right)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Deku Nuts (10) to Nick (Eastern Palace - Dark Eyegore Key Drop)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Archdrake Shield to TNNPE (Spectacle Rock)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Faraam Armor to TNNPE (Blind's Hideout - Left)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Northwarder Manchettes to TNNPE (Turtle Rock - Boss)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Velstadt's Armor to TNNPE (Eastern Palace - Boss)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Soul Vortex to TNNPE (Blind's Hideout - Top)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Great Fireball to TNNPE (Turtle Rock - Eye Bridge - Bottom Left)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Small Smooth & Silky Stone to TNNPE (Blind's Hideout - Far Left)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Divine Blessing to TNNPE (Brewery)
+[2026-06-20 15:59:39,552]: (Team #1) Andrew sent Fire Seed to TNNPE (Desert Palace - Beamos Hall Pot Key)
+[2026-06-20 16:06:50,393]: Notice (all): Andrew: !hint Hookshot
+[2026-06-20 16:06:50,394]: Notice (Team #1): [Hint]: Andrew's Hookshot is at [Drangleic] Metal chest on left-hand side behind wellager in TNNPE's World. (priority)
+[2026-06-20 16:07:00,060]: Notice (all): Andrew: !hint Progressive Gloves
+[2026-06-20 16:07:00,062]: Notice (Team #1): [Hint]: Andrew's Progressive Glove is at Kak GS Above Impas House in Nick's World. (found)
+[2026-06-20 16:07:00,063]: Notice (Team #1): [Hint]: Andrew's Progressive Glove is at [DLC2] Behind explodable wall the curved corridor opposite the gate to sir alonne in TNNPE's World. (priority)
+[2026-06-20 16:12:13,079]: Notice (all): Andrew: !hint Hammer
+[2026-06-20 16:12:13,080]: Notice (Team #1): [Hint]: Andrew's Hammer is at Shadow Temple Invisible Blades Invisible Chest in Nick's World. (priority)
+[2026-06-20 16:17:29,403]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 16:22:55,437]: Notice (all): Andrew: !hint Pegasus Boots
+[2026-06-20 16:22:55,439]: Notice (Team #1): [Hint]: Andrew's Pegasus Boots is at [ShadedWoods] Metal chest in room blocked by petrified statue in TNNPE's World. (priority)
+[2026-06-20 16:24:45,185]: Notice (all): Andrew: !hint Book of Mudora
+[2026-06-20 16:24:45,186]: Notice (Team #1): [Hint]: Andrew's Book of Mudora is at Ganon's Castle Light Trial Second Right Chest in Nick's World. (priority)

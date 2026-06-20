@@ -1746,3 +1746,20 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 16:22:55,439]: Notice (Team #1): [Hint]: Andrew's Pegasus Boots is at [ShadedWoods] Metal chest in room blocked by petrified statue in TNNPE's World. (priority)
 [2026-06-20 16:24:45,185]: Notice (all): Andrew: !hint Book of Mudora
 [2026-06-20 16:24:45,186]: Notice (Team #1): [Hint]: Andrew's Book of Mudora is at Ganon's Castle Light Trial Second Right Chest in Nick's World. (priority)
+[2026-06-20 17:20:05,618]: Notice (all): Brian (Team #1) playing Symphony of the Night has joined. Client(0.6.5), ['DeathLink', 'AP'].
+[2026-06-20 17:20:05,618]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 17:20:17,074]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 17:24:55,915]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['DeathLink', 'AP'].
+[2026-06-20 17:25:30,565]: Notice (all): Brian (Team #1) playing Symphony of the Night has joined. Client(0.6.5), ['DeathLink', 'AP'].
+[2026-06-20 17:25:30,566]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 17:35:20,769]: (Team #1) Brian sent Ice Trap to Nick (Cave - Death Item)
+[2026-06-20 17:37:19,127]: (Team #1) Brian sent Large Soul of a Lost Undead to TNNPE (Cave - Upper Ascend Item 1)
+[2026-06-20 17:37:26,469]: (Team #1) Brian sent Light Crossbow to TNNPE (Cave - Upper Ascend Item 2)
+[2026-06-20 17:37:36,378]: (Team #1) Brian sent Mirror cuirass to Brian (Cave - Upper Right Room Left Item(Shared with Demon Side))
+[2026-06-20 17:37:38,862]: (Team #1) Brian sent Mormegil to Brian (Cave - Upper Right Room Right Item)
+[2026-06-20 17:42:12,518]: (Team #1) Brian sent Iron ball to Brian (Floating Catacombs Bottom - After Save Point Breakable Wall)
+[2026-06-20 17:45:23,699]: (Team #1) Brian sent Magic missile to Brian (Floating Catacombs After Spike Tunnel - Bottom Right Vase)
+[2026-06-20 17:45:23,700]: (Team #1) Brian sent Transgressor's Staff to TNNPE (Floating Catacombs After Spike Tunnel - Bottom Left Vase)
+[2026-06-20 17:45:26,888]: (Team #1) Brian sent Huge Rupee to Nick (Floating Catacombs After Spike Tunnel - Top Right Vase)
+[2026-06-20 17:45:27,939]: (Team #1) Brian sent Nunchaku to Brian (Floating Catacombs After Spike Tunnel - Top Left Vase)
+[2026-06-20 17:45:36,195]: (Team #1) Brian sent Recovery Heart to Nick (Floating Catacombs After Spike Tunnel - Deep Left Item)

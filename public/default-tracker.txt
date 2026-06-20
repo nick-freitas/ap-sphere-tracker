@@ -1763,3 +1763,29 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 17:45:26,888]: (Team #1) Brian sent Huge Rupee to Nick (Floating Catacombs After Spike Tunnel - Top Right Vase)
 [2026-06-20 17:45:27,939]: (Team #1) Brian sent Nunchaku to Brian (Floating Catacombs After Spike Tunnel - Top Left Vase)
 [2026-06-20 17:45:36,195]: (Team #1) Brian sent Recovery Heart to Nick (Floating Catacombs After Spike Tunnel - Deep Left Item)
+[2026-06-20 17:46:45,422]: (Team #1) Brian sent Heart Vessel to Brian (Floating Catacombs After Spike Tunnel - Deep Right Item)
+[2026-06-20 17:46:51,310]: (Team #1) Brian sent Large Soul of a Nameless Soldier to TNNPE (Floating Catacombs After Spike Tunnel - Deep Right Breakable Wall Item)
+[2026-06-20 17:48:30,964]: (Team #1) Brian sent Heart Container to Nick (Floating Catacombs Upper - Start of Crypt Left Item)
+[2026-06-20 17:48:32,888]: (Team #1) Brian sent King's Leggings to TNNPE (Floating Catacombs Upper - Start of Crypt Right Item)
+[2026-06-20 17:49:01,348]: (Team #1) Brian sent Gold Skulltula Token to Nick (Floating Catacombs Upper - After Crypt Cave Upper Red Vase)
+[2026-06-20 17:49:04,120]: (Team #1) Brian sent Hard Leather Boots to TNNPE (Floating Catacombs Upper - After Crypt Cave Bottom Red Vase)
+[2026-06-20 17:49:14,196]: (Team #1) Brian sent Dark Hail to TNNPE (Floating Catacombs Upper - After Crypt Breakable Wall Room)
+[2026-06-20 17:54:33,723]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-20 17:54:33,723]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 17:55:08,279]: (Team #1) Brian sent Gold Skulltula Token to Nick (Floating Catacombs Upper - Before Galamoth Save Point)
+[2026-06-20 17:57:46,418]: (Team #1) Brian sent Lifegem to TNNPE (Floating Catacombs Upper - After Galamoth Left Item)
+[2026-06-20 17:57:48,093]: (Team #1) Brian sent Velstadt's Leggings to TNNPE (Floating Catacombs Upper - After Galamoth Right Item)
+[2026-06-20 17:58:39,446]: (Team #1) Brian sent Piece of Heart to Nick (Floating Catacombs Upper - After Galamoth Deeper Room Right Item)
+[2026-06-20 17:58:41,832]: (Team #1) Brian sent Resist thunder to Brian (Floating Catacombs Upper - After Galamoth Deeper Room Left Item)
+[2026-06-20 17:59:44,240]: Notice (all): Nick: !hint 'Hover Boots'
+[2026-06-20 17:59:44,243]: Notice (Team #1): [Hint]: Nick's Hover Boots is at [DLC1] Next to the hidden sanctum chamber bonfire in TNNPE's World. (priority)
+[2026-06-20 18:00:23,210]: Notice (all): Nick: !hint 'Progressive Magic Meter'
+[2026-06-20 18:00:23,214]: Notice (Team #1): [Hint]: Nick's Progressive Magic Meter is at Kak Near Potion Shop Pot 3 in Nick's World. (found)
+[2026-06-20 18:00:23,214]: Notice (Team #1): [Hint]: Nick's Progressive Magic Meter is at KF Shop Item 4 in Nick's World. (unspecified)
+[2026-06-20 18:00:23,215]: Notice (Team #1): [Hint]: Nick's Progressive Magic Meter is at [Drangleic] Between the stone horse-knights (2) in TNNPE's World. (priority)
+[2026-06-20 18:01:00,084]: Notice (all): Nick: !hint 'Progressive Wallet'
+[2026-06-20 18:01:00,087]: Notice (Team #1): [Hint]: Nick's Progressive Wallet is at Entrance - Right Alcove in Cube of Zoe Room in Brian's World. (found)
+[2026-06-20 18:01:00,088]: Notice (Team #1): [Hint]: Nick's Progressive Wallet is at DMT Freestanding PoH in Nick's World. (found)
+[2026-06-20 18:01:00,088]: Notice (Team #1): [Hint]: Nick's Progressive Wallet is at DMT GS Above Dodongos Cavern in Nick's World. (found)
+[2026-06-20 18:01:00,088]: Notice (Team #1): [Hint]: Nick's Progressive Wallet is at Water Temple Near Compass Pot 1 in Nick's World. (priority)
+[2026-06-20 18:01:00,088]: Notice (Team #1): [Hint]: Nick's Progressive Wallet is at Ganon's Castle Fire Trial Pot 2 in Nick's World. (priority)

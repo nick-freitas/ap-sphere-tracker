@@ -1934,3 +1934,9 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 20:28:34,457]: (Team #1) Brian sent Northern Ritual Band to TNNPE (Royal Chapel - Item Behind Maria)
 [2026-06-20 20:31:48,187]: (Team #1) TNNPE sent Ice Trap to Nick ([Gutter] Urn next to upper gutter bonfire on a little bit higher ledge)
 [2026-06-20 20:37:31,428]: Notice (all): TNNPE (Team #1) has left the game. Client(0.5.1), ['DeathLink'].
+[2026-06-20 21:02:24,328]: (Team #1) Nick sent Ice Trap to Nick (LH GS Bean Patch)
+[2026-06-20 21:04:56,978]: (Team #1) Nick sent Smooth & Silky Stone to TNNPE (GV GS Bean Patch)
+[2026-06-20 21:05:43,306]: (Team #1) Nick sent Shiitake to Brian (Colossus GS Bean Patch)
+[2026-06-20 21:08:02,923]: (Team #1) Nick sent Shadow Temple Small Key to Nick (KF GS Bean Patch)
+[2026-06-20 21:09:21,176]: (Team #1) Nick sent Soul of a Brave Warrior to TNNPE (LW GS Bean Patch Near Bridge)
+[2026-06-20 21:10:42,444]: (Team #1) Nick sent Infantry Armor to TNNPE (LW GS Bean Patch Near Theater)

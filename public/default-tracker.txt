@@ -1601,3 +1601,8 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 11:41:05,301]: (Team #1) TNNPE sent Life Vessel to Brian ([Copse] Round hut on the way to Skeleton Lords)
 [2026-06-20 11:42:29,172]: (Team #1) TNNPE sent Resist thunder to Brian ([Copse] On small ledge with a necromancer)
 [2026-06-20 11:42:43,013]: (Team #1) TNNPE sent Huge Rupee to Nick ([Copse] On a stone pillar inside the necromancer cave)
+[2026-06-20 11:48:33,022]: (Team #1) TNNPE sent Estus Flask Shard to TNNPE ([Copse] Skeleton Lords drop)
+[2026-06-20 11:51:11,062]: (Team #1) TNNPE sent Twinkling Titanite to TNNPE ([Maughlin the Armourer] Falconer Gloves)
+[2026-06-20 11:51:58,460]: (Team #1) TNNPE sent Large Titanite Shard to TNNPE ([Maughlin the Armourer] Silver Eagle Kite Shield)
+[2026-06-20 11:56:11,910]: (Team #1) TNNPE sent Rusted Coin to TNNPE ([Copse] On a ledge on the way to Executioner's Chariot)
+[2026-06-20 12:02:06,427]: Notice (all): TNNPE (Team #1) has left the game. Client(0.5.1), ['DeathLink'].

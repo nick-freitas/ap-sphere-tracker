@@ -1957,3 +1957,19 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 21:39:47,756]: (Team #1) Nick sent Bombs (10) to Nick (Fire Temple After Hammer Small Crate 2)
 [2026-06-20 21:39:48,104]: (Team #1) Nick sent Tower Key to TNNPE (Fire Temple After Hammer Small Crate 1)
 [2026-06-20 21:41:08,879]: (Team #1) Nick sent Piece of Heart to Andrew (Fire Temple Compass Chest)
+[2026-06-20 21:48:49,291]: (Team #1) Nick sent Looking Glass Armor to TNNPE (Spirit Temple Hallway Left Invisible Chest)
+[2026-06-20 21:48:56,881]: (Team #1) Nick sent Rupees (20) to Andrew (Spirit Temple Hallway Right Invisible Chest)
+[2026-06-20 21:51:12,146]: (Team #1) Nick sent Soul of a Great Hero to TNNPE (Spirit Temple Mirror Shield Chest)
+[2026-06-20 21:51:59,791]: (Team #1) Nick sent Buffalo star to Brian (Spirit Temple Near Four Armos Chest)
+[2026-06-20 21:56:07,990]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 21:56:08,196]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['DeathLink', 'AP'].
+[2026-06-20 21:58:14,111]: Notice (all): Nick: !hint 'Progressive Hookshot'
+[2026-06-20 21:58:14,117]: Notice (Team #1): [Hint]: Nick's Progressive Hookshot is at [FOFG] On the huge sword in TNNPE's World. (found)
+[2026-06-20 21:58:14,117]: Notice (Team #1): [Hint]: Nick's Progressive Hookshot is at Gerudo Training Ground Maze Right Side Chest in Nick's World. (priority)
+[2026-06-20 22:09:36,994]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 22:09:37,122]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 22:09:37,246]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-20 22:09:41,261]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 22:09:45,642]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 22:10:08,102]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-20 22:10:08,103]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.

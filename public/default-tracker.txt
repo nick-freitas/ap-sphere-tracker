@@ -1576,3 +1576,5 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 03:03:21,394]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
 [2026-06-20 03:04:09,389]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-06-20 03:04:10,252]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 03:20:46,247]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 04:42:12,872]: Shutting down due to inactivity.

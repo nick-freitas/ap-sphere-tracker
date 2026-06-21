@@ -2011,3 +2011,31 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 23:32:45,461]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-06-20 23:32:46,015]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-06-20 23:32:57,164]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 23:40:12,287]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 23:40:12,335]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 23:40:12,968]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 23:40:17,862]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 23:41:37,690]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-20 23:41:37,690]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-20 23:41:37,843]: (Team #1) Nick sent Arrows (10) to Andrew (Wasteland After Quicksand Crate 1)
+[2026-06-20 23:41:37,843]: (Team #1) Nick sent Zircon to Brian (LH GS Tree)
+[2026-06-20 23:41:37,843]: (Team #1) Nick sent Force of echo to Brian (Wasteland GS)
+[2026-06-20 23:41:37,843]: (Team #1) Nick sent Water Medallion to Nick (Morpha)
+[2026-06-20 23:41:37,844]: (Team #1) Nick sent Recovery Heart to Nick (Wasteland Near GS Pot 2)
+[2026-06-20 23:41:37,844]: (Team #1) Nick sent Blue Rupee to Nick (GF Chest)
+[2026-06-20 23:41:37,844]: (Team #1) Nick sent Arrows (10) to Nick (Water Temple Main Level 1 Pot 2)
+[2026-06-20 23:41:37,844]: (Team #1) Nick sent Barinade's Soul to Nick (Wasteland Chest)
+[2026-06-20 23:41:37,844]: (Team #1) Nick sent Sanctum Crossbow to TNNPE (Water Temple Main Level 1 Pot 1)
+[2026-06-20 23:41:37,844]: (Team #1) Nick sent Dark Pyromancy Flame to TNNPE (Wasteland Near GS Pot 3)
+[2026-06-20 23:41:37,844]: (Team #1) Nick sent Traveling Merchant Hat to TNNPE (Wasteland Near GS Pot 1)
+[2026-06-20 23:41:37,844]: (Team #1) Nick sent Ring of the Living to TNNPE (Wasteland Near GS Pot 4)
+[2026-06-20 23:41:37,844]: (Team #1) Nick sent Petrified Something to TNNPE (Water Temple Morpha Heart Container)
+[2026-06-20 23:41:37,844]: (Team #1) Nick sent Soul of a Nameless Soldier to TNNPE (Wasteland After Quicksand Crate 2)
+[2026-06-20 23:41:37,844]: (Team #1) Nick sent Titanite Shard to TNNPE (Wasteland After Quicksand Crate 3)
+[2026-06-20 23:43:24,977]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 23:43:25,071]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 23:43:25,079]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-20 23:43:26,440]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 23:44:56,405]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 23:44:58,166]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-20 23:45:06,599]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

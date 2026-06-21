@@ -2179,3 +2179,20 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-21 18:41:26,051]: Hosting game at archipelago.gg:45783
 [2026-06-21 18:41:58,439]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
 [2026-06-21 18:41:58,440]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-21 19:13:47,663]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-21 19:44:37,529]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-21 19:44:37,530]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-21 19:44:42,114]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-21 19:44:42,115]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-21 19:46:47,823]: Notice (all): Nick (Team #1) viewing Ship of Harkinian has joined. Client(0.6.7), ['AP', 'TextOnly'].
+[2026-06-21 19:46:47,823]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-21 19:48:03,560]: Notice (all): Cheat console: sending "Volvagia's Soul" to Nick
+[2026-06-21 19:48:46,972]: Notice (all): Cheat console: sending "Zelda's Lullaby" to Nick
+[2026-06-21 19:49:12,282]: Notice (all): Cheat console: sending "Hover Boots" to Nick
+[2026-06-21 19:49:27,399]: Notice (all): Cheat console: sending "Double Defense" to Nick
+[2026-06-21 19:49:44,480]: Notice (all): Cheat console: sending "Progressive Magic Meter" to Nick
+[2026-06-21 19:50:37,355]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-21 19:50:45,614]: Notice (all): Cheat console: sending "Hookshot" to Andrew
+[2026-06-21 19:53:08,914]: (Team #1) Andrew sent Small Key (Misery Mire) to Andrew (Misery Mire - Spike Chest)
+[2026-06-21 19:53:08,914]: (Team #1) Andrew sent Small Key (Misery Mire) to Andrew (Misery Mire - Spikes Pot Key)
+[2026-06-21 19:53:43,230]: (Team #1) Nick sent Monastery Charm to TNNPE (Shadow Temple Compass Chest)

@@ -2992,3 +2992,6 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-21 22:08:41,547]: (Team #1) Nick sent Scorpioness Najka Soul to TNNPE (Kak Redead Grotto Chest)
 [2026-06-21 22:08:41,547]: (Team #1) Nick sent Darklurker Soul to TNNPE (DMT Great Fairy Reward)
 [2026-06-21 22:23:30,535]: Notice (all): Nick (Team #1) has changed tags from ['DeathLink', 'SharedDamage', 'TrapLink'] to ['SharedDamage', 'TrapLink'].
+[2026-06-21 22:43:58,515]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['SharedDamage', 'TrapLink'].
+[2026-06-21 22:45:17,080]: Notice (all): Nick (Team #1) has stopped viewing the game. Client(0.6.7), ['AP', 'TextOnly'].
+[2026-06-21 22:45:44,028]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

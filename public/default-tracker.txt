@@ -2156,3 +2156,6 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-21 14:39:25,071]: Hosting game at archipelago.gg:45783
 [2026-06-21 14:39:58,410]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
 [2026-06-21 14:39:58,410]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-21 15:19:07,017]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-21 15:19:31,057]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-21 15:19:31,058]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.

@@ -2995,3 +2995,7 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-21 22:43:58,515]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['SharedDamage', 'TrapLink'].
 [2026-06-21 22:45:17,080]: Notice (all): Nick (Team #1) has stopped viewing the game. Client(0.6.7), ['AP', 'TextOnly'].
 [2026-06-21 22:45:44,028]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-21 23:35:44,604]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-21 23:35:47,879]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-21 23:35:57,110]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-21 23:36:38,083]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

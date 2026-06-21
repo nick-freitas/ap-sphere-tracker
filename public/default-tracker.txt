@@ -2085,3 +2085,14 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-21 00:42:17,097]: Notice (Team #1): [Hint]: Nick's Progressive Magic Meter is at [Drangleic] Between the stone horse-knights (2) in TNNPE's World. (priority)
 [2026-06-21 00:44:44,057]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
 [2026-06-21 00:44:47,950]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-21 02:29:10,486]: Notice (all): Andrew (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-21 02:32:39,079]: Shutting down due to inactivity.
+[2026-06-21 02:32:39,396]: Notice (all): Andrew (Team #1) has left the game. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-21 02:33:24,408]: Loading embedded data package for game Symphony of the Night
+[2026-06-21 02:33:24,409]: Loading embedded data package for game Ship of Harkinian
+[2026-06-21 02:33:24,409]: Loading embedded data package for game Final Fantasy 6 Worlds Collide
+[2026-06-21 02:33:24,409]: Loading embedded data package for game Dark Souls II
+[2026-06-21 02:33:24,420]: Loaded save file with 1488 received items for 5 players
+[2026-06-21 02:33:24,434]: Hosting game at archipelago.gg:45783
+[2026-06-21 02:33:26,931]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-21 02:33:26,932]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.

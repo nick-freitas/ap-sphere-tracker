@@ -2039,3 +2039,49 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-20 23:44:56,405]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-06-20 23:44:58,166]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-06-20 23:45:06,599]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-21 00:31:52,782]: Loading embedded data package for game Symphony of the Night
+[2026-06-21 00:31:52,782]: Loading embedded data package for game Ship of Harkinian
+[2026-06-21 00:31:52,782]: Loading embedded data package for game Final Fantasy 6 Worlds Collide
+[2026-06-21 00:31:52,782]: Loading embedded data package for game Dark Souls II
+[2026-06-21 00:31:52,791]: Loaded save file with 1473 received items for 5 players
+[2026-06-21 00:32:02,574]: Hosting game at archipelago.gg:45783
+[2026-06-21 00:32:07,070]: Notice (all): Andrew (Team #1) tracking A Link to the Past has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-21 00:32:09,540]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-21 00:32:38,051]: Notice (all): Nick (Team #1) playing Ship of Harkinian has joined. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-21 00:32:38,052]: Notice (Player Nick in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-21 00:32:38,216]: (Team #1) Nick sent Crissaegrim to Brian (LLR Talons House Pot 3)
+[2026-06-21 00:32:38,216]: (Team #1) Nick sent Diamond to Brian (LLR Talons House Pot 1)
+[2026-06-21 00:32:38,220]: (Team #1) Nick sent Life Vessel to Brian (LLR Talons Chickens)
+[2026-06-21 00:32:38,220]: (Team #1) Nick sent Gold Skulltula Token to Nick (Ganon's Castle Water Trial Pot 1)
+[2026-06-21 00:32:38,220]: (Team #1) Nick sent Forest Medallion to Nick (Barinade)
+[2026-06-21 00:32:38,220]: (Team #1) Nick sent Huge Rupee to Nick (LH Sun)
+[2026-06-21 00:32:38,220]: (Team #1) Nick sent Bombs (5) to Nick (Ganon's Castle Water Trial Pot 3)
+[2026-06-21 00:32:38,220]: (Team #1) Nick sent Arrows (10) to Nick (Ganon's Castle Water Trial Left Chest)
+[2026-06-21 00:32:38,220]: (Team #1) Nick sent Arrows (10) to Nick (Ganon's Castle Water Trial Pot 2)
+[2026-06-21 00:32:38,220]: (Team #1) Nick sent Durgo's Hat to TNNPE (Ganon's Castle Forest Trial Chest)
+[2026-06-21 00:32:38,220]: (Team #1) Nick sent Soul Spear to TNNPE (Ganon's Castle Water Trial Right Chest)
+[2026-06-21 00:32:38,220]: (Team #1) Nick sent Flame Quartz Ring+3 to TNNPE (LLR Talons House Pot 2)
+[2026-06-21 00:32:38,220]: (Team #1) Nick sent Rotten Pine Resin to TNNPE (Jabu Jabus Belly Barinade Heart Container)
+[2026-06-21 00:32:38,220]: (Team #1) Nick sent Green Blossom to TNNPE (Sheik at Temple)
+[2026-06-21 00:32:38,220]: (Team #1) Nick sent Petrified Dragon Bone to TNNPE (LLR Freestanding PoH)
+[2026-06-21 00:34:13,172]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-21 00:34:20,216]: Notice (all): Nick (Team #1) tracking Ship of Harkinian has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-21 00:36:33,564]: Notice (all): Nick: !hint 'Double Defense'
+[2026-06-21 00:36:33,567]: Notice (Team #1): [Hint]: Nick's Double Defense is at [AldiasKeep] Inside a barrel in the corner in side room with caged Gargoyle in TNNPE's World. (priority)
+[2026-06-21 00:36:41,585]: Notice (all): Nick: !hint 'Volvagia's Soul'
+[2026-06-21 00:36:41,588]: Notice (Team #1): [Hint]: Nick's Volvagia's Soul is at [DLC1] In the bug room before Flynn's Ring (2) in TNNPE's World. (priority)
+[2026-06-21 00:36:49,840]: Notice (all): Nick: !hint 'Hover Boots'
+[2026-06-21 00:36:49,842]: Notice (Team #1): [Hint]: Nick's Hover Boots is at [DLC1] Next to the hidden sanctum chamber bonfire in TNNPE's World. (priority)
+[2026-06-21 00:36:49,842]: Notice (Player Nick in team 1): Hint was previously used, no points deducted.
+[2026-06-21 00:36:59,678]: Notice (all): Nick: !hint 'Twinrova's Soul'
+[2026-06-21 00:36:59,680]: Notice (Team #1): [Hint]: Nick's Twinrova's Soul is at Water Temple GS Central Pillar in Nick's World. (priority)
+[2026-06-21 00:37:41,002]: Notice (all): Nick: !hint 'Zelda's Lullaby'
+[2026-06-21 00:37:41,004]: Notice (Team #1): [Hint]: Nick's Zelda's Lullaby is at [Aerie] On droppable small ledge before the third dragon nest in TNNPE's World. (priority)
+[2026-06-21 00:40:16,869]: Notice (all): Andrew (Team #1) playing A Link to the Past has joined. Client(0.6.6), ['AP', 'DeathLink'].
+[2026-06-21 00:40:16,869]: Notice (Player Andrew in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-06-21 00:42:17,092]: Notice (all): Nick: !hint 'Progressive Magic Meter'
+[2026-06-21 00:42:17,095]: Notice (Team #1): [Hint]: Nick's Progressive Magic Meter is at Kak Near Potion Shop Pot 3 in Nick's World. (found)
+[2026-06-21 00:42:17,096]: Notice (Team #1): [Hint]: Nick's Progressive Magic Meter is at KF Shop Item 4 in Nick's World. (found)
+[2026-06-21 00:42:17,097]: Notice (Team #1): [Hint]: Nick's Progressive Magic Meter is at [Drangleic] Between the stone horse-knights (2) in TNNPE's World. (priority)
+[2026-06-21 00:44:44,057]: Notice (all): Nick (Team #1) has left the game. Client(0.6.3), ['DeathLink', 'SharedDamage', 'TrapLink'].
+[2026-06-21 00:44:47,950]: Notice (all): Nick (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

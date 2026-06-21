@@ -2991,3 +2991,4 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-21 22:08:41,547]: (Team #1) Nick sent Smelter Demon Soul to TNNPE (Bottom of the Well Basement Pot 11)
 [2026-06-21 22:08:41,547]: (Team #1) Nick sent Scorpioness Najka Soul to TNNPE (Kak Redead Grotto Chest)
 [2026-06-21 22:08:41,547]: (Team #1) Nick sent Darklurker Soul to TNNPE (DMT Great Fairy Reward)
+[2026-06-21 22:23:30,535]: Notice (all): Nick (Team #1) has changed tags from ['DeathLink', 'SharedDamage', 'TrapLink'] to ['SharedDamage', 'TrapLink'].

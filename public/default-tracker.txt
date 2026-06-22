@@ -3008,3 +3008,12 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-22 00:09:25,873]: Loaded save file with 2280 received items for 5 players
 [2026-06-22 00:09:25,899]: Hosting game at archipelago.gg:45783
 [2026-06-22 00:09:31,998]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-22 02:09:25,906]: Shutting down due to inactivity.
+[2026-06-22 02:09:26,175]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-06-22 02:10:25,370]: Loading embedded data package for game Symphony of the Night
+[2026-06-22 02:10:25,370]: Loading embedded data package for game Ship of Harkinian
+[2026-06-22 02:10:25,370]: Loading embedded data package for game Final Fantasy 6 Worlds Collide
+[2026-06-22 02:10:25,370]: Loading embedded data package for game Dark Souls II
+[2026-06-22 02:10:25,383]: Loaded save file with 2280 received items for 5 players
+[2026-06-22 02:10:25,427]: Hosting game at archipelago.gg:45783
+[2026-06-22 02:10:38,068]: Notice (all): Brian (Team #1) tracking Symphony of the Night has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].

@@ -3039,3 +3039,4 @@ websockets.exceptions.ConnectionClosedError: no close frame received or sent
 [2026-06-23 02:03:55,393]: Loading embedded data package for game Dark Souls II
 [2026-06-23 02:03:55,406]: Loaded save file with 2280 received items for 5 players
 [2026-06-23 02:03:55,541]: Hosting game at archipelago.gg:45783
+[2026-06-23 04:03:55,549]: Shutting down due to inactivity.

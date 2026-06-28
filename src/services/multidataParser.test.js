@@ -451,33 +451,30 @@ describe('parseMultidata — end-to-end fixture', () => {
     expect(md.locations).toBeInstanceOf(Map)
     expect(md.slot_info).toBeInstanceOf(Map)
 
-    // Five slots, matching the test seed's players
-    expect(md.locations.size).toBe(5)
-    expect(md.slot_info.size).toBe(5)
+    // Two slots, matching the test seed's players
+    expect(md.locations.size).toBe(2)
+    expect(md.slot_info.size).toBe(2)
 
     // Per-slot check counts match the authoritative multidata check list.
-    expect(md.locations.get(1).size).toBe(261)   // Andrew
-    expect(md.locations.get(2).size).toBe(386)   // Brian
-    expect(md.locations.get(3).size).toBe(961)   // Nick
-    expect(md.locations.get(4).size).toBe(62)    // Ryot
-    expect(md.locations.get(5).size).toBe(1189)  // TNNPE
+    expect(md.locations.get(1).size).toBe(961)  // Nick
+    expect(md.locations.get(2).size).toBe(702)  // ThiccNick
 
     // Datapackage has the games from the fixture seed.
-    expect(md.datapackage.has('A Link to the Past')).toBe(true)
     expect(md.datapackage.has('Ship of Harkinian')).toBe(true)
+    expect(md.datapackage.has('Path of Exile')).toBe(true)
 
     // KF Shop Item 1 (Ship of Harkinian location id 624) is NOT in Nick's checks.
     // This is the regression test for the un-shuffled-slot issue.
-    expect(md.locations.get(3).has(624)).toBe(false)
+    expect(md.locations.get(1).has(624)).toBe(false)
 
     // Link's Pocket (Ship of Harkinian location id 1) IS in Nick's checks.
-    expect(md.locations.get(3).has(1)).toBe(true)
+    expect(md.locations.get(1).has(1)).toBe(true)
   })
 
   it('sniffs a raw .archipelago file (version byte prefix)', async () => {
     const md = await parseMultidata(fixtureBytes)
     // First byte of the fixture is the version marker (0x03)
     expect(fixtureBytes[0]).toBe(0x03)
-    expect(md.locations.size).toBe(5)
+    expect(md.locations.size).toBe(2)
   })
 })

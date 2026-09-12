@@ -428,3 +428,69 @@
 [2026-09-12 01:48:05,712]: (Team #1) Brian sent (Recyclable) Standard Component to AndrewSol (Defeat 1 Heartless Crescendo)
 [2026-09-12 01:48:13,785]: (Team #1) Brian sent Enemy Card White Mushroom to Brian (Defeat 2 Heartless Crescendo)
 [2026-09-12 01:49:07,777]: (Team #1) Brian sent Jin x50 to AndrewSol (Defeat 3 Heartless Crescendo)
+[2026-09-12 01:54:06,193]: (Team #1) Brian sent Sleight Zantetsuken to Brian (Defeat 2 Heartless Barrel Spider)
+[2026-09-12 01:54:06,194]: (Team #1) Brian sent Soul Fragment to Ryot (Defeat 3 Heartless Barrel Spider)
+[2026-09-12 01:54:06,194]: (Team #1) Brian sent Gemstones to TNNPE (Defeat 1 Heartless Barrel Spider)
+[2026-09-12 01:56:12,752]: (Team #1) Brian sent Jin x50 to AndrewSol (Olympus Coliseum Field (Attack Card Olympia))
+[2026-09-12 01:58:20,202]: (Team #1) Ryot sent (Poison) Oriander to AndrewSol (FF: Lower Pit)
+[2026-09-12 02:01:31,962]: (Team #1) Ryot sent Mana Upgrade to Ryot (FF: Fungal Deed)
+[2026-09-12 02:01:39,889]: (Team #1) Ryot sent Jin x50 to AndrewSol (FF: Past Fungella)
+[2026-09-12 02:03:43,337]: (Team #1) Ryot sent Tao Fruit to AndrewSol (TG: Early Gacha Coin)
+[2026-09-12 02:04:03,907]: (Team #1) Ryot sent Alchemist Costume to Ryot (TG: Early Coins Chest)
+[2026-09-12 02:04:33,125]: (Team #1) Ryot sent Sleight Warp to Brian (TG: Hidden Foliage)
+[2026-09-12 02:05:33,097]: (Team #1) Ryot sent Health Upgrade to Ryot (TG: Hidden Flip Magic Spring)
+[2026-09-12 02:06:14,414]: Notice (Team #1): [Hint]: Brian's Key to Rewards Atlantica is at Fountain Upgrade1 Location in TNNPE's World. (unspecified)
+[2026-09-12 02:06:14,415]: Notice (Team #1): [Hint]: Brian's Friend Card Donald is at Urns Of Wealth1 Location in TNNPE's World. (unspecified)
+[2026-09-12 02:06:14,415]: Notice (Team #1): [Hint]: Goonmaxxing's Slime Boss Key is at Fountain Upgrade2 Location in TNNPE's World. (unspecified)
+[2026-09-12 02:06:29,426]: (Team #1) TNNPE sent Slime Boss Key to Goonmaxxing (Fountain Upgrade2 Location)
+[2026-09-12 02:06:40,995]: (Team #1) TNNPE sent Healing Surge to Ryot (Urns Of Wealth3 Location)
+[2026-09-12 02:06:57,997]: (Team #1) TNNPE sent Key to Rewards Atlantica to Brian (Fountain Upgrade1 Location)
+[2026-09-12 02:07:03,104]: (Team #1) TNNPE sent Friend Card Donald to Brian (Urns Of Wealth1 Location)
+[2026-09-12 02:07:39,740]: (Team #1) Ryot sent Health Upgrade to Goonmaxxing (TG: Birby)
+[2026-09-12 02:07:45,747]: (Team #1) TNNPE sent Peachy Peach Recharge to Goonmaxxing (Darker Thirst Location)
+[2026-09-12 02:07:55,911]: (Team #1) TNNPE sent Ji's Hair to AndrewSol (Vintage Nectar Location)
+[2026-09-12 02:08:05,313]: (Team #1) TNNPE sent Loose Change to Ryot (Pitch Black Darkness Location)
+[2026-09-12 02:08:18,663]: (Team #1) TNNPE sent Jin x320 to AndrewSol (Fated Keys Location)
+[2026-09-12 02:08:19,475]: (Team #1) Ryot sent Frilly Panties to Ryot (TG: Flip Magic Chest)
+[2026-09-12 02:08:38,497]: (Team #1) TNNPE sent (Database) Water Synthesis Pipeline Panel to AndrewSol (Orpheus Keepsake)
+[2026-09-12 02:09:00,802]: (Team #1) TNNPE sent Sleight Magic LV2 to Brian (Court Musician Sentence Location)
+[2026-09-12 02:09:46,055]: (Team #1) Ryot sent Sleight Freeze to Brian (TG: Hidden Ledge)
+[2026-09-12 02:10:30,659]: Notice (all): Goonmaxxing (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-12 02:10:36,281]: Notice (all): Goonmaxxing (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-12 02:10:36,282]: Notice (Player Goonmaxxing in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-12 02:10:36,282]: Notice (Player Goonmaxxing in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-12 02:10:36,760]: Notice (all): Goonmaxxing (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-12 02:10:48,579]: (Team #1) Ryot sent Enemy Card Aquatank to Brian (TG: Secret Alcove)
+[2026-09-12 02:11:10,817]: (Team #1) Ryot sent Card Set Cloud to Brian (AH: Starting Coins)
+[2026-09-12 02:13:03,932]: (Team #1) Ryot sent Key to Rewards Wonderland to Brian (AH: Below Boss Room Chest)
+[2026-09-12 02:13:06,461]: (Team #1) Ryot sent Mana Surge to Goonmaxxing (AH: Below Boss Room Coin)
+[2026-09-12 02:15:28,889]: (Team #1) Goonmaxxing sent Goblin Queen Key to Goonmaxxing (Dusty: Alley Cat)
+[2026-09-12 02:16:30,552]: Notice (all): Goonmaxxing (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-12 02:16:38,028]: Notice (all): Goonmaxxing (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-12 02:16:38,029]: Notice (Player Goonmaxxing in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-12 02:16:38,029]: Notice (Player Goonmaxxing in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-12 02:16:38,541]: Notice (all): Goonmaxxing (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-12 02:17:58,584]: (Team #1) TNNPE sent Enemy Card Jafar to Brian (Dusa Keepsake)
+[2026-09-12 02:19:11,485]: (Team #1) TNNPE sent Cerberus Keepsake to TNNPE (Brilliant Gemstones Location)
+[2026-09-12 02:19:18,418]: (Team #1) TNNPE sent Bow Weapon Unlock Item to TNNPE (Vanquishers Keep Location)
+[2026-09-12 02:19:27,851]: (Team #1) TNNPE sent Jin x50 to AndrewSol (Cerberus Keepsake)
+[2026-09-12 02:19:46,001]: (Team #1) TNNPE sent Card Set Star Seeker to Brian (Achilles Keepsake)
+[2026-09-12 02:23:30,813]: (Team #1) AndrewSol sent Money Punishment to TNNPE (Cortex Center: Defeat Lady Ethereal)
+[2026-09-12 02:23:44,192]: (Team #1) Goonmaxxing sent Card Set Gravity to Brian (JG: Slime Form Room)
+[2026-09-12 02:23:45,905]: (Team #1) AndrewSol sent Jin x50 to AndrewSol (Cortex Center: Tianhuo Flower After Soulscape)
+[2026-09-12 02:24:59,622]: (Team #1) AndrewSol sent (Recyclable) Standard Component to AndrewSol (Cortex Center: Retrieve Chip From Shanhai 9000)
+[2026-09-12 02:26:46,691]: (Team #1) Goonmaxxing sent (Recyclable) Basic Component to AndrewSol (JG: Far Ledge)
+[2026-09-12 02:28:18,814]: Notice (all): Brian (Team #1) has changed tags from ['AP', 'DeathLink'] to ['AP'].
+[2026-09-12 02:28:22,377]: Notice (all): Brian (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-09-12 02:29:44,776]: (Team #1) Goonmaxxing sent Cat Costume to Goonmaxxing (JG: Hidden Hole)
+[2026-09-12 02:30:09,080]: (Team #1) Goonmaxxing sent Rundown House Key to Ryot (JG: Annahell Chest)
+[2026-09-12 02:32:59,956]: (Team #1) Goonmaxxing sent Sacrificial Dagger to Ryot (Annahell: Harvest Season)
+[2026-09-12 02:33:40,757]: (Team #1) Ryot sent Sleight Proud Roar LV3 to Brian (AH: Angelica MP Upgrade)
+[2026-09-12 02:34:01,532]: (Team #1) Goonmaxxing sent (Recyclable) Standard Component to AndrewSol (JG: Beast Key Chest)
+[2026-09-12 02:36:08,973]: (Team #1) Ryot sent Mana Surge to Ryot (FF: Thimble Costume 1)
+[2026-09-12 02:36:09,816]: (Team #1) Ryot sent Peachy Peach Recharge to Goonmaxxing (FF: Thimble Costume 2)
+[2026-09-12 02:36:36,099]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-12 02:37:01,351]: Notice (all): Ryot (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-12 02:37:01,355]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-12 02:37:01,355]: Notice (Player Ryot in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-12 02:37:02,093]: Notice (all): Ryot (Team #1) has changed tags from [] to ['DeathLink'].

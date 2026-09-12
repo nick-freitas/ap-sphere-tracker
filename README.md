@@ -32,7 +32,7 @@ The seed file (`.archipelago`) contains the authoritative per-slot check list fo
 - Game-agnostic — works with any Archipelago game including unofficial ones
 - Dark/light mode (defaults to system preference)
 - Installable as a PWA for offline use
-- Auto-updates tracker data hourly via GitHub Actions
+- Checks for tracker updates every five minutes via GitHub Actions
 - Filters out logic events using the authoritative per-slot check list embedded in your seed file
 - Player color coding throughout all views
 

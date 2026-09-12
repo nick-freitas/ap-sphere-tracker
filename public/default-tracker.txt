@@ -1,1 +1,286 @@
-
+[2026-09-11 22:34:31,760]: Loading embedded data package for game Nine Sols
+[2026-09-11 22:34:31,765]: Loading embedded data package for game Kingdom Hearts RE Chain of Memories
+[2026-09-11 22:34:31,765]: Loading embedded data package for game Flipwitch Forbidden Sex Hex
+[2026-09-11 22:34:31,765]: Loading embedded data package for game Hades
+[2026-09-11 22:34:31,805]: Hosting game at archipelago.gg:34417
+[2026-09-11 22:35:12,884]: Notice (all): Brian (Team #1) playing Kingdom Hearts RE Chain of Memories has joined. Client(0.6.5), ['AP'].
+[2026-09-11 22:35:12,885]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-11 22:35:33,180]: Notice (all): Brian (Team #1) tracking Kingdom Hearts RE Chain of Memories has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-11 22:35:36,722]: Notice (all): AndrewSol (Team #1) tracking Nine Sols has joined. Client(0.6.7), ['AP', 'Tracker'].
+[2026-09-11 22:35:36,723]: Notice (Player AndrewSol in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-11 22:37:06,019]: Notice (all): AndrewSol (Team #1) playing Nine Sols has joined. Client(0.6.0), ['DeathLink'].
+[2026-09-11 22:37:06,019]: Notice (Player AndrewSol in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-11 22:37:06,019]: Notice (Player AndrewSol in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-11 22:39:45,949]: Notice (all): Brian (Team #1) has changed tags from ['AP'] to ['AP', 'DeathLink'].
+[2026-09-11 22:39:51,619]: Notice (all): Goonmaxxing (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-11 22:39:51,620]: Notice (Player Goonmaxxing in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-11 22:39:51,620]: Notice (Player Goonmaxxing in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-11 22:39:52,530]: Notice (all): Goonmaxxing (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-11 22:40:04,689]: Notice (all): Ryot (Team #1) viewing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), ['TextOnly', 'AP'].
+[2026-09-11 22:40:04,689]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-11 22:40:33,226]: Notice (all): Ryot (Team #1) tracking Flipwitch Forbidden Sex Hex has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-11 22:40:45,098]: Notice (all): Goonmaxxing (Team #1) tracking Flipwitch Forbidden Sex Hex has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-11 22:41:48,465]: Notice (all): Ryot (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-11 22:41:48,477]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-11 22:41:48,485]: Notice (Player Ryot in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-11 22:41:49,137]: Notice (all): Ryot (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-11 22:43:52,106]: (Team #1) Brian sent (Recyclable) Passenger Token: Jihai to AndrewSol (Starting Checks (Magic Cards Cure))
+[2026-09-11 22:43:52,106]: (Team #1) Brian sent Enemy Card Sea Neon to Brian (Starting Checks (Magic Cards Blizzard))
+[2026-09-11 22:43:52,106]: (Team #1) Brian sent Peachy Peach Recharge to Goonmaxxing (Starting Checks (Sleight Blizzara))
+[2026-09-11 22:43:52,106]: (Team #1) Brian sent Peachy Peach Recharge to Goonmaxxing (Starting Checks (Sleight Curaga))
+[2026-09-11 22:43:52,106]: (Team #1) Brian sent Goblin Apartment Key to Goonmaxxing (Starting Checks (Item Cards Potion))
+[2026-09-11 22:43:52,107]: (Team #1) Brian sent Mana Surge to Ryot (Starting Checks (Sleight Blizzaga))
+[2026-09-11 22:43:52,107]: (Team #1) Brian sent Summon Stone to Ryot (Starting Checks (Attack Cards Kingdom Key))
+[2026-09-11 22:43:52,107]: (Team #1) Brian sent Spear Hidden Aspect to TNNPE (Starting Checks (Sleight Cura))
+[2026-09-11 22:45:42,964]: (Team #1) AndrewSol sent Angel Feathers to Goonmaxxing (FSP: Receive Peach Blossom Village Quest)
+[2026-09-11 22:49:56,598]: (Team #1) AndrewSol sent Bewitched Bubble to Ryot (AF (Monitoring): Break Corpse)
+[2026-09-11 22:51:55,817]: Notice (all): TNNPE (Team #1) playing Hades has joined. Client(0.6.7), [].
+[2026-09-11 22:51:55,817]: Notice (Player TNNPE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-11 22:53:03,131]: Notice (all): TNNPE (Team #1) has left the game. Client(0.6.7), [].
+[2026-09-11 22:53:09,147]: Notice (all): TNNPE (Team #1) playing Hades has joined. Client(0.6.7), [].
+[2026-09-11 22:53:09,147]: Notice (Player TNNPE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-11 22:53:29,058]: (Team #1) Brian sent Bewitched Bubble to Goonmaxxing (Pick Up Donald In Battle (Sleight Magic LV2))
+[2026-09-11 22:53:29,058]: (Team #1) Brian sent Loose Change to Ryot (Pick Up Donald In Battle (Sleight Magic LV3))
+[2026-09-11 22:54:05,541]: Notice (all): TNNPE (Team #1) has left the game. Client(0.6.7), [].
+[2026-09-11 22:54:13,388]: (Team #1) Ryot sent Fountain Upgrade1 Item to TNNPE (WW: Feminine Spare Clothes Chest)
+[2026-09-11 22:54:16,845]: (Team #1) AndrewSol sent Fishing Rod Item to TNNPE (AF (Monitoring): Upper Right)
+[2026-09-11 22:54:24,787]: (Team #1) Ryot sent Farmer Costume to Goonmaxxing (WW: Masculine Spare Clothes Chest)
+[2026-09-11 22:54:30,021]: Notice (all): TNNPE (Team #1) playing Hades has joined. Client(0.6.7), [].
+[2026-09-11 22:54:30,022]: Notice (Player TNNPE in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-11 22:54:58,058]: (Team #1) Ryot sent Card Set Mushu to Brian (WW: Beatrix's Introduction Gift)
+[2026-09-11 22:55:10,666]: (Team #1) TNNPE sent Animal Coin to Ryot (Clear Room 01)
+[2026-09-11 22:55:25,141]: (Team #1) Ryot sent (Artifact) Legend of the Porky Heroes to AndrewSol (WW: Secret Cave Coin)
+[2026-09-11 22:55:29,087]: (Team #1) Ryot sent Peachy Peach Recharge to Goonmaxxing (WW: Secret Cave Chest)
+[2026-09-11 22:55:54,667]: (Team #1) AndrewSol sent Ghost Form to Ryot (AF (Monitoring): Lower Vent)
+[2026-09-11 22:56:20,112]: (Team #1) TNNPE sent Bunny Costume to Ryot (Clear Room 02)
+[2026-09-11 22:56:26,906]: (Team #1) Ryot sent Flutterknife Garter to Ryot (WW: Genesis' Coin)
+[2026-09-11 22:56:28,214]: (Team #1) AndrewSol sent Goblin Queen Key to Ryot (AF (Monitoring): Examine Apeman Surveillance)
+[2026-09-11 22:57:44,932]: Notice (Team #1): [Hint]: Ryot's Blue Jelly Mushroom is at Fountain Tartarus Location in TNNPE's World. (unspecified)
+[2026-09-11 22:57:44,932]: Notice (Team #1): [Hint]: Goonmaxxing's Collapsed Temple Key is at Infernal Trove1 Location in TNNPE's World. (unspecified)
+[2026-09-11 22:57:44,933]: Notice (Team #1): [Hint]: Brian's Card Set Thunder is at Bow Weapon Unlock Location in TNNPE's World. (unspecified)
+[2026-09-11 22:57:44,933]: Notice (Team #1): [Hint]: Brian's Card Set Total Eclipse is at Sword Weapon Unlock Location in TNNPE's World. (unspecified)
+[2026-09-11 22:57:44,933]: Notice (Team #1): [Hint]: Goonmaxxing's Promotional Coin is at Shield Weapon Unlock Location in TNNPE's World. (unspecified)
+[2026-09-11 22:57:44,933]: Notice (Team #1): [Hint]: Goonmaxxing's Monster Coin is at Spear Weapon Unlock Location in TNNPE's World. (unspecified)
+[2026-09-11 22:57:44,933]: Notice (Team #1): [Hint]: Brian's Key to Rewards Twilight Town is at Fist Weapon Unlock Location in TNNPE's World. (unspecified)
+[2026-09-11 22:57:47,522]: Notice (all): Goonmaxxing (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-11 22:57:53,330]: (Team #1) TNNPE sent Blue Jelly Mushroom to Ryot (Fountain Tartarus Location)
+[2026-09-11 22:58:04,269]: Notice (all): Goonmaxxing (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-11 22:58:04,269]: Notice (Player Goonmaxxing in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-11 22:58:04,269]: Notice (Player Goonmaxxing in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-11 22:58:04,793]: Notice (all): Goonmaxxing (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-11 22:58:34,952]: (Team #1) Brian sent Slimy Sub Boss Key to Ryot (Defeat 1 Heartless Shadow)
+[2026-09-11 22:58:39,002]: (Team #1) Brian sent (Recyclable) Advanced Component to AndrewSol (Defeat 2 Heartless Shadow)
+[2026-09-11 22:58:51,030]: (Team #1) Brian sent Card Set Two Become One to Brian (Defeat 3 Heartless Shadow)
+[2026-09-11 22:59:23,279]: (Team #1) Goonmaxxing sent Sleight Thundaga to Brian (WW: Feminine Spare Clothes Chest)
+[2026-09-11 22:59:52,205]: (Team #1) Ryot sent World Card Neverland to Brian (WW: Above Rundown House)
+[2026-09-11 22:59:53,721]: (Team #1) Goonmaxxing sent (Database) Rhizomatic Energy Meter to AndrewSol (WW: Beatrix's Introduction Gift)
+[2026-09-11 23:00:24,581]: (Team #1) Ryot sent Woods Crystal Blockade Removal to Goonmaxxing (WW: Rundown House Save Hidden Chest)
+[2026-09-11 23:00:26,738]: (Team #1) Goonmaxxing sent (Poison) Golden Yinglong Egg to AndrewSol (WW: Masculine Spare Clothes Chest)
+[2026-09-11 23:00:28,280]: (Team #1) TNNPE sent Peachy Peach Recharge to Ryot (Clear Room 03)
+[2026-09-11 23:01:09,272]: (Team #1) Goonmaxxing sent Healing Surge to Ryot (WW: Secret Cave Coin)
+[2026-09-11 23:01:15,626]: (Team #1) Goonmaxxing sent Friend Card Ariel to Brian (WW: Secret Cave Chest)
+[2026-09-11 23:02:24,015]: (Team #1) Goonmaxxing sent Loose Change to Ryot (WW: Genesis' Coin)
+[2026-09-11 23:03:10,394]: (Team #1) Goonmaxxing sent Haunted Scythe to Ryot (WW: Above Rundown House)
+[2026-09-11 23:03:21,970]: (Team #1) Ryot sent Healing Surge to Goonmaxxing (WW: Mimi's Hidden Chest)
+[2026-09-11 23:03:42,161]: (Team #1) Goonmaxxing sent Seal of Fuxi to AndrewSol (WW: Rundown House Save Hidden Chest)
+[2026-09-11 23:03:46,810]: (Team #1) AndrewSol sent Jin x800 to AndrewSol (AF (Elevator): Hidden Atop Upper Level Pagoda (Left Chest))
+[2026-09-11 23:03:46,923]: (Team #1) AndrewSol sent Tai-Chi Kick to AndrewSol (AF (Elevator): Hidden Atop Upper Level Pagoda (Right Chest))
+[2026-09-11 23:03:51,453]: (Team #1) Brian sent Demon Boss Key to Goonmaxxing (Defeat 1 Heartless Blue Rhapsody)
+[2026-09-11 23:03:53,444]: (Team #1) Brian sent Elevator Access Token to AndrewSol (Pick Up Goofy In Battle (Sleight Wild Crush))
+[2026-09-11 23:03:53,444]: (Team #1) Brian sent Card Set Star Seeker to Brian (Pick Up Goofy In Battle (Sleight Goofy Tornado LV3))
+[2026-09-11 23:03:53,444]: (Team #1) Brian sent Sleight Showtime LV3 to Brian (Pick Up Goofy In Battle (Sleight Goofy Tornado LV2))
+[2026-09-11 23:03:53,444]: (Team #1) Brian sent Peachy Peach Recharge to Goonmaxxing (Pick Up Goofy In Battle (Sleight Goofy Smash))
+[2026-09-11 23:03:53,444]: (Team #1) Brian sent Magical Mushroom to Goonmaxxing (Defeat 1 Heartless Red Nocturne)
+[2026-09-11 23:03:57,483]: (Team #1) Brian sent Abandoned Mines Access Token to AndrewSol (Defeat 3 Heartless Red Nocturne)
+[2026-09-11 23:03:57,485]: (Team #1) Brian sent Frog Boss Key to Goonmaxxing (Defeat 2 Heartless Blue Rhapsody)
+[2026-09-11 23:03:57,486]: (Team #1) Brian sent Monster Coin to Ryot (Defeat 2 Heartless Red Nocturne)
+[2026-09-11 23:04:13,421]: (Team #1) Brian sent Peachy Peach Recharge to Ryot (Defeat 1 Heartless Soldier)
+[2026-09-11 23:04:15,448]: (Team #1) Brian sent Jin x320 to AndrewSol (Defeat 3 Heartless Blue Rhapsody)
+[2026-09-11 23:04:17,476]: (Team #1) Brian sent Air Dash to AndrewSol (Defeat 3 Heartless Soldier)
+[2026-09-11 23:04:17,477]: (Team #1) Brian sent Rat Costume to Ryot (Defeat 2 Heartless Soldier)
+[2026-09-11 23:05:51,152]: (Team #1) AndrewSol sent Mana Surge to Ryot (AF (Elevator): Moving Boxes)
+[2026-09-11 23:06:34,153]: (Team #1) AndrewSol sent Healing Surge to Ryot (AF (Elevator): Elevator Shaft)
+[2026-09-11 23:07:49,276]: (Team #1) Goonmaxxing sent Sleight Mega Flare to Brian (WW: Gobliana's Belongings)
+[2026-09-11 23:07:56,298]: (Team #1) Ryot sent Tao Fruit to AndrewSol (WW: Mimic Chest Key Room Chest 1)
+[2026-09-11 23:07:59,964]: (Team #1) Ryot sent Enemy Card Ursula to Brian (WW: Mimic Chest Key Room Chest 2)
+[2026-09-11 23:09:56,450]: (Team #1) Goonmaxxing sent Sleight Magnet Spiral to Brian (WW: Mimi's Hidden Chest)
+[2026-09-11 23:10:26,692]: (Team #1) TNNPE sent Sleight Cura to Brian (Clear Room 04)
+[2026-09-11 23:10:32,703]: (Team #1) Ryot sent Healing Surge to Ryot (WW: Belle's Cowbell Chest)
+[2026-09-11 23:10:55,205]: (Team #1) TNNPE sent Demonic Cuff to Ryot (Clear Room 05)
+[2026-09-11 23:11:08,654]: (Team #1) Ryot sent Summon Stone to Ryot (WW: Rundown House Chest)
+[2026-09-11 23:11:14,264]: (Team #1) AndrewSol sent Keys to TNNPE (AF (Elevator): Over Electrified Floor)
+[2026-09-11 23:11:17,367]: (Team #1) Goonmaxxing sent Soul Fragment to Ryot (WW: Mimic Chest Key Room Chest 1)
+[2026-09-11 23:11:24,581]: (Team #1) Goonmaxxing sent Bunny Coin to Ryot (WW: Mimic Chest Key Room Chest 2)
+[2026-09-11 23:11:31,920]: (Team #1) TNNPE sent Healing Surge to Goonmaxxing (Clear Room 06)
+[2026-09-11 23:11:41,520]: (Team #1) TNNPE sent Woods Crystal Blockade Removal to Ryot (Clear Room 07)
+[2026-09-11 23:11:43,072]: (Team #1) Ryot sent Jin x50 to AndrewSol (WW: Secret Alcove)
+[2026-09-11 23:12:21,739]: (Team #1) TNNPE sent Monster Coin to Ryot (Clear Room 08)
+[2026-09-11 23:13:45,671]: (Team #1) TNNPE sent Card Set Thunder to Brian (Bow Weapon Unlock Location)
+[2026-09-11 23:14:18,762]: (Team #1) AndrewSol sent Mana Surge to Goonmaxxing (AF (Elevator): Hack Statue)
+[2026-09-11 23:14:24,804]: (Team #1) TNNPE sent Card Set Total Eclipse to Brian (Sword Weapon Unlock Location)
+[2026-09-11 23:14:35,605]: (Team #1) TNNPE sent Key to Rewards Twilight Town to Brian (Fist Weapon Unlock Location)
+[2026-09-11 23:14:42,540]: (Team #1) TNNPE sent Monster Coin to Goonmaxxing (Spear Weapon Unlock Location)
+[2026-09-11 23:14:48,604]: (Team #1) TNNPE sent Promotional Coin to Goonmaxxing (Shield Weapon Unlock Location)
+[2026-09-11 23:16:19,962]: (Team #1) AndrewSol sent (Database) Council Tenets to AndrewSol (AF (Elevator): Defeat Red Tiger Elite: Baichang)
+[2026-09-11 23:17:00,438]: (Team #1) AndrewSol sent Health Upgrade to Goonmaxxing (Central Hall: Examine Council Sign)
+[2026-09-11 23:18:08,116]: (Team #1) AndrewSol sent (Database) Underground Water Tower to AndrewSol (Central Hall: Examine Launch Memorial)
+[2026-09-11 23:18:20,365]: (Team #1) Brian sent Charged Strike to AndrewSol (Traverse Town Room of Truth)
+[2026-09-11 23:18:47,591]: (Team #1) Ryot sent Middle Management Pact Level to TNNPE (SpC: Men's Bathroom MP Upgrade)
+[2026-09-11 23:18:58,151]: (Team #1) Ryot sent Rat Costume to Goonmaxxing (SpC: Women's Bathroom HP Upgrade)
+[2026-09-11 23:20:07,430]: (Team #1) Goonmaxxing sent Mana Upgrade to Ryot (WW: Belle's Cowbell Chest)
+[2026-09-11 23:20:28,002]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-11 23:20:29,728]: (Team #1) Goonmaxxing sent Loose Change to Ryot (WW: Rundown House Chest)
+[2026-09-11 23:20:49,672]: Notice (all): Ryot (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-11 23:20:49,672]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-11 23:20:49,672]: Notice (Player Ryot in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-11 23:20:50,341]: Notice (all): Ryot (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-11 23:21:19,252]: (Team #1) Ryot sent Peachy Peach Recharge to Ryot (SpC: Outside Shop Item)
+[2026-09-11 23:21:21,611]: (Team #1) Goonmaxxing sent Angel & Demon Coin to Goonmaxxing (WW: Secret Alcove)
+[2026-09-11 23:21:54,583]: (Team #1) Ryot sent Slime Sentry to Goonmaxxing (SpC: Ghostly Castle Key Chest)
+[2026-09-11 23:22:13,861]: (Team #1) Brian sent Seal of Ji to AndrewSol (Traverse Town Room of Truth (Enemy Cards Guard Armor))
+[2026-09-11 23:22:18,775]: (Team #1) Ryot sent Slime Form to Goonmaxxing (SpC: Ancient Being Chest)
+[2026-09-11 23:25:02,681]: (Team #1) Goonmaxxing sent (Database) Hexachrem Vault Scroll to AndrewSol (WW: Gerry G. Atric's Chest)
+[2026-09-11 23:25:19,681]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-11 23:25:37,152]: (Team #1) Brian sent Loose Change to Goonmaxxing (Traverse Town Room of Guidance)
+[2026-09-11 23:26:33,117]: (Team #1) AndrewSol sent (Artifact) Unknown Seed to AndrewSol (Central Hall: Vents)
+[2026-09-11 23:26:36,926]: Notice (all): Ryot (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-11 23:26:36,926]: Notice (Player Ryot in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-11 23:26:36,926]: Notice (Player Ryot in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-11 23:26:37,603]: Notice (all): Ryot (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-11 23:26:55,838]: (Team #1) AndrewSol sent Gobliana's Luggage to Goonmaxxing (Central Hall: Examine Council Tenets)
+[2026-09-11 23:27:33,584]: (Team #1) Ryot sent World Card Hollow Bastion to Brian (SpC: Shop Item 1)
+[2026-09-11 23:27:48,357]: (Team #1) Ryot sent Urns Of Wealth1 Item to TNNPE (SpC: Shop Item 4)
+[2026-09-11 23:28:46,482]: (Team #1) AndrewSol sent Mana Upgrade to Ryot (Galactic Dock: Examine Sign)
+[2026-09-11 23:28:48,689]: (Team #1) Goonmaxxing sent Peachy Peach Charge to Ryot (WW: Past Man Cave Chest)
+[2026-09-11 23:29:10,110]: (Team #1) Ryot sent Angel Feathers to Ryot (Bunny Club: The Bunny Club)
+[2026-09-11 23:29:40,884]: Notice (Team #1): [Hint]: Brian's Enemy Card Oogie Boogie is at Urns Of Wealth2 Location in TNNPE's World. (unspecified)
+[2026-09-11 23:30:04,796]: (Team #1) Ryot sent City Crystal Blockade Removal to Goonmaxxing (SpC: Banana Apartment)
+[2026-09-11 23:30:29,398]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-11 23:30:36,064]: (Team #1) Goonmaxxing sent Peachy Peach Recharge to Goonmaxxing (WW: Before Great Fairy)
+[2026-09-11 23:30:36,451]: Notice (all): Brian (Team #1) tracking Kingdom Hearts RE Chain of Memories has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-11 23:31:22,908]: (Team #1) Ryot sent Skelly Keepsake to TNNPE (Dusty: Alley Cat)
+[2026-09-11 23:33:10,513]: (Team #1) AndrewSol sent Key to Rewards Monstro to Brian (Galactic Dock: Tianhuo Flower)
+[2026-09-11 23:33:31,599]: (Team #1) Ryot sent Cultivation Jade to AndrewSol (WW: Before Great Fairy)
+[2026-09-11 23:34:09,939]: (Team #1) Ryot sent Fungal Key to Ryot (WW: Red Wine Chest)
+[2026-09-11 23:35:21,327]: (Team #1) AndrewSol sent Blue Jelly Mushroom to Goonmaxxing (AF (Depths): Lower Level)
+[2026-09-11 23:35:55,198]: (Team #1) AndrewSol sent Mana Surge to Ryot (AF (Depths): Under Lower Left Exit)
+[2026-09-11 23:37:11,439]: (Team #1) TNNPE sent Collapsed Temple Key to Goonmaxxing (Infernal Trove1 Location)
+[2026-09-11 23:38:10,086]: (Team #1) Goonmaxxing sent Mana Surge to Ryot (WW: Red Wine Chest)
+[2026-09-11 23:39:02,422]: (Team #1) Brian sent Jin x320 to AndrewSol (01F Exit Hall Axel I (Sleight Firaga))
+[2026-09-11 23:39:02,422]: (Team #1) Brian sent Healing Surge to Goonmaxxing (01F Exit Hall Axel I (Magic Cards Fire))
+[2026-09-11 23:39:02,422]: (Team #1) Brian sent Mana Surge to Goonmaxxing (01F Exit Hall Axel I (Sleight Fira))
+[2026-09-11 23:40:50,232]: (Team #1) Goonmaxxing sent Peachy Peach Recharge to Goonmaxxing (WW: Hidden Alcove)
+[2026-09-11 23:42:48,631]: (Team #1) Goonmaxxing sent Loose Change to Ryot (WW: Beside Flip Platform)
+[2026-09-11 23:43:33,051]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-11 23:43:58,038]: Notice (all): Brian (Team #1) tracking Kingdom Hearts RE Chain of Memories has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-11 23:44:16,899]: (Team #1) Goonmaxxing sent Jin x800 to AndrewSol (WW: Gobliana's Headshot)
+[2026-09-11 23:44:45,369]: (Team #1) AndrewSol sent Card Set Mushu to Brian (LYR: Above Leftmost Pool)
+[2026-09-11 23:45:08,724]: (Team #1) AndrewSol sent (Database) Jie Clan Family Precept to AndrewSol (LYR: Right of Leftmost Pool)
+[2026-09-11 23:45:18,198]: (Team #1) AndrewSol sent Jin x50 to AndrewSol (LYR: Second Chest in Leftmost Pool)
+[2026-09-11 23:45:21,564]: (Team #1) AndrewSol sent (Database) Haotian Sphere Model to AndrewSol (LYR: First Chest in Leftmost Pool)
+[2026-09-11 23:46:07,706]: (Team #1) Ryot sent Court Musician Stand Item to TNNPE (SpC: Coin Above Restrooms)
+[2026-09-11 23:46:45,464]: (Team #1) Ryot sent Sleight Blizzara to Brian (SpC: Shop Roof Chest)
+[2026-09-11 23:46:50,746]: (Team #1) AndrewSol sent Jin x320 to AndrewSol (LYR: Hear Ji Reminisce About Daybreak Tower)
+[2026-09-11 23:47:10,527]: (Team #1) AndrewSol sent (Recyclable) Advanced Component to AndrewSol (LYR: Daybreak Tower Chest)
+[2026-09-11 23:47:56,737]: (Team #1) Ryot sent Card Set One Winged Angel to Brian (SpC: Fashion Shop 2)
+[2026-09-11 23:47:57,497]: (Team #1) AndrewSol sent Peachy Peach Charge to Ryot (TRC: Find Broken Shanhai 9000)
+[2026-09-11 23:48:57,680]: (Team #1) Goonmaxxing sent Darkness to TNNPE (WW: After Chaos Fight Chest)
+[2026-09-11 23:49:42,692]: (Team #1) Ryot sent Seal of Kuafu to AndrewSol (SpC: Fashion Shop 1)
+[2026-09-11 23:50:01,541]: (Team #1) AndrewSol sent Jin x50 to AndrewSol (LYR: Statue Hack Room Near Root Node)
+[2026-09-11 23:50:08,645]: (Team #1) Goonmaxxing sent (Recyclable) Noble Ring to AndrewSol (WW: Boss Key Room Chest)
+[2026-09-11 23:50:12,129]: (Team #1) Goonmaxxing sent Sacrificial Dagger to Goonmaxxing (WW: Boss Key Room HP Upgrade)
+[2026-09-11 23:50:19,842]: (Team #1) Brian sent Legendary Halo to Goonmaxxing (Defeat 1 Heartless Wyvern)
+[2026-09-11 23:50:24,349]: (Team #1) Goonmaxxing sent Herb Catalyst to AndrewSol (WW: Boss Key Room Big Chest)
+[2026-09-11 23:50:55,849]: (Team #1) Brian sent (Artifact) Tiandao Academy Periodical to AndrewSol (Defeat 2 Heartless Wyvern)
+[2026-09-11 23:51:19,873]: (Team #1) Brian sent (Artifact) GM Fertilizer to AndrewSol (Defeat 1 Heartless Darkball)
+[2026-09-11 23:51:19,874]: (Team #1) Brian sent Health Upgrade to Ryot (Defeat 2 Heartless Darkball)
+[2026-09-11 23:51:28,570]: (Team #1) Brian sent Healing Surge to Ryot (Defeat 1 Heartless Defender)
+[2026-09-11 23:51:28,621]: (Team #1) AndrewSol sent Animal Coin to Goonmaxxing (Yinglong Canal: Top Left of Upper Caves)
+[2026-09-11 23:51:28,698]: (Team #1) Brian sent (Artifact) Fusang Amulet to AndrewSol (Defeat 3 Heartless Wyvern)
+[2026-09-11 23:51:29,917]: (Team #1) Brian sent Card Set Lady Luck to Brian (Hollow Bastion Ally (Sleight Furious Volley LV3))
+[2026-09-11 23:51:29,917]: (Team #1) Brian sent Peachy Peach Recharge to Goonmaxxing (Hollow Bastion Ally (Sleight Furious Volley LV2))
+[2026-09-11 23:51:59,704]: (Team #1) TNNPE sent Infernal Trove3 Item to TNNPE (Clear Room 09)
+[2026-09-11 23:52:05,760]: (Team #1) TNNPE sent Abandoned Mines Chip to AndrewSol (Clear Room 10)
+[2026-09-11 23:52:08,010]: (Team #1) Brian sent Mana Surge to Goonmaxxing (Defeat 3 Heartless Darkball)
+[2026-09-11 23:52:09,869]: (Team #1) Brian sent Mana Surge to Ryot (Defeat 1 Heartless Wizard)
+[2026-09-11 23:52:25,352]: (Team #1) TNNPE sent Peachy Peach Recharge to Ryot (Charon Keepsake)
+[2026-09-11 23:52:29,989]: (Team #1) Brian sent Belle's Cowbell to Ryot (Defeat 2 Heartless Defender)
+[2026-09-11 23:52:35,431]: (Team #1) AndrewSol sent Tao Fruit to AndrewSol (Yinglong Canal: Bottom Left of Upper Caves)
+[2026-09-11 23:52:40,037]: (Team #1) Brian sent Jin x320 to AndrewSol (Defeat 2 Heartless Wizard)
+[2026-09-11 23:52:44,279]: Notice (all): Goonmaxxing (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-11 23:52:52,170]: Notice (all): Goonmaxxing (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-11 23:52:52,171]: Notice (Player Goonmaxxing in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-11 23:52:52,171]: Notice (Player Goonmaxxing in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-11 23:52:52,676]: Notice (all): Goonmaxxing (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-11 23:53:02,653]: (Team #1) Brian sent (Database) Dusk Guardian Recording Device 3 to AndrewSol (Hollow Bastion Room of Guidance)
+[2026-09-11 23:53:22,838]: (Team #1) TNNPE sent Athena Keepsake to TNNPE (Clear Room 11)
+[2026-09-11 23:54:10,890]: (Team #1) TNNPE sent (Database) Yellow Water Report to AndrewSol (Clear Room 12)
+[2026-09-11 23:54:15,604]: (Team #1) TNNPE sent City Crystal Blockade Removal to Ryot (Clear Room 13)
+[2026-09-11 23:54:44,376]: (Team #1) AndrewSol sent Sleight Stun Impact to Brian (Yinglong Canal: Climbing Puzzle Above Farmland Markings)
+[2026-09-11 23:55:18,766]: (Team #1) AndrewSol sent Fated Keys Item to TNNPE (Yinglong Canal: Examine Farmland Markings)
+[2026-09-11 23:56:19,846]: (Team #1) AndrewSol sent Jin x320 to AndrewSol (Yinglong Canal: Between Egg Cave and Farmland Markings)
+[2026-09-11 23:56:57,849]: (Team #1) AndrewSol sent (Recyclable) Basic Component to AndrewSol (Yinglong Canal: Break Center Yinglong Egg)
+[2026-09-11 23:57:25,440]: (Team #1) Brian sent Enemy Card Gargoyle to Brian (Defeat 3 Heartless Defender)
+[2026-09-11 23:58:06,517]: (Team #1) Goonmaxxing sent Key to Rewards Hollow Bastion to Brian (WW: Flying Fairy Chest)
+[2026-09-11 23:58:53,577]: (Team #1) Brian sent Jin x800 to AndrewSol (Hollow Bastion Room of Rewards (Sleight Flare Breath LV3))
+[2026-09-11 23:58:53,577]: (Team #1) Brian sent Loose Change to Goonmaxxing (Hollow Bastion Room of Rewards (Sleight Flare Breath LV2))
+[2026-09-11 23:58:53,577]: (Team #1) Brian sent Healing Surge to Goonmaxxing (Hollow Bastion Room of Rewards (Summon Cards Mushu))
+[2026-09-11 23:58:58,814]: (Team #1) Ryot sent Deluxe Contractor Desk Item to TNNPE (Rover: Let the Dog Out)
+[2026-09-11 23:59:43,559]: (Team #1) Brian sent Convenience Fee Pact Level to TNNPE (Defeat 3 Heartless Wizard)
+[2026-09-12 00:01:48,632]: (Team #1) Ryot sent Jin x50 to AndrewSol (SpC: Shop Item 3)
+[2026-09-12 00:02:13,744]: (Team #1) Brian sent Key to Rewards Halloween Town to Brian (Hollow Bastion Room of Truth)
+[2026-09-12 00:02:40,914]: (Team #1) Ryot sent Herb Catalyst to AndrewSol (SpC: Abandoned Homes 02 House Chest)
+[2026-09-12 00:02:51,507]: (Team #1) Ryot sent Computing Unit to AndrewSol (SpC: Abandoned Homes 01 House Coin)
+[2026-09-12 00:03:15,982]: (Team #1) Ryot sent Frog Boss Key to Ryot (SpC: Lone House Chest)
+[2026-09-12 00:04:09,464]: (Team #1) Brian sent Peachy Peach Recharge to Ryot (Hollow Bastion Room of Truth (Enemy Cards Dragon Maleficent))
+[2026-09-12 00:04:12,333]: (Team #1) AndrewSol sent Slime Citadel Key to Goonmaxxing (Yinglong Canal: Near Root Node)
+[2026-09-12 00:04:49,429]: (Team #1) Ryot sent Sleight Cross-slash to Brian (GC: Below Entrance Chest)
+[2026-09-12 00:07:22,549]: Notice (all): Goonmaxxing (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-12 00:07:26,059]: (Team #1) Brian sent Mana Surge to Ryot (Hollow Bastion Room of Beginnings)
+[2026-09-12 00:07:29,272]: Notice (all): Goonmaxxing (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-12 00:07:29,272]: Notice (Player Goonmaxxing in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-12 00:07:29,272]: Notice (Player Goonmaxxing in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-12 00:07:29,704]: Notice (all): Goonmaxxing (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-12 00:08:12,719]: (Team #1) Ryot sent Mana Surge to Ryot (Belle: Need My Cowbell)
+[2026-09-12 00:08:23,650]: (Team #1) Goonmaxxing sent Monster Coin to Ryot (SpC: Men's Bathroom MP Upgrade)
+[2026-09-12 00:08:45,524]: (Team #1) Goonmaxxing sent Nurse Costume to Goonmaxxing (SpC: Women's Bathroom HP Upgrade)
+[2026-09-12 00:08:59,880]: (Team #1) Goonmaxxing sent Deed to Fungal Forest to Ryot (SpC: Coin Above Restrooms)
+[2026-09-12 00:09:44,568]: (Team #1) Goonmaxxing sent Enemy Card Axel to Brian (SpC: Outside Shop Item)
+[2026-09-12 00:10:56,900]: (Team #1) AndrewSol sent Ares Keepsake to TNNPE (LYR: Examine Stele)
+[2026-09-12 00:11:08,911]: (Team #1) Goonmaxxing sent Ghost Form to Goonmaxxing (SpC: Shop Item 2)
+[2026-09-12 00:11:12,043]: (Team #1) Goonmaxxing sent Cherry Apartment Key to Goonmaxxing (SpC: Shop Item 1)
+[2026-09-12 00:11:25,220]: (Team #1) Goonmaxxing sent Card Set Megalixir to Brian (SpC: Shop Item 3)
+[2026-09-12 00:11:58,433]: (Team #1) Goonmaxxing sent (Recyclable) Standard Component to AndrewSol (SpC: Shop Roof Chest)
+[2026-09-12 00:13:17,148]: (Team #1) Goonmaxxing sent Navy Witch Costume to Ryot (SpC: Ghostly Castle Key Chest)
+[2026-09-12 00:13:57,808]: (Team #1) Goonmaxxing sent Immovable Jade to AndrewSol (SpC: Shop Item 4)
+[2026-09-12 00:15:30,097]: (Team #1) Ryot sent Slime Citadel Key to Ryot (WW: Past Man Cave Chest)
+[2026-09-12 00:15:40,115]: (Team #1) Ryot sent Peachy Peach Recharge to Ryot (WW: Gerry G. Atric's Chest)
+[2026-09-12 00:15:41,950]: (Team #1) AndrewSol sent Research Center Chip to AndrewSol (LYR: Ropes Near Right Exit)
+[2026-09-12 00:16:31,038]: (Team #1) Ryot sent (Recyclable) Basic Component to AndrewSol (WW: Hidden Alcove)
+[2026-09-12 00:16:51,703]: (Team #1) AndrewSol sent (Artifact) Multi-tool Kit to AndrewSol (GoS (Entry): Examine Painting)
+[2026-09-12 00:17:00,543]: (Team #1) Ryot sent Homing Darts to AndrewSol (WW: Beside Flip Platform)
+[2026-09-12 00:18:12,860]: (Team #1) Ryot sent Angel & Demon Coin to Ryot (WW: Gobliana's Headshot)
+[2026-09-12 00:20:44,759]: (Team #1) Goonmaxxing sent Rose Garden Key to Goonmaxxing (Clinic: Medical Emergency)
+[2026-09-12 00:21:19,927]: Notice (all): Goonmaxxing (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-12 00:21:25,933]: Notice (all): Goonmaxxing (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-12 00:21:25,933]: Notice (Player Goonmaxxing in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-12 00:21:25,933]: Notice (Player Goonmaxxing in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-12 00:21:26,420]: Notice (all): Goonmaxxing (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-12 00:21:58,908]: (Team #1) Goonmaxxing sent Ring Of The Sun to Ryot (SpC: Fashion Shop 1)
+[2026-09-12 00:21:58,908]: (Team #1) Goonmaxxing sent Peachy Peach Upgrade to Ryot (SpC: Fashion Shop 2)
+[2026-09-12 00:23:35,616]: (Team #1) AndrewSol sent Greater Tao Fruit to AndrewSol (Greenhouse: Examine Water Report)
+[2026-09-12 00:24:34,999]: (Team #1) Goonmaxxing sent Heart Necklace to Ryot (SpC: Ancient Being Chest)
+[2026-09-12 00:24:50,845]: (Team #1) AndrewSol sent (Recyclable) Passenger Token: A-Shou to AndrewSol (Greenhouse: Near Rightmost Hanging Pool)
+[2026-09-12 00:25:39,200]: (Team #1) AndrewSol sent Loose Change to Ryot (Greenhouse: Retrieve Chip From Shanhai 9000)
+[2026-09-12 00:25:59,367]: (Team #1) AndrewSol sent Healing Surge to Goonmaxxing (Greenhouse: Hidden in Upper Level Foliage)
+[2026-09-12 00:26:03,037]: (Team #1) Ryot sent Belle's Cowbell to Goonmaxxing (WW: Goblin Queen MP Upgrade)
+[2026-09-12 00:27:00,045]: (Team #1) AndrewSol sent Sleight Teleport to Brian (Greenhouse: In Leftmost Hanging Pool)
+[2026-09-12 00:28:17,036]: (Team #1) AndrewSol sent Jin x50 to AndrewSol (Greenhouse: Vase In Water Above Root Node)
+[2026-09-12 00:28:29,528]: (Team #1) TNNPE sent Charon Keepsake to TNNPE (Infernal Trove in 30 seconds)
+[2026-09-12 00:28:29,665]: (Team #1) TNNPE sent Sleight Raging Storm to Brian (Infernal Trove in 45 seconds)
+[2026-09-12 00:28:29,667]: (Team #1) TNNPE sent Sleight Tornado to Brian (Infernal Trove in 60 seconds)
+[2026-09-12 00:28:29,668]: (Team #1) TNNPE sent Healing Surge to Goonmaxxing (First Infernal Trove: Tartarus)
+[2026-09-12 00:29:06,444]: (Team #1) Ryot sent Bunny Coin to Ryot (WW: After Chaos Fight Chest)
+[2026-09-12 00:30:04,285]: (Team #1) Ryot sent Card Set Stop to Brian (WW: Boss Key Room HP Upgrade)
+[2026-09-12 00:30:07,498]: (Team #1) Ryot sent Mana Surge to Goonmaxxing (WW: Boss Key Room Chest)
+[2026-09-12 00:30:11,599]: (Team #1) Ryot sent Health Upgrade to Goonmaxxing (WW: Boss Key Room Big Chest)

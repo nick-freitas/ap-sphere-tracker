@@ -719,3 +719,43 @@
 [2026-09-12 06:08:35,559]: (Team #1) Goonmaxxing sent Miko Costume to Ryot (GC: Ghost Form Chest)
 [2026-09-12 06:13:49,835]: (Team #1) AndrewSol sent Promotional Coin to Ryot (IW: Shielded Walking Chest)
 [2026-09-12 06:19:33,267]: (Team #1) AndrewSol sent (Recyclable) Standard Component to AndrewSol (IW: Nymph Puzzle Room)
+[2026-09-12 06:22:23,750]: (Team #1) Goonmaxxing sent Sleight Ragnarok to Brian (UU: Early Gacha Coin)
+[2026-09-12 06:24:45,504]: (Team #1) AndrewSol sent World Card Twilight Town to Brian (IW: Defeat Celestial Enforcer: Tieyan)
+[2026-09-12 06:24:52,827]: (Team #1) Goonmaxxing sent Loose Change to Ryot (UU: Flip Magic Room Chest)
+[2026-09-12 06:25:28,521]: (Team #1) Goonmaxxing sent Healing Surge to Goonmaxxing (UU: Far Corner)
+[2026-09-12 06:26:56,932]: (Team #1) Goonmaxxing sent Healing Surge to Ryot (UU: Sacrificial Dagger Chest)
+[2026-09-12 06:27:51,484]: (Team #1) Goonmaxxing sent Bunny Coin to Ryot (UU: Mermaid's Chest)
+[2026-09-12 06:28:27,378]: (Team #1) AndrewSol sent Mana Surge to Goonmaxxing (IW: Dusk Guardian Recording Device)
+[2026-09-12 06:28:30,301]: (Team #1) AndrewSol sent Healing Surge to Ryot (IW: Tianhuo Flower)
+[2026-09-12 06:28:48,576]: (Team #1) AndrewSol sent Health Upgrade to Ryot (IW: Hack 3 Statues)
+[2026-09-12 06:29:02,836]: (Team #1) Goonmaxxing sent Card Set Oathkeeper to Brian (UU: Watery Gauntlet)
+[2026-09-12 06:34:16,911]: (Team #1) Goonmaxxing sent Angel & Demon Coin to Goonmaxxing (UU: Save Coin Chest)
+[2026-09-12 06:34:27,694]: (Team #1) AndrewSol sent Jin x50 to AndrewSol (BR: Examine Console)
+[2026-09-12 06:34:38,973]: (Team #1) Goonmaxxing sent Ambrosia to TNNPE (UU: Above Save Room)
+[2026-09-12 06:34:39,528]: (Team #1) AndrewSol sent Enemy Card Darkside to Brian (BR: Near Xingtian Console)
+[2026-09-12 06:34:57,343]: (Team #1) Goonmaxxing sent Loose Change to Ryot (UU: Chaos Fight Chest)
+[2026-09-12 06:36:35,710]: (Team #1) Goonmaxxing sent Delicious Milk to Goonmaxxing (UU: Path Near Frog Boss)
+[2026-09-12 06:37:27,115]: (Team #1) AndrewSol sent Enemy Card Ansem to Brian (BR: Gauntlet Part 1 Chest)
+[2026-09-12 06:39:34,999]: (Team #1) AndrewSol sent World Card Halloween Town to Brian (BR: Gauntlet Part 2 First Chest)
+[2026-09-12 06:40:06,904]: (Team #1) AndrewSol sent Magnetic Hairpin to Goonmaxxing (BR: Gauntlet Part 2 Chest Past Lasers)
+[2026-09-12 06:40:27,479]: (Team #1) AndrewSol sent Sleight Blizzard Raid to Brian (BR: Gauntlet Part 2 Chest Past Beetle)
+[2026-09-12 06:42:36,595]: Notice (all): Goonmaxxing (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-12 06:42:42,925]: Notice (all): Goonmaxxing (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-12 06:42:42,926]: Notice (Player Goonmaxxing in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-12 06:42:42,926]: Notice (Player Goonmaxxing in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-12 06:42:43,429]: Notice (all): Goonmaxxing (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-12 06:43:25,267]: (Team #1) Goonmaxxing sent Sleight Terror to Brian (Cabaret Cafe: Booze Bunny)
+[2026-09-12 06:44:07,257]: (Team #1) Goonmaxxing sent Jin x50 to AndrewSol (Cabaret Cafe: Jelly Mushroom)
+[2026-09-12 06:45:00,901]: (Team #1) Goonmaxxing sent Monster Coin to Ryot (SpC: Cabaret Cafe Delicious Milk)
+[2026-09-12 06:46:14,841]: (Team #1) Goonmaxxing sent Animal Coin to Ryot (SpC: Cabaret Cafe Girls Room Chest)
+[2026-09-12 06:47:26,512]: Notice (all): Ryot (Team #1) has stopped viewing the game. Client(0.6.7), ['TextOnly', 'AP'].
+[2026-09-12 06:47:42,241]: (Team #1) Goonmaxxing sent Tao Fruit to AndrewSol (Ancient Being: Stop Democracy)
+[2026-09-12 06:49:32,689]: (Team #1) Goonmaxxing sent Jin x50 to AndrewSol (SpC: Chaos Fight)
+[2026-09-12 06:49:52,836]: (Team #1) Goonmaxxing sent World Card Destiny Islands to Brian (SpC: Special Milkshake)
+[2026-09-12 06:55:07,532]: (Team #1) Goonmaxxing sent Jin x50 to AndrewSol (Mimi: Giant Chest Key)
+[2026-09-12 06:55:25,149]: Notice (all): Goonmaxxing (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-12 06:55:31,873]: Notice (all): Goonmaxxing (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-12 06:55:31,873]: Notice (Player Goonmaxxing in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-12 06:55:31,873]: Notice (Player Goonmaxxing in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-12 06:55:32,363]: Notice (all): Goonmaxxing (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-12 06:58:18,030]: (Team #1) Goonmaxxing sent Loose Change to Goonmaxxing (Fairy: Fairy Mushrooms)

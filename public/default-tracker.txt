@@ -959,3 +959,53 @@
 [2026-09-12 18:00:34,583]: (Team #1) Goonmaxxing sent Tao Fruit to AndrewSol (CC: Early Coins Chest)
 [2026-09-12 18:02:38,859]: (Team #1) Goonmaxxing sent Belle's Milkshake to Goonmaxxing (CC: Near Chaos Sanctum)
 [2026-09-12 18:03:00,611]: (Team #1) Goonmaxxing sent Enemy Card Parasite Cage to Brian (CC: Jigoku Path Chest)
+[2026-09-12 18:14:20,204]: Notice (all): Brian (Team #1) tracking Kingdom Hearts RE Chain of Memories has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-12 18:14:31,703]: Notice (all): Brian (Team #1) playing Kingdom Hearts RE Chain of Memories has joined. Client(0.6.5), ['AP'].
+[2026-09-12 18:14:31,703]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-12 18:15:21,539]: (Team #1) Goonmaxxing sent Secret Club Door Key to Goonmaxxing (CC: Goblin/Fungal Path Coin)
+[2026-09-12 18:16:59,579]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-12 18:17:17,079]: Notice (all): Brian (Team #1) tracking Kingdom Hearts RE Chain of Memories has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-12 18:17:52,927]: (Team #1) Brian sent Demon Wings to Goonmaxxing (Agrabah Ally (Sleight Sandstorm LV3))
+[2026-09-12 18:17:52,928]: (Team #1) Brian sent Peachy Peach Recharge to Goonmaxxing (Agrabah Ally (Sleight Sandstorm LV2))
+[2026-09-12 18:18:10,923]: (Team #1) Brian sent Wand Upgrade to Goonmaxxing (Defeat 1 Heartless Bandit)
+[2026-09-12 18:18:24,975]: (Team #1) Brian sent Mana Surge to Goonmaxxing (Defeat 2 Heartless Bandit)
+[2026-09-12 18:18:44,939]: (Team #1) Brian sent Sleight Aqua Splash to Brian (Defeat 1 Heartless Air Soldier)
+[2026-09-12 18:19:00,782]: (Team #1) Brian sent Enemy Card Xigbar to Brian (Defeat 2 Heartless Air Soldier)
+[2026-09-12 18:19:00,937]: (Team #1) Brian sent (Artifact) Sword of Jie to AndrewSol (Defeat 3 Heartless Air Soldier)
+[2026-09-12 18:19:11,059]: (Team #1) Brian sent Enemy Card Wizard to Brian (Defeat 1 Heartless Fat Bandit)
+[2026-09-12 18:19:14,912]: (Team #1) Brian sent Sleight Blizzaga to Brian (Defeat 1 Heartless Green Requiem)
+[2026-09-12 18:19:19,005]: (Team #1) Brian sent Animal Coin to Ryot (Defeat 3 Heartless Bandit)
+[2026-09-12 18:19:26,446]: (Team #1) Goonmaxxing sent (Poison) Molted Tianma Hide to AndrewSol (CC: Ghost Castle Path Coin)
+[2026-09-12 18:20:14,329]: Notice (all): Goonmaxxing (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-12 18:20:25,378]: Notice (all): Goonmaxxing (Team #1) tracking Flipwitch Forbidden Sex Hex has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-12 18:24:41,079]: (Team #1) Brian sent Enemy Card Large Body to Brian (Agrabah Field (Attack Cards Three Wishes))
+[2026-09-12 18:25:20,683]: (Team #1) Goonmaxxing sent Secret Club Door Key to Ryot (CC: Elf Merchant Item 1)
+[2026-09-12 18:25:27,147]: (Team #1) Goonmaxxing sent (Database) Farmland Markings to AndrewSol (CC: Elf Merchant Chest)
+[2026-09-12 18:25:48,994]: (Team #1) Goonmaxxing sent Sleight Strike Raid to Brian (CC: Slime Citadel Path Chest)
+[2026-09-12 18:26:13,424]: (Team #1) Goonmaxxing sent Jin x320 to AndrewSol (CC: Fungal Area Coin)
+[2026-09-12 18:26:13,541]: (Team #1) Brian sent Mana Surge to Goonmaxxing (Defeat 2 Heartless Green Requiem)
+[2026-09-12 18:26:35,533]: (Team #1) Brian sent Mana Surge to Goonmaxxing (Defeat 2 Heartless Fat Bandit)
+[2026-09-12 18:27:40,914]: (Team #1) Goonmaxxing sent Mana Surge to Ryot (CC: Pandora MP Upgrade)
+[2026-09-12 18:27:43,119]: (Team #1) Goonmaxxing sent Enemy Card Wyvern to Brian (CC: Pandora Chaos Sanctum Key)
+[2026-09-12 18:30:31,458]: (Team #1) Brian sent (Database) Coffin Inscription to AndrewSol (Defeat 3 Heartless Green Requiem)
+[2026-09-12 18:32:31,912]: (Team #1) Brian sent Ghostly Castle Key to Ryot (Defeat 3 Heartless Fat Bandit)
+[2026-09-12 18:36:05,823]: (Team #1) Brian sent Key to Rewards Olympus Coliseum to Brian (Agrabah Bounty (Sleight Gravira))
+[2026-09-12 18:36:05,823]: (Team #1) Brian sent Peachy Peach Recharge to Goonmaxxing (Agrabah Bounty (Sleight Graviga))
+[2026-09-12 18:36:05,824]: (Team #1) Brian sent Patroclus Keepsake to TNNPE (Agrabah Bounty (Magic Cards Gravity))
+[2026-09-12 18:40:28,822]: (Team #1) Goonmaxxing sent Loose Change to Goonmaxxing (CC: Outside Castle Coin)
+[2026-09-12 18:42:30,529]: (Team #1) Goonmaxxing sent Angel Letter to Goonmaxxing (CC: Big Jump HP Upgrade)
+[2026-09-12 18:42:33,071]: (Team #1) Goonmaxxing sent Keys to TNNPE (CC: Big Jump Chest)
+[2026-09-12 18:45:07,549]: (Team #1) Goonmaxxing sent Card Set Genie to Brian (Kyoni's Shop: Devilicious)
+[2026-09-12 18:46:50,430]: (Team #1) Goonmaxxing sent Card Set Hi-Potion to Brian (Kyoni's Shop: What's a Daikon?)
+[2026-09-12 18:50:34,007]: (Team #1) Goonmaxxing sent Sleight Fira to Brian (Cabaret Cafe: Rat Problem)
+[2026-09-12 18:51:23,159]: (Team #1) Goonmaxxing sent Nectar to TNNPE (Cabaret Cafe: Help Wanted)
+[2026-09-12 18:54:06,639]: (Team #1) Goonmaxxing sent Dark Steel to AndrewSol (JG: Demon Wings Tutorial)
+[2026-09-12 18:56:49,359]: (Team #1) Goonmaxxing sent (Database) Dusk Guardian Recording Device 1 to AndrewSol (CD: Demon Boss Key Chest)
+[2026-09-12 18:58:25,681]: Notice (all): Goonmaxxing (Team #1) viewing Flipwitch Forbidden Sex Hex has joined. Client(0.6.8), ['AP', 'TextOnly'].
+[2026-09-12 18:58:25,681]: Notice (Player Goonmaxxing in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-12 18:58:29,717]: (Team #1) Brian sent Demon Boss Key to Ryot (Agrabah Room of Guidance)
+[2026-09-12 18:58:31,610]: Notice (all): Goonmaxxing: !hint Chaos Sanctum Key
+[2026-09-12 18:58:31,612]: Notice (Team #1): [Hint]: Goonmaxxing's Chaos Sanctum Key is at FSP: Give Shuanshuan's Book to Chiyou in AndrewSol's World. (priority)
+[2026-09-12 19:00:30,712]: Notice (all): Goonmaxxing (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-12 19:00:49,826]: Notice (all): Goonmaxxing (Team #1) has stopped viewing the game. Client(0.6.8), ['AP', 'TextOnly'].
+[2026-09-12 19:03:01,562]: (Team #1) Brian sent Silky Slime to Ryot (Agrabah Room of Guidance (Item Cards Ether))

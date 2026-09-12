@@ -692,3 +692,8 @@
 [2026-09-12 05:34:45,946]: (Team #1) AndrewSol sent Seal of Lady Ethereal to AndrewSol (Factory (GH): Recording Device in Platform Puzzle Room)
 [2026-09-12 05:34:53,439]: (Team #1) AndrewSol sent Sleight Furious Volley LV3 to Brian (Factory (GH): Tianhuo Flower in Platform Puzzle Room)
 [2026-09-12 05:38:07,171]: (Team #1) AndrewSol sent Red Wine to Goonmaxxing (Factory (U): Above Root Node)
+[2026-09-12 05:42:15,399]: (Team #1) AndrewSol sent Diamonds to TNNPE (Factory (U): Below Walkway to Left Exit)
+[2026-09-12 05:43:29,067]: (Team #1) AndrewSol sent Peachy Peach Charge to Goonmaxxing (Factory (U): Behind Moving Boxes)
+[2026-09-12 05:47:44,780]: (Team #1) Goonmaxxing sent Dominating Costume to Goonmaxxing (TG: Hidden Ledge)
+[2026-09-12 05:47:57,336]: (Team #1) AndrewSol sent Peachy Peach Upgrade to Goonmaxxing (OW: Retrieve Chip From Shanhai 9000)
+[2026-09-12 05:48:01,337]: (Team #1) AndrewSol sent Card Set Star Seeker to Brian (OW: Above Sol Statue)

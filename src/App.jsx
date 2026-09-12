@@ -18,7 +18,7 @@ import './App.css'
 const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i})`)
 
 // GitHub API endpoint for the most recent successful run of the
-// Refresh Tracker Log workflow. Used to power the "Log updated" header
+// Fetch Tracker Log workflow. Used to power the "Log updated" header
 // display: it tells us when the five-minute auto-update action last ran,
 // even when the run found no tracker changes to commit. This is the
 // key signal that distinguishes "action is alive, just no new data"
@@ -29,7 +29,7 @@ const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i
 // the owner/repo/workflow segments to match your own.
 const ACTION_RUNS_URL =
   'https://api.github.com/repos/nick-freitas/ap-sphere-tracker' +
-  '/actions/workflows/refresh-tracker.yml/runs?status=success&per_page=1'
+  '/actions/workflows/fetch-tracker.yml/runs?status=success&per_page=1'
 
 async function fetchLatestActionRunTime() {
   try {

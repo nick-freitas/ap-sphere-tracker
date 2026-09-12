@@ -1,4 +1,4 @@
-name: Refresh Tracker Log
+name: Fetch Tracker Log
 
 on:
   schedule:

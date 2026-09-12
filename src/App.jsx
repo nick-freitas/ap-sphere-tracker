@@ -19,7 +19,7 @@ const PLAYER_COLOR_VARS = Array.from({ length: 10 }, (_, i) => `var(--player-${i
 
 // GitHub API endpoint for the most recent successful run of the
 // Fetch Tracker Log workflow. Used to power the "Log updated" header
-// display: it tells us when the five-minute auto-update action last ran,
+// display: it tells us when the ten-minute auto-update action last ran,
 // even when the run found no tracker changes to commit. This is the
 // key signal that distinguishes "action is alive, just no new data"
 // from "action has silently broken and stopped running" — a failure
@@ -119,7 +119,7 @@ function App() {
     //
     //   2. GitHub Actions API: updated_at of the most recent successful
     //      run of the Fetch Tracker Log workflow. Advances on every
-    //      scheduled run (every 30 min), including runs that found no
+    //      scheduled run (every 10 min), including runs that found no
     //      tracker changes and skipped the commit step. This is the
     //      action-health heartbeat — it tells us "the action is alive,"
     //      separate from whether the content actually changed.

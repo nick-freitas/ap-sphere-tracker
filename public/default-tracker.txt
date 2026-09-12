@@ -923,3 +923,39 @@
 [2026-09-12 16:57:47,679]: (Team #1) Goonmaxxing sent Loose Change to Ryot (AH: Flip Magic Room)
 [2026-09-12 17:00:29,561]: (Team #1) Goonmaxxing sent Nyx Keepsake to TNNPE (AH: Angel Feathers Chest)
 [2026-09-12 17:03:10,031]: (Team #1) Goonmaxxing sent Harpy Feather to Goonmaxxing (AH: Hidden Foliage 2)
+[2026-09-12 17:09:15,300]: (Team #1) Goonmaxxing sent Orpheus Keepsake to TNNPE (AH: Angelica MP Upgrade)
+[2026-09-12 17:11:45,642]: (Team #1) Goonmaxxing sent Angel & Demon Coin to Ryot (AH: Cloudia)
+[2026-09-12 17:14:08,915]: (Team #1) Goonmaxxing sent (Recyclable) Advanced Component to AndrewSol (AH: Gabrielle Chest)
+[2026-09-12 17:18:26,815]: Notice (all): Goonmaxxing (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-12 17:18:57,533]: Notice (all): Goonmaxxing (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-12 17:18:57,534]: Notice (Player Goonmaxxing in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-12 17:18:57,534]: Notice (Player Goonmaxxing in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-12 17:18:58,231]: Notice (all): Goonmaxxing (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-12 17:26:36,741]: Notice (all): Goonmaxxing (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-12 17:26:46,916]: Notice (all): Goonmaxxing (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-12 17:26:46,916]: Notice (Player Goonmaxxing in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-12 17:26:46,916]: Notice (Player Goonmaxxing in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-12 17:26:47,422]: Notice (all): Goonmaxxing (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-12 17:27:08,712]: Notice (all): Goonmaxxing (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-12 17:27:11,160]: Notice (all): Goonmaxxing (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-12 17:27:11,161]: Notice (Player Goonmaxxing in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-12 17:27:11,161]: Notice (Player Goonmaxxing in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-12 17:27:11,588]: Notice (all): Goonmaxxing (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-12 17:27:46,004]: Notice (all): Goonmaxxing (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-12 17:28:09,498]: Notice (all): Goonmaxxing (Team #1) playing Flipwitch Forbidden Sex Hex has joined. Client(0.6.7), [].
+[2026-09-12 17:28:09,498]: Notice (Player Goonmaxxing in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-12 17:28:09,498]: Notice (Player Goonmaxxing in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.
+[2026-09-12 17:28:09,910]: Notice (all): Goonmaxxing (Team #1) has changed tags from [] to ['DeathLink'].
+[2026-09-12 17:31:02,751]: (Team #1) Goonmaxxing sent Navy Witch Costume to Goonmaxxing (UU: Path to Octrina)
+[2026-09-12 17:33:32,947]: (Team #1) Goonmaxxing sent (Recyclable) Standard Component to AndrewSol (UU: Octrina Chest)
+[2026-09-12 17:35:15,798]: (Team #1) Goonmaxxing sent Peachy Peach Charge to Goonmaxxing (UU: Flip Magic Room 2 Coin)
+[2026-09-12 17:39:50,942]: (Team #1) Goonmaxxing sent Jin x50 to AndrewSol (UU: Frog Boss MP Upgrade)
+[2026-09-12 17:41:42,661]: (Team #1) Goonmaxxing sent Health Upgrade to Ryot (Keroku: Seamen, With an A)
+[2026-09-12 17:47:33,731]: (Team #1) Goonmaxxing sent Jin x320 to AndrewSol (Cabaret Cafe: Ectogasm)
+[2026-09-12 17:49:19,418]: (Team #1) Goonmaxxing sent Peachy Peach Recharge to Ryot (Cabaret Cafe: Haunted Bathroom)
+[2026-09-12 17:50:31,971]: (Team #1) Goonmaxxing sent Healing Surge to Ryot (Cabaret Cafe: Legendary Chewtoy)
+[2026-09-12 17:52:54,729]: (Team #1) Goonmaxxing sent Sleight Confuse to Brian (SlC: Slurp Summoning Stone)
+[2026-09-12 17:57:46,034]: (Team #1) Goonmaxxing sent Jin x50 to AndrewSol (CD: Demon Boss MP Upgrade)
+[2026-09-12 18:00:34,583]: (Team #1) Goonmaxxing sent Tao Fruit to AndrewSol (CC: Early Coins Chest)
+[2026-09-12 18:02:38,859]: (Team #1) Goonmaxxing sent Belle's Milkshake to Goonmaxxing (CC: Near Chaos Sanctum)
+[2026-09-12 18:03:00,611]: (Team #1) Goonmaxxing sent Enemy Card Parasite Cage to Brian (CC: Jigoku Path Chest)

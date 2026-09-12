@@ -1228,3 +1228,10 @@
 [2026-09-12 20:44:21,353]: (Team #1) Ryot sent Pitch Black Darkness Item to TNNPE (Cabaret Cafe: Legendary Chewtoy)
 [2026-09-12 20:45:59,226]: Notice (all): Ryot (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
 [2026-09-12 20:46:07,357]: Notice (all): Ryot (Team #1) has left the game. Client(0.6.7), ['DeathLink'].
+[2026-09-12 21:04:50,410]: (Team #1) Brian sent Firestorm Ring to AndrewSol (Destiny Islands Room of Rewards (Item Cards Megalixir))
+[2026-09-12 21:07:33,901]: (Team #1) Brian sent Jin x50 to AndrewSol (Destiny Islands Room of Guidance)
+[2026-09-12 21:18:56,483]: (Team #1) Brian sent Peachy Peach Recharge to Goonmaxxing (Neverland Room of Rewards (Sleight Thunder Raid))
+[2026-09-12 21:24:37,224]: (Team #1) Brian sent Monster Coin to Goonmaxxing (Halloween Town Field (Attack Cards Pumpkinhead))
+[2026-09-12 21:24:51,474]: Notice (all): AndrewSol (Team #1) playing Nine Sols has joined. Client(0.6.0), ['DeathLink'].
+[2026-09-12 21:24:51,474]: Notice (Player AndrewSol in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-12 21:24:51,474]: Notice (Player AndrewSol in team 1): Warning: your client does not support compressed websocket connections! It may stop working in the future. If you are a player, please report this to the client's developer.

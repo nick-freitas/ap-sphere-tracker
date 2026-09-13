@@ -1557,3 +1557,54 @@
 [2026-09-13 01:46:33,812]: (Team #1) AndrewSol sent Sleight Synchro to Brian (GoS (East): Spike Ball Hall Upper Right)
 [2026-09-13 01:46:33,812]: (Team #1) AndrewSol sent Sleight Showtime LV2 to Brian (GoS (East): Examine Stone Carvings)
 [2026-09-13 01:46:33,812]: (Team #1) AndrewSol sent Sleight Spiral Wave LV3 to Brian (W&OS: Climb Elevator Shaft By Root Node)
+[2026-09-13 01:50:16,731]: Notice (all): Brian: !giveitem Friend Card Pluto
+[2026-09-13 01:50:16,731]: Notice (Player Brian in team 1): Could not find command giveitem. Known commands: help, license, options, admin, players, status, release, collect, countdown, remaining, missing, checked, alias, getitem, hint, hint_location, video
+[2026-09-13 01:50:28,791]: Notice (all): Brian: !getitem Friend Card Pluto
+[2026-09-13 01:50:28,793]: Notice (all): Cheat console: sending "Friend Card Pluto" to Brian
+[2026-09-13 01:53:28,970]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-13 02:00:07,679]: Notice (all): Brian: !getitem Friend Card Pluto
+[2026-09-13 02:00:07,681]: Notice (all): Cheat console: sending "Friend Card Pluto" to Brian
+[2026-09-13 02:00:46,747]: Notice (all): AndrewSol (Team #1) has left the game. Client(0.6.0), ['DeathLink'].
+[2026-09-13 02:00:48,251]: Notice (all): Brian: !getitem Friend Card Pluto
+[2026-09-13 02:00:48,253]: Notice (all): Cheat console: sending "Friend Card Pluto" to Brian
+[2026-09-13 02:00:49,357]: Notice (all): Brian: !getitem Friend Card Pluto
+[2026-09-13 02:00:49,359]: Notice (all): Cheat console: sending "Friend Card Pluto" to Brian
+[2026-09-13 02:01:49,153]: Notice (all): Brian: !getitem Friend Card Pluto
+[2026-09-13 02:01:49,155]: Notice (all): Cheat console: sending "Friend Card Pluto" to Brian
+[2026-09-13 02:01:50,677]: Notice (all): Brian: !getitem Friend Card Pluto
+[2026-09-13 02:01:50,681]: Notice (all): Cheat console: sending "Friend Card Pluto" to Brian
+[2026-09-13 02:01:52,293]: Notice (all): Brian: !getitem Friend Card Pluto
+[2026-09-13 02:01:52,295]: Notice (all): Cheat console: sending "Friend Card Pluto" to Brian
+[2026-09-13 02:01:52,981]: Notice (all): Brian: !getitem Friend Card Pluto
+[2026-09-13 02:01:52,984]: Notice (all): Cheat console: sending "Friend Card Pluto" to Brian
+[2026-09-13 02:01:53,477]: Notice (all): Brian: !getitem Friend Card Pluto
+[2026-09-13 02:01:53,486]: Notice (all): Cheat console: sending "Friend Card Pluto" to Brian
+[2026-09-13 02:03:12,953]: Notice (all): Brian: !getitem Friend Card Pluto
+[2026-09-13 02:03:12,956]: Notice (all): Cheat console: sending "Friend Card Pluto" to Brian
+[2026-09-13 02:03:14,291]: Notice (all): Brian: !getitem Friend Card Pluto
+[2026-09-13 02:03:14,292]: Notice (all): Cheat console: sending "Friend Card Pluto" to Brian
+[2026-09-13 02:03:15,337]: Notice (all): Brian: !getitem Friend Card Pluto
+[2026-09-13 02:03:15,339]: Notice (all): Cheat console: sending "Friend Card Pluto" to Brian
+[2026-09-13 02:03:58,777]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-13 02:04:17,485]: Notice (all): Brian (Team #1) tracking Kingdom Hearts RE Chain of Memories has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-13 02:05:33,745]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
+[2026-09-13 02:05:37,799]: Notice (all): Brian (Team #1) playing Kingdom Hearts RE Chain of Memories has joined. Client(0.6.5), ['AP'].
+[2026-09-13 02:05:37,800]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-13 02:05:59,269]: Notice (all): Brian: !collect
+[2026-09-13 02:05:59,269]: Notice (all): Brian (Team #1) has collected their items from other worlds.
+[2026-09-13 02:05:59,270]: (Team #1) Brian sent Victory to Brian (Final Marluxia)
+[2026-09-13 02:05:59,270]: (Team #1) Brian sent Card Set Three Wishes to Brian (Castle Oblivion Field Marluxia)
+[2026-09-13 02:05:59,270]: (Team #1) Brian sent Sleight Furious Volley LV2 to Brian (Castle Oblivion Bounty (Sleight Raging Storm))
+[2026-09-13 02:05:59,270]: (Team #1) Brian sent Friend Card Pluto to Brian (12F Exit Hall Larxene II (Enemy Cards Larxene))
+[2026-09-13 02:06:00,300]: Notice (all): Brian (Team #1) has completed their goal.
+[2026-09-13 02:06:00,300]: Notice (all): Brian (Team #1) has collected their items from other worlds.
+[2026-09-13 02:06:00,301]: Notice (all): Brian (Team #1) has released all remaining items from their world.
+[2026-09-13 02:06:00,301]: Notice (all): Team #1 has completed all of their games! Congratulations!
+[2026-09-13 02:13:27,069]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-13 02:13:29,480]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
+[2026-09-13 02:16:59,667]: Notice (all): Brian (Team #1) playing Kingdom Hearts RE Chain of Memories has joined. Client(0.6.5), ['AP'].
+[2026-09-13 02:16:59,667]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-13 02:19:21,701]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
+[2026-09-13 03:21:54,932]: Notice (all): Ryot (Team #1) has stopped viewing the game. Client(0.6.7), ['AP', 'TextOnly'].
+[2026-09-13 03:46:33,812]: Shutting down due to inactivity.
+[2026-09-13 03:46:34,069]: Notice (all): AndrewSol (Team #1) has stopped tracking the game. Client(0.6.7), ['AP', 'Tracker'].

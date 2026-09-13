@@ -1431,3 +1431,35 @@
 [2026-09-13 00:13:21,633]: Notice (Player Brian in team 1): Didn't find something that closely matches 'World Card Castle Oblivion', did you mean 'Key to Rewards Castle Oblivion'? (66% sure)
 [2026-09-13 00:13:36,446]: Notice (all): Brian: !hint Key to Rewards Castle Oblivion
 [2026-09-13 00:13:36,449]: Notice (Team #1): [Hint]: Brian's Key to Rewards Castle Oblivion is at Clear Room 47 in TNNPE's World. (priority)
+[2026-09-13 00:19:10,401]: (Team #1) AndrewSol sent Enemy Card Tornado Step to Brian (AF (Depths): Defeat Celestial Spectre: Shangui (2nd Reward))
+[2026-09-13 00:19:10,401]: (Team #1) AndrewSol sent (Recyclable) Basic Component to AndrewSol (AF (Depths): Defeat Celestial Spectre: Shangui (1st Reward))
+[2026-09-13 00:22:26,325]: (Team #1) AndrewSol sent Seal of Nuwa to AndrewSol (AF (Depths): Upper Right Chest (1st Reward))
+[2026-09-13 00:22:26,471]: (Team #1) AndrewSol sent (Recyclable) Standard Component to AndrewSol (AF (Depths): Upper Right Chest (2nd Reward))
+[2026-09-13 00:23:30,062]: (Team #1) TNNPE sent Bloody Crimson Hibiscus to AndrewSol (Eurydice Keepsake)
+[2026-09-13 00:24:49,374]: (Team #1) AndrewSol sent Jury Summons Pact Level to TNNPE (ED (Passages): Examine Water Tower)
+[2026-09-13 00:26:14,378]: (Team #1) AndrewSol sent Jin x50 to AndrewSol (ED (Passages): Covered By Lasers)
+[2026-09-13 00:27:08,154]: (Team #1) AndrewSol sent Seal of Yanlao to AndrewSol (ED (Passages): Above Transporter)
+[2026-09-13 00:35:14,912]: Notice (all): Brian (Team #1) has left the game. Client(0.6.5), ['AP'].
+[2026-09-13 00:35:17,270]: Notice (all): Brian (Team #1) has stopped tracking the game. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-13 00:35:17,790]: Notice (all): Brian (Team #1) tracking Kingdom Hearts RE Chain of Memories has joined. Client(0.5.1), ['PopTracker', 'NoText', 'Tracker'].
+[2026-09-13 00:35:20,319]: Notice (all): Brian (Team #1) playing Kingdom Hearts RE Chain of Memories has joined. Client(0.6.5), ['AP'].
+[2026-09-13 00:35:20,320]: Notice (Player Brian in team 1): Now that you are connected, you can use !help to list commands to run via the server. If your client supports it, you may have additional local commands you can list with /help.
+[2026-09-13 00:45:20,927]: (Team #1) TNNPE sent World Card 100 Acre Wood to Brian (Clear Room 36)
+[2026-09-13 00:45:29,277]: (Team #1) TNNPE sent Card Set Pumpkinhead to Brian (Clear Room 37)
+[2026-09-13 00:45:59,963]: (Team #1) TNNPE sent Diamonds to TNNPE (Clear Room 38)
+[2026-09-13 00:47:14,364]: (Team #1) TNNPE sent Zeus Keepsake to TNNPE (Clear Room 42)
+[2026-09-13 00:49:02,724]: (Team #1) TNNPE sent Enemy Card Card Soldier to Brian (Clear Room 44)
+[2026-09-13 00:49:32,049]: (Team #1) TNNPE sent Jury Summons Pact Level to TNNPE (Clear Room 46)
+[2026-09-13 00:49:47,949]: (Team #1) TNNPE sent Key to Rewards Castle Oblivion to Brian (Clear Room 47)
+[2026-09-13 00:50:01,320]: (Team #1) TNNPE sent Keepsake Collection Item to TNNPE (Clear Room 48)
+[2026-09-13 00:50:16,331]: (Team #1) TNNPE sent Sleight Thundara to Brian (Clear Room 49)
+[2026-09-13 00:50:32,696]: (Team #1) TNNPE sent Enemy Card Black Fungus to Brian (Clear Room 50)
+[2026-09-13 00:50:35,650]: (Team #1) TNNPE sent Nectar to TNNPE (Clear Room 51)
+[2026-09-13 00:55:06,139]: Notice (Team #1): [Hint]: Goonmaxxing's Healing Surge is at Fountain Elysium Location in TNNPE's World. (found)
+[2026-09-13 00:55:06,140]: Notice (Team #1): [Hint]: Goonmaxxing's Angel & Demon Coin is at Infernal Trove3 Location in TNNPE's World. (found)
+[2026-09-13 00:55:06,140]: Notice (Team #1): [Hint]: Ryot's Healing Surge is at Deluxe Contractor Desk Location in TNNPE's World. (found)
+[2026-09-13 00:55:06,140]: Notice (Team #1): [Hint]: AndrewSol's Jin x320 is at Fountain Asphodel Location in TNNPE's World. (unspecified)
+[2026-09-13 00:55:06,140]: Notice (Team #1): [Hint]: Brian's Sleight Paradise LV3 is at Infernal Trove2 Location in TNNPE's World. (unspecified)
+[2026-09-13 00:55:06,140]: Notice (Team #1): [Hint]: TNNPE's Shield Weapon Unlock Item is at Fishing Rod Location in TNNPE's World. (unspecified)
+[2026-09-13 00:55:12,295]: (Team #1) TNNPE sent Jin x320 to AndrewSol (Fountain Asphodel Location)
+[2026-09-13 00:56:46,154]: (Team #1) TNNPE sent Sleight Paradise LV3 to Brian (Infernal Trove2 Location)
